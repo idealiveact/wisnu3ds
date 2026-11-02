@@ -119,7 +119,9 @@
   --border: oklch(1 0 0 / 14%);
   --input: oklch(1 0 0 / 15%);
   --ring: oklch(0.68 0.18 45);
-  --scrim: linear-gradient(to top, oklch(0.12 0.005 60 / 0.95) 0%, oklch(0.12 0.005 60 / 0.4) 45%, oklch(0.12 0.005 60 / 0.15) 100%);
+  --scrim:
+    linear-gradient(to bottom, oklch(0.12 0.005 60 / 0.8) 0%, oklch(0.12 0.005 60 / 0.35) 22%, oklch(0.12 0.005 60 / 0) 40%),
+    linear-gradient(to top, oklch(0.12 0.005 60 / 0.97) 0%, oklch(0.12 0.005 60 / 0.6) 45%, oklch(0.12 0.005 60 / 0.28) 100%);
 }
 
 @layer base {
@@ -137,6 +139,15 @@ body { font-family: var(--font-sans); }
 .font-display { font-family: var(--font-display); letter-spacing: -0.03em; }
 @utility bg-scrim { background: var(--scrim); }
 @utility eyebrow { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.2em; color: var(--muted-foreground); }
+@utility slide-label {
+  width: fit-content; padding: 0.32rem 0.75rem; border-radius: 999px;
+  background: oklch(0.12 0.005 60 / 0.72);
+  font-size: 0.82rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.18em;
+  color: oklch(0.82 0.15 55);
+}
+@utility slide-lead {
+  text-shadow: 0 2px 22px oklch(0.12 0.005 60 / 0.95), 0 1px 5px oklch(0.12 0.005 60 / 0.9);
+}
 @utility nav-link {
   font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.15em; color: var(--muted-foreground); transition: color .2s;
   &:hover, &[data-active="true"] { color: var(--primary); }

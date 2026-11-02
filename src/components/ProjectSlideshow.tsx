@@ -51,10 +51,10 @@ export function ProjectSlideshow({ projects, title }: { projects: Project[]; tit
       <div className="absolute inset-0 bg-scrim" />
 
       <div className="relative z-10 flex h-full flex-col justify-end px-6 pb-10 md:px-10 md:pb-14">
-        <p className="eyebrow mb-4">{title}</p>
+        <p className="slide-label mb-4">{title}</p>
         <div key={p.slug + "t"} className="fade-up max-w-3xl">
-          <h1 className="font-display text-5xl font-bold leading-[0.95] text-foreground md:text-8xl">{p.title}</h1>
-          <p className="mt-4 max-w-xl text-muted-foreground md:text-lg">{p.summary}</p>
+          <h1 className="slide-lead font-display text-5xl font-bold leading-[0.95] text-foreground md:text-8xl">{p.title}</h1>
+          <p className="slide-lead mt-4 max-w-xl text-muted-foreground md:text-lg">{p.summary}</p>
           <Link to="/projects/$slug" params={{ slug: p.slug }} className="btn-ember mt-6">
             View project →
           </Link>
