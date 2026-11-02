@@ -1,24 +1,36 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
+import { heroImage } from "@/data/projects";
 
-// No head() here: the home route inherits title/description/og/twitter from
-// __root.tsx, and ships no og:image so serve-time hosting can inject the
-// project's social preview (explicit og:image or latest screenshot).
 export const Route = createFileRoute("/")({
+  head: () => ({
+    meta: [
+      { title: "Rhea Voss — 3D Artist & Visualizer" },
+      { name: "description", content: "Portfolio of Rhea Voss, 3D artist and visualizer crafting cinematic renders, technical art and immersive worlds." },
+      { property: "og:title", content: "Rhea Voss — 3D Artist & Visualizer" },
+      { property: "og:description", content: "Cinematic 3D visualization, technical art and personal worlds." },
+    ],
+  }),
   component: Index,
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
 function Index() {
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
-    </div>
+    <section className="relative h-[100svh] overflow-hidden">
+      <img src={heroImage} alt="" width={1920} height={1088} fetchPriority="high" className="hero-zoom absolute inset-0 h-full w-full object-cover" />
+      <div className="absolute inset-0 bg-scrim" />
+      <div className="relative z-10 flex h-full flex-col justify-end px-6 pb-16 md:px-10 md:pb-24">
+        <p className="eyebrow fade-up">3D Artist · 3D Visualizer</p>
+        <h1 className="fade-up mt-4 font-display text-6xl font-bold leading-[0.9] text-foreground md:text-[9rem]">
+          Rhea<br />Voss<span className="text-primary">.</span>
+        </h1>
+        <p className="fade-up mt-6 max-w-lg text-muted-foreground md:text-lg">
+          Building light, matter and atmosphere — from architectural visualization to real-time technical art.
+        </p>
+        <div className="fade-up mt-8 flex flex-wrap gap-3">
+          <Link to="/work" className="btn-ember">Explore work →</Link>
+          <Link to="/contact" className="btn-outline">Get in touch</Link>
+        </div>
+      </div>
+    </section>
   );
 }
