@@ -140,8 +140,9 @@ body { font-family: var(--font-sans); }
 @utility bg-scrim { background: var(--scrim); }
 @utility eyebrow { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.2em; color: var(--muted-foreground); }
 @utility slide-label {
-  font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.2em; color: var(--primary);
-  text-shadow: 0 1px 14px oklch(0.12 0.005 60 / 0.95), 0 0 4px oklch(0.12 0.005 60 / 0.9);
+  font-size: 0.82rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.18em;
+  color: oklch(0.82 0.15 55);
+  text-shadow: 0 1px 16px oklch(0.12 0.005 60 / 1), 0 0 6px oklch(0.12 0.005 60 / 0.95);
 }
 @utility slide-lead {
   text-shadow: 0 2px 22px oklch(0.12 0.005 60 / 0.95), 0 1px 5px oklch(0.12 0.005 60 / 0.9);
