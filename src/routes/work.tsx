@@ -5,9 +5,9 @@ import { byCategory } from "@/data/projects";
 export const Route = createFileRoute("/work")({
   head: () => ({
     meta: [
-      { title: "Work — Rhea Voss 3D" },
-      { name: "description", content: "Commercial 3D visualization and client projects." },
-      { property: "og:title", content: "Work — Rhea Voss 3D" },
+      { title: "Work — Wisnu Kesuma 3D" },
+      { name: "description", content: "Commercial 3D visualization and client projects by Wisnu Kesuma." },
+      { property: "og:title", content: "Work — Wisnu Kesuma 3D" },
       { property: "og:description", content: "Commercial 3D visualization and client projects." },
     ],
   }),

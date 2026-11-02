@@ -14,7 +14,7 @@ export function SiteNav() {
   return (
     <header className="fixed inset-x-0 top-0 z-50 flex items-center justify-between px-6 py-5 md:px-10">
       <Link to="/" className="font-display text-lg font-bold tracking-tight text-foreground">
-        R<span className="text-primary">.</span>VOSS
+        W<span className="text-primary">.</span>KESUMA
       </Link>
       <nav className="hidden gap-8 md:flex">
         {links.map((l) => (
