@@ -4,10 +4,11 @@ import p2 from "@/assets/p2.jpg";
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "About — Rhea Voss 3D" },
-      { name: "description", content: "About Rhea Voss, 3D artist and visualizer." },
-      { property: "og:title", content: "About — Rhea Voss 3D" },
+      { title: "About — Wisnu Kesuma 3D" },
+      { name: "description", content: "About Wisnu Kesuma, 3D artist and visualizer." },
+      { property: "og:title", content: "About — Wisnu Kesuma 3D" },
       { property: "og:description", content: "Background, skills and toolset." },
+      { property: "og:type", content: "profile" },
     ],
   }),
   component: About,

@@ -4,9 +4,9 @@ import { heroImage } from "@/data/projects";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Rhea Voss — 3D Artist & Visualizer" },
-      { name: "description", content: "Portfolio of Rhea Voss, 3D artist and visualizer crafting cinematic renders, technical art and immersive worlds." },
-      { property: "og:title", content: "Rhea Voss — 3D Artist & Visualizer" },
+      { title: "Wisnu Kesuma — 3D Artist & Visualizer" },
+      { name: "description", content: "Portfolio of Wisnu Kesuma, 3D artist and visualizer crafting cinematic renders, technical art and immersive worlds." },
+      { property: "og:title", content: "Wisnu Kesuma — 3D Artist & Visualizer" },
       { property: "og:description", content: "Cinematic 3D visualization, technical art and personal worlds." },
     ],
   }),
@@ -21,7 +21,7 @@ function Index() {
       <div className="relative z-10 flex h-full flex-col justify-end px-6 pb-16 md:px-10 md:pb-24">
         <p className="eyebrow fade-up">3D Artist · 3D Visualizer</p>
         <h1 className="fade-up mt-4 font-display text-6xl font-bold leading-[0.9] text-foreground md:text-[9rem]">
-          Rhea<br />Voss<span className="text-primary">.</span>
+          Wisnu<br />Kesuma<span className="text-primary">.</span>
         </h1>
         <p className="fade-up mt-6 max-w-lg text-muted-foreground md:text-lg">
           Building light, matter and atmosphere — from architectural visualization to real-time technical art.

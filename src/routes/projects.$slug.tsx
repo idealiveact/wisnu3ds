@@ -9,7 +9,7 @@ export const Route = createFileRoute("/projects/$slug")({
   },
   head: ({ loaderData }) => {
     const p = loaderData ? getProject(loaderData.slug) : undefined;
-    const t = p ? `${p.title} — Rhea Voss 3D` : "Project not found";
+    const t = p ? `${p.title} — Wisnu Kesuma 3D` : "Project not found";
     return {
       meta: [
         { title: t },
