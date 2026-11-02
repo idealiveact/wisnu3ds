@@ -119,7 +119,9 @@
   --border: oklch(1 0 0 / 14%);
   --input: oklch(1 0 0 / 15%);
   --ring: oklch(0.68 0.18 45);
-  --scrim: linear-gradient(to top, oklch(0.12 0.005 60 / 0.95) 0%, oklch(0.12 0.005 60 / 0.4) 45%, oklch(0.12 0.005 60 / 0.15) 100%);
+  --scrim:
+    linear-gradient(to bottom, oklch(0.12 0.005 60 / 0.8) 0%, oklch(0.12 0.005 60 / 0.35) 22%, oklch(0.12 0.005 60 / 0) 40%),
+    linear-gradient(to top, oklch(0.12 0.005 60 / 0.97) 0%, oklch(0.12 0.005 60 / 0.6) 45%, oklch(0.12 0.005 60 / 0.28) 100%);
 }
 
 @layer base {
