@@ -7,7 +7,7 @@ export const Route = createFileRoute("/personal")({
     meta: [
       { title: "Personal Projects — Wisnu Kesuma 3D" },
       { name: "description", content: "Self-initiated 3D experiments and worlds by Wisnu Kesuma." },
-      { property: "og:title", content: "Personal Projects — Rhea Voss 3D" },
+      { property: "og:title", content: "Personal Projects — Wisnu Kesuma 3D" },
       { property: "og:description", content: "Self-initiated 3D experiments and worlds." },
     ],
   }),

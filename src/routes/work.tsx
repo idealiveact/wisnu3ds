@@ -7,7 +7,7 @@ export const Route = createFileRoute("/work")({
     meta: [
       { title: "Work — Wisnu Kesuma 3D" },
       { name: "description", content: "Commercial 3D visualization and client projects by Wisnu Kesuma." },
-      { property: "og:title", content: "Work — Rhea Voss 3D" },
+      { property: "og:title", content: "Work — Wisnu Kesuma 3D" },
       { property: "og:description", content: "Commercial 3D visualization and client projects." },
     ],
   }),
