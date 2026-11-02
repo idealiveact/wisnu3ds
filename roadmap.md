@@ -2,7 +2,7 @@
 
 ## Done
 - [x] Identity swap: name "Wisnu Kesuma", email wisnu3ds@gmail.com across nav, hero, titles, Contact.
-- [x] First real project: Pertamina HUT ke-64 (2021) — 3ds Max 2018, V-Ray, Photoshop, CorelDRAW.
+- [x] Slideshow text made readable over bright renders (stronger top/bottom overlay, accent label, soft text shadow).
 
 ## Open
 - [ ] About bio: real text from Wisnu (still placeholder copy).
