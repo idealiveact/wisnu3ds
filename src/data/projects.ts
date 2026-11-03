@@ -3,6 +3,15 @@ import p2 from "@/assets/p2.jpg";
 import p3 from "@/assets/p3.jpg";
 import hero from "@/assets/hero.jpg";
 import pertaminaTerminal from "@/assets/pertamina-hut-64-terminal.jpg.asset.json";
+import pertaminaEnergyPark from "@/assets/pertamina-hut-64-energy-park-2021.jpg.asset.json";
+import pertaminaOffshore from "@/assets/pertamina-hut-64-offshore-platform-2021.jpg.asset.json";
+import pertaminaTss from "@/assets/pertamina-tss-virtual-2022.jpg.asset.json";
+import pertaminaKeroncong from "@/assets/pertamina-keroncong-pavilion-2025.webp.asset.json";
+import pertaminaEcorun from "@/assets/pertamina-ecorun-fest-booth-2025.jpg.asset.json";
+import pertaminaKartiniStage from "@/assets/pertamina-kartini-stage-2025.jpg.asset.json";
+import pertaminaKartiniGate from "@/assets/pertamina-kartini-gate-2025.jpg.asset.json";
+import pertaminaPasarRakyatGate from "@/assets/pertamina-pasar-rakyat-gate-2026.jpg.asset.json";
+import pertaminaPasarRakyatStage from "@/assets/pertamina-pasar-rakyat-stage-2026.webp.asset.json";
 import samsungBooth1 from "@/assets/samsung-note20-booth-1.jpg.asset.json";
 import samsungBooth2 from "@/assets/samsung-note20-booth-2.jpg.asset.json";
 import samsungBooth3 from "@/assets/samsung-note20-booth-3.jpg.asset.json";
@@ -10,6 +19,8 @@ import samsungBooth3 from "@/assets/samsung-note20-booth-3.jpg.asset.json";
 /**
  * Tambahkan project baru cukup dengan menambah objek ke array `projects`.
  * Ganti gambar placeholder dengan file di src/assets lalu import di atas.
+ * Setiap gambar galeri punya label judul + tahun (wajib) dan caption (opsional),
+ * supaya pengunjung bisa membedakan satu render dengan render lainnya.
  */
 export type CategoryId = "work" | "technical-art" | "personal";
 
@@ -18,6 +29,20 @@ export const categories: Record<CategoryId, { label: string; path: "/work" | "/t
   "technical-art": { label: "Technical Art", path: "/technical-art", intro: "Shaders, tools, rigs and procedural systems." },
   personal: { label: "Personal Projects", path: "/personal", intro: "Experiments and self-initiated worlds." },
 };
+
+export interface GalleryItem {
+  /** URL gambar (asset CDN atau import dari src/assets). */
+  src: string;
+  /** Label judul yang tampil di bawah gambar. */
+  title: string;
+  /** Tahun render/produksi gambar ini. */
+  year: string;
+  /** Keterangan singkat opsional (lokasi, tanggal, isi scene). */
+  caption?: string;
+  /** Dimensi asli gambar, dipakai agar tidak terpotong dan layout tidak melompat. */
+  width: number;
+  height: number;
+}
 
 export interface Project {
   slug: string;
@@ -30,7 +55,7 @@ export interface Project {
   summary: string;
   description: string;
   cover: string;
-  gallery: string[];
+  gallery: GalleryItem[];
 }
 
 export const projects: Project[] = [
@@ -43,11 +68,92 @@ export const projects: Project[] = [
     role: "3D Artist",
     software: ["3ds Max 2018", "V-Ray", "Photoshop", "CorelDRAW"],
     summary:
-      "A running body of commercial visualization work for Pertamina: anniversary key visuals, a virtual exhibition environment and campaign artwork.",
+      "A running body of commercial visualization work for Pertamina since 2021: anniversary key visuals, a virtual exhibition environment, event stages, gates and exhibition booths.",
     description:
-      "Project Pertamina collects the commercial visualization work I have produced for Pertamina since 2021: anniversary key visuals, a virtual exhibition environment, and campaign artwork. Each piece asks the same thing of a 3D artist — take a very large, very technical company and reduce it to one image that people recognize at a glance.\n\nThe render shown here was made for Pertamina's 64th anniversary in 2021. It lifts a working LPG terminal off the map and sets it on a floating island in the sky: two tankers moored at the jetty, a row of cylindrical storage tanks, spherical gas holders, the plant building, and a large Pertamina sign carved into the hillside. Water pours out of the inland bay and falls over the island's edge into the cloud layer below, which lets heavy infrastructure read as weightless without hiding any of the equipment that makes it real.\n\nOther pieces in this group are Pertamina TSS Virtual (2022), MyPertamina Pasar Rakyat (2026), and Pertamina Kartini, along with several further assignments for the same client.\n\nEverything in this group follows one pipeline: modelled and rendered in 3ds Max 2018 with V-Ray, then composited and finished in Photoshop, with graphic layout and print-ready artwork prepared in CorelDRAW.",
+      "Project Pertamina collects the commercial visualization work I have produced for Pertamina since 2021: anniversary key visuals, a virtual exhibition environment, and artwork for stages, entrance gates and exhibition booths. Each piece asks the same thing of a 3D artist — take a very large, very technical company and reduce it to one image that people recognize at a glance.\n\nThe first render in the gallery was made for Pertamina's 64th anniversary in 2021. It lifts a working LPG terminal off the map and sets it on a floating island in the sky: two tankers moored at the jetty, a row of cylindrical storage tanks, spherical gas holders, the plant building, and a large Pertamina sign carved into the hillside. Water pours out of the inland bay and falls over the island's edge into the cloud layer below, which lets heavy infrastructure read as weightless without hiding any of the equipment that makes it real. Two further 2021 studies from the same anniversary series — a floating \"Energy Park\" island and an offshore platform — sit beside it.\n\nThe rest of the gallery follows the same brief across the years that followed: Pertamina TSS Virtual (2022), a hexagonal virtual exhibition environment whose floating districts stand for Human Capital, Asset Management, ICT, Master Data Operation and Shared Services; a joglo-style Pertamina pavilion for Indonesia Keroncong Festival 2025 in Borobudur Magelang; a MyPertamina Ecorun Fest activation booth with a living green wall; the Pertamina Kartini stage and entrance gate built around the tagline \"Energi dari Hati\"; and MyPertamina Pasar Rakyat (2026), an Independence Day market held at Hutan Kota GBK Jakarta on 16–17 August 2026, shown here as its bamboo-wrapped entrance gate and its main stage.\n\nEverything in this group follows one pipeline: modelled and rendered in 3ds Max 2018 with V-Ray, then composited and finished in Photoshop, with graphic layout and print-ready artwork prepared in CorelDRAW.",
     cover: pertaminaTerminal.url,
-    gallery: [pertaminaTerminal.url],
+    gallery: [
+      {
+        src: pertaminaTerminal.url,
+        title: "HUT ke-64 — Floating LPG Terminal",
+        year: "2021",
+        caption: "Key visual for Pertamina's 64th anniversary: a working LPG terminal lifted onto a floating island above the cloud layer.",
+        width: 1366,
+        height: 768,
+      },
+      {
+        src: pertaminaEnergyPark.url,
+        title: "HUT ke-64 — Energy Park",
+        year: "2021",
+        caption: "Floating festival island with a Ferris wheel, concert stage, games corner and a solar yacht at the dock.",
+        width: 1920,
+        height: 1080,
+      },
+      {
+        src: pertaminaOffshore.url,
+        title: "HUT ke-64 — Offshore Platform",
+        year: "2021",
+        caption: "Offshore platform study from the same anniversary series.",
+        width: 1280,
+        height: 720,
+      },
+      {
+        src: pertaminaTss.url,
+        title: "Pertamina TSS Virtual",
+        year: "2022",
+        caption: "Virtual exhibition environment: hexagonal districts for Human Capital, Asset Management, ICT, Master Data Operation and Shared Services.",
+        width: 1920,
+        height: 1080,
+      },
+      {
+        src: pertaminaKeroncong.url,
+        title: "Indonesia Keroncong Festival Pavilion",
+        year: "2025",
+        caption: "Joglo-style pavilion with an espresso bar and LED backdrop, Borobudur Magelang, 16 December 2025.",
+        width: 1672,
+        height: 941,
+      },
+      {
+        src: pertaminaEcorun.url,
+        title: "MyPertamina Ecorun Fest Booth",
+        year: "2025",
+        caption: "Points-redemption activation booth with a living green wall and an \"Energizing You\" neon sign.",
+        width: 1672,
+        height: 941,
+      },
+      {
+        src: pertaminaKartiniStage.url,
+        title: "Pertamina Kartini — Stage",
+        year: "2025",
+        caption: "\"Energi dari Hati\" stage set with layered arches, batik cloud motifs and 3D floral sculptures.",
+        width: 1672,
+        height: 940,
+      },
+      {
+        src: pertaminaKartiniGate.url,
+        title: "Pertamina Kartini — Entrance Gate",
+        year: "2025",
+        caption: "Foyer facade framing two portals with batik motifs, a neon flower outline and a 3D lotus.",
+        width: 1672,
+        height: 940,
+      },
+      {
+        src: pertaminaPasarRakyatGate.url,
+        title: "MyPertamina Pasar Rakyat — Entrance Gate",
+        year: "2026",
+        caption: "Bamboo-wrapped archway at Hutan Kota GBK Jakarta, 16–17 August 2026.",
+        width: 1280,
+        height: 720,
+      },
+      {
+        src: pertaminaPasarRakyatStage.url,
+        title: "MyPertamina Pasar Rakyat — Main Stage",
+        year: "2026",
+        caption: "\"Pesta Meriah, Hadiah Melimpah!\" — truss stage with line arrays and mascot fascia panels.",
+        width: 1671,
+        height: 941,
+      },
+    ],
   },
   {
     slug: "samsung-note20-virtual-booth",
@@ -61,12 +167,98 @@ export const projects: Project[] = [
     description:
       "A virtual exhibition booth designed for the Samsung Galaxy Note20 launch in 2020. The circular stand is wrapped by a floating rose-gold ring with light strips and a hexagonal light ceiling, echoing the Mystic Bronze colour of the phone. Inside are a central Galaxy Note20 display wall with an oversized S Pen, a 'Powerful Phone' demo counter, a 'Doodling Contest' area, and a 'Work & Play Experience' zone that pairs a lounge corner (Power to Work) with a racing-simulator gaming setup (Power to Play). Modelled and rendered in 3ds Max 2018 with V-Ray, finished in Photoshop.",
     cover: samsungBooth1.url,
-    gallery: [samsungBooth1.url, samsungBooth2.url, samsungBooth3.url],
+    gallery: [
+      {
+        src: samsungBooth1.url,
+        title: "Full Booth Overview",
+        year: "2020",
+        caption: "Front view of the circular stand, its floating rose-gold ring and the central Galaxy Note20 display wall.",
+        width: 1920,
+        height: 1080,
+      },
+      {
+        src: samsungBooth2.url,
+        title: "Presenter Desk & S Pen",
+        year: "2020",
+        caption: "Central presenter desk with the oversized S Pen and the phone display station.",
+        width: 1920,
+        height: 1080,
+      },
+      {
+        src: samsungBooth3.url,
+        title: "Work & Play Experience",
+        year: "2020",
+        caption: "The 'Power to Work' lounge corner beside the 'Power to Play' racing simulator.",
+        width: 1920,
+        height: 1080,
+      },
+    ],
   },
-  { slug: "cyber-bust", title: "Cyber Bust Shader Study", category: "technical-art", year: "2025", client: "Internal R&D", role: "Technical Artist", software: ["ZBrush", "Houdini", "Unreal Engine"], summary: "Procedural wear shader and turntable rig.", description: "Placeholder description. Document the node setup, performance targets and reusable tools.", cover: p2, gallery: [p2, p1] },
-  { slug: "procedural-forest", title: "Procedural Forest Tool", category: "technical-art", year: "2024", client: "Game Studio X", role: "Tools Developer", software: ["Houdini", "Unreal Engine", "Python"], summary: "Scatter system for large forest biomes.", description: "Placeholder description. Explain the HDA parameters, artist workflow and results.", cover: p3, gallery: [p3, hero] },
-  { slug: "lantern-shrine", title: "Lantern Shrine", category: "personal", year: "2026", client: "Personal", role: "Environment Artist", software: ["Unreal Engine", "Megascans", "Blender"], summary: "Misty forest shrine at dusk.", description: "Placeholder description. Share the story, references and what you learned.", cover: p3, gallery: [p3, p2, hero] },
-  { slug: "quiet-concrete", title: "Quiet Concrete", category: "personal", year: "2024", client: "Personal", role: "3D Artist", software: ["Blender", "Eevee"], summary: "Mood study on light and mass.", description: "Placeholder description.", cover: hero, gallery: [hero, p1] },
+  {
+    slug: "cyber-bust",
+    title: "Cyber Bust Shader Study",
+    category: "technical-art",
+    year: "2025",
+    client: "Internal R&D",
+    role: "Technical Artist",
+    software: ["ZBrush", "Houdini", "Unreal Engine"],
+    summary: "Procedural wear shader and turntable rig.",
+    description: "Placeholder description. Document the node setup, performance targets and reusable tools.",
+    cover: p2,
+    gallery: [
+      { src: p2, title: "Cyber Bust", year: "2025", width: 1600, height: 1008 },
+      { src: p1, title: "Wear Study", year: "2025", width: 1600, height: 1008 },
+    ],
+  },
+  {
+    slug: "procedural-forest",
+    title: "Procedural Forest Tool",
+    category: "technical-art",
+    year: "2024",
+    client: "Game Studio X",
+    role: "Tools Developer",
+    software: ["Houdini", "Unreal Engine", "Python"],
+    summary: "Scatter system for large forest biomes.",
+    description: "Placeholder description. Explain the HDA parameters, artist workflow and results.",
+    cover: p3,
+    gallery: [
+      { src: p3, title: "Forest Scatter", year: "2024", width: 1600, height: 1008 },
+      { src: hero, title: "Biome Layout", year: "2024", width: 1920, height: 1088 },
+    ],
+  },
+  {
+    slug: "lantern-shrine",
+    title: "Lantern Shrine",
+    category: "personal",
+    year: "2026",
+    client: "Personal",
+    role: "Environment Artist",
+    software: ["Unreal Engine", "Megascans", "Blender"],
+    summary: "Misty forest shrine at dusk.",
+    description: "Placeholder description. Share the story, references and what you learned.",
+    cover: p3,
+    gallery: [
+      { src: p3, title: "Lantern Shrine", year: "2026", width: 1600, height: 1008 },
+      { src: p2, title: "Detail Study", year: "2026", width: 1600, height: 1008 },
+      { src: hero, title: "Wide Shot", year: "2026", width: 1920, height: 1088 },
+    ],
+  },
+  {
+    slug: "quiet-concrete",
+    title: "Quiet Concrete",
+    category: "personal",
+    year: "2024",
+    client: "Personal",
+    role: "3D Artist",
+    software: ["Blender", "Eevee"],
+    summary: "Mood study on light and mass.",
+    description: "Placeholder description.",
+    cover: hero,
+    gallery: [
+      { src: hero, title: "Quiet Concrete", year: "2024", width: 1920, height: 1088 },
+      { src: p1, title: "Material Study", year: "2024", width: 1600, height: 1008 },
+    ],
+  },
 ];
 
 export const byCategory = (c: CategoryId) => projects.filter((p) => p.category === c);

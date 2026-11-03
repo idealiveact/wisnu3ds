@@ -1,6 +1,9 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { categories, getProject, byCategory } from "@/data/projects";
 
+const pad = (n: number) => String(n).padStart(2, "0");
+
+
 export const Route = createFileRoute("/projects/$slug")({
   loader: ({ params }) => {
     const project = getProject(params.slug);
