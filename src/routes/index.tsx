@@ -4,10 +4,10 @@ import { heroImage } from "@/data/projects";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Wisnu Kesuma — 3D Artist & Visualizer" },
-      { name: "description", content: "Portfolio of Wisnu Kesuma, 3D artist and visualizer crafting cinematic renders, technical art and immersive worlds." },
-      { property: "og:title", content: "Wisnu Kesuma — 3D Artist & Visualizer" },
-      { property: "og:description", content: "Cinematic 3D visualization, technical art and personal worlds." },
+      { title: "Wisnu Kesuma — 3D Designer" },
+      { name: "description", content: "Portfolio of Wisnu Kesuma, Senior 3D Designer in brand activation with 15+ years of booth and event design." },
+      { property: "og:title", content: "Wisnu Kesuma — 3D Designer" },
+      { property: "og:description", content: "Booth and event design, from small setups to IIMS, GIIAS and PRJ." },
     ],
   }),
   component: Index,
