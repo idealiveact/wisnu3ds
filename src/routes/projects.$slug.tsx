@@ -1,6 +1,9 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { categories, getProject, byCategory } from "@/data/projects";
 
+const pad = (n: number) => String(n).padStart(2, "0");
+
+
 export const Route = createFileRoute("/projects/$slug")({
   loader: ({ params }) => {
     const project = getProject(params.slug);
@@ -52,9 +55,29 @@ function ProjectPage() {
         </div>
       </div>
 
-      <div className="mt-16 grid gap-4 px-6 md:px-10">
-        {p.gallery.map((src, k) => (
-          <img key={k} src={src} alt={`${p.title} ${k + 1}`} width={1600} height={1008} loading={k === 0 ? "eager" : "lazy"} decoding="async" className="w-full rounded-sm bg-muted object-cover" />
+      <div className="mt-16 space-y-14 px-6 md:px-10">
+        {p.gallery.map((item, k) => (
+          <figure key={item.src + k}>
+            <img
+              src={item.src}
+              alt={`${item.title}, ${item.year}`}
+              width={item.width}
+              height={item.height}
+              loading={k === 0 ? "eager" : "lazy"}
+              decoding="async"
+              className="h-auto w-full rounded-sm bg-muted"
+            />
+            <figcaption className="mt-4 flex flex-wrap items-baseline justify-between gap-x-6 gap-y-1 border-t border-border pt-4">
+              <span className="font-display text-2xl font-bold leading-tight text-foreground md:text-4xl">
+                <span className="mr-3 text-base font-bold text-primary md:text-xl">{pad(k + 1)}</span>
+                {item.title}
+              </span>
+              <span className="eyebrow shrink-0 pt-1">{item.year}</span>
+            </figcaption>
+            {item.caption && (
+              <p className="mt-2 max-w-2xl text-sm leading-relaxed text-muted-foreground md:text-base">{item.caption}</p>
+            )}
+          </figure>
         ))}
       </div>
 
