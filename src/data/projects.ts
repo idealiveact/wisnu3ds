@@ -36,7 +36,7 @@ export interface Project {
 export const projects: Project[] = [
   {
     slug: "pertamina-hut-64",
-    title: "Pertamina HUT ke-64",
+    title: "Project Pertamina",
     category: "work",
     year: "2021",
     client: "Pertamina",
