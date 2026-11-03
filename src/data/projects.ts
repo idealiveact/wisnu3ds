@@ -35,17 +35,17 @@ export interface Project {
 
 export const projects: Project[] = [
   {
-    slug: "pertamina-hut-64",
+    slug: "pertamina",
     title: "Project Pertamina",
     category: "work",
-    year: "2021",
+    year: "2021–2026",
     client: "Pertamina",
     role: "3D Artist",
     software: ["3ds Max 2018", "V-Ray", "Photoshop", "CorelDRAW"],
     summary:
-      "A floating LPG terminal suspended above the clouds, made for Pertamina's 64th anniversary.",
+      "A running body of commercial visualization work for Pertamina: anniversary key visuals, a virtual exhibition environment and campaign artwork.",
     description:
-      "A commemorative visualization built for Pertamina's 64th anniversary in 2021. The scene lifts a working LPG terminal off the map and sets it on a floating island in the sky: two tankers moored at the jetty, a row of cylindrical storage tanks, spherical gas holders, the plant building, and a large Pertamina sign carved into the hillside. Water pours out of the inland bay and falls over the island's edge into the cloud layer below. Modelled and rendered in 3ds Max 2018 with V-Ray, then composited and finished in Photoshop, with the anniversary graphic layout prepared in CorelDRAW.",
+      "Project Pertamina collects the commercial visualization work I have produced for Pertamina since 2021: anniversary key visuals, a virtual exhibition environment, and campaign artwork. Each piece asks the same thing of a 3D artist — take a very large, very technical company and reduce it to one image that people recognize at a glance.\n\nThe render shown here was made for Pertamina's 64th anniversary in 2021. It lifts a working LPG terminal off the map and sets it on a floating island in the sky: two tankers moored at the jetty, a row of cylindrical storage tanks, spherical gas holders, the plant building, and a large Pertamina sign carved into the hillside. Water pours out of the inland bay and falls over the island's edge into the cloud layer below, which lets heavy infrastructure read as weightless without hiding any of the equipment that makes it real.\n\nOther pieces in this group are Pertamina TSS Virtual (2022), MyPertamina Pasar Rakyat (2026), and Pertamina Kartini, along with several further assignments for the same client.\n\nEverything in this group follows one pipeline: modelled and rendered in 3ds Max 2018 with V-Ray, then composited and finished in Photoshop, with graphic layout and print-ready artwork prepared in CorelDRAW.",
     cover: pertaminaTerminal.url,
     gallery: [pertaminaTerminal.url],
   },

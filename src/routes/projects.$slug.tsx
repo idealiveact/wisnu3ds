@@ -45,7 +45,11 @@ function ProjectPage() {
             <div key={k}><dt className="eyebrow">{k}</dt><dd className="mt-1 text-foreground">{v}</dd></div>
           ))}
         </dl>
-        <p className="text-lg leading-relaxed text-muted-foreground md:text-2xl">{p.description}</p>
+        <div className="space-y-5">
+          {p.description.split("\n\n").map((para, k) => (
+            <p key={k} className="text-lg leading-relaxed text-muted-foreground md:text-2xl">{para}</p>
+          ))}
+        </div>
       </div>
 
       <div className="mt-16 grid gap-4 px-6 md:px-10">
