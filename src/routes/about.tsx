@@ -5,7 +5,7 @@ export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
       { title: "About — Wisnu Kesuma 3D" },
-      { name: "description", content: "About Wisnu Kesuma, 3D artist and visualizer." },
+      { name: "description", content: "About Wisnu Kesuma, Senior 3D Designer in brand activation." },
       { property: "og:title", content: "About — Wisnu Kesuma 3D" },
       { property: "og:description", content: "Background, skills and toolset." },
       { property: "og:type", content: "profile" },
