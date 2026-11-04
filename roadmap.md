@@ -18,12 +18,14 @@
 - [x] Private Briefs page (/briefs, Wisnu's account only) listing every brief with status and project-type filters and a status changer; clients now pick a project type when sending.
 - [x] Brief assistant given its own menu item "Start a Project" and its own page (/start-a-project); Contact keeps the email and social links plus a button pointing there.
 
+- [x] Gallery Photo opened with its first photo: the Pertamina International Shipping Independence Day lobby display, labelled with name, date (August 2023) and a short note. Entries live in src/data/gallery.ts; every entry must carry a name, a date and a note (checked by src/test/gallery.test.ts).
+
 ## Open
 - [ ] Wisnu must create his account at /auth with wisnu3ds@gmail.com and confirm it before /briefs shows anything.
 - [ ] Inbox email to wisnu3ds@gmail.com for each new brief — blocked until Wisnu sets up an email sender domain he owns (or picks a forwarding service instead).
 - [ ] About picture: Wisnu is choosing a replacement render — blocked until he sends it.
 - [ ] Video from Wisnu: no video file arrived in the chat uploads, so the requested video review is blocked until he attaches it.
-- [ ] Add Wisnu's own photos to Gallery Photo (currently empty by request).
+
 - [ ] Fill Personal with real projects once they exist.
 - [ ] Confirm Pertamina Kartini is 2025 — the year was read from the "68" Pertamina anniversary emblem on its screen, not from Wisnu.
 - [ ] Confirm the Pertamina write-up is accurate: role "3D Artist" and the paragraph text.
