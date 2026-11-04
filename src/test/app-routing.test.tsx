@@ -14,11 +14,16 @@ describe("App routing", () => {
     expect(matches.at(-1)?.routeId).not.toBe(rootRouteId);
   });
 
-  it("has pages for every menu: Work, Gallery Photo, Personal, About, Start a Project, Contact", () => {
-    for (const path of ["/work", "/gallery-photo", "/personal", "/about", "/start-a-project", "/contact"]) {
+  it("has pages for every menu: Work, Gallery, Personal, About, Start a Project, Contact", () => {
+    for (const path of ["/work", "/gallery", "/personal", "/about", "/start-a-project", "/contact"]) {
       const matches = router.matchRoutes(path);
       expect(matches.at(-1)?.routeId, path).not.toBe(rootRouteId);
     }
+  });
+
+  it("keeps the old Gallery Photo address alive as a redirect stub", () => {
+    const matches = router.matchRoutes("/gallery-photo");
+    expect(matches.some((m) => String(m.routeId).includes("gallery-photo"))).toBe(true);
   });
 
   it("no longer serves a Technical Art page", () => {

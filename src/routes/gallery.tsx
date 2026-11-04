@@ -1,0 +1,73 @@
+import { createFileRoute } from "@tanstack/react-router";
+
+import walkthroughPreview from "@/assets/samsung-note20-walkthrough-2020-preview.jpg.asset.json";
+import { galleryEntries } from "@/data/gallery";
+import { pageHead } from "@/lib/seo";
+
+export const Route = createFileRoute("/gallery")({
+  head: () =>
+    pageHead({
+      title: "Gallery — Wisnu Kesuma | 3D Designer",
+      description:
+        "Selected renders, installations and walkthrough films by Wisnu Kesuma, 3D designer for exhibition booths, stages and event spaces.",
+      path: "/gallery",
+      image: walkthroughPreview.url,
+      imageAlt: "Still from the Galaxy Note20 virtual booth walkthrough film",
+    }),
+  component: Gallery,
+});
+
+function Gallery() {
+  return (
+    <section className="min-h-screen px-6 pt-28 pb-16 md:px-10">
+      <p className="eyebrow">Gallery</p>
+      <h1 className="fade-up mt-4 font-display text-5xl font-bold leading-[0.95] text-foreground md:text-7xl">
+        Selected <span className="text-primary">frames</span>.
+      </h1>
+      {galleryEntries.length === 0 ? (
+        <p className="mt-8 max-w-xl text-lg leading-relaxed text-muted-foreground">
+          A curated gallery is on its way — renders, installations and walkthrough films will appear here soon.
+        </p>
+      ) : (
+        <div className="mt-12 columns-1 gap-6 sm:columns-2 lg:columns-3">
+          {galleryEntries.map((entry, k) => (
+            <figure key={entry.src + k} className="mb-6 break-inside-avoid">
+              {entry.kind === "video" ? (
+                <video
+                  src={entry.src}
+                  poster={entry.poster}
+                  width={entry.width}
+                  height={entry.height}
+                  controls
+                  playsInline
+                  preload="metadata"
+                  className="h-auto w-full rounded-sm bg-muted"
+                />
+              ) : (
+                <img
+                  src={entry.src}
+                  alt={entry.title}
+                  width={entry.width}
+                  height={entry.height}
+                  loading={k === 0 ? "eager" : "lazy"}
+                  decoding="async"
+                  className="h-auto w-full rounded-sm bg-muted"
+                />
+              )}
+              <figcaption className="mt-3 flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1 border-t border-border pt-3">
+                <span className="font-display text-xl font-bold text-foreground md:text-2xl">
+                  {entry.title}
+                  {entry.kind === "video" && <span className="eyebrow ml-3">Video</span>}
+                </span>
+                <span className="eyebrow shrink-0">{entry.year}</span>
+              </figcaption>
+              {entry.caption && (
+                <p className="mt-2 max-w-2xl text-sm leading-relaxed text-muted-foreground">{entry.caption}</p>
+              )}
+            </figure>
+          ))}
+        </div>
+      )}
+    </section>
+  );
+}

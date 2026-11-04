@@ -31,6 +31,12 @@ describe("SAMSUNG Project entry", () => {
     expect([...years].sort((a, b) => a - b)).toEqual(years);
   });
 
+  it("groups the House of Screens showroom under the TV & AV campaign and dates it 2020", () => {
+    const item = project?.gallery.find((g) => g.title.includes("House of Screens"));
+    expect(item?.title).toBe("TV & AV Campaign — House of Screens");
+    expect(item?.year).toBe("2020");
+  });
+
   it("does not repeat a picture across the whole portfolio", () => {
     const srcs = projects.flatMap((p) => p.gallery.map((item) => item.src));
     expect(new Set(srcs).size).toBe(srcs.length);
