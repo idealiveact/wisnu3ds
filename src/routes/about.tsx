@@ -14,7 +14,7 @@ export const Route = createFileRoute("/about")({
   component: About,
 });
 
-const skills = ["Blender", "3ds Max", "Houdini", "Unreal Engine", "ZBrush", "Substance", "Corona / V-Ray", "Python"];
+const skills = ["3ds Max", "V-Ray", "SketchUp", "Adobe Photoshop", "CorelDRAW", "ChatGPT", "Gemini", "Claude", "Lovable"];
 
 function About() {
   return (
