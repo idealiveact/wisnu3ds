@@ -17,4 +17,5 @@
 - [ ] Confirm Pertamina Kartini is 2025 — the year was read from the "68" Pertamina anniversary emblem on its screen, not from Wisnu.
 - [ ] Confirm the Pertamina write-up is accurate: role "3D Artist" and the paragraph text.
 - [x] About bio: Wisnu's real two-paragraph bio in place of the placeholder copy.
-- [ ] About page still shows placeholder extras: headline "Light is the material.", toolset chips (Blender, Houdini, Unreal, ZBrush, Substance, Python) and the p2.jpg sample image — awaiting Wisnu's wording/choices.
+- [ ] About page still shows placeholder extras: headline "Light is the material." and the p2.jpg sample image on the right — awaiting Wisnu's wording/choices.
+- [x] About toolset chips replaced with Wisnu's real tools: 3ds Max, V-Ray, SketchUp, Adobe Photoshop, CorelDRAW, ChatGPT, Gemini, Claude, Lovable.
