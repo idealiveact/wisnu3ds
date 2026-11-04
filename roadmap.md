@@ -21,6 +21,7 @@
 - [ ] Fill Personal with real projects once they exist.
 - [ ] Confirm Pertamina Kartini is 2025 — the year was read from the "68" Pertamina anniversary emblem on its screen, not from Wisnu.
 - [ ] Confirm the Pertamina write-up is accurate: role "3D Artist" and the paragraph text.
+- [x] Contact: AI project-brief assistant (client notes → structured brief, send via email or copy).
 - [x] About bio: Wisnu's real two-paragraph bio in place of the placeholder copy.
 - [x] About right-side image: Wisnu's own render (Samsung Galaxy activation concept with carnival performers) shown full-size in the right panel.
 - [x] About toolset split into two groups: **Software** (3ds Max, V-Ray, SketchUp, Adobe Photoshop, CorelDRAW) and **AI** (ChatGPT, Gemini, Claude, Meshy, Lovable).
