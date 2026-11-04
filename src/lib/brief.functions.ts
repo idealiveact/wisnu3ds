@@ -90,5 +90,29 @@ export const sendBrief = createServerFn({ method: "POST" })
       console.error("brief send: save failed", error);
       return { ok: false, error: SEND_FAILED };
     }
+
+    // Forward a copy to Wisnu's Gmail via FormSubmit (free relay). The brief is
+    // already saved, so a relay failure is logged but never shown to the client.
+    try {
+      const res = await fetch("https://formsubmit.co/ajax/wisnu3ds@gmail.com", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json", Origin: "https://sculpted-world-showcase.lovable.app", Referer: "https://sculpted-world-showcase.lovable.app/start-a-project" },
+        body: JSON.stringify({
+          _subject: `New project brief from ${data.name}`,
+          _replyto: data.email,
+          _template: "box",
+          _captcha: "false",
+          Name: data.name,
+          Email: data.email,
+          "Phone / WhatsApp": data.phone || "-",
+          "Project type": data.projectType,
+          Notes: data.notes,
+          Brief: data.brief,
+        }),
+      });
+      if (!res.ok) console.error(`brief forward failed [${res.status}]: ${await res.text()}`);
+    } catch (e) {
+      console.error("brief forward error", e);
+    }
     return { ok: true, error: null };
   });
