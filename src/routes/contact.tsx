@@ -7,6 +7,8 @@ export const Route = createFileRoute("/contact")({
       { name: "description", content: "Get in touch with Wisnu Kesuma for 3D visualization and technical art projects." },
       { property: "og:title", content: "Contact — Wisnu Kesuma 3D" },
       { property: "og:description", content: "Available for freelance and studio collaborations." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
   component: Contact,
@@ -28,6 +30,7 @@ function Contact() {
           { label: "Gmail", href: "mailto:wisnu3ds@gmail.com" },
           { label: "Instagram", href: "https://www.instagram.com/wisnu3ds/" },
           { label: "Behance", href: "https://www.behance.net/wisnu3ds" },
+          { label: "YouTube", href: "https://www.youtube.com/@wisnu3ds" },
         ].map((s) => (
           <a
             key={s.label}
