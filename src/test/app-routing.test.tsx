@@ -27,4 +27,17 @@ describe("App routing", () => {
     const ids = matches.map((m) => String(m.routeId));
     expect(ids.some((id) => id.endsWith("work")) || ids.length > 0).toBe(true);
   });
+
+  it("shows the profile header on the About page", () => {
+    const html = renderToString(
+      createElement(
+        RouterProvider,
+        { router },
+        createElement("div", null, createElement(AboutRoute.options.component)),
+      ),
+    );
+    for (const text of ["Wisnu Kesuma", "Senior 3D Designer", "Brand Activation", "Jakarta Metropolitan Area", "wisnu3ds@gmail.com"]) {
+      expect(html, text).toContain(text);
+    }
+  });
 });
