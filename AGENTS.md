@@ -10,3 +10,4 @@
 <!-- LOVABLE:END -->
 
 - Portfolio projects live in src/data/projects.ts; category pages and detail pages derive from it so new projects need only a data entry.
+- Homepage and project SEO use src/lib/seo.ts with leaf-only canonicals and project shareImage renditions of the displayed cover at 1200×630, keeping metadata aligned with project data.

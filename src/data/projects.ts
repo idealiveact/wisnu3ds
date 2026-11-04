@@ -15,6 +15,11 @@ import pertaminaPasarRakyatStage from "@/assets/pertamina-pasar-rakyat-stage-202
 import samsungBooth1 from "@/assets/samsung-note20-booth-1.jpg.asset.json";
 import samsungBooth2 from "@/assets/samsung-note20-booth-2.jpg.asset.json";
 import samsungBooth3 from "@/assets/samsung-note20-booth-3.jpg.asset.json";
+import homePreview from "@/assets/home-preview.jpg.asset.json";
+import cyberPreview from "@/assets/cyber-bust-preview.jpg.asset.json";
+import forestPreview from "@/assets/forest-preview.jpg.asset.json";
+import pertaminaPreview from "@/assets/pertamina-preview.jpg.asset.json";
+import samsungPreview from "@/assets/samsung-preview.jpg.asset.json";
 
 /**
  * Tambahkan project baru cukup dengan menambah objek ke array `projects`.
@@ -55,6 +60,8 @@ export interface Project {
   summary: string;
   description: string;
   cover: string;
+  /** A 1200×630 rendition of the cover for search and sharing. */
+  shareImage: string;
   gallery: GalleryItem[];
 }
 
@@ -72,6 +79,7 @@ export const projects: Project[] = [
     description:
       "Project Pertamina collects the commercial visualization work I have produced for Pertamina since 2021: anniversary key visuals, a virtual exhibition environment, and artwork for stages, entrance gates and exhibition booths. Each piece asks the same thing of a 3D artist — take a very large, very technical company and reduce it to one image that people recognize at a glance.\n\nThe first render in the gallery was made for Pertamina's 64th anniversary in 2021. It lifts a working LPG terminal off the map and sets it on a floating island in the sky: two tankers moored at the jetty, a row of cylindrical storage tanks, spherical gas holders, the plant building, and a large Pertamina sign carved into the hillside. Water pours out of the inland bay and falls over the island's edge into the cloud layer below, which lets heavy infrastructure read as weightless without hiding any of the equipment that makes it real. Two further 2021 studies from the same anniversary series — a floating \"Energy Park\" island and an offshore platform — sit beside it.\n\nThe rest of the gallery follows the same brief across the years that followed: Pertamina TSS Virtual (2022), a hexagonal virtual exhibition environment whose floating districts stand for Human Capital, Asset Management, ICT, Master Data Operation and Shared Services; a joglo-style Pertamina pavilion for Indonesia Keroncong Festival 2025 in Borobudur Magelang; a MyPertamina Ecorun Fest activation booth with a living green wall; the Pertamina Kartini stage and entrance gate built around the tagline \"Energi dari Hati\"; and MyPertamina Pasar Rakyat (2026), an Independence Day market held at Hutan Kota GBK Jakarta on 16–17 August 2026, shown here as its bamboo-wrapped entrance gate and its main stage.\n\nEverything in this group follows one pipeline: modelled and rendered in 3ds Max 2018 with V-Ray, then composited and finished in Photoshop, with graphic layout and print-ready artwork prepared in CorelDRAW.",
     cover: pertaminaTerminal.url,
+    shareImage: pertaminaPreview.url,
     gallery: [
       {
         src: pertaminaTerminal.url,
@@ -167,6 +175,7 @@ export const projects: Project[] = [
     description:
       "A virtual exhibition booth designed for the Samsung Galaxy Note20 launch in 2020. The circular stand is wrapped by a floating rose-gold ring with light strips and a hexagonal light ceiling, echoing the Mystic Bronze colour of the phone. Inside are a central Galaxy Note20 display wall with an oversized S Pen, a 'Powerful Phone' demo counter, a 'Doodling Contest' area, and a 'Work & Play Experience' zone that pairs a lounge corner (Power to Work) with a racing-simulator gaming setup (Power to Play). Modelled and rendered in 3ds Max 2018 with V-Ray, finished in Photoshop.",
     cover: samsungBooth1.url,
+    shareImage: samsungPreview.url,
     gallery: [
       {
         src: samsungBooth1.url,
@@ -205,6 +214,7 @@ export const projects: Project[] = [
     summary: "Procedural wear shader and turntable rig.",
     description: "Placeholder description. Document the node setup, performance targets and reusable tools.",
     cover: p2,
+    shareImage: cyberPreview.url,
     gallery: [
       { src: p2, title: "Cyber Bust", year: "2025", width: 1600, height: 1008 },
       { src: p1, title: "Wear Study", year: "2025", width: 1600, height: 1008 },
@@ -221,6 +231,7 @@ export const projects: Project[] = [
     summary: "Scatter system for large forest biomes.",
     description: "Placeholder description. Explain the HDA parameters, artist workflow and results.",
     cover: p3,
+    shareImage: forestPreview.url,
     gallery: [
       { src: p3, title: "Forest Scatter", year: "2024", width: 1600, height: 1008 },
       { src: hero, title: "Biome Layout", year: "2024", width: 1920, height: 1088 },
@@ -237,6 +248,7 @@ export const projects: Project[] = [
     summary: "Misty forest shrine at dusk.",
     description: "Placeholder description. Share the story, references and what you learned.",
     cover: p3,
+    shareImage: forestPreview.url,
     gallery: [
       { src: p3, title: "Lantern Shrine", year: "2026", width: 1600, height: 1008 },
       { src: p2, title: "Detail Study", year: "2026", width: 1600, height: 1008 },
@@ -254,6 +266,7 @@ export const projects: Project[] = [
     summary: "Mood study on light and mass.",
     description: "Placeholder description.",
     cover: hero,
+    shareImage: homePreview.url,
     gallery: [
       { src: hero, title: "Quiet Concrete", year: "2024", width: 1920, height: 1088 },
       { src: p1, title: "Material Study", year: "2024", width: 1600, height: 1008 },
@@ -264,3 +277,4 @@ export const projects: Project[] = [
 export const byCategory = (c: CategoryId) => projects.filter((p) => p.category === c);
 export const getProject = (slug: string) => projects.find((p) => p.slug === slug);
 export { hero as heroImage };
+export const heroShareImage = homePreview.url;

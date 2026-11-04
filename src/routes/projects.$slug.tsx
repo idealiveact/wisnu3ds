@@ -1,5 +1,6 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { categories, getProject, byCategory } from "@/data/projects";
+import { pageHead } from "@/lib/seo";
 
 const pad = (n: number) => String(n).padStart(2, "0");
 
@@ -12,15 +13,15 @@ export const Route = createFileRoute("/projects/$slug")({
   },
   head: ({ loaderData }) => {
     const p = loaderData ? getProject(loaderData.slug) : undefined;
-    const t = p ? `${p.title} — Wisnu Kesuma 3D` : "Project not found";
-    return {
-      meta: [
-        { title: t },
-        { name: "description", content: p?.summary ?? "" },
-        { property: "og:title", content: t },
-        { property: "og:description", content: p?.summary ?? "" },
-      ],
-    };
+    if (!p) return { meta: [{ title: "Project not found — Wisnu Kesuma" }, { name: "robots", content: "noindex" }] };
+    return pageHead({
+      title: `${p.title} — Wisnu Kesuma | 3D Designer`,
+      description: p.summary,
+      path: `/projects/${p.slug}`,
+      image: p.shareImage,
+      imageAlt: `${p.title} (${p.year}) — ${p.gallery[0]?.title ?? p.title}`,
+      type: "article",
+    });
   },
   component: ProjectPage,
   notFoundComponent: () => (
@@ -30,7 +31,8 @@ export const Route = createFileRoute("/projects/$slug")({
 
 function ProjectPage() {
   const { slug } = Route.useLoaderData();
-  const p = getProject(slug)!;
+  const p = getProject(slug);
+  if (!p) throw notFound();
   const cat = categories[p.category];
   const list = byCategory(p.category);
   const next = list[(list.findIndex((x) => x.slug === p.slug) + 1) % list.length];
