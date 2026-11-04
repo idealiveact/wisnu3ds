@@ -15,8 +15,10 @@
 - [x] About bio, two-group toolset (Software / AI) and profile header.
 - [x] Contact: AI project-brief assistant (client notes → structured brief).
 - [x] "Send to Wisnu" sends the brief straight to Wisnu without opening a mail app: asks the client's reply email (+ optional WhatsApp), saves every brief in the site's backend, shows sending / sent / error states, limits each address to 3 briefs an hour and quietly ignores spam bots.
+- [x] Private Briefs page (/briefs, Wisnu's account only) listing every brief with status and project-type filters and a status changer; clients now pick a project type when sending.
 
 ## Open
+- [ ] Wisnu must create his account at /auth with wisnu3ds@gmail.com and confirm it before /briefs shows anything.
 - [ ] Inbox email to wisnu3ds@gmail.com for each new brief — blocked until Wisnu sets up an email sender domain he owns (or picks a forwarding service instead).
 - [ ] About picture: Wisnu is choosing a replacement render — blocked until he sends it.
 - [ ] Video from Wisnu: no video file arrived in the chat uploads, so the requested video review is blocked until he attaches it.
@@ -26,5 +28,4 @@
 - [ ] Confirm the Pertamina write-up is accurate: role "3D Artist" and the paragraph text.
 
 ## Ideas (ready)
-- [ ] Private "Briefs" page for Wisnu (sign-in only) to read and mark incoming briefs, instead of opening the backend.
 - [ ] Hourly limit on "Generate brief" too, so nobody can burn AI credits by spamming the button.
