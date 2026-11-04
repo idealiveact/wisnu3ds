@@ -23,7 +23,7 @@ export const SendBriefInput = z.object({
     .string()
     .trim()
     .max(40, "Phone number is too long.")
-    .regex(/^[0-9+()\-.\s]*$/, "Phone number can only contain digits, spaces and + - ( ).")
+    .regex(/^[0-9+()\-.\s]*$/, "Use only numbers, spaces, + or -.")
     .optional()
     .default(""),
   notes: z.string().trim().min(20, "Your project notes are too short.").max(4000),
