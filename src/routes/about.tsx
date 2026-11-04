@@ -67,7 +67,7 @@ function About() {
           width={1410}
           height={752}
           loading="lazy"
-          className="h-auto w-full rounded-sm border border-border object-cover md:h-full"
+          className="h-auto w-full rounded-sm border border-border object-cover object-[68%_center] md:h-full"
         />
       </div>
     </section>
