@@ -16,6 +16,7 @@
 - [x] Contact: AI project-brief assistant (client notes → structured brief).
 - [x] "Send to Wisnu" sends the brief straight to Wisnu without opening a mail app: asks the client's reply email (+ optional WhatsApp), saves every brief in the site's backend, shows sending / sent / error states, limits each address to 3 briefs an hour and quietly ignores spam bots.
 - [x] Private Briefs page (/briefs, Wisnu's account only) listing every brief with status and project-type filters and a status changer; clients now pick a project type when sending.
+- [x] Brief assistant given its own menu item "Start a Project" and its own page (/start-a-project); Contact keeps the email and social links plus a button pointing there.
 
 ## Open
 - [ ] Wisnu must create his account at /auth with wisnu3ds@gmail.com and confirm it before /briefs shows anything.
