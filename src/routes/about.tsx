@@ -61,16 +61,14 @@ function About() {
         </ul>
       </div>
       <div>
-        <div className="md:sticky md:top-24">
-          <img
-            src={showcase.url}
-            alt="Samsung Galaxy activation booth concept at night, with carnival performers in costume"
-            width={1410}
-            height={752}
-            loading="lazy"
-            className="w-full rounded-sm border border-border object-cover"
-          />
-        </div>
+        <img
+          src={showcase.url}
+          alt="Samsung Galaxy activation booth concept at night, with carnival performers in costume"
+          width={1410}
+          height={752}
+          loading="lazy"
+          className="h-auto w-full rounded-sm border border-border object-cover md:h-full"
+        />
       </div>
     </section>
   );
