@@ -23,8 +23,20 @@ function Contact() {
         wisnu3ds@gmail.com
       </a>
       <div className="mt-10 flex flex-wrap gap-3">
-        {["ArtStation", "Instagram", "LinkedIn", "Behance"].map((s) => (
-          <a key={s} href="#" className="btn-outline">{s}</a>
+        {[
+          { label: "LinkedIn", href: "https://www.linkedin.com/in/wisnu-kesuma-b1564426/" },
+          { label: "Gmail", href: "mailto:wisnu3ds@gmail.com" },
+          { label: "Instagram", href: "https://www.instagram.com/wisnu3ds/" },
+          { label: "Behance", href: "https://www.behance.net/wisnu3ds" },
+        ].map((s) => (
+          <a
+            key={s.label}
+            href={s.href}
+            className="btn-outline"
+            {...(s.href.startsWith("http") ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+          >
+            {s.label}
+          </a>
         ))}
       </div>
     </section>
