@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Mail } from "lucide-react";
-import p2 from "@/assets/p2.jpg";
+import showcase from "@/assets/about-showcase.jpg.asset.json";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
