@@ -14,7 +14,8 @@ export const Route = createFileRoute("/about")({
   component: About,
 });
 
-const skills = ["3ds Max", "V-Ray", "SketchUp", "Adobe Photoshop", "CorelDRAW", "ChatGPT", "Gemini", "Claude", "Lovable"];
+const software = ["3ds Max", "V-Ray", "SketchUp", "Adobe Photoshop", "CorelDRAW"];
+const aiTools = ["ChatGPT", "Gemini", "Claude", "Meshy", "Lovable"];
 
 function About() {
   return (
@@ -34,9 +35,13 @@ function About() {
           major exhibitions such as IIMS, GIIAS, and PRJ. Skilled at maximizing materials to make booths more
           cost-efficient without compromising visual impact.
         </p>
-        <p className="eyebrow mt-10">Toolset</p>
+        <p className="eyebrow mt-10">Software</p>
         <ul className="mt-4 flex flex-wrap gap-2">
-          {skills.map((s) => <li key={s} className="chip">{s}</li>)}
+          {software.map((s) => <li key={s} className="chip">{s}</li>)}
+        </ul>
+        <p className="eyebrow mt-8">AI</p>
+        <ul className="mt-4 flex flex-wrap gap-2">
+          {aiTools.map((s) => <li key={s} className="chip">{s}</li>)}
         </ul>
       </div>
       <img src={p2} alt="Sample work" width={1600} height={1008} loading="lazy" className="h-full max-h-[80vh] w-full rounded-sm object-cover" />
