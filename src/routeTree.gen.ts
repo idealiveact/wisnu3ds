@@ -14,6 +14,7 @@ import { Route as AuthenticatedRouteRouteImport } from './routes/_authenticated/
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as AuthRouteImport } from './routes/auth'
 import { Route as ContactRouteImport } from './routes/contact'
+import { Route as GalleryRouteImport } from './routes/gallery'
 import { Route as GalleryPhotoRouteImport } from './routes/gallery-photo'
 import { Route as PersonalRouteImport } from './routes/personal'
 import { Route as StartAProjectRouteImport } from './routes/start-a-project'
@@ -45,6 +46,11 @@ const AuthRoute = AuthRouteImport.update({
 const ContactRoute = ContactRouteImport.update({
   id: '/contact',
   path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GalleryRoute = GalleryRouteImport.update({
+  id: '/gallery',
+  path: '/gallery',
   getParentRoute: () => rootRouteImport,
 } as any)
 const GalleryPhotoRoute = GalleryPhotoRouteImport.update({
@@ -94,6 +100,7 @@ export interface FileRoutesByFullPath {
   '/about': typeof AboutRoute
   '/auth': typeof AuthRoute
   '/contact': typeof ContactRoute
+  '/gallery': typeof GalleryRoute
   '/gallery-photo': typeof GalleryPhotoRoute
   '/personal': typeof PersonalRoute
   '/start-a-project': typeof StartAProjectRoute
@@ -108,6 +115,7 @@ export interface FileRoutesByTo {
   '/about': typeof AboutRoute
   '/auth': typeof AuthRoute
   '/contact': typeof ContactRoute
+  '/gallery': typeof GalleryRoute
   '/gallery-photo': typeof GalleryPhotoRoute
   '/personal': typeof PersonalRoute
   '/start-a-project': typeof StartAProjectRoute
@@ -124,6 +132,7 @@ export interface FileRoutesById {
   '/about': typeof AboutRoute
   '/auth': typeof AuthRoute
   '/contact': typeof ContactRoute
+  '/gallery': typeof GalleryRoute
   '/gallery-photo': typeof GalleryPhotoRoute
   '/personal': typeof PersonalRoute
   '/start-a-project': typeof StartAProjectRoute
@@ -140,6 +149,7 @@ export interface FileRouteTypes {
     | '/about'
     | '/auth'
     | '/contact'
+    | '/gallery'
     | '/gallery-photo'
     | '/personal'
     | '/start-a-project'
@@ -154,6 +164,7 @@ export interface FileRouteTypes {
     | '/about'
     | '/auth'
     | '/contact'
+    | '/gallery'
     | '/gallery-photo'
     | '/personal'
     | '/start-a-project'
@@ -169,6 +180,7 @@ export interface FileRouteTypes {
     | '/about'
     | '/auth'
     | '/contact'
+    | '/gallery'
     | '/gallery-photo'
     | '/personal'
     | '/start-a-project'
@@ -185,6 +197,7 @@ export interface RootRouteChildren {
   AboutRoute: typeof AboutRoute
   AuthRoute: typeof AuthRoute
   ContactRoute: typeof ContactRoute
+  GalleryRoute: typeof GalleryRoute
   GalleryPhotoRoute: typeof GalleryPhotoRoute
   PersonalRoute: typeof PersonalRoute
   StartAProjectRoute: typeof StartAProjectRoute
@@ -229,6 +242,13 @@ declare module '@tanstack/react-router' {
       path: '/contact'
       fullPath: '/contact'
       preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/gallery': {
+      id: '/gallery'
+      path: '/gallery'
+      fullPath: '/gallery'
+      preLoaderRoute: typeof GalleryRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/gallery-photo': {
@@ -307,6 +327,7 @@ const rootRouteChildren: RootRouteChildren = {
   AboutRoute: AboutRoute,
   AuthRoute: AuthRoute,
   ContactRoute: ContactRoute,
+  GalleryRoute: GalleryRoute,
   GalleryPhotoRoute: GalleryPhotoRoute,
   PersonalRoute: PersonalRoute,
   StartAProjectRoute: StartAProjectRoute,

@@ -171,9 +171,9 @@ export const projects: Project[] = [
     role: "3D Artist",
     software: ["3ds Max 2018", "V-Ray", "Photoshop"],
     summary:
-      "Samsung work from 2015 to 2020: a carnival activation booth, a digital-dealer showroom stand, a Galaxy Note8 photo experience, the House of Screens showroom building, the Galaxy Note20 virtual launch booth, and lifestyle visualisations for the TV & AV line.",
+      "Samsung work from 2015 to 2020: a carnival activation booth, a digital-dealer showroom stand, a Galaxy Note8 photo experience, the Galaxy Note20 virtual launch booth, and showroom and lifestyle visualisations made for the brand's TV & AV campaign.",
     description:
-      "A run of Samsung work from 2015 to 2020: carnival and exhibition booths, a showroom building, a campaign photo experience, a virtual launch booth, and interior visualisations made for the brand's TV & AV line.\n\nThe earliest piece is the Samsung Galaxy booth for Jember Fashion Carnaval: an open walkthrough stand wrapped in peacock and carnival-costume graphics, with glowing cyan light strips tracing the fascia and the floor edge, phone display counters in the middle, and the JFC co-branding on the back wall — designed to hold its own next to the parade's enormous hand-made costumes.\n\nTwo years later came a small-footprint stand for a Samsung digital dealer: a curved structure in pale oak and white, edged in Samsung blue, with two demo stations — Smart Car and Gear VR — set under a curved canopy carrying illuminated 3D lettering, and a Gear S3 plinth to the side. Blue LED strip lighting around the base of the platform does most of the work at trade-show floor level, pulling people in from across a hall. From the same period, the Galaxy Note8 'Do bigger things' campaign needed a photo experience rather than a booth: a life-size room drawn like a pen sketch — chair, desk, chandelier and coat stand all rendered as black linework on white — with a real framed screen at its centre and an oversized blue S Pen leaning against the set, so visitors could step inside a doodle.\n\nThe House of Screens takes the brand outdoors: a two-storey showroom building with a glass corner facade, a warm timber soffit over the entrance terrace, Samsung lettering across the upper glass, and a concrete monument sign at the driveway. Inside, the ground floor works as a gallery of screens — The Frame TVs and large-format displays visible straight through the glass from the street.\n\nThe Galaxy Note20 virtual booth is the largest of the group. The circular stand is wrapped by a floating rose-gold ring with light strips and a hexagonal light ceiling, echoing the Mystic Bronze colour of the phone. Inside are a central Galaxy Note20 display wall with an oversized S Pen, a 'Powerful Phone' demo counter, a 'Doodling Contest' area, and a 'Work & Play Experience' zone that pairs a lounge corner (Power to Work) with a racing-simulator gaming setup (Power to Play).\n\nThe TV & AV interiors take a different route: instead of a stand, the product is placed inside an aspirational home — a double-height residence foyer with a marble floor medallion, fluted columns, a gold sunburst mirror and a glass wall onto a tropical garden, and an oceanfront villa deck where a teak poolside runs to an infinity pool and a beach. Both are built as complete environments — furniture, planting, daylight and reflective surfaces — rather than a product shot on a plain background.\n\nEverything in this group follows one pipeline: modelled and rendered in 3ds Max 2018 with V-Ray, then composited and finished in Photoshop.",
+      "A run of Samsung work from 2015 to 2020: carnival and exhibition booths, a showroom building, a campaign photo experience, a virtual launch booth, and interior visualisations made for the brand's TV & AV line.\n\nThe earliest piece is the Samsung Galaxy booth for Jember Fashion Carnaval: an open walkthrough stand wrapped in peacock and carnival-costume graphics, with glowing cyan light strips tracing the fascia and the floor edge, phone display counters in the middle, and the JFC co-branding on the back wall — designed to hold its own next to the parade's enormous hand-made costumes.\n\nTwo years later came a small-footprint stand for a Samsung digital dealer: a curved structure in pale oak and white, edged in Samsung blue, with two demo stations — Smart Car and Gear VR — set under a curved canopy carrying illuminated 3D lettering, and a Gear S3 plinth to the side. Blue LED strip lighting around the base of the platform does most of the work at trade-show floor level, pulling people in from across a hall. From the same period, the Galaxy Note8 'Do bigger things' campaign needed a photo experience rather than a booth: a life-size room drawn like a pen sketch — chair, desk, chandelier and coat stand all rendered as black linework on white — with a real framed screen at its centre and an oversized blue S Pen leaning against the set, so visitors could step inside a doodle.\n\nHouse of Screens gives the TV & AV campaign a building of its own: a two-storey showroom with a glass corner facade, a warm timber soffit over the entrance terrace, Samsung lettering across the upper glass, and a concrete monument sign at the driveway. Inside, the ground floor works as a gallery of screens — The Frame TVs and large-format displays visible straight through the glass from the street.\n\nThe Galaxy Note20 virtual booth is the largest of the group. The circular stand is wrapped by a floating rose-gold ring with light strips and a hexagonal light ceiling, echoing the Mystic Bronze colour of the phone. Inside are a central Galaxy Note20 display wall with an oversized S Pen, a 'Powerful Phone' demo counter, a 'Doodling Contest' area, and a 'Work & Play Experience' zone that pairs a lounge corner (Power to Work) with a racing-simulator gaming setup (Power to Play).\n\nTwo companion TV & AV interiors take a different route: instead of a stand, the product is placed inside an aspirational home — a double-height residence foyer with a marble floor medallion, fluted columns, a gold sunburst mirror and a glass wall onto a tropical garden, and an oceanfront villa deck where a teak poolside runs to an infinity pool and a beach. Both are built as complete environments — furniture, planting, daylight and reflective surfaces — rather than a product shot on a plain background.\n\nEverything in this group follows one pipeline: modelled and rendered in 3ds Max 2018 with V-Ray, then composited and finished in Photoshop.",
     cover: samsungBooth1.url,
     shareImage: samsungPreview.url,
     gallery: [
@@ -202,14 +202,6 @@ export const projects: Project[] = [
         height: 768,
       },
       {
-        src: samsungHouseOfScreens.url,
-        title: "House of Screens — Showroom Building",
-        year: "2018",
-        caption: "Two-storey Samsung showroom with a glass corner facade, a timber entrance terrace and a 'House of Screens' monument sign; The Frame TVs and large displays visible from the street.",
-        width: 1672,
-        height: 941,
-      },
-      {
         src: samsungBooth1.url,
         title: "Full Booth Overview",
         year: "2020",
@@ -232,6 +224,14 @@ export const projects: Project[] = [
         caption: "The 'Power to Work' lounge corner beside the 'Power to Play' racing simulator.",
         width: 1920,
         height: 1080,
+      },
+      {
+        src: samsungHouseOfScreens.url,
+        title: "TV & AV Campaign — House of Screens",
+        year: "2020",
+        caption: "Campaign showroom building: a two-storey Samsung showroom with a glass corner facade, a timber entrance terrace and a 'House of Screens' monument sign, with The Frame TVs and large-format displays visible straight through the glass from the street.",
+        width: 1672,
+        height: 941,
       },
       {
         src: samsungTvAvInterior.url,
