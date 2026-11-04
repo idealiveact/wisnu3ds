@@ -1,6 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Mail } from "lucide-react";
-import showcase from "@/assets/about-showcase.jpg.asset.json";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
@@ -20,8 +19,8 @@ const aiTools = ["ChatGPT", "Gemini", "Claude", "Meshy", "Lovable"];
 
 function About() {
   return (
-    <section className="grid min-h-screen gap-12 px-6 pt-28 pb-16 md:grid-cols-2 md:px-10">
-      <div>
+    <section className="min-h-screen px-6 pt-28 pb-16 md:px-10">
+      <div className="mx-auto w-full max-w-3xl">
         <p className="eyebrow">About</p>
         <h1 className="fade-up mt-4 font-display text-4xl font-bold leading-[1] text-foreground md:text-5xl">
           Wisnu Kesuma
@@ -59,16 +58,6 @@ function About() {
         <ul className="mt-4 flex flex-wrap gap-2">
           {aiTools.map((s) => <li key={s} className="chip">{s}</li>)}
         </ul>
-      </div>
-      <div>
-        <img
-          src={showcase.url}
-          alt="Samsung Galaxy activation booth concept at night, with carnival performers in costume"
-          width={1410}
-          height={752}
-          loading="lazy"
-          className="h-auto w-full rounded-sm border border-border object-cover object-[68%_center] md:h-full"
-        />
       </div>
     </section>
   );
