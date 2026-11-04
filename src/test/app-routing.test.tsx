@@ -14,8 +14,8 @@ describe("App routing", () => {
     expect(matches.at(-1)?.routeId).not.toBe(rootRouteId);
   });
 
-  it("has pages for every menu: Work, Gallery Photo, Personal, About, Contact", () => {
-    for (const path of ["/work", "/gallery-photo", "/personal", "/about", "/contact"]) {
+  it("has pages for every menu: Work, Gallery Photo, Personal, About, Start a Project, Contact", () => {
+    for (const path of ["/work", "/gallery-photo", "/personal", "/about", "/start-a-project", "/contact"]) {
       const matches = router.matchRoutes(path);
       expect(matches.at(-1)?.routeId, path).not.toBe(rootRouteId);
     }
