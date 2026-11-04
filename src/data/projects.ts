@@ -76,7 +76,7 @@ export const projects: Project[] = [
     gallery: [
       {
         src: pertaminaTerminal.url,
-        title: "HUT ke-64 — Floating LPG Terminal",
+        title: "64th Anniversary — Floating LPG Terminal",
         year: "2021",
         caption: "Key visual for Pertamina's 64th anniversary: a working LPG terminal lifted onto a floating island above the cloud layer.",
         width: 1366,
@@ -84,7 +84,7 @@ export const projects: Project[] = [
       },
       {
         src: pertaminaEnergyPark.url,
-        title: "HUT ke-64 — Energy Park",
+        title: "64th Anniversary — Energy Park",
         year: "2021",
         caption: "Floating festival island with a Ferris wheel, concert stage, games corner and a solar yacht at the dock.",
         width: 1920,
@@ -92,7 +92,7 @@ export const projects: Project[] = [
       },
       {
         src: pertaminaOffshore.url,
-        title: "HUT ke-64 — Offshore Platform",
+        title: "64th Anniversary — Offshore Platform",
         year: "2021",
         caption: "Offshore platform study from the same anniversary series.",
         width: 1280,
