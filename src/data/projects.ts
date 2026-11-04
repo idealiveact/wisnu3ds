@@ -1,6 +1,3 @@
-import p1 from "@/assets/p1.jpg";
-import p2 from "@/assets/p2.jpg";
-import p3 from "@/assets/p3.jpg";
 import hero from "@/assets/hero.jpg";
 import pertaminaTerminal from "@/assets/pertamina-hut-64-terminal.jpg.asset.json";
 import pertaminaEnergyPark from "@/assets/pertamina-hut-64-energy-park-2021.jpg.asset.json";
@@ -16,8 +13,6 @@ import samsungBooth1 from "@/assets/samsung-note20-booth-1.jpg.asset.json";
 import samsungBooth2 from "@/assets/samsung-note20-booth-2.jpg.asset.json";
 import samsungBooth3 from "@/assets/samsung-note20-booth-3.jpg.asset.json";
 import homePreview from "@/assets/home-preview.jpg.asset.json";
-import cyberPreview from "@/assets/cyber-bust-preview.jpg.asset.json";
-import forestPreview from "@/assets/forest-preview.jpg.asset.json";
 import pertaminaPreview from "@/assets/pertamina-preview.jpg.asset.json";
 import samsungPreview from "@/assets/samsung-preview.jpg.asset.json";
 
@@ -27,12 +22,10 @@ import samsungPreview from "@/assets/samsung-preview.jpg.asset.json";
  * Setiap gambar galeri punya label judul + tahun (wajib) dan caption (opsional),
  * supaya pengunjung bisa membedakan satu render dengan render lainnya.
  */
-export type CategoryId = "work" | "technical-art" | "personal";
+export type CategoryId = "work";
 
-export const categories: Record<CategoryId, { label: string; path: "/work" | "/technical-art" | "/personal"; intro: string }> = {
+export const categories: Record<CategoryId, { label: string; path: "/work"; intro: string }> = {
   work: { label: "Work", path: "/work", intro: "Commercial visualization & client projects." },
-  "technical-art": { label: "Technical Art", path: "/technical-art", intro: "Shaders, tools, rigs and procedural systems." },
-  personal: { label: "Personal Projects", path: "/personal", intro: "Experiments and self-initiated worlds." },
 };
 
 export interface GalleryItem {

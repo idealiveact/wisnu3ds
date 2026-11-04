@@ -12,6 +12,7 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as ContactRouteImport } from './routes/contact'
+import { Route as GalleryPhotoRouteImport } from './routes/gallery-photo'
 import { Route as PersonalRouteImport } from './routes/personal'
 import { Route as TechnicalArtRouteImport } from './routes/technical-art'
 import { Route as WorkRouteImport } from './routes/work'
@@ -30,6 +31,11 @@ const AboutRoute = AboutRouteImport.update({
 const ContactRoute = ContactRouteImport.update({
   id: '/contact',
   path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GalleryPhotoRoute = GalleryPhotoRouteImport.update({
+  id: '/gallery-photo',
+  path: '/gallery-photo',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PersonalRoute = PersonalRouteImport.update({
@@ -57,6 +63,7 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
+  '/gallery-photo': typeof GalleryPhotoRoute
   '/personal': typeof PersonalRoute
   '/technical-art': typeof TechnicalArtRoute
   '/work': typeof WorkRoute
@@ -66,6 +73,7 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
+  '/gallery-photo': typeof GalleryPhotoRoute
   '/personal': typeof PersonalRoute
   '/technical-art': typeof TechnicalArtRoute
   '/work': typeof WorkRoute
@@ -76,6 +84,7 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
+  '/gallery-photo': typeof GalleryPhotoRoute
   '/personal': typeof PersonalRoute
   '/technical-art': typeof TechnicalArtRoute
   '/work': typeof WorkRoute
@@ -87,6 +96,7 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/contact'
+    | '/gallery-photo'
     | '/personal'
     | '/technical-art'
     | '/work'
@@ -96,6 +106,7 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/contact'
+    | '/gallery-photo'
     | '/personal'
     | '/technical-art'
     | '/work'
@@ -105,6 +116,7 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/contact'
+    | '/gallery-photo'
     | '/personal'
     | '/technical-art'
     | '/work'
@@ -115,6 +127,7 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
   ContactRoute: typeof ContactRoute
+  GalleryPhotoRoute: typeof GalleryPhotoRoute
   PersonalRoute: typeof PersonalRoute
   TechnicalArtRoute: typeof TechnicalArtRoute
   WorkRoute: typeof WorkRoute
@@ -142,6 +155,13 @@ declare module '@tanstack/react-router' {
       path: '/contact'
       fullPath: '/contact'
       preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/gallery-photo': {
+      id: '/gallery-photo'
+      path: '/gallery-photo'
+      fullPath: '/gallery-photo'
+      preLoaderRoute: typeof GalleryPhotoRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/personal': {
@@ -179,6 +199,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
   ContactRoute: ContactRoute,
+  GalleryPhotoRoute: GalleryPhotoRoute,
   PersonalRoute: PersonalRoute,
   TechnicalArtRoute: TechnicalArtRoute,
   WorkRoute: WorkRoute,
