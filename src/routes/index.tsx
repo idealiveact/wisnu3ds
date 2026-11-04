@@ -26,7 +26,7 @@ function Index() {
         <p className="fade-up mt-6 max-w-xl text-muted-foreground md:text-lg">
           Senior 3D Designer in brand activation with 15+ years of experience in booth and event design. I enjoy
           finding practical, budget-friendly ways to bring ideas to life, from small setups to exhibitions like IIMS,
-          GIIAS, and PRJ. Honored to have received several design awards, including Best Booth.
+          GIIAS, and PRJ.
         </p>
         <div className="fade-up mt-8 flex flex-wrap gap-3">
           <Link to="/work" className="btn-ember">Explore work →</Link>
