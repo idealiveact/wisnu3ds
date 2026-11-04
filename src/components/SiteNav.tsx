@@ -6,6 +6,7 @@ const links = [
   { to: "/gallery-photo", label: "Gallery Photo" },
   { to: "/personal", label: "Personal" },
   { to: "/about", label: "About" },
+  { to: "/start-a-project", label: "Start a Project" },
   { to: "/contact", label: "Contact" },
 ] as const;
 
@@ -16,7 +17,7 @@ export function SiteNav() {
       <Link to="/" className="font-display text-lg font-bold tracking-tight text-foreground">
         W<span className="text-primary">.</span>KESUMA
       </Link>
-      <nav className="hidden gap-8 md:flex">
+      <nav className="site-nav hidden gap-4 md:flex lg:gap-8">
         {links.map((l) => (
           <Link key={l.to} to={l.to} className="nav-link" activeProps={{ "data-active": "true" }}>
             {l.label}

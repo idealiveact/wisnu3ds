@@ -113,12 +113,8 @@ export function BriefBuilder() {
   const fallbackMailto = `mailto:wisnu3ds@gmail.com?subject=${encodeURIComponent(`Project brief${name ? ` — ${name}` : ""}`)}&body=${encodeURIComponent(brief)}`;
 
   return (
-    <div className="mt-20 max-w-3xl border-t border-border pt-12">
-      <p className="eyebrow">Project brief assistant</p>
-      <h2 className="mt-3 font-display text-3xl font-bold text-foreground md:text-4xl">Describe your idea, get a clear brief.</h2>
-      <p className="mt-3 text-muted-foreground">Write freely — booth size, event, brand, deadline, budget. AI will organise it into a brief you can send straight to Wisnu.</p>
-
-      <form onSubmit={generate} className="mt-8 flex flex-col gap-4">
+    <div className="mt-12 w-full max-w-3xl">
+      <form onSubmit={generate} className="flex flex-col gap-4">
         <input value={name} onChange={(e) => setName(e.target.value)} maxLength={100} placeholder="Your name / company (optional)"
           aria-label="Your name or company" autoComplete="organization" className={fieldClass} />
         <textarea value={notes} onChange={(e) => setNotes(e.target.value)} maxLength={4000} rows={7} aria-label="Project notes"

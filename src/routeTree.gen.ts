@@ -16,6 +16,7 @@ import { Route as AuthRouteImport } from './routes/auth'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as GalleryPhotoRouteImport } from './routes/gallery-photo'
 import { Route as PersonalRouteImport } from './routes/personal'
+import { Route as StartAProjectRouteImport } from './routes/start-a-project'
 import { Route as TechnicalArtRouteImport } from './routes/technical-art'
 import { Route as WorkRouteImport } from './routes/work'
 import { Route as AuthenticatedBriefsRouteImport } from './routes/_authenticated/briefs'
@@ -55,6 +56,11 @@ const PersonalRoute = PersonalRouteImport.update({
   path: '/personal',
   getParentRoute: () => rootRouteImport,
 } as any)
+const StartAProjectRoute = StartAProjectRouteImport.update({
+  id: '/start-a-project',
+  path: '/start-a-project',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const TechnicalArtRoute = TechnicalArtRouteImport.update({
   id: '/technical-art',
   path: '/technical-art',
@@ -83,6 +89,7 @@ export interface FileRoutesByFullPath {
   '/contact': typeof ContactRoute
   '/gallery-photo': typeof GalleryPhotoRoute
   '/personal': typeof PersonalRoute
+  '/start-a-project': typeof StartAProjectRoute
   '/technical-art': typeof TechnicalArtRoute
   '/work': typeof WorkRoute
   '/briefs': typeof AuthenticatedBriefsRoute
@@ -95,6 +102,7 @@ export interface FileRoutesByTo {
   '/contact': typeof ContactRoute
   '/gallery-photo': typeof GalleryPhotoRoute
   '/personal': typeof PersonalRoute
+  '/start-a-project': typeof StartAProjectRoute
   '/technical-art': typeof TechnicalArtRoute
   '/work': typeof WorkRoute
   '/briefs': typeof AuthenticatedBriefsRoute
@@ -109,6 +117,7 @@ export interface FileRoutesById {
   '/contact': typeof ContactRoute
   '/gallery-photo': typeof GalleryPhotoRoute
   '/personal': typeof PersonalRoute
+  '/start-a-project': typeof StartAProjectRoute
   '/technical-art': typeof TechnicalArtRoute
   '/work': typeof WorkRoute
   '/_authenticated/briefs': typeof AuthenticatedBriefsRoute
@@ -123,6 +132,7 @@ export interface FileRouteTypes {
     | '/contact'
     | '/gallery-photo'
     | '/personal'
+    | '/start-a-project'
     | '/technical-art'
     | '/work'
     | '/briefs'
@@ -135,6 +145,7 @@ export interface FileRouteTypes {
     | '/contact'
     | '/gallery-photo'
     | '/personal'
+    | '/start-a-project'
     | '/technical-art'
     | '/work'
     | '/briefs'
@@ -148,6 +159,7 @@ export interface FileRouteTypes {
     | '/contact'
     | '/gallery-photo'
     | '/personal'
+    | '/start-a-project'
     | '/technical-art'
     | '/work'
     | '/_authenticated/briefs'
@@ -162,6 +174,7 @@ export interface RootRouteChildren {
   ContactRoute: typeof ContactRoute
   GalleryPhotoRoute: typeof GalleryPhotoRoute
   PersonalRoute: typeof PersonalRoute
+  StartAProjectRoute: typeof StartAProjectRoute
   TechnicalArtRoute: typeof TechnicalArtRoute
   WorkRoute: typeof WorkRoute
   ProjectsSlugRoute: typeof ProjectsSlugRoute
@@ -218,6 +231,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PersonalRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/start-a-project': {
+      id: '/start-a-project'
+      path: '/start-a-project'
+      fullPath: '/start-a-project'
+      preLoaderRoute: typeof StartAProjectRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/technical-art': {
       id: '/technical-art'
       path: '/technical-art'
@@ -268,6 +288,7 @@ const rootRouteChildren: RootRouteChildren = {
   ContactRoute: ContactRoute,
   GalleryPhotoRoute: GalleryPhotoRoute,
   PersonalRoute: PersonalRoute,
+  StartAProjectRoute: StartAProjectRoute,
   TechnicalArtRoute: TechnicalArtRoute,
   WorkRoute: WorkRoute,
   ProjectsSlugRoute: ProjectsSlugRoute,

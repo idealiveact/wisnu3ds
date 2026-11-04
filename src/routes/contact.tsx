@@ -1,19 +1,24 @@
-import { createFileRoute } from "@tanstack/react-router";
-import { BriefBuilder } from "@/components/BriefBuilder";
+import { createFileRoute, Link } from "@tanstack/react-router";
+import { pageHead } from "@/lib/seo";
 
 export const Route = createFileRoute("/contact")({
-  head: () => ({
-    meta: [
-      { title: "Contact — Wisnu Kesuma 3D" },
-      { name: "description", content: "Get in touch with Wisnu Kesuma for 3D visualization and technical art projects." },
-      { property: "og:title", content: "Contact — Wisnu Kesuma 3D" },
-      { property: "og:description", content: "Available for freelance and studio collaborations." },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary_large_image" },
-    ],
-  }),
+  head: () =>
+    pageHead({
+      title: "Contact — Wisnu Kesuma 3D",
+      description:
+        "Get in touch with Wisnu Kesuma, senior 3D designer for exhibition booths, stages and event visualisation — email, LinkedIn, Instagram, Behance and YouTube.",
+      path: "/contact",
+    }),
   component: Contact,
 });
+
+const socials = [
+  { label: "LinkedIn", href: "https://www.linkedin.com/in/wisnu-kesuma-b1564426/" },
+  { label: "Gmail", href: "mailto:wisnu3ds@gmail.com" },
+  { label: "Instagram", href: "https://www.instagram.com/wisnu3ds/" },
+  { label: "Behance", href: "https://www.behance.net/wisnu3ds" },
+  { label: "YouTube", href: "https://www.youtube.com/@wisnu3ds" },
+];
 
 function Contact() {
   return (
@@ -26,13 +31,7 @@ function Contact() {
         wisnu3ds@gmail.com
       </a>
       <div className="mt-10 flex flex-wrap gap-3">
-        {[
-          { label: "LinkedIn", href: "https://www.linkedin.com/in/wisnu-kesuma-b1564426/" },
-          { label: "Gmail", href: "mailto:wisnu3ds@gmail.com" },
-          { label: "Instagram", href: "https://www.instagram.com/wisnu3ds/" },
-          { label: "Behance", href: "https://www.behance.net/wisnu3ds" },
-          { label: "YouTube", href: "https://www.youtube.com/@wisnu3ds" },
-        ].map((s) => (
+        {socials.map((s) => (
           <a
             key={s.label}
             href={s.href}
@@ -43,7 +42,16 @@ function Contact() {
           </a>
         ))}
       </div>
-      <BriefBuilder />
+
+      <div className="mt-16 max-w-3xl rounded-lg border border-border bg-card p-6 text-card-foreground md:p-8">
+        <p className="eyebrow">Project brief assistant</p>
+        <h2 className="mt-3 font-display text-2xl font-bold md:text-3xl">Not sure what to write yet?</h2>
+        <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+          Jot down the rough idea on the Start a Project page — booth size, event, brand, deadline, budget. It turns your
+          notes into a clear brief and sends it straight to Wisnu, no email app needed.
+        </p>
+        <Link to="/start-a-project" className="btn-ember mt-6">Start a project</Link>
+      </div>
     </section>
   );
 }
