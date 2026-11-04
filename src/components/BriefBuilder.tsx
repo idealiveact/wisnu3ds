@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { useServerFn } from "@tanstack/react-start";
 import { generateBrief, sendBrief } from "@/lib/brief.functions";
-import { SendBriefInput } from "@/lib/brief.schema";
+import { PROJECT_TYPES, SendBriefInput, type ProjectType } from "@/lib/brief.schema";
 
 function renderBrief(md: string) {
   return md.split("\n").map((line, i) => {
@@ -37,6 +37,7 @@ export function BriefBuilder() {
 
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
+  const [projectType, setProjectType] = useState<ProjectType>("booth");
   const [website, setWebsite] = useState("");
   const [fieldErrors, setFieldErrors] = useState<FieldErrors>({});
   const [send, setSend] = useState<SendState>({ status: "idle" });
@@ -74,7 +75,7 @@ export function BriefBuilder() {
   async function submitBrief(e: React.FormEvent) {
     e.preventDefault();
     if (send.status === "sending") return;
-    const parsed = SendBriefInput.safeParse({ name, email, phone, notes, brief, website });
+    const parsed = SendBriefInput.safeParse({ name, email, phone, projectType, notes, brief, website });
     if (!parsed.success) {
       const errs: FieldErrors = {};
       let other: string | null = null;
@@ -170,6 +171,13 @@ export function BriefBuilder() {
                     className={fieldClass} />
                   {fieldErrors.phone && <p id="brief-phone-error" className="mt-1.5 text-sm text-destructive">{fieldErrors.phone}</p>}
                 </div>
+              </div>
+
+              <div className="mt-4">
+                <label htmlFor="brief-type" className="mb-1.5 block text-sm text-foreground">Project type</label>
+                <select id="brief-type" value={projectType} onChange={(e) => setProjectType(e.target.value as ProjectType)} className={fieldClass}>
+                  {PROJECT_TYPES.map((t) => <option key={t.value} value={t.value}>{t.label}</option>)}
+                </select>
               </div>
 
               <div aria-hidden="true" className="absolute -left-[10000px] top-auto h-px w-px overflow-hidden">
