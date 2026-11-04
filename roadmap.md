@@ -11,7 +11,11 @@
 - [x] Gallery Photo page created, empty until Wisnu's own photos are added (data in src/data/gallery.ts).
 - [x] Personal page emptied with a "coming soon" message; its two example projects deleted.
 
+- [x] Homepage opening picture: Wisnu's Samsung Galaxy activation render (with costumed performers), plus a matching 1200×630 share preview; overlay strengthened so the wording stays readable on phone and desktop.
+- [x] About picture removed; the page now reads as one centered column until Wisnu picks a new image.
+
 ## Open
+- [ ] About picture: Wisnu is choosing a replacement render — blocked until he sends it.
 - [ ] Video from Wisnu: no video file arrived in the chat uploads, so the requested video review is blocked until he attaches it.
 - [ ] Add Wisnu's own photos to Gallery Photo (currently empty by request).
 - [ ] Fill Personal with real projects once they exist.
