@@ -10,7 +10,7 @@ describe("SAMSUNG Project entry", () => {
   it("is listed as SAMSUNG Project spanning 2017 to 2020", () => {
     expect(project, "no project with slug 'samsung'").toBeTruthy();
     expect(project?.title).toBe("SAMSUNG Project");
-    expect(project?.year).toBe("2017–2020");
+    expect(project?.year).toBe("2015–2020");
     expect(project?.category).toBe("work");
   });
 
@@ -18,9 +18,9 @@ describe("SAMSUNG Project entry", () => {
     expect(getProject("samsung-note20-virtual-booth")).toBeUndefined();
   });
 
-  it("shows six labelled pictures, oldest first", () => {
+  it("shows nine labelled pictures, oldest first", () => {
     const gallery = project?.gallery ?? [];
-    expect(gallery.length).toBe(6);
+    expect(gallery.length).toBe(9);
     for (const item of gallery) {
       expect(item.title.trim().length, item.src).toBeGreaterThan(3);
       expect(item.caption?.trim().length, item.title).toBeGreaterThan(0);

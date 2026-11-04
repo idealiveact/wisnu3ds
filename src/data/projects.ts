@@ -178,12 +178,36 @@ export const projects: Project[] = [
     shareImage: samsungPreview.url,
     gallery: [
       {
+        src: samsungJfc.url,
+        title: "Jember Fashion Carnaval — Galaxy Booth",
+        year: "2015",
+        caption: "Samsung Galaxy activation booth at Jember Fashion Carnaval: an open walkthrough stand with peacock and carnival-costume graphics, cyan light strips and phone display counters.",
+        width: 1410,
+        height: 752,
+      },
+      {
         src: samsungDealerBooth.url,
         title: "Digital Dealer Mini Booth",
         year: "2017",
         caption: "Compact Samsung Digital Showroom stand: Smart Car and Gear VR demo stations under an illuminated canopy, with a Gear S3 plinth and blue LED perimeter lighting.",
         width: 1524,
         height: 1032,
+      },
+      {
+        src: samsungNote8.url,
+        title: "Galaxy Note8 — 'Do Bigger Things' Photo Experience",
+        year: "2017",
+        caption: "Campaign photo spot: a life-size room drawn like a pen sketch, with a real framed screen at its centre and an oversized blue S Pen leaning against the set.",
+        width: 1366,
+        height: 768,
+      },
+      {
+        src: samsungHouseOfScreens.url,
+        title: "House of Screens — Showroom Building",
+        year: "2018",
+        caption: "Two-storey Samsung showroom with a glass corner facade, a timber entrance terrace and a 'House of Screens' monument sign; The Frame TVs and large displays visible from the street.",
+        width: 1672,
+        height: 941,
       },
       {
         src: samsungBooth1.url,
