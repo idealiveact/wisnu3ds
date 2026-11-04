@@ -1,14 +1,14 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { heroImage } from "@/data/projects";
+import { heroImage, heroShareImage } from "@/data/projects";
+import { pageHead } from "@/lib/seo";
 
 export const Route = createFileRoute("/")({
-  head: () => ({
-    meta: [
-      { title: "Wisnu Kesuma — 3D Designer" },
-      { name: "description", content: "Portfolio of Wisnu Kesuma, Senior 3D Designer in brand activation with 15+ years of booth and event design." },
-      { property: "og:title", content: "Wisnu Kesuma — 3D Designer" },
-      { property: "og:description", content: "Booth and event design, from small setups to IIMS, GIIAS and PRJ." },
-    ],
+  head: () => pageHead({
+    title: "Wisnu Kesuma — Senior 3D Designer | Booth & Event Design",
+    description: "Wisnu Kesuma, Senior 3D Designer with 15+ years in brand activation, booth and event design. Explore work for Pertamina, Samsung, IIMS, GIIAS and PRJ.",
+    path: "/",
+    image: heroShareImage,
+    imageAlt: "3D environment render on Wisnu Kesuma's portfolio homepage",
   }),
   component: Index,
 });

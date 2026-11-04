@@ -1,6 +1,7 @@
 # Roadmap
 
 ## Done
+- [x] Homepage and project-specific SEO: titles, descriptions, self-referencing URLs and optimized cover previews.
 - [x] Identity swap: name "Wisnu Kesuma", email wisnu3ds@gmail.com across nav, hero, titles, Contact.
 - [x] Project Pertamina (2021–2026) in Work: umbrella entry with expanded English write-up, HUT ke-64 render as the gallery image.
 - [x] Pertamina gallery filled with ten labelled renders (HUT ke-64 x3 2021, TSS Virtual 2022, Keroncong pavilion 2025, Ecorun Fest booth 2025, Kartini stage + gate 2025, Pasar Rakyat gate + stage 2026); every image shows a number, title, year and short caption.
