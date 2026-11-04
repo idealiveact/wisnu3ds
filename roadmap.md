@@ -12,6 +12,7 @@
 - [x] Personal page emptied with a "coming soon" message; its two example projects deleted.
 
 ## Open
+- [ ] Video from Wisnu: no video file arrived in the chat uploads, so the requested video review is blocked until he attaches it.
 - [ ] Add Wisnu's own photos to Gallery Photo (currently empty by request).
 - [ ] Fill Personal with real projects once they exist.
 - [ ] Confirm Pertamina Kartini is 2025 — the year was read from the "68" Pertamina anniversary emblem on its screen, not from Wisnu.
