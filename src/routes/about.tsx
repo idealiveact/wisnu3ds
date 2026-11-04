@@ -36,7 +36,7 @@ function About() {
             <Mail size={13} aria-hidden /> wisnu3ds@gmail.com
           </a>
         </p>
-        <h2 className="fade-up mt-10 font-display text-2xl font-bold leading-[1.15] text-foreground md:text-[28px] xl:text-[38px] 2xl:text-[44px]">
+        <h2 className="fade-up mt-10 font-display text-2xl font-bold leading-[1.15] text-foreground lg:text-[28px] xl:text-[38px] 2xl:text-[44px]">
           Designed to be walked into.
           <br />
           Built to <span className="text-primary">bring crowds in</span>.
