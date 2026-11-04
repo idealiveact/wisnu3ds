@@ -82,6 +82,7 @@ export const sendBrief = createServerFn({ method: "POST" })
       client_name: data.name,
       client_email: data.email,
       client_phone: data.phone,
+      project_type: data.projectType,
       notes: data.notes,
       brief: data.brief,
     });

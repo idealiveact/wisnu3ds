@@ -8,6 +8,13 @@
       "when": 1793794896108,
       "tag": "0000_create_brief_requests",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1793795773211,
+      "tag": "0001_brief_status_type_admin",
+      "breakpoints": true
     }
   ]
 }

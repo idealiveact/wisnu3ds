@@ -13,3 +13,4 @@
 - Homepage and project SEO use src/lib/seo.ts with leaf-only canonicals and project shareImage renditions of the displayed cover at 1200×630, keeping metadata aligned with project data.
 - Contact-page briefs are saved to the brief_requests table only through the sendBrief server function using the service-role client; the table has RLS on with no public policies, because visitors must never read other clients' briefs.
 - Brief form rules live in src/lib/brief.schema.ts and are shared by the browser form and the server function, so client feedback and server checks never drift apart.
+- The private /briefs page lives under the _authenticated layout; access is decided by the admin row in user_roles (granted by a trigger only to the owner's confirmed email), checked server-side with has_role, because sign-up is open and any account must otherwise see nothing.
