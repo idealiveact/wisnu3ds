@@ -3,7 +3,7 @@ import { useState } from "react";
 
 const links = [
   { to: "/work", label: "Work" },
-  { to: "/technical-art", label: "Technical Art" },
+  { to: "/gallery-photo", label: "Gallery Photo" },
   { to: "/personal", label: "Personal" },
   { to: "/about", label: "About" },
   { to: "/contact", label: "Contact" },

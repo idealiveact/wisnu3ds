@@ -1,15 +1,9 @@
-import { createFileRoute } from "@tanstack/react-router";
-import { ProjectSlideshow } from "@/components/ProjectSlideshow";
-import { byCategory } from "@/data/projects";
+import { createFileRoute, redirect } from "@tanstack/react-router";
 
+// The Technical Art menu was retired; keep the old public URL working by
+// redirecting visitors (and search engines) to the Work section.
 export const Route = createFileRoute("/technical-art")({
-  head: () => ({
-    meta: [
-      { title: "Technical Art — Wisnu Kesuma 3D" },
-      { name: "description", content: "Shaders, tools and procedural systems by Wisnu Kesuma." },
-      { property: "og:title", content: "Technical Art — Wisnu Kesuma 3D" },
-      { property: "og:description", content: "Shaders, tools and procedural systems." },
-    ],
-  }),
-  component: () => <ProjectSlideshow projects={byCategory("technical-art")} title="Technical Art" />,
+  beforeLoad: () => {
+    throw redirect({ to: "/work", replace: true });
+  },
 });
