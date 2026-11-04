@@ -60,7 +60,14 @@ function About() {
           {aiTools.map((s) => <li key={s} className="chip">{s}</li>)}
         </ul>
       </div>
-      <img src={p2} alt="Sample work" width={1600} height={1008} loading="lazy" className="h-full max-h-[80vh] w-full rounded-sm object-cover" />
+      <img
+        src={showcase.url}
+        alt="Samsung Galaxy activation booth concept at night, with carnival performers in costume"
+        width={1410}
+        height={752}
+        loading="lazy"
+        className="w-full self-start rounded-sm border border-border object-cover"
+      />
     </section>
   );
 }
