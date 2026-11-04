@@ -4,7 +4,7 @@
 - [x] Homepage and project-specific SEO: titles, descriptions, self-referencing URLs and optimized cover previews.
 - [x] Identity swap: name "Wisnu Kesuma", email wisnu3ds@gmail.com across nav, hero, titles, Contact.
 - [x] Project Pertamina (2021–2026) in Work: umbrella entry with expanded English write-up, ten labelled gallery renders in year order (HUT ke-64 x3 2021, TSS Virtual 2022, PIS Independence Day display 2023, Java Jazz Festival booth 2024, Keroncong pavilion + Ecorun Fest booth + Kartini stage 2025, Pasar Rakyat main stage 2026).
-- [x] SAMSUNG Project (2017–2020) in Work: umbrella entry renamed from "Samsung Galaxy Note20 Virtual Booth", now holding six labelled renders in year order (digital-dealer mini booth 2017, Note20 virtual booth x3 2020, TV & AV lifestyle interiors x2 2020). Old /projects/samsung-note20-virtual-booth URL redirects to /projects/samsung.
+- [x] SAMSUNG Project (2015–2020) in Work: umbrella entry renamed from "Samsung Galaxy Note20 Virtual Booth", now holding nine labelled renders in year order (Jember Fashion Carnaval booth 2015, digital-dealer mini booth 2017, Galaxy Note8 "Do bigger things" photo experience 2017, House of Screens showroom building 2018, Note20 virtual booth x3 2020, TV & AV lifestyle interiors x2 2020). Old /projects/samsung-note20-virtual-booth URL redirects to /projects/samsung.
 - [x] Slideshow text made readable over bright renders (stronger top/bottom overlay, accent label, soft text shadow).
 - [x] Contact links: LinkedIn, Gmail, Instagram, Behance and YouTube @wisnu3ds.
 - [x] Menu restructured: Work, Gallery Photo, Personal, About, Contact. Technical Art removed (old /technical-art URL redirects to /work); its two example projects deleted.
@@ -28,7 +28,7 @@
 
 - [ ] Fill Personal with real projects once they exist.
 - [ ] Confirm Pertamina Kartini is 2025 — the year was read from the "68" Pertamina anniversary emblem on its screen, not from Wisnu.
-- [ ] Confirm the SAMSUNG Project write-up: the two 2020 TV & AV interiors carry no visible branding, so their campaign name and year come only from Wisnu's file names; the foyer render shows no screen at all.
+- [ ] Confirm the SAMSUNG Project write-up: the two 2020 TV & AV interiors carry no visible branding, so their campaign name and year come only from Wisnu's file names; the foyer render shows no screen at all. Also confirm House of Screens is 2018 — the render shows The Frame TVs but no printed year, so 2018 was inferred.
 - [ ] Confirm the Pertamina write-up is accurate: role "3D Artist" and the paragraph text.
 
 ## Ideas (ready)
