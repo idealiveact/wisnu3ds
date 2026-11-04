@@ -173,7 +173,7 @@ export const projects: Project[] = [
     summary:
       "Samsung work from 2015 to 2020: a carnival activation booth, a digital-dealer showroom stand, a Galaxy Note8 photo experience, the Galaxy Note20 virtual launch booth, and showroom and lifestyle visualisations made for the brand's TV & AV campaign.",
     description:
-      "A body of Samsung work from 2015 to 2020: the Samsung Galaxy booth for Jember Fashion Carnaval, a compact digital-dealer stand, a Galaxy Note8 'Do bigger things' photo experience, the Galaxy Note20 virtual launch booth, and a showroom plus two lifestyle interiors made for the brand's TV & AV campaign. All of it modelled and rendered in 3ds Max 2018 with V-Ray, then finished in Photoshop.",
+      "A body of Samsung work from 2015 to 2020, built while in-house at an activation agency. It opens with the big Samsung Galaxy booth for Jember Fashion Carnaval, a compact digital-dealer stand with Smart Car and Gear VR demo stations, and a Galaxy Note8 'Do bigger things' photo experience drawn like a life-size pen sketch. In 2020 the brief moved online: the Galaxy Note20 virtual launch booth, a circular stand with a floating rose-gold ring, a presenter desk and 'Power to Work' and 'Power to Play' zones, followed by a showroom building and two lifestyle interiors made for the brand's TV & AV campaign. Everything was modelled and rendered in 3ds Max 2018 with V-Ray, then finished in Photoshop.",
     cover: samsungBooth1.url,
     shareImage: samsungPreview.url,
     gallery: [
