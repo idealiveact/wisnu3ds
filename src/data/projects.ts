@@ -1,4 +1,4 @@
-import hero from "@/assets/hero.jpg";
+import hero from "@/assets/hero-activation-booth.jpg.asset.json";
 import pertaminaTerminal from "@/assets/pertamina-hut-64-terminal.jpg.asset.json";
 import pertaminaEnergyPark from "@/assets/pertamina-hut-64-energy-park-2021.jpg.asset.json";
 import pertaminaOffshore from "@/assets/pertamina-hut-64-offshore-platform-2021.jpg.asset.json";
@@ -12,7 +12,7 @@ import pertaminaPasarRakyatStage from "@/assets/pertamina-pasar-rakyat-stage-202
 import samsungBooth1 from "@/assets/samsung-note20-booth-1.jpg.asset.json";
 import samsungBooth2 from "@/assets/samsung-note20-booth-2.jpg.asset.json";
 import samsungBooth3 from "@/assets/samsung-note20-booth-3.jpg.asset.json";
-import homePreview from "@/assets/home-preview.jpg.asset.json";
+import homePreview from "@/assets/home-preview-activation.jpg.asset.json";
 import pertaminaPreview from "@/assets/pertamina-preview.jpg.asset.json";
 import samsungPreview from "@/assets/samsung-preview.jpg.asset.json";
 
@@ -200,5 +200,5 @@ export const projects: Project[] = [
 
 export const byCategory = (c: CategoryId) => projects.filter((p) => p.category === c);
 export const getProject = (slug: string) => projects.find((p) => p.slug === slug);
-export { hero as heroImage };
+export const heroImage = hero.url;
 export const heroShareImage = homePreview.url;
