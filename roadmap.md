@@ -12,11 +12,12 @@
 - [x] Personal page emptied with a "coming soon" message; its two example projects deleted.
 
 ## Open
+- [ ] Video from Wisnu: no video file arrived in the chat uploads, so the requested video review is blocked until he attaches it.
 - [ ] Add Wisnu's own photos to Gallery Photo (currently empty by request).
 - [ ] Fill Personal with real projects once they exist.
 - [ ] Confirm Pertamina Kartini is 2025 — the year was read from the "68" Pertamina anniversary emblem on its screen, not from Wisnu.
 - [ ] Confirm the Pertamina write-up is accurate: role "3D Artist" and the paragraph text.
 - [x] About bio: Wisnu's real two-paragraph bio in place of the placeholder copy.
-- [ ] About page still shows the p2.jpg sample image on the right — awaiting Wisnu's choice of image.
+- [x] About right-side image: Wisnu's own render (Samsung Galaxy activation concept with carnival performers) shown full-size in the right panel.
 - [x] About toolset split into two groups: **Software** (3ds Max, V-Ray, SketchUp, Adobe Photoshop, CorelDRAW) and **AI** (ChatGPT, Gemini, Claude, Meshy, Lovable).
 - [x] About opens with a profile header: "Wisnu Kesuma" / "Senior 3D Designer | Brand Activation & Exhibition" / "Jakarta Metropolitan Area · wisnu3ds@gmail.com" (mailto).

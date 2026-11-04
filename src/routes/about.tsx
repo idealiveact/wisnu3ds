@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Mail } from "lucide-react";
-import p2 from "@/assets/p2.jpg";
+import showcase from "@/assets/about-showcase.jpg.asset.json";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
@@ -60,7 +60,16 @@ function About() {
           {aiTools.map((s) => <li key={s} className="chip">{s}</li>)}
         </ul>
       </div>
-      <img src={p2} alt="Sample work" width={1600} height={1008} loading="lazy" className="h-full max-h-[80vh] w-full rounded-sm object-cover" />
+      <div>
+        <img
+          src={showcase.url}
+          alt="Samsung Galaxy activation booth concept at night, with carnival performers in costume"
+          width={1410}
+          height={752}
+          loading="lazy"
+          className="h-auto w-full rounded-sm border border-border object-cover object-[68%_center] md:h-full"
+        />
+      </div>
     </section>
   );
 }
