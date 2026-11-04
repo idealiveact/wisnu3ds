@@ -24,9 +24,11 @@ function Index() {
         <h1 className="fade-up slide-lead mt-4 font-display text-6xl font-bold leading-[0.9] text-foreground md:text-[9rem]">
           Wisnu<br />Kesuma<span className="text-primary">.</span>
         </h1>
-        <p className="fade-up slide-lead mt-6 max-w-xl text-muted-foreground md:text-lg">
-          Senior 3D Designer in brand activation with 15+ years of experience in booth and event design. I enjoy
-          finding practical, budget-friendly ways to bring ideas to life, from small setups to exhibitions like IIMS,
+        <p className="fade-up slide-lead mt-6 max-w-lg text-muted-foreground md:text-lg">
+          Senior 3D Designer in brand activation with 15+ years of experience in booth and event design.
+        </p>
+        <p className="fade-up slide-lead mt-3 max-w-lg text-muted-foreground md:text-lg">
+          I find practical, budget-friendly ways to bring ideas to life, from small setups to exhibitions like IIMS,
           GIIAS, and PRJ.
         </p>
         <div className="fade-up mt-8 flex flex-wrap gap-3">
