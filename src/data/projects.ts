@@ -1,6 +1,3 @@
-import p1 from "@/assets/p1.jpg";
-import p2 from "@/assets/p2.jpg";
-import p3 from "@/assets/p3.jpg";
 import hero from "@/assets/hero.jpg";
 import pertaminaTerminal from "@/assets/pertamina-hut-64-terminal.jpg.asset.json";
 import pertaminaEnergyPark from "@/assets/pertamina-hut-64-energy-park-2021.jpg.asset.json";
@@ -16,8 +13,6 @@ import samsungBooth1 from "@/assets/samsung-note20-booth-1.jpg.asset.json";
 import samsungBooth2 from "@/assets/samsung-note20-booth-2.jpg.asset.json";
 import samsungBooth3 from "@/assets/samsung-note20-booth-3.jpg.asset.json";
 import homePreview from "@/assets/home-preview.jpg.asset.json";
-import cyberPreview from "@/assets/cyber-bust-preview.jpg.asset.json";
-import forestPreview from "@/assets/forest-preview.jpg.asset.json";
 import pertaminaPreview from "@/assets/pertamina-preview.jpg.asset.json";
 import samsungPreview from "@/assets/samsung-preview.jpg.asset.json";
 
@@ -27,12 +22,10 @@ import samsungPreview from "@/assets/samsung-preview.jpg.asset.json";
  * Setiap gambar galeri punya label judul + tahun (wajib) dan caption (opsional),
  * supaya pengunjung bisa membedakan satu render dengan render lainnya.
  */
-export type CategoryId = "work" | "technical-art" | "personal";
+export type CategoryId = "work";
 
-export const categories: Record<CategoryId, { label: string; path: "/work" | "/technical-art" | "/personal"; intro: string }> = {
+export const categories: Record<CategoryId, { label: string; path: "/work"; intro: string }> = {
   work: { label: "Work", path: "/work", intro: "Commercial visualization & client projects." },
-  "technical-art": { label: "Technical Art", path: "/technical-art", intro: "Shaders, tools, rigs and procedural systems." },
-  personal: { label: "Personal Projects", path: "/personal", intro: "Experiments and self-initiated worlds." },
 };
 
 export interface GalleryItem {
@@ -201,75 +194,6 @@ export const projects: Project[] = [
         width: 1920,
         height: 1080,
       },
-    ],
-  },
-  {
-    slug: "cyber-bust",
-    title: "Cyber Bust Shader Study",
-    category: "technical-art",
-    year: "2025",
-    client: "Internal R&D",
-    role: "Technical Artist",
-    software: ["ZBrush", "Houdini", "Unreal Engine"],
-    summary: "Procedural wear shader and turntable rig.",
-    description: "Placeholder description. Document the node setup, performance targets and reusable tools.",
-    cover: p2,
-    shareImage: cyberPreview.url,
-    gallery: [
-      { src: p2, title: "Cyber Bust", year: "2025", width: 1600, height: 1008 },
-      { src: p1, title: "Wear Study", year: "2025", width: 1600, height: 1008 },
-    ],
-  },
-  {
-    slug: "procedural-forest",
-    title: "Procedural Forest Tool",
-    category: "technical-art",
-    year: "2024",
-    client: "Game Studio X",
-    role: "Tools Developer",
-    software: ["Houdini", "Unreal Engine", "Python"],
-    summary: "Scatter system for large forest biomes.",
-    description: "Placeholder description. Explain the HDA parameters, artist workflow and results.",
-    cover: p3,
-    shareImage: forestPreview.url,
-    gallery: [
-      { src: p3, title: "Forest Scatter", year: "2024", width: 1600, height: 1008 },
-      { src: hero, title: "Biome Layout", year: "2024", width: 1920, height: 1088 },
-    ],
-  },
-  {
-    slug: "lantern-shrine",
-    title: "Lantern Shrine",
-    category: "personal",
-    year: "2026",
-    client: "Personal",
-    role: "Environment Artist",
-    software: ["Unreal Engine", "Megascans", "Blender"],
-    summary: "Misty forest shrine at dusk.",
-    description: "Placeholder description. Share the story, references and what you learned.",
-    cover: p3,
-    shareImage: forestPreview.url,
-    gallery: [
-      { src: p3, title: "Lantern Shrine", year: "2026", width: 1600, height: 1008 },
-      { src: p2, title: "Detail Study", year: "2026", width: 1600, height: 1008 },
-      { src: hero, title: "Wide Shot", year: "2026", width: 1920, height: 1088 },
-    ],
-  },
-  {
-    slug: "quiet-concrete",
-    title: "Quiet Concrete",
-    category: "personal",
-    year: "2024",
-    client: "Personal",
-    role: "3D Artist",
-    software: ["Blender", "Eevee"],
-    summary: "Mood study on light and mass.",
-    description: "Placeholder description.",
-    cover: hero,
-    shareImage: homePreview.url,
-    gallery: [
-      { src: hero, title: "Quiet Concrete", year: "2024", width: 1920, height: 1088 },
-      { src: p1, title: "Material Study", year: "2024", width: 1600, height: 1008 },
     ],
   },
 ];
