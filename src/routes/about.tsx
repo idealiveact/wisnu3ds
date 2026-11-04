@@ -5,7 +5,7 @@ export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
       { title: "About — Wisnu Kesuma 3D" },
-      { name: "description", content: "About Wisnu Kesuma, Senior 3D Designer in brand activation." },
+      { name: "description", content: "Wisnu Kesuma — creative designer with 15+ years in exhibition booth and event design, from small setups to IIMS, GIIAS and PRJ." },
       { property: "og:title", content: "About — Wisnu Kesuma 3D" },
       { property: "og:description", content: "Background, skills and toolset." },
       { property: "og:type", content: "profile" },
@@ -25,7 +25,14 @@ function About() {
           Light is the <span className="text-primary">material</span>.
         </h1>
         <p className="mt-8 text-lg leading-relaxed text-muted-foreground">
-          Placeholder bio. I'm a 3D artist and visualizer with 8+ years of experience in architectural visualization, product rendering and real-time technical art.
+          Creative designer with 15+ years of experience in the creative industry, specializing in exhibition
+          booth and event design. Started as a freelancer and has worked since 2008 at Beeactivator, Dwisapta
+          Dentsu, Indonesia5, Dyacomm, ASSI, and the regional media group Tribun.
+        </p>
+        <p className="mt-6 text-lg leading-relaxed text-muted-foreground">
+          Experienced in delivering designs across all budget levels, from low to large-scale projects, including
+          major exhibitions such as IIMS, GIIAS, and PRJ. Skilled at maximizing materials to make booths more
+          cost-efficient without compromising visual impact.
         </p>
         <p className="eyebrow mt-10">Toolset</p>
         <ul className="mt-4 flex flex-wrap gap-2">
