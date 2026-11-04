@@ -1,10 +1,5 @@
 import { createServerFn } from "@tanstack/react-start";
-import { z } from "zod";
-
-const Input = z.object({
-  name: z.string().trim().max(100).optional().default(""),
-  notes: z.string().trim().min(20, "Please describe your project in a bit more detail.").max(4000),
-});
+import { GenerateBriefInput, MAX_BRIEFS_PER_EMAIL_PER_HOUR, SendBriefInput } from "@/lib/brief.schema";
 
 const SYSTEM = `You help Wisnu Kesuma, a Senior 3D Designer for brand activation, exhibition booths and events, turn a prospective client's rough notes into a clear project brief.
 Write in the same language the client used. Use these markdown sections with "## " headings:
@@ -12,7 +7,7 @@ Project Overview, Objectives, Deliverables, Space & Technical Details, Style & B
 Only use facts from the notes. Where information is missing write "Not specified" and add a matching question under Open Questions. Be concise and practical.`;
 
 export const generateBrief = createServerFn({ method: "POST" })
-  .inputValidator((d: unknown) => Input.parse(d))
+  .inputValidator((d: unknown) => GenerateBriefInput.parse(d))
   .handler(async ({ data }) => {
     const apiKey = process.env["LOVABLE_API_KEY"];
     if (!apiKey) return { brief: "", error: "The brief assistant is not configured yet." };
@@ -53,4 +48,46 @@ export const generateBrief = createServerFn({ method: "POST" })
         : "Couldn't create the brief. Please try again or email directly.";
       return { brief: "", error: msg };
     }
+  });
+
+const SEND_FAILED = "Your brief couldn't be sent just now. Please try again, or email wisnu3ds@gmail.com directly.";
+
+/** Delivers a finished brief to Wisnu by saving it to his private brief inbox. */
+export const sendBrief = createServerFn({ method: "POST" })
+  .inputValidator((d: unknown) => SendBriefInput.parse(d))
+  .handler(async ({ data }): Promise<{ ok: boolean; error: string | null }> => {
+    // Bots fill the hidden field; pretend success so they move on.
+    if (data.website) return { ok: true, error: null };
+
+    const { supabaseAdmin } = await import("@/integrations/supabase/client.server");
+
+    const since = new Date(Date.now() - 60 * 60 * 1000).toISOString();
+    const { count, error: countError } = await supabaseAdmin
+      .from("brief_requests")
+      .select("id", { count: "exact", head: true })
+      .eq("client_email", data.email)
+      .gte("created_at", since);
+    if (countError) {
+      console.error("brief send: rate check failed", countError);
+      return { ok: false, error: SEND_FAILED };
+    }
+    if ((count ?? 0) >= MAX_BRIEFS_PER_EMAIL_PER_HOUR) {
+      return {
+        ok: false,
+        error: "You've already sent several briefs in the last hour. Please wait a little, or email wisnu3ds@gmail.com directly.",
+      };
+    }
+
+    const { error } = await supabaseAdmin.from("brief_requests").insert({
+      client_name: data.name,
+      client_email: data.email,
+      client_phone: data.phone,
+      notes: data.notes,
+      brief: data.brief,
+    });
+    if (error) {
+      console.error("brief send: save failed", error);
+      return { ok: false, error: SEND_FAILED };
+    }
+    return { ok: true, error: null };
   });
