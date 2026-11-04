@@ -17,6 +17,8 @@ function renderBrief(md: string) {
 const fieldClass =
   "w-full rounded-md border border-input bg-background px-4 py-3 text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring aria-[invalid=true]:border-destructive";
 
+type FieldErrors = { email?: string | undefined; phone?: string | undefined };
+
 type SendState =
   | { status: "idle" }
   | { status: "sending" }
@@ -36,7 +38,7 @@ export function BriefBuilder() {
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
   const [website, setWebsite] = useState("");
-  const [fieldErrors, setFieldErrors] = useState<{ email?: string; phone?: string }>({});
+  const [fieldErrors, setFieldErrors] = useState<FieldErrors>({});
   const [send, setSend] = useState<SendState>({ status: "idle" });
   const [copied, setCopied] = useState<"idle" | "done" | "failed">("idle");
 
@@ -74,7 +76,7 @@ export function BriefBuilder() {
     if (send.status === "sending") return;
     const parsed = SendBriefInput.safeParse({ name, email, phone, notes, brief, website });
     if (!parsed.success) {
-      const errs: { email?: string; phone?: string } = {};
+      const errs: FieldErrors = {};
       let other: string | null = null;
       for (const issue of parsed.error.issues) {
         const key = issue.path[0];
