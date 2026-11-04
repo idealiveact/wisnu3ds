@@ -36,8 +36,10 @@ function About() {
             <Mail size={13} aria-hidden /> wisnu3ds@gmail.com
           </a>
         </p>
-        <h2 className="fade-up mt-10 font-display text-5xl font-bold leading-[0.95] text-foreground md:text-7xl">
-          Light is the <span className="text-primary">material</span>.
+        <h2 className="fade-up mt-10 font-display text-4xl font-bold leading-[1.05] text-foreground md:text-6xl">
+          Designed to be walked into.
+          <br />
+          Built to <span className="text-primary">bring crowds in</span>.
         </h2>
         <p className="mt-8 text-lg leading-relaxed text-muted-foreground">
           Creative designer with 15+ years of experience in the creative industry, specializing in exhibition
