@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { BriefBuilder } from "@/components/BriefBuilder";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
@@ -42,6 +43,7 @@ function Contact() {
           </a>
         ))}
       </div>
+      <BriefBuilder />
     </section>
   );
 }
