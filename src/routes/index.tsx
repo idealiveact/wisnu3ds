@@ -8,7 +8,7 @@ export const Route = createFileRoute("/")({
     description: "Wisnu Kesuma, Senior 3D Designer with 15+ years in brand activation, booth and event design. Explore work for Pertamina, Samsung, IIMS, GIIAS and PRJ.",
     path: "/",
     image: heroShareImage,
-    imageAlt: "3D environment render on Wisnu Kesuma's portfolio homepage",
+    imageAlt: "Samsung Galaxy activation booth render at night with costumed carnival performers",
   }),
   component: Index,
 });
@@ -16,7 +16,7 @@ export const Route = createFileRoute("/")({
 function Index() {
   return (
     <section className="relative h-[100svh] overflow-hidden">
-      <img src={heroImage} alt="" width={1920} height={1088} fetchPriority="high" className="hero-zoom absolute inset-0 h-full w-full object-cover" />
+      <img src={heroImage} alt="" width={1410} height={752} fetchPriority="high" className="hero-zoom absolute inset-0 h-full w-full object-cover" />
       <div className="absolute inset-0 bg-scrim" />
       <div className="relative z-10 flex h-full flex-col justify-end px-6 pb-16 md:px-10 md:pb-24">
         <p className="eyebrow fade-up">3D Designer</p>
