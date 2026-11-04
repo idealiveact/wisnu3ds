@@ -15,6 +15,8 @@
 - [x] About picture removed; the page now reads as one centered column until Wisnu picks a new image.
 
 ## Open
+- [ ] "Send to Wisnu" sends the brief straight to Wisnu (no mail app): save every brief on the site's backend, ask the client's reply email, show sent/failed states.
+- [ ] Inbox delivery to wisnu3ds@gmail.com — blocked until Wisnu sets up an email sender domain he owns.
 - [ ] About picture: Wisnu is choosing a replacement render — blocked until he sends it.
 - [ ] Video from Wisnu: no video file arrived in the chat uploads, so the requested video review is blocked until he attaches it.
 - [ ] Add Wisnu's own photos to Gallery Photo (currently empty by request).
