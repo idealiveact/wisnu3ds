@@ -6,7 +6,7 @@ import pertaminaTss from "@/assets/pertamina-tss-virtual-2022.jpg.asset.json";
 import pertaminaKeroncong from "@/assets/pertamina-keroncong-pavilion-2025.webp.asset.json";
 import pertaminaEcorun from "@/assets/pertamina-ecorun-fest-booth-2025.jpg.asset.json";
 import pertaminaKartiniStage from "@/assets/pertamina-kartini-stage-2025.jpg.asset.json";
-import pertaminaKartiniGate from "@/assets/pertamina-kartini-gate-2025.jpg.asset.json";
+import pertaminaPisHutRi from "@/assets/pertamina-pis-hut-ri-2023.jpg.asset.json";
 import pertaminaPasarRakyatGate from "@/assets/pertamina-pasar-rakyat-gate-2026.jpg.asset.json";
 import pertaminaPasarRakyatStage from "@/assets/pertamina-pasar-rakyat-stage-2026.webp.asset.json";
 import samsungBooth1 from "@/assets/samsung-note20-booth-1.jpg.asset.json";
@@ -70,7 +70,7 @@ export const projects: Project[] = [
     summary:
       "A collection of commercial visualization work for Pertamina from 2021 to 2026: anniversary key visuals, a virtual exhibition environment, event stages, entrance gates and exhibition booths.",
     description:
-      "An ongoing collaboration with Pertamina: anniversary key visuals, a virtual exhibition environment, and artwork for stages, entrance gates and exhibition booths. Each piece asks the same thing of a 3D artist — take a very large, very technical company and reduce it to one image that people recognize at a glance.\n\nThe anniversary key visual lifts a working LPG terminal off the map and sets it on a floating island in the sky: two tankers moored at the jetty, a row of cylindrical storage tanks, spherical gas holders, the plant building, and a large Pertamina sign carved into the hillside. Water pours out of the inland bay and falls over the island's edge into the cloud layer below, which lets heavy infrastructure read as weightless without hiding any of the equipment that makes it real. Two companion studies from the same series — a floating \"Energy Park\" island and an offshore platform — sit beside it.\n\nThe rest of the gallery follows the same brief as the collaboration continues: Pertamina TSS Virtual, a hexagonal virtual exhibition environment whose floating districts stand for Human Capital, Asset Management, ICT, Master Data Operation and Shared Services; a joglo-style Pertamina pavilion for Indonesia Keroncong Festival in Borobudur Magelang; a MyPertamina Ecorun Fest activation booth with a living green wall; the Pertamina Kartini stage and entrance gate built around the tagline \"Energi dari Hati\"; and MyPertamina Pasar Rakyat, an Independence Day market at Hutan Kota GBK Jakarta, shown here as its bamboo-wrapped entrance gate and its main stage.\n\nEverything in this group follows one pipeline: modelled and rendered in 3ds Max 2018 with V-Ray, then composited and finished in Photoshop, with graphic layout and print-ready artwork prepared in CorelDRAW.",
+      "An ongoing collaboration with Pertamina: anniversary key visuals, a virtual exhibition environment, and artwork for stages, entrance gates and exhibition booths. Each piece asks the same thing of a 3D artist — take a very large, very technical company and reduce it to one image that people recognize at a glance.\n\nThe anniversary key visual lifts a working LPG terminal off the map and sets it on a floating island in the sky: two tankers moored at the jetty, a row of cylindrical storage tanks, spherical gas holders, the plant building, and a large Pertamina sign carved into the hillside. Water pours out of the inland bay and falls over the island's edge into the cloud layer below, which lets heavy infrastructure read as weightless without hiding any of the equipment that makes it real. Two companion studies from the same series — a floating \"Energy Park\" island and an offshore platform — sit beside it.\n\nThe rest of the gallery follows the same brief as the collaboration continues: Pertamina TSS Virtual, a hexagonal virtual exhibition environment whose floating districts stand for Human Capital, Asset Management, ICT, Master Data Operation and Shared Services; an Independence Day display for Pertamina International Shipping, where a tanker sails over a layered coral reef beneath the campaign slogan; a joglo-style Pertamina pavilion for Indonesia Keroncong Festival in Borobudur Magelang; a MyPertamina Ecorun Fest activation booth with a living green wall; the Pertamina Kartini stage built around the tagline \"Energi dari Hati\"; and MyPertamina Pasar Rakyat, an Independence Day market at Hutan Kota GBK Jakarta, shown here as its bamboo-wrapped entrance gate and its main stage.\n\nEverything in this group follows one pipeline: modelled and rendered in 3ds Max 2018 with V-Ray, then composited and finished in Photoshop, with graphic layout and print-ready artwork prepared in CorelDRAW.",
     cover: pertaminaTerminal.url,
     shareImage: pertaminaPreview.url,
     gallery: [
@@ -107,6 +107,14 @@ export const projects: Project[] = [
         height: 1080,
       },
       {
+        src: pertaminaPisHutRi.url,
+        title: "Pertamina International Shipping — Independence Day Display",
+        year: "2023",
+        caption: "Photo backdrop for the 78th Independence Day: a slogan panel beside a layered ocean diorama, with a tanker riding over a coral reef.",
+        width: 1672,
+        height: 940,
+      },
+      {
         src: pertaminaKeroncong.url,
         title: "Indonesia Keroncong Festival Pavilion",
         year: "2025",
@@ -127,14 +135,6 @@ export const projects: Project[] = [
         title: "Pertamina Kartini — Stage",
         year: "2025",
         caption: "\"Energi dari Hati\" stage set with layered arches, batik cloud motifs and 3D floral sculptures.",
-        width: 1672,
-        height: 940,
-      },
-      {
-        src: pertaminaKartiniGate.url,
-        title: "Pertamina Kartini — Entrance Gate",
-        year: "2025",
-        caption: "Foyer facade framing two portals with batik motifs, a neon flower outline and a 3D lotus.",
         width: 1672,
         height: 940,
       },
