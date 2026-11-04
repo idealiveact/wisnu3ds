@@ -19,3 +19,4 @@
 - [x] About bio: Wisnu's real two-paragraph bio in place of the placeholder copy.
 - [ ] About page still shows placeholder extras: headline "Light is the material." and the p2.jpg sample image on the right — awaiting Wisnu's wording/choices.
 - [x] About toolset split into two groups: **Software** (3ds Max, V-Ray, SketchUp, Adobe Photoshop, CorelDRAW) and **AI** (ChatGPT, Gemini, Claude, Meshy, Lovable).
+- [x] About opens with a profile header: "Wisnu Kesuma" / "Senior 3D Designer | Brand Activation & Exhibition" / "Jakarta Metropolitan Area · wisnu3ds@gmail.com" (mailto).

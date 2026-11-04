@@ -27,4 +27,13 @@ describe("App routing", () => {
     const ids = matches.map((m) => String(m.routeId));
     expect(ids.some((id) => id.endsWith("work")) || ids.length > 0).toBe(true);
   });
+
+  it("shows the profile header on the About page", async () => {
+    const res = await fetch("http://localhost:8080/about");
+    expect(res.ok).toBe(true);
+    const html = await res.text();
+    for (const text of ["Wisnu Kesuma", "Senior 3D Designer", "Brand Activation", "Jakarta Metropolitan Area", "mailto:wisnu3ds@gmail.com"]) {
+      expect(html, text).toContain(text);
+    }
+  });
 });

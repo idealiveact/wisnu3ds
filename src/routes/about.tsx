@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { Mail } from "lucide-react";
 import p2 from "@/assets/p2.jpg";
 
 export const Route = createFileRoute("/about")({
@@ -22,9 +23,22 @@ function About() {
     <section className="grid min-h-screen gap-12 px-6 pt-28 pb-16 md:grid-cols-2 md:px-10">
       <div>
         <p className="eyebrow">About</p>
-        <h1 className="fade-up mt-4 font-display text-5xl font-bold leading-[0.95] text-foreground md:text-7xl">
-          Light is the <span className="text-primary">material</span>.
+        <h1 className="fade-up mt-4 font-display text-4xl font-bold leading-[1] text-foreground md:text-5xl">
+          Wisnu Kesuma
         </h1>
+        <p className="mt-3 text-lg text-muted-foreground">
+          Senior 3D Designer <span className="text-primary">|</span> Brand Activation &amp; Exhibition
+        </p>
+        <p className="mt-1 text-sm text-muted-foreground">
+          Jakarta Metropolitan Area
+          <span className="mx-2">·</span>
+          <a className="inline-flex items-center gap-1 underline-offset-4 hover:underline" href="mailto:wisnu3ds@gmail.com">
+            <Mail size={13} aria-hidden /> wisnu3ds@gmail.com
+          </a>
+        </p>
+        <h2 className="fade-up mt-10 font-display text-5xl font-bold leading-[0.95] text-foreground md:text-7xl">
+          Light is the <span className="text-primary">material</span>.
+        </h2>
         <p className="mt-8 text-lg leading-relaxed text-muted-foreground">
           Creative designer with 15+ years of experience in the creative industry, specializing in exhibition
           booth and event design. Started as a freelancer and has worked since 2008 at Beeactivator, Dwisapta
