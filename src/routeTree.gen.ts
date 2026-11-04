@@ -21,6 +21,7 @@ import { Route as TechnicalArtRouteImport } from './routes/technical-art'
 import { Route as WorkRouteImport } from './routes/work'
 import { Route as AuthenticatedBriefsRouteImport } from './routes/_authenticated/briefs'
 import { Route as ProjectsSlugRouteImport } from './routes/projects.$slug'
+import { Route as ProjectsSamsungNote20VirtualBoothRouteImport } from './routes/projects.samsung-note20-virtual-booth'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -81,6 +82,12 @@ const ProjectsSlugRoute = ProjectsSlugRouteImport.update({
   path: '/projects/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ProjectsSamsungNote20VirtualBoothRoute =
+  ProjectsSamsungNote20VirtualBoothRouteImport.update({
+    id: '/projects/samsung-note20-virtual-booth',
+    path: '/projects/samsung-note20-virtual-booth',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -94,6 +101,7 @@ export interface FileRoutesByFullPath {
   '/work': typeof WorkRoute
   '/briefs': typeof AuthenticatedBriefsRoute
   '/projects/$slug': typeof ProjectsSlugRoute
+  '/projects/samsung-note20-virtual-booth': typeof ProjectsSamsungNote20VirtualBoothRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -107,6 +115,7 @@ export interface FileRoutesByTo {
   '/work': typeof WorkRoute
   '/briefs': typeof AuthenticatedBriefsRoute
   '/projects/$slug': typeof ProjectsSlugRoute
+  '/projects/samsung-note20-virtual-booth': typeof ProjectsSamsungNote20VirtualBoothRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -122,6 +131,7 @@ export interface FileRoutesById {
   '/work': typeof WorkRoute
   '/_authenticated/briefs': typeof AuthenticatedBriefsRoute
   '/projects/$slug': typeof ProjectsSlugRoute
+  '/projects/samsung-note20-virtual-booth': typeof ProjectsSamsungNote20VirtualBoothRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -137,6 +147,7 @@ export interface FileRouteTypes {
     | '/work'
     | '/briefs'
     | '/projects/$slug'
+    | '/projects/samsung-note20-virtual-booth'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -150,6 +161,7 @@ export interface FileRouteTypes {
     | '/work'
     | '/briefs'
     | '/projects/$slug'
+    | '/projects/samsung-note20-virtual-booth'
   id:
     | '__root__'
     | '/'
@@ -164,6 +176,7 @@ export interface FileRouteTypes {
     | '/work'
     | '/_authenticated/briefs'
     | '/projects/$slug'
+    | '/projects/samsung-note20-virtual-booth'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -178,6 +191,7 @@ export interface RootRouteChildren {
   TechnicalArtRoute: typeof TechnicalArtRoute
   WorkRoute: typeof WorkRoute
   ProjectsSlugRoute: typeof ProjectsSlugRoute
+  ProjectsSamsungNote20VirtualBoothRoute: typeof ProjectsSamsungNote20VirtualBoothRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -266,6 +280,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ProjectsSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/projects/samsung-note20-virtual-booth': {
+      id: '/projects/samsung-note20-virtual-booth'
+      path: '/projects/samsung-note20-virtual-booth'
+      fullPath: '/projects/samsung-note20-virtual-booth'
+      preLoaderRoute: typeof ProjectsSamsungNote20VirtualBoothRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -292,6 +313,8 @@ const rootRouteChildren: RootRouteChildren = {
   TechnicalArtRoute: TechnicalArtRoute,
   WorkRoute: WorkRoute,
   ProjectsSlugRoute: ProjectsSlugRoute,
+  ProjectsSamsungNote20VirtualBoothRoute:
+    ProjectsSamsungNote20VirtualBoothRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

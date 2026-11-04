@@ -12,6 +12,9 @@ import pertaminaPasarRakyatStage from "@/assets/pertamina-pasar-rakyat-stage-202
 import samsungBooth1 from "@/assets/samsung-note20-booth-1.jpg.asset.json";
 import samsungBooth2 from "@/assets/samsung-note20-booth-2.jpg.asset.json";
 import samsungBooth3 from "@/assets/samsung-note20-booth-3.jpg.asset.json";
+import samsungDealerBooth from "@/assets/samsung-digital-dealer-mini-booth-2017.jpg.asset.json";
+import samsungTvAvInterior from "@/assets/samsung-tv-av-interior-2020.jpg.asset.json";
+import samsungTvAvSeaside from "@/assets/samsung-tv-av-seaside-infinity-pool-2020.jpg.asset.json";
 import homePreview from "@/assets/home-preview-activation.jpg.asset.json";
 import pertaminaPreview from "@/assets/pertamina-preview.jpg.asset.json";
 import samsungPreview from "@/assets/samsung-preview.jpg.asset.json";
@@ -157,19 +160,28 @@ export const projects: Project[] = [
     ],
   },
   {
-    slug: "samsung-note20-virtual-booth",
-    title: "Samsung Galaxy Note20 Virtual Booth",
+    slug: "samsung",
+    title: "SAMSUNG Project",
     category: "work",
-    year: "2020",
+    year: "2017–2020",
     client: "Samsung (office project)",
     role: "3D Artist",
     software: ["3ds Max 2018", "V-Ray", "Photoshop"],
-    summary: "A rose-gold virtual exhibition booth for the Samsung Galaxy Note20 launch.",
+    summary:
+      "Samsung work from 2017 to 2020: a digital-dealer showroom stand, the Galaxy Note20 virtual launch booth, and lifestyle interior visualisations for the TV & AV line.",
     description:
-      "A virtual exhibition booth designed for the Samsung Galaxy Note20 launch in 2020. The circular stand is wrapped by a floating rose-gold ring with light strips and a hexagonal light ceiling, echoing the Mystic Bronze colour of the phone. Inside are a central Galaxy Note20 display wall with an oversized S Pen, a 'Powerful Phone' demo counter, a 'Doodling Contest' area, and a 'Work & Play Experience' zone that pairs a lounge corner (Power to Work) with a racing-simulator gaming setup (Power to Play). Modelled and rendered in 3ds Max 2018 with V-Ray, finished in Photoshop.",
+      "A run of Samsung work from 2017 to 2020: a compact digital-dealer showroom stand, the Galaxy Note20 virtual launch booth, and interior visualisations made for the brand's TV & AV line.\n\nThe earliest piece is a small-footprint stand for a Samsung digital dealer: a curved structure in pale oak and white, edged in Samsung blue, with two demo stations — Smart Car and Gear VR — set under a curved canopy carrying illuminated 3D lettering, and a Gear S3 plinth to the side. Blue LED strip lighting around the base of the platform does most of the work at trade-show floor level, pulling people in from across a hall.\n\nThe Galaxy Note20 virtual booth is the largest of the group. The circular stand is wrapped by a floating rose-gold ring with light strips and a hexagonal light ceiling, echoing the Mystic Bronze colour of the phone. Inside are a central Galaxy Note20 display wall with an oversized S Pen, a 'Powerful Phone' demo counter, a 'Doodling Contest' area, and a 'Work & Play Experience' zone that pairs a lounge corner (Power to Work) with a racing-simulator gaming setup (Power to Play).\n\nThe TV & AV interiors take a different route: instead of a stand, the product is placed inside an aspirational home — a double-height residence foyer with a marble floor medallion, fluted columns, a gold sunburst mirror and a glass wall onto a tropical garden, and an oceanfront villa deck where a teak poolside runs to an infinity pool and a beach. Both are built as complete environments — furniture, planting, daylight and reflective surfaces — rather than a product shot on a plain background.\n\nEverything in this group follows one pipeline: modelled and rendered in 3ds Max 2018 with V-Ray, then composited and finished in Photoshop.",
     cover: samsungBooth1.url,
     shareImage: samsungPreview.url,
     gallery: [
+      {
+        src: samsungDealerBooth.url,
+        title: "Digital Dealer Mini Booth",
+        year: "2017",
+        caption: "Compact Samsung Digital Showroom stand: Smart Car and Gear VR demo stations under an illuminated canopy, with a Gear S3 plinth and blue LED perimeter lighting.",
+        width: 1524,
+        height: 1032,
+      },
       {
         src: samsungBooth1.url,
         title: "Full Booth Overview",
@@ -193,6 +205,22 @@ export const projects: Project[] = [
         caption: "The 'Power to Work' lounge corner beside the 'Power to Play' racing simulator.",
         width: 1920,
         height: 1080,
+      },
+      {
+        src: samsungTvAvInterior.url,
+        title: "TV & AV Campaign — Residence Foyer",
+        year: "2020",
+        caption: "Lifestyle interior for the TV & AV campaign: a double-height residence foyer with a marble floor medallion, fluted columns, a gold sunburst mirror and a glass wall onto a tropical garden.",
+        width: 1672,
+        height: 941,
+      },
+      {
+        src: samsungTvAvSeaside.url,
+        title: "TV & AV Campaign — Seaside Infinity Pool",
+        year: "2020",
+        caption: "Oceanfront villa deck: a teak poolside running to an infinity pool and a beach, with a timber entertainment unit holding an outdoor screen.",
+        width: 1672,
+        height: 941,
       },
     ],
   },
