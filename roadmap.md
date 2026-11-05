@@ -21,6 +21,7 @@
 - [x] Gallery cards are clickable: clicking a picture or the film's expand button opens a full-size viewer with the name, date, note and a position counter; arrows, keyboard arrows and swipes move between entries and wrap around, Escape / the X / a backdrop click closes it.
 
 ## Open
+- [ ] Change Work to a horizontally sliding project-cover collection matching Wisnu's reference; each cover opens its project. Verify desktop/mobile navigation and image loading.
 - [ ] Wisnu must create his account at /auth with wisnu3ds@gmail.com and confirm it before /briefs shows anything.
 - [ ] Inbox email to wisnu3ds@gmail.com for each new brief — blocked until Wisnu sets up an email sender domain he owns (or picks a forwarding service instead).
 - [ ] About picture: Wisnu is choosing a replacement render — blocked until he sends it.
