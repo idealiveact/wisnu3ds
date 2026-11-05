@@ -20,6 +20,7 @@
 - [x] Gallery opened with two labelled entries: the Galaxy Note20 virtual booth walkthrough film (September 2020, re-encoded to ~19 MB with a cover still so it streams instead of downloading) and the Pertamina International Shipping Independence Day lobby display (August 2023). Entries live in src/data/gallery.ts; every entry must carry a name, a date and a note, and every film a cover still (checked by src/test/gallery.test.ts).
 - [x] Gallery cards are clickable: clicking a picture or the film's expand button opens a full-size viewer with the name, date, note and a position counter; arrows, keyboard arrows and swipes move between entries and wrap around, Escape / the X / a backdrop click closes it.
 - [x] Work now shows a horizontally sliding project-cover collection matching Wisnu's reference; each cover opens its project. Desktop/mobile navigation and image loading verified.
+- [x] Indofood Project (2018) added to Work: a 20 x 20 metre Rumah Indofood noodle pavilion at the Jakarta Fair (PRJ), with two labelled renders (main pavilion front view, scoreboard corner) and a 699-character opening paragraph; the Work cover row now holds three projects.
 
 ## Open
 - [ ] Wisnu must create his account at /auth with wisnu3ds@gmail.com and confirm it before /briefs shows anything.
@@ -29,6 +30,7 @@
 - [ ] Confirm Pertamina Kartini is 2025 — the year was read from the "68" Pertamina anniversary emblem on its screen, not from Wisnu.
 - [ ] Confirm the SAMSUNG Project write-up: the two 2020 TV & AV interiors carry no visible branding, so their campaign name and year come only from Wisnu's file names; the foyer render shows no screen at all.
 - [ ] Confirm the Pertamina write-up is accurate: role "3D Artist" and the paragraph text.
+- [ ] Confirm the Indofood write-up: software list (3ds Max 2018, V-Ray, Photoshop, CorelDRAW) and role "3D Artist" were copied from the Pertamina entry, not told by Wisnu; the "20 x 20 m" size and PRJ 2018 date come from his message.
 
 ## Ideas (ready)
 - [ ] Hourly limit on "Generate brief" too, so nobody can burn AI credits by spamming the button.
