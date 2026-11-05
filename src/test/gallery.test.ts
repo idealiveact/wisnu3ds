@@ -35,3 +35,22 @@ describe("Gallery entries", () => {
     expect(new Set(srcs).size).toBe(srcs.length);
   });
 });
+
+// The full-size viewer is opened by clicking a card, so its arrows must always
+// land on a real entry — including wrapping past the first and the last one.
+describe("Gallery full-size viewer navigation", () => {
+  it("moves forward and backward through the entries", () => {
+    expect(stepIndex(0, 3, 1)).toBe(1);
+    expect(stepIndex(2, 3, -1)).toBe(1);
+  });
+
+  it("wraps around at both ends", () => {
+    expect(stepIndex(2, 3, 1)).toBe(0);
+    expect(stepIndex(0, 3, -1)).toBe(2);
+  });
+
+  it("stays put when there is nothing to move between", () => {
+    expect(stepIndex(0, 1, 1)).toBe(0);
+    expect(stepIndex(0, 0, 1)).toBe(0);
+  });
+});
