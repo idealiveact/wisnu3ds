@@ -21,6 +21,7 @@
 - [x] Gallery cards are clickable: clicking a picture or the film's expand button opens a full-size viewer with the name, date, note and a position counter; arrows, keyboard arrows and swipes move between entries and wrap around, Escape / the X / a backdrop click closes it.
 - [x] Work now shows a horizontally sliding project-cover collection matching Wisnu's reference; each cover opens its project. Desktop/mobile navigation and image loading verified.
 - [x] Indofood Project (2018) added to Work: a 20 x 20 metre Rumah Indofood noodle pavilion at the Jakarta Fair (PRJ), with two labelled renders (main pavilion front view, scoreboard corner) and a 699-character opening paragraph; the Work cover row now holds three projects.
+- [x] Gallery now holds five on-site photos: the 2015 Palmia temple-roof pavilion at SIAL Interfood (wide hall view and crowded floor), the Rumah Indofood pavilion at the Jakarta Fair after dark, the 2017 Bogasari island booth, and the three Best Booth plaques labelled as three consecutive years.
 
 ## Open
 - [ ] Wisnu must create his account at /auth with wisnu3ds@gmail.com and confirm it before /briefs shows anything.

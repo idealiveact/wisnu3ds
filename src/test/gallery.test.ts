@@ -34,6 +34,15 @@ describe("Gallery entries", () => {
     const srcs = galleryEntries.map((entry) => entry.src);
     expect(new Set(srcs).size).toBe(srcs.length);
   });
+
+  // Wisnu's rule: the three plaques in the Bogasari counter photo are three
+  // consecutive Best Booth wins, so that photo must say so on the page.
+  it("labels the three plaques as three consecutive Best Booth wins", () => {
+    const awards = galleryEntries.find((entry) => entry.title.includes("Best Booth"));
+    expect(awards, "no gallery entry about the Best Booth awards").toBeTruthy();
+    expect(awards?.year).toBe("2015–2017");
+    expect(awards?.caption).toContain("three consecutive years");
+  });
 });
 
 // The full-size viewer is opened by clicking a card, so its arrows must always
