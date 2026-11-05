@@ -18,6 +18,9 @@ import samsungTvAvSeaside from "@/assets/samsung-tv-av-seaside-infinity-pool-202
 import samsungJfc from "@/assets/samsung-jember-fashion-carnaval-2015.jpg.asset.json";
 import samsungNote8 from "@/assets/samsung-note8-do-bigger-things-2017.jpg.asset.json";
 import samsungHouseOfScreens from "@/assets/samsung-house-of-screens.jpg.asset.json";
+import indofoodEntrance from "@/assets/indofood-rumah-indofood-entrance-2018.jpg.asset.json";
+import indofoodScoreboard from "@/assets/indofood-rumah-indofood-scoreboard-2018.jpg.asset.json";
+import indofoodPreview from "@/assets/indofood-preview.jpg.asset.json";
 import homePreview from "@/assets/home-preview-activation.jpg.asset.json";
 import pertaminaPreview from "@/assets/pertamina-preview.jpg.asset.json";
 import samsungPreview from "@/assets/samsung-preview.jpg.asset.json";
@@ -248,6 +251,38 @@ export const projects: Project[] = [
         caption: "Oceanfront villa deck: a teak poolside running to an infinity pool and a beach, with a timber entertainment unit holding an outdoor screen.",
         width: 1672,
         height: 941,
+      },
+    ],
+  },
+  {
+    slug: "indofood",
+    title: "Indofood Project",
+    category: "work",
+    year: "2018",
+    client: "Indofood",
+    role: "3D Artist",
+    software: ["3ds Max 2018", "V-Ray", "Photoshop", "CorelDRAW"],
+    summary:
+      "A 20 x 20 metre Rumah Indofood noodle pavilion at the Jakarta Fair (PRJ) 2018: a two-storey, stadium-shaped activation with noodle counters, brand displays and a roofline of flags.",
+    description: `A 20 x 20 metre food pavilion built for Rumah Indofood at the Jakarta Fair (PRJ) in 2018: an open-air, two-storey structure shaped like a small stadium, with a circular plan, an open truss ring roof carried on round white pylons, and floodlight banks mounted along the ribs. The ground floor holds noodle serving counters and retail displays for Indomie, Pop Mie, Noodlez and PlenTop, while a mezzanine deck above is reached via the central staircase. Branding runs the full height of the build: a large stadium-shaped header reading "Rumah Indofood - Jelajah Kuliner Indonesia", a Garuda panel marking Sector 1, Indonesian and Indofood flags along the roofline, and a scoreboard showing 20 over 18.`,
+    cover: indofoodEntrance.url,
+    shareImage: indofoodPreview.url,
+    gallery: [
+      {
+        src: indofoodEntrance.url,
+        title: "Rumah Indofood — Main Pavilion",
+        year: "2018",
+        caption: "Front view of the 20 x 20 metre pavilion: the stadium-shaped \"Rumah Indofood - Jelajah Kuliner Indonesia\" header above a central staircase, a Garuda panel marking Sector 1, and Pop Mie, Indomie and PlenTop counters along the ground floor.",
+        width: 1448,
+        height: 1086,
+      },
+      {
+        src: indofoodScoreboard.url,
+        title: "Rumah Indofood — Scoreboard Corner",
+        year: "2018",
+        caption: "Corner of the same pavilion: a central scoreboard reading 20 and 18, flanked by two \"Rumah Indofood\" header signs, curved fascia panels for Pop Mie and Indomie, and PlenTop counters below.",
+        width: 1448,
+        height: 1086,
       },
     ],
   },
