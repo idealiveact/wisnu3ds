@@ -19,9 +19,9 @@
 - [x] Brief assistant given its own menu item "Start a Project" and its own page (/start-a-project); Contact keeps the email and social links plus a button pointing there.
 - [x] Gallery opened with two labelled entries: the Galaxy Note20 virtual booth walkthrough film (September 2020, re-encoded to ~19 MB with a cover still so it streams instead of downloading) and the Pertamina International Shipping Independence Day lobby display (August 2023). Entries live in src/data/gallery.ts; every entry must carry a name, a date and a note, and every film a cover still (checked by src/test/gallery.test.ts).
 - [x] Gallery cards are clickable: clicking a picture or the film's expand button opens a full-size viewer with the name, date, note and a position counter; arrows, keyboard arrows and swipes move between entries and wrap around, Escape / the X / a backdrop click closes it.
+- [x] Work now shows a horizontally sliding project-cover collection matching Wisnu's reference; each cover opens its project. Desktop/mobile navigation and image loading verified.
 
 ## Open
-- [ ] Change Work to a horizontally sliding project-cover collection matching Wisnu's reference; each cover opens its project. Verify desktop/mobile navigation and image loading.
 - [ ] Wisnu must create his account at /auth with wisnu3ds@gmail.com and confirm it before /briefs shows anything.
 - [ ] Inbox email to wisnu3ds@gmail.com for each new brief — blocked until Wisnu sets up an email sender domain he owns (or picks a forwarding service instead).
 - [ ] About picture: Wisnu is choosing a replacement render — blocked until he sends it.
