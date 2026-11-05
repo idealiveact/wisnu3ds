@@ -104,7 +104,7 @@ export const galleryEntries: GalleryEntry[] = [
     kind: "video",
     src: suzuki2023.url,
     poster: suzuki2023Poster.url,
-    title: "Suzuki at IIMS",
+    title: "Suzuki Booth Exhibition at IIMS",
     year: "February 2023",
     caption: "The stage reveal at the Suzuki booth, with a new SUV unveiled before a crowd of cameras.",
     width: 1920,
