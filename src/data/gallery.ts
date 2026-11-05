@@ -6,6 +6,12 @@ import sialPavilionFloor2015 from "@/assets/sial-interfood-indofood-pavilion-flo
 import prjRumahIndofoodNight from "@/assets/prj-rumah-indofood-night-2015.jpg.asset.json";
 import bogasariIsland2017 from "@/assets/sial-interfood-bogasari-island-booth-2017.jpg.asset.json";
 import bogasariAwards2017 from "@/assets/sial-interfood-bogasari-awards-2017.jpg.asset.json";
+import ahm2018 from "@/assets/ahm-honda-jakarta-fair-2018.mp4.asset.json";
+import ahm2018Poster from "@/assets/ahm-honda-jakarta-fair-2018-poster.jpg.asset.json";
+import suzuki2023 from "@/assets/suzuki-iims-2023.mp4.asset.json";
+import suzuki2023Poster from "@/assets/suzuki-iims-2023-poster.jpg.asset.json";
+import suzuki2025 from "@/assets/suzuki-iims-ewx-2025.mp4.asset.json";
+import suzuki2025Poster from "@/assets/suzuki-iims-ewx-2025-poster.jpg.asset.json";
 
 /**
  * Entri untuk halaman Gallery.
@@ -34,8 +40,7 @@ export const galleryEntries: GalleryEntry[] = [
     src: sialPavilion2015.url,
     title: "SIAL Interfood — Palmia Pavilion",
     year: "2015",
-    caption:
-      "A temple-roof pavilion for the Indofood group at SIAL Interfood: a swept, blue-tiled pagoda roof hung with red lanterns above open bakery counters carrying Palmia and Indomilk, with the Indofood sign on the white pavilion beside it.",
+    caption: "A blue-tiled pagoda roof hung with red lanterns above Palmia and Indomilk bakery counters.",
     width: 1920,
     height: 1280,
   },
@@ -44,8 +49,7 @@ export const galleryEntries: GalleryEntry[] = [
     src: sialPavilionFloor2015.url,
     title: "SIAL Interfood — Pavilion Floor",
     year: "2015",
-    caption:
-      "The same pavilion at peak hours: visitors lined up at the glass pastry cases and refrigerated displays under the painted rafters, with video screens and the lantern line running above the counter.",
+    caption: "Peak hours at the pavilion: visitors queueing at the pastry cases under the lantern line.",
     width: 1920,
     height: 1080,
   },
@@ -54,8 +58,7 @@ export const galleryEntries: GalleryEntry[] = [
     src: prjRumahIndofoodNight.url,
     title: "Rumah Indofood at the Jakarta Fair — Night",
     year: "2015",
-    caption:
-      "The two-storey Rumah Indofood pavilion after dark: winged \"Jelajah Kuliner Indonesia\" signs either side of a glowing Indomie screen, food counters and menu lightboxes wrapping the ground floor, and the crowd moving past in long exposure.",
+    caption: "The two-storey pavilion after dark, its Indomie screen glowing above the food counters.",
     width: 1920,
     height: 1280,
   },
@@ -64,8 +67,7 @@ export const galleryEntries: GalleryEntry[] = [
     src: bogasariIsland2017.url,
     title: "SIAL Interfood — Bogasari Island Booth",
     year: "2017",
-    caption:
-      "A circular blue-and-white island booth for Bogasari: a curved canopy with illuminated lettering, a hot-air-balloon display dressed with country names and brand marks, and a central island of bread and pastries under angled screens.",
+    caption: "A round blue-and-white booth with a hot-air-balloon display and a central bread island.",
     width: 1920,
     height: 1440,
   },
@@ -74,10 +76,19 @@ export const galleryEntries: GalleryEntry[] = [
     src: bogasariAwards2017.url,
     title: "Three Years of Best Booth Awards",
     year: "2015–2017",
-    caption:
-      "Three plaques side by side on the Bogasari counter: Best Stand Award, Best Stand Design at SIAL Interfood Indonesia 2016, and Favourite Stand at SIAL Interfood Indonesia 2017 — three consecutive years of best booth.",
+    caption: "Three plaques on the Bogasari counter — three consecutive years of best booth.",
     width: 1920,
     height: 1280,
+  },
+  {
+    kind: "video",
+    src: ahm2018.url,
+    poster: ahm2018Poster.url,
+    title: "Astra Honda Motor at the Jakarta Fair",
+    year: "June 2018",
+    caption: "A walk through the red-and-white Honda hall: a high steel roof, hanging lights and busy crowds.",
+    width: 1280,
+    height: 720,
   },
   {
     kind: "video",
@@ -85,8 +96,17 @@ export const galleryEntries: GalleryEntry[] = [
     poster: walkthrough2020Poster.url,
     title: "Galaxy Note20 Virtual Booth — Walkthrough Film",
     year: "September 2020",
-    caption:
-      "A one-minute twenty-one second camera walkthrough of the Galaxy Note20 virtual launch booth: past the rose-gold ring and the central display wall, through the 'Power to Work' lounge, the 'Power to Play' racing simulator, and the Galaxy Creation doodling station with its oversized S Pen.",
+    caption: "A camera walkthrough of the Note20 virtual booth, from the display wall to the S Pen station.",
+    width: 1920,
+    height: 1080,
+  },
+  {
+    kind: "video",
+    src: suzuki2023.url,
+    poster: suzuki2023Poster.url,
+    title: "Suzuki at IIMS",
+    year: "February 2023",
+    caption: "The stage reveal at the Suzuki booth, with a new SUV unveiled before a crowd of cameras.",
     width: 1920,
     height: 1080,
   },
@@ -95,9 +115,18 @@ export const galleryEntries: GalleryEntry[] = [
     src: lobbyPis2023.url,
     title: "Pertamina International Shipping — Independence Day Display",
     year: "August 2023",
-    caption:
-      "A lobby installation for the 78th Independence Day: a transparent acrylic panel carrying the campaign slogan beside a tiered ocean diorama, with a tanker riding over layered coral reef, a whale shark, turtles and tropical fish.",
+    caption: "An acrylic slogan panel beside an ocean diorama with a tanker riding over a coral reef.",
     width: 1448,
     height: 1086,
+  },
+  {
+    kind: "video",
+    src: suzuki2025.url,
+    poster: suzuki2025Poster.url,
+    title: "Suzuki eWX Reveal at IIMS",
+    year: "February 2025",
+    caption: "The eWX concept unveiled on a glowing green turntable beneath a wide LED screen.",
+    width: 1920,
+    height: 1080,
   },
 ];
