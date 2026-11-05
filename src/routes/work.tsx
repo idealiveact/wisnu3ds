@@ -1,15 +1,12 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { ProjectSlideshow } from "@/components/ProjectSlideshow";
+import { WorkCarousel } from "@/components/WorkCarousel";
 import { byCategory } from "@/data/projects";
+import { pageHead } from "@/lib/seo";
 
 export const Route = createFileRoute("/work")({
-  head: () => ({
-    meta: [
-      { title: "Work — Wisnu Kesuma 3D" },
-      { name: "description", content: "Commercial 3D visualization and client projects by Wisnu Kesuma." },
-      { property: "og:title", content: "Work — Wisnu Kesuma 3D" },
-      { property: "og:description", content: "Commercial 3D visualization and client projects." },
-    ],
-  }),
-  component: () => <ProjectSlideshow projects={byCategory("work")} title="Work" />,
+  head: () => {
+    const first = byCategory("work")[0];
+    return pageHead({ title: "Work — Wisnu Kesuma 3D", description: "Explore Wisnu Kesuma's 3D booth, exhibition and brand activation projects for Samsung and Pertamina.", path: "/work", ...(first ? { image: first.cover } : {}) });
+  },
+  component: () => <WorkCarousel projects={byCategory("work")} />,
 });
