@@ -1,5 +1,6 @@
 import { describe, expect, it } from "vitest";
 
+import { stepIndex } from "@/components/GalleryLightbox";
 import { galleryEntries } from "@/data/gallery";
 
 // Every entry on the Gallery page must carry its own label, date and note,

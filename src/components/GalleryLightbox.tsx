@@ -1,4 +1,4 @@
-import { useCallback, useEffect } from "react";
+import { useCallback, useEffect, useRef } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 import { Dialog, DialogContent, DialogDescription, DialogTitle } from "@/components/ui/dialog";
@@ -45,7 +45,7 @@ export function GalleryLightbox({ entries, index, open, onOpenChange, onIndexCha
     return () => window.removeEventListener("keydown", onKey);
   }, [open, go]);
 
-  const touchX = { current: null as number | null };
+  const touchX = useRef<number | null>(null);
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
