@@ -27,8 +27,8 @@ function Gallery() {
   return (
     <section className="min-h-screen px-6 pt-28 pb-16 md:px-10">
       <p className="eyebrow">Gallery</p>
-      <h1 className="fade-up mt-4 font-display text-5xl font-bold leading-[0.95] text-foreground md:text-7xl">
-        Real <span className="text-primary">projects</span>.
+      <h1 className="fade-up mt-4 max-w-4xl text-balance font-display text-3xl font-bold leading-[1.08] text-foreground md:text-5xl">
+        A collection of works, built through <span className="text-primary">process and dedication</span>.
       </h1>
       <p className="fade-up mt-5 font-display text-2xl font-bold leading-none text-foreground md:text-3xl">
         Selected <span className="text-primary">frames</span>
@@ -40,7 +40,8 @@ function Gallery() {
       ) : (
         <>
           <p className="fade-up mt-4 max-w-xl text-sm leading-relaxed text-muted-foreground">
-            A collection of works, built through process and dedication. Thank you for taking the time to view them.
+            Thank you for taking the time to view them. Click any picture or film to open it full size, then use the
+            arrows to move between them.
           </p>
           <div className="mt-10 columns-1 gap-6 sm:columns-2 lg:columns-3">
             {galleryEntries.map((entry, k) => (
