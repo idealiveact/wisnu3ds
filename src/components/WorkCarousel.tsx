@@ -25,7 +25,7 @@ export function WorkCarousel({ projects }: { projects: Project[] }) {
       <header className="mx-auto flex max-w-[1600px] items-end justify-between gap-5 px-6 md:px-10">
         <div>
           <p className="text-xs font-semibold uppercase text-primary">Selected projects</p>
-          <h1 className="mt-3 font-display text-5xl font-bold leading-none tracking-normal md:text-7xl">Work</h1>
+          <h1 className="mt-3 font-display text-4xl font-bold leading-[1.08] tracking-normal md:text-6xl">Built with care. Shown with gratitude.</h1>
         </div>
         <span className="pb-1 text-sm text-muted-foreground">{String(active + 1).padStart(2, "0")} / {String(projects.length).padStart(2, "0")}</span>
       </header>
