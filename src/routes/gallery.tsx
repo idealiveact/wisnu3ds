@@ -39,8 +39,8 @@ function Gallery() {
         </p>
       ) : (
         <>
-          <p className="mt-4 max-w-xl text-sm leading-relaxed text-muted-foreground">
-            Click any picture or film to open it full size, then use the arrows to move between them.
+          <p className="fade-up mt-4 max-w-xl text-sm leading-relaxed text-muted-foreground">
+            A collection of works, built through process and dedication. Thank you for taking the time to view them.
           </p>
           <div className="mt-10 columns-1 gap-6 sm:columns-2 lg:columns-3">
             {galleryEntries.map((entry, k) => (
