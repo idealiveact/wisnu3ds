@@ -61,6 +61,9 @@ export function WorkCarousel({ projects }: { projects: Project[] }) {
 
       <h1 className="sr-only">Built with care. Shown with gratitude.</h1>
 
+      <div className="relative flex flex-1">
+      <Button variant="outline" size="icon" className="work-arrow work-arrow-left absolute top-1/2 z-10 size-12 -translate-y-1/2 rounded-full" onClick={() => go(active - 1)} disabled={active === 0} aria-label="Previous project"><ArrowLeft /></Button>
+      <Button size="icon" className="work-arrow work-arrow-right absolute top-1/2 z-10 size-12 -translate-y-1/2 rounded-full" onClick={() => go(active + 1)} disabled={active === projects.length - 1} aria-label="Next project"><ArrowRight /></Button>
       <div
         ref={track}
         role="region"
@@ -95,8 +98,9 @@ export function WorkCarousel({ projects }: { projects: Project[] }) {
           </Link>
         ))}
       </div>
+      </div>
 
-      <footer className="mx-auto flex w-full max-w-[1600px] items-end justify-between gap-6 px-6 pb-8 md:px-10">
+      <footer className="mx-auto flex w-full max-w-[1600px] items-end justify-between gap-6 px-6 pb-20 md:px-10 md:pb-28">
         <div>
           <p className="flex items-center gap-3 text-xs font-semibold uppercase text-muted-foreground"><span className="h-px w-8 bg-primary" aria-hidden="true" />Selected projects</p>
           <p className="mt-3 font-display text-5xl font-semibold leading-none text-primary md:text-6xl">{String(active + 1).padStart(2, "0")}<span className="ml-2 text-base text-muted-foreground">/ {String(projects.length).padStart(2, "0")}</span></p>
@@ -110,10 +114,6 @@ export function WorkCarousel({ projects }: { projects: Project[] }) {
               </li>
             ))}
           </ul>
-          <div className="flex gap-3">
-            <Button variant="outline" size="icon" className="size-11 rounded-full" onClick={() => go(active - 1)} disabled={active === 0} aria-label="Previous project"><ArrowLeft /></Button>
-            <Button size="icon" className="size-11 rounded-full" onClick={() => go(active + 1)} disabled={active === projects.length - 1} aria-label="Next project"><ArrowRight /></Button>
-          </div>
         </div>
       </footer>
     </section>
