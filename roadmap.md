@@ -33,7 +33,7 @@
 - [ ] Confirm the SAMSUNG Project write-up: the two 2020 TV & AV interiors carry no visible branding, so their campaign name and year come only from Wisnu's file names; the foyer render shows no screen at all.
 - [ ] Confirm the Pertamina write-up is accurate: role "3D Artist" and the paragraph text.
 - [ ] Confirm the Indofood write-up: software list (3ds Max 2018, V-Ray, Photoshop, CorelDRAW) and role "3D Artist" were copied from the Pertamina entry, not told by Wisnu; the "20 x 20 m" size and PRJ 2018 date come from his message.
-- [ ] Confirm the Injourney write-up: year 2024 and the "Booth Exhibition Sub Holding" title come from Wisnu's message; software list and role "3D Artist" were copied from the Pertamina entry, not told by Wisnu.
+- [ ] Confirm the Injourney write-up: years 2024–2026 and the "Booth Exhibition Sub Holding", "Sahakarya" and "Gandrung Sewu / UMKM" names come from Wisnu's messages and file names — none of the 2026 renders show a logo; software list and role "3D Artist" were copied from the Pertamina entry, not told by Wisnu.
 
 ## Ideas (ready)
 - [ ] Hourly limit on "Generate brief" too, so nobody can burn AI credits by spamming the button.
