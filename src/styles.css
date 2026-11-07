@@ -218,3 +218,17 @@ body { font-family: var(--font-sans); }
 @media (prefers-reduced-motion: reduce) {
   .work-cover-number, .work-cover-caption::after { transition: none; }
 }
+
+/* Vertical Work slider: centred cover grows, neighbours shrink and dim. */
+.work-vtrack { scrollbar-width: none; scroll-snap-type: y mandatory; padding-block: calc(50svh - 12rem); display: flex; flex-direction: column; gap: 1.25rem; }
+.work-vtrack::-webkit-scrollbar { display: none; }
+.work-vcard { width: min(46vw, 760px); aspect-ratio: 16 / 9; flex: none; scroll-snap-align: center; transform: scale(.62); opacity: .45; filter: grayscale(.8); transition: transform .6s cubic-bezier(.2,.7,.2,1), opacity .6s, filter .6s; }
+.work-vcard[data-active="true"] { transform: scale(1); opacity: 1; filter: none; }
+.work-vcard-shade { background: linear-gradient(to top, oklch(0.12 0.005 60 / 0.85), transparent 55%); }
+.work-vcard-title { color: var(--work-image-foreground); opacity: 0; transition: opacity .4s; }
+.work-vcard[data-active="true"] .work-vcard-title { opacity: 1; }
+@media (max-width: 767px) {
+  .work-vcard { width: 88vw; }
+  .work-vtrack { padding-block: calc(50svh - 9rem); }
+}
+@media (prefers-reduced-motion: reduce) { .work-vcard, .work-vcard-title { transition: none; } }

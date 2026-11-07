@@ -1,31 +1,62 @@
 import { Link } from "@tanstack/react-router";
-import { ArrowLeft, ArrowRight, ArrowUpRight } from "lucide-react";
+import { ArrowDown, ArrowUp, ArrowUpRight } from "lucide-react";
 import { useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
 import type { Project } from "@/data/projects";
 
+/** Vertical cover slider: the centred cover grows and is ready to open; details sit left and right. */
 export function WorkCarousel({ projects }: { projects: Project[] }) {
   const track = useRef<HTMLDivElement>(null);
-  const pointer = useRef<{ x: number; y: number; left: number } | null>(null);
-  const dragged = useRef(false);
   const [active, setActive] = useState(0);
+  const current = projects[active];
 
   function go(index: number) {
     const element = track.current;
     const card = element?.children[index];
     if (!element || !(card instanceof HTMLElement)) return;
-    element.scrollTo({ left: card.offsetLeft - element.offsetLeft, behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "instant" : "smooth" });
+    const top = card.offsetTop - (element.clientHeight - card.offsetHeight) / 2;
+    element.scrollTo({ top, behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "instant" : "smooth" });
+  }
+
+  function onScroll() {
+    const element = track.current;
+    if (!element) return;
+    const middle = element.scrollTop + element.clientHeight / 2;
+    let closest = 0;
+    let distance = Infinity;
+    Array.from(element.children).forEach((child, index) => {
+      if (!(child instanceof HTMLElement)) return;
+      const d = Math.abs(child.offsetTop + child.offsetHeight / 2 - middle);
+      if (d < distance) { closest = index; distance = d; }
+    });
+    setActive(closest);
   }
 
   return (
-    <section className="work-collection relative isolate min-h-svh overflow-hidden bg-background pb-10 pt-28 md:pt-32">
-      <header className="mx-auto flex max-w-[1600px] items-end justify-between gap-5 px-6 md:px-10">
-        <div className="min-w-0">
-          <p className="flex items-center gap-3 text-xs font-semibold uppercase text-muted-foreground"><span className="h-px w-8 bg-primary" aria-hidden="true" />Selected projects</p>
-          <h1 className="mt-5 font-display text-4xl font-bold leading-[1.15] tracking-normal md:text-6xl">Built with care.<br /><span className="text-primary">Shown with gratitude.</span></h1>
+    <section className="work-collection relative isolate h-svh overflow-hidden bg-background pt-24">
+      <h1 className="sr-only">Built with care. Shown with gratitude.</h1>
+
+      {/* Left details */}
+      <div className="pointer-events-none absolute left-6 top-1/2 z-10 hidden w-[22vw] -translate-y-1/2 md:block lg:left-10">
+        <p className="flex items-center gap-3 text-xs font-semibold uppercase text-muted-foreground"><span className="h-px w-8 bg-primary" aria-hidden="true" />Selected projects</p>
+        <p className="mt-6 font-display text-7xl font-semibold leading-none text-primary">{String(active + 1).padStart(2, "0")}<span className="ml-2 text-base text-muted-foreground">/ {String(projects.length).padStart(2, "0")}</span></p>
+        {current && <p className="mt-6 text-sm text-muted-foreground">{current.client} · {current.role}<br />{current.year}</p>}
+      </div>
+
+      {/* Right list */}
+      <div className="absolute right-6 top-1/2 z-10 hidden w-[20vw] -translate-y-1/2 md:block lg:right-10">
+        <ul className="space-y-1">
+          {projects.map((project, index) => (
+            <li key={project.slug}>
+              <button type="button" onClick={() => go(index)} aria-current={active === index} className={`text-left font-display text-lg leading-snug transition-colors ${active === index ? "text-foreground" : "text-muted-foreground/60 hover:text-primary"}`}>{project.title}</button>
+            </li>
+          ))}
+        </ul>
+        <div className="mt-8 flex gap-3">
+          <Button variant="outline" size="icon" className="size-11 rounded-full" onClick={() => go(active - 1)} disabled={active === 0} aria-label="Previous project"><ArrowUp /></Button>
+          <Button size="icon" className="size-11 rounded-full" onClick={() => go(active + 1)} disabled={active === projects.length - 1} aria-label="Next project"><ArrowDown /></Button>
         </div>
-        <span className="hidden shrink-0 items-baseline gap-2 pb-1 font-display sm:flex"><span className="text-4xl font-medium text-foreground">{String(active + 1).padStart(2, "0")}</span><span className="text-sm text-muted-foreground">/ {String(projects.length).padStart(2, "0")}</span></span>
-      </header>
+      </div>
 
       <div
         ref={track}
@@ -33,42 +64,14 @@ export function WorkCarousel({ projects }: { projects: Project[] }) {
         aria-label="Work projects"
         aria-roledescription="carousel"
         tabIndex={0}
-        className="work-track mt-10 flex items-start gap-6 overflow-x-auto px-6 pb-5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring md:mt-12 md:gap-10 md:px-10"
-        onScroll={() => {
-          const element = track.current;
-          if (!element) return;
-          let closest = 0;
-          let distance = Infinity;
-          Array.from(element.children).forEach((child, index) => {
-            if (!(child instanceof HTMLElement)) return;
-            const difference = Math.abs(child.offsetLeft - element.offsetLeft - element.scrollLeft);
-            if (difference < distance) { closest = index; distance = difference; }
-          });
-          setActive(closest);
-        }}
+        className="work-vtrack h-full overflow-y-auto focus-visible:outline-none"
+        onScroll={onScroll}
         onKeyDown={(event) => {
-          if (event.key !== "ArrowRight" && event.key !== "ArrowLeft") return;
+          if (!["ArrowDown", "ArrowUp", "ArrowRight", "ArrowLeft"].includes(event.key)) return;
           event.preventDefault();
-          go(Math.max(0, Math.min(projects.length - 1, active + (event.key === "ArrowRight" ? 1 : -1))));
+          const step = event.key === "ArrowDown" || event.key === "ArrowRight" ? 1 : -1;
+          go(Math.max(0, Math.min(projects.length - 1, active + step)));
         }}
-        onPointerDown={(event) => {
-          dragged.current = false;
-          if (event.pointerType !== "mouse" || event.button !== 0 || !track.current) return;
-          pointer.current = { x: event.clientX, y: event.clientY, left: track.current.scrollLeft };
-        }}
-        onPointerMove={(event) => {
-          const start = pointer.current;
-          if (!start || !track.current) return;
-          if (event.buttons !== 1) { pointer.current = null; return; }
-          const dx = event.clientX - start.x;
-          if (Math.abs(dx) > 8 && Math.abs(dx) > Math.abs(event.clientY - start.y)) {
-            dragged.current = true;
-            track.current.scrollLeft = start.left - dx;
-          }
-        }}
-        onPointerUp={() => { pointer.current = null; }}
-        onPointerLeave={() => { pointer.current = null; }}
-        onClickCapture={(event) => { if (dragged.current) { event.preventDefault(); event.stopPropagation(); } }}
       >
         {projects.map((project, index) => (
           <Link
@@ -76,37 +79,20 @@ export function WorkCarousel({ projects }: { projects: Project[] }) {
             to="/projects/$slug"
             params={{ slug: project.slug }}
             preload={false}
-            draggable={false}
-            className="work-cover group relative block shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+            className="work-vcard group relative mx-auto block overflow-hidden rounded-lg bg-card focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
             data-active={active === index}
             aria-label={`Open ${project.title}`}
-            onDragStart={(event) => event.preventDefault()}
+            onClick={(event) => { if (active !== index) { event.preventDefault(); go(index); } }}
           >
-            <div className="work-cover-image relative overflow-hidden rounded-lg bg-card">
-              <img src={project.cover} alt={project.title} loading={index < 2 ? "eager" : "lazy"} decoding="async" draggable={false} className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.035] motion-reduce:transition-none" />
-              <span className="work-cover-year absolute left-5 top-5 text-xs font-semibold">{project.year}</span>
-              <span className="work-cover-open absolute bottom-5 right-5 flex size-12 items-center justify-center rounded-full transition-transform duration-300 group-hover:-rotate-45 motion-reduce:transition-none" aria-hidden="true"><ArrowUpRight className="size-6" /></span>
-            </div>
-            <div className="work-cover-caption flex items-start gap-4 border-b border-border pb-5 pt-5 md:gap-6">
-              <span className="work-cover-number shrink-0 font-display text-4xl font-semibold leading-none md:text-5xl" aria-hidden="true">{String(index + 1).padStart(2, "0")}</span>
-              <div className="min-w-0">
-                <h2 className="font-display text-2xl font-bold leading-tight tracking-normal transition-colors group-hover:text-primary md:text-3xl">{project.title}</h2>
-                <p className="mt-2 text-xs text-muted-foreground md:text-sm">{project.client}</p>
-              </div>
-            </div>
+            <img src={project.cover} alt={project.title} loading={index < 3 ? "eager" : "lazy"} decoding="async" className="h-full w-full object-cover" />
+            <span className="work-vcard-shade absolute inset-0" aria-hidden="true" />
+            <span className="work-vcard-title absolute inset-x-0 bottom-0 flex items-end justify-between gap-4 p-5 md:p-6">
+              <span className="font-display text-xl font-bold leading-tight md:text-3xl">{project.title}</span>
+              <span className="work-cover-open flex size-11 shrink-0 items-center justify-center rounded-full transition-transform group-hover:-rotate-45" aria-hidden="true"><ArrowUpRight className="size-5" /></span>
+            </span>
           </Link>
         ))}
       </div>
-
-      <footer className="mx-auto mt-5 flex max-w-[1600px] items-center justify-between gap-6 px-6 md:px-10">
-        <div className="flex gap-1" aria-label="Select project">
-          {projects.map((project, index) => <Button key={project.slug} variant="ghost" size="icon" className="work-project-selector" onClick={() => go(index)} aria-label={`Show ${project.title}`} aria-pressed={active === index} title={project.title}><span className={`h-px w-7 transition-colors ${active === index ? "bg-primary" : "bg-border"}`} /></Button>)}
-        </div>
-        <div className="flex gap-3">
-          <Button variant="outline" size="icon" className="size-12 rounded-full hover:border-primary" onClick={() => go(active - 1)} disabled={active === 0} aria-label="Previous project" title="Previous project"><ArrowLeft /></Button>
-          <Button variant="default" size="icon" className="size-12 rounded-full" onClick={() => go(active + 1)} disabled={active === projects.length - 1} aria-label="Next project" title="Next project"><ArrowRight /></Button>
-        </div>
-      </footer>
     </section>
   );
 }
