@@ -6,6 +6,11 @@ import type { Project } from "@/data/projects";
 
 const SLIDE_MS = 1100;
 
+/** Arrows and keyboard keys loop the slider: past the last cover you land back on the first. */
+export function shiftIndex(active: number, dir: number, total: number) {
+  return (active + dir + total) % total;
+}
+
 /** Horizontal cover slider: the centred cover grows and is ready to open; the page background shows it blurred and dark. */
 export function WorkCarousel({ projects }: { projects: Project[] }) {
   const track = useRef<HTMLDivElement>(null);
@@ -35,6 +40,10 @@ export function WorkCarousel({ projects }: { projects: Project[] }) {
     requestAnimationFrame(step);
   }
 
+  function shift(dir: number) {
+    go(shiftIndex(active, dir, projects.length));
+  }
+
   function onScroll() {
     const element = track.current;
     if (!element || animating.current) return;
@@ -62,8 +71,8 @@ export function WorkCarousel({ projects }: { projects: Project[] }) {
       <h1 className="sr-only">Built with care. Shown with gratitude.</h1>
 
       <div className="relative flex flex-1">
-      <Button variant="outline" size="icon" className="work-arrow work-arrow-left absolute top-1/2 z-10 size-12 -translate-y-1/2 rounded-full" onClick={() => go(active - 1)} disabled={active === 0} aria-label="Previous project"><ArrowLeft /></Button>
-      <Button size="icon" className="work-arrow work-arrow-right absolute top-1/2 z-10 size-12 -translate-y-1/2 rounded-full" onClick={() => go(active + 1)} disabled={active === projects.length - 1} aria-label="Next project"><ArrowRight /></Button>
+      <Button variant="outline" size="icon" className="work-arrow work-arrow-left absolute top-1/2 z-10 size-12 -translate-y-1/2 rounded-full" onClick={() => shift(-1)} aria-label="Previous project"><ArrowLeft /></Button>
+      <Button size="icon" className="work-arrow work-arrow-right absolute top-1/2 z-10 size-12 -translate-y-1/2 rounded-full" onClick={() => shift(1)} aria-label="Next project"><ArrowRight /></Button>
       <div
         ref={track}
         role="region"
@@ -75,7 +84,7 @@ export function WorkCarousel({ projects }: { projects: Project[] }) {
         onKeyDown={(event) => {
           if (event.key !== "ArrowRight" && event.key !== "ArrowLeft") return;
           event.preventDefault();
-          go(Math.max(0, Math.min(projects.length - 1, active + (event.key === "ArrowRight" ? 1 : -1))));
+          shift(event.key === "ArrowRight" ? 1 : -1);
         }}
       >
         {projects.map((project, index) => (
