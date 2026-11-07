@@ -317,7 +317,7 @@ export const projects: Project[] = [
     gallery: [
       {
         src: injourneyPola.url,
-        title: "1 — Pola",
+        title: "Booth Exhibition Sub Holding 2024 — 1 pola",
         year: "2024",
         caption: "The pattern study: curved timber arches arranged in four clusters, the shared visual language of every InJourney stand.",
         width: 1366,
@@ -325,7 +325,7 @@ export const projects: Project[] = [
       },
       {
         src: injourneyRetail.url,
-        title: "2 — InJourney Retail",
+        title: "Booth Exhibition Sub Holding 2024 — 2 retail",
         year: "2024",
         caption: "Travel fashion and merchandise booth with a teal arch, a woven canopy pergola and a \"Transforming Travel into Experiences\" screen.",
         width: 1672,
@@ -333,7 +333,7 @@ export const projects: Project[] = [
       },
       {
         src: injourneyHospitality.url,
-        title: "3 — InJourney Hospitality",
+        title: "Booth Exhibition Sub Holding 2024 — 3 hospitality",
         year: "2024",
         caption: "Hospitality stand with a yellow The Meru Bali counter and stools, beside panels of hotel, township and workforce figures.",
         width: 1672,
@@ -341,7 +341,7 @@ export const projects: Project[] = [
       },
       {
         src: injourneyAviation.url,
-        title: "4 — InJourney Aviation Service",
+        title: "Booth Exhibition Sub Holding 2024 — 4 aviation service",
         year: "2024",
         caption: "Airport lounge booth with a neon LOUNGE sign, a flight information board and circular seating under the timber arches.",
         width: 1672,
@@ -349,7 +349,7 @@ export const projects: Project[] = [
       },
       {
         src: injourneyDestination.url,
-        title: "5 — InJourney Destination Management",
+        title: "Booth Exhibition Sub Holding 2024 — 5 destination management",
         year: "2024",
         caption: "Destination management stand: a Borobudur diorama and TMII letters on a grass floor, framed by Smart, Culture and Green Tour cubes.",
         width: 1672,
@@ -357,7 +357,7 @@ export const projects: Project[] = [
       },
       {
         src: injourneySahakaryaFoodCourt.url,
-        title: "6 — Sahakarya Food Court",
+        title: "Sahakarya 2025 — 1 food court",
         year: "2025",
         caption: "Night food court with wooden tables on the grass, a Gudeg Kremiyati stall and a Makanan Nusantara corner under string lights.",
         width: 1672,
@@ -365,7 +365,7 @@ export const projects: Project[] = [
       },
       {
         src: injourneySahakaryaEntrance.url,
-        title: "7 — Sahakarya Entrance",
+        title: "Sahakarya 2025 — 2 entrance",
         year: "2025",
         caption: "Festival entrance at sunset: thatched huts, a flower-decked stage with the injourney SAHAKARYA letters and a transparent roof.",
         width: 1672,
@@ -373,7 +373,7 @@ export const projects: Project[] = [
       },
       {
         src: injourneySahakaryaStage.url,
-        title: "8 — Sahakarya Main Stage",
+        title: "Sahakarya 2025 — 3 main stage",
         year: "2025",
         caption: "The Leaving Legacy stage with a live band, a temple backdrop and batik drapes, with lesehan seating on the lawn.",
         width: 1671,
@@ -381,7 +381,7 @@ export const projects: Project[] = [
       },
       {
         src: injourneySahakaryaAerial.url,
-        title: "9 — Sahakarya Aerial Layout",
+        title: "Sahakarya 2025 — 4 aerial layout",
         year: "2025",
         caption: "Bird's-eye view of the whole festival ground: the entrance sign, food stalls, garden paths and the main stage.",
         width: 1672,
@@ -389,7 +389,7 @@ export const projects: Project[] = [
       },
       {
         src: injourneyUmkmCraft.url,
-        title: "10 — UMKM Craft Market",
+        title: "Gandrung Sewu 2026 — 1 umkm craft market",
         year: "2026",
         caption: "Gandrung Sewu 2026: a grassy clearing beside rice fields with bamboo thatched huts, a becak, batik cloth on a clothes horse and two mannequins in batik garments.",
         width: 1569,
@@ -397,7 +397,7 @@ export const projects: Project[] = [
       },
       {
         src: injourneyUmkmVillage.url,
-        title: "11 — UMKM Market Lane",
+        title: "Gandrung Sewu 2026 — 2 umkm market lane",
         year: "2026",
         caption: "Noon market lane through the artisan village: bamboo gazebos with steep thatched roofs on one side, a brick half-wall, potted plants and hanging woven basket lanterns on the other.",
         width: 1619,
@@ -405,7 +405,7 @@ export const projects: Project[] = [
       },
       {
         src: injourneyUmkmNight.url,
-        title: "12 — UMKM Night Harvest",
+        title: "Gandrung Sewu 2026 — 3 umkm night harvest",
         year: "2026",
         caption: "Night harvest corner lit by warm spots: burlap sacks of grain, a wooden pestle, green bananas and coconuts beside a woven bamboo screen hung with baskets of spice.",
         width: 1620,
@@ -413,7 +413,7 @@ export const projects: Project[] = [
       },
       {
         src: injourneyUmkmCoastal.url,
-        title: "13 — UMKM Coastal Pavilion",
+        title: "Gandrung Sewu 2026 — 4 umkm coastal pavilion",
         year: "2026",
         caption: "Night pavilion with a carved wooden screen showing a fan dancer in silhouette, white draped canopies above, woven floor mats, terracotta urns and a glowing bamboo lantern.",
         width: 1620,

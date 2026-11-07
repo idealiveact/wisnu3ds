@@ -4,6 +4,28 @@ import { pageHead } from "@/lib/seo";
 
 const pad = (n: number) => String(n).padStart(2, "0");
 
+/**
+ * A picture name that carries its own number ("Booth Exhibition Sub Holding 2024 — 1 pola")
+ * keeps it, with the number picked out in the accent colour. Names without one fall back
+ * to the running 01, 02 … prefix.
+ */
+function captionTitle(title: string, index: number) {
+  const parts = title.match(/^(.*) — (\d+) (.*)$/);
+  if (!parts) {
+    return (
+      <>
+        <span className="mr-3 text-base font-bold text-primary md:text-xl">{pad(index + 1)}</span>
+        {title}
+      </>
+    );
+  }
+  return (
+    <>
+      {parts[1]} — <span className="text-primary">{parts[2]}</span> {parts[3]}
+    </>
+  );
+}
+
 
 export const Route = createFileRoute("/projects/$slug")({
   loader: ({ params }) => {
@@ -71,8 +93,7 @@ function ProjectPage() {
             />
             <figcaption className="mt-4 flex flex-wrap items-baseline justify-between gap-x-6 gap-y-1 border-t border-border pt-4">
               <span className="font-display text-2xl font-bold leading-tight text-foreground md:text-4xl">
-                <span className="mr-3 text-base font-bold text-primary md:text-xl">{pad(k + 1)}</span>
-                {item.title}
+                {captionTitle(item.title, k)}
               </span>
               <span className="eyebrow shrink-0 pt-1">{item.year}</span>
             </figcaption>
