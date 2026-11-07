@@ -21,7 +21,8 @@ function captionTitle(title: string, index: number) {
   }
   return (
     <>
-      {parts[1]} — <span className="text-primary">{parts[2]}</span> {parts[3]}
+      <span className="text-primary">{parts[1]}</span>{" "}
+      <span className="text-[0.6em]">— {parts[2]} {parts[3]}</span>
     </>
   );
 }
