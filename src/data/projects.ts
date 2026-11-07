@@ -21,6 +21,12 @@ import samsungHouseOfScreens from "@/assets/samsung-house-of-screens.jpg.asset.j
 import indofoodEntrance from "@/assets/indofood-rumah-indofood-entrance-2018.jpg.asset.json";
 import indofoodScoreboard from "@/assets/indofood-rumah-indofood-scoreboard-2018.jpg.asset.json";
 import indofoodPreview from "@/assets/indofood-preview.jpg.asset.json";
+import injourneyPola from "@/assets/injourney-pola-2024.jpg.asset.json";
+import injourneyRetail from "@/assets/injourney-retail-2024.jpg.asset.json";
+import injourneyHospitality from "@/assets/injourney-hospitality-2024.jpg.asset.json";
+import injourneyAviation from "@/assets/injourney-aviation-2024.jpg.asset.json";
+import injourneyDestination from "@/assets/injourney-destination-2024.jpg.asset.json";
+import injourneyPreview from "@/assets/injourney-preview.jpg.asset.json";
 import homePreview from "@/assets/home-preview-activation.jpg.asset.json";
 import pertaminaPreview from "@/assets/pertamina-preview.jpg.asset.json";
 import samsungPreview from "@/assets/samsung-preview.jpg.asset.json";
