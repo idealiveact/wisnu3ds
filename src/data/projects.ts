@@ -333,7 +333,7 @@ export const projects: Project[] = [
       },
       {
         src: injourneyAviation.url,
-        title: "4 — InJourney Aviation",
+        title: "4 — InJourney Aviation Service",
         year: "2024",
         caption: "Airport lounge booth with a neon LOUNGE sign, a flight information board and circular seating under the timber arches.",
         width: 1672,
