@@ -292,6 +292,63 @@ export const projects: Project[] = [
       },
     ],
   },
+  {
+    slug: "injourney",
+    title: "Injourney",
+    category: "work",
+    year: "2024",
+    client: "InJourney",
+    role: "3D Artist",
+    software: ["3ds Max 2018", "V-Ray", "Photoshop", "CorelDRAW"],
+    summary:
+      "Booth Exhibition Sub Holding 2024: a series of exhibition booths for InJourney and its four sub-holdings — Retail, Hospitality, Aviation and Destination Management — all built on one shared timber-arch pattern.",
+    description:
+      "A set of exhibition booths designed in 2024 for InJourney, the state-owned aviation and tourism holding and its four sub-holdings. The series opens with the pola: a study of curved timber arches that became the shared visual language of every stand. InJourney Retail presents travel fashion and merchandise under a woven canopy. InJourney Hospitality carries a yellow The Meru Bali counter beside panels of hotel and township figures. InJourney Aviation turns the arches into an airport lounge with a neon LOUNGE sign and a flight information board. InJourney Destination Management places a Borobudur diorama and TMII letters on a grass floor. Modelled in 3ds Max with V-Ray, finished in Photoshop.",
+    cover: injourneyPola.url,
+    shareImage: injourneyPreview.url,
+    gallery: [
+      {
+        src: injourneyPola.url,
+        title: "1 — Pola",
+        year: "2024",
+        caption: "The pattern study: curved timber arches arranged in four clusters, the shared visual language of every InJourney stand.",
+        width: 1366,
+        height: 768,
+      },
+      {
+        src: injourneyRetail.url,
+        title: "2 — InJourney Retail",
+        year: "2024",
+        caption: "Travel fashion and merchandise booth with a teal arch, a woven canopy pergola and a \"Transforming Travel into Experiences\" screen.",
+        width: 1672,
+        height: 941,
+      },
+      {
+        src: injourneyHospitality.url,
+        title: "3 — InJourney Hospitality",
+        year: "2024",
+        caption: "Hospitality stand with a yellow The Meru Bali counter and stools, beside panels of hotel, township and workforce figures.",
+        width: 1672,
+        height: 941,
+      },
+      {
+        src: injourneyAviation.url,
+        title: "4 — InJourney Aviation",
+        year: "2024",
+        caption: "Airport lounge booth with a neon LOUNGE sign, a flight information board and circular seating under the timber arches.",
+        width: 1672,
+        height: 940,
+      },
+      {
+        src: injourneyDestination.url,
+        title: "5 — InJourney Destination Management",
+        year: "2024",
+        caption: "Destination management stand: a Borobudur diorama and TMII letters on a grass floor, framed by Smart, Culture and Green Tour cubes.",
+        width: 1672,
+        height: 941,
+      },
+    ],
+  },
 ];
 
 export const byCategory = (c: CategoryId) => projects.filter((p) => p.category === c);
