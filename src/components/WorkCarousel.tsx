@@ -6,6 +6,11 @@ import type { Project } from "@/data/projects";
 
 const SLIDE_MS = 1100;
 
+/** Arrows and keyboard keys loop the slider: past the last cover you land back on the first. */
+export function shiftIndex(active: number, dir: number, total: number) {
+  return (active + dir + total) % total;
+}
+
 /** Horizontal cover slider: the centred cover grows and is ready to open; the page background shows it blurred and dark. */
 export function WorkCarousel({ projects }: { projects: Project[] }) {
   const track = useRef<HTMLDivElement>(null);
