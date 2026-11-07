@@ -80,28 +80,30 @@ describe("Indofood Project entry", () => {
 });
 
 // Wisnu's rule: the Injourney folder holds the Booth Exhibition Sub Holding
-// 2024 series (five numbered pictures, number one being the Pola study) plus
-// the four Sahakarya 2025 festival renders that follow them.
+// 2024 series (five numbered pictures, number one being the Pola study), then
+// the four Sahakarya 2025 festival renders, then the four Gandrung Sewu 2026
+// UMKM market renders.
 describe("Injourney entry", () => {
   const project = getProject("injourney");
 
-  it("is listed as Injourney, 2024–2025, for client InJourney", () => {
+  it("is listed as Injourney, 2024–2026, for client InJourney", () => {
     expect(project, "no project with slug 'injourney'").toBeTruthy();
     expect(project?.title).toBe("Injourney");
-    expect(project?.year).toBe("2024–2025");
+    expect(project?.year).toBe("2024–2026");
     expect(project?.client).toBe("InJourney");
     expect(project?.category).toBe("work");
   });
 
-  it("shows nine numbered pictures with Pola first and Sahakarya last", () => {
+  it("shows thirteen numbered pictures with Pola first and the UMKM market last", () => {
     const gallery = project?.gallery ?? [];
-    expect(gallery.length).toBe(9);
+    expect(gallery.length).toBe(13);
     expect(gallery[0]?.title).toBe("1 — Pola");
     gallery.forEach((item, index) => {
       expect(item.title.startsWith(`${index + 1} — `), item.title).toBe(true);
       expect(item.caption?.trim().length, item.title).toBeGreaterThan(0);
-      expect(item.year).toBe(index < 5 ? "2024" : "2025");
+      expect(item.year).toBe(index < 5 ? "2024" : index < 9 ? "2025" : "2026");
     });
     expect(gallery[8]?.title).toContain("Sahakarya");
+    expect(gallery[12]?.title).toContain("UMKM");
   });
 });

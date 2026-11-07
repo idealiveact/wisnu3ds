@@ -31,6 +31,10 @@ import injourneySahakaryaFoodCourt from "@/assets/injourney-sahakarya-food-court
 import injourneySahakaryaEntrance from "@/assets/injourney-sahakarya-entrance-2025.jpg.asset.json";
 import injourneySahakaryaStage from "@/assets/injourney-sahakarya-stage-2025.jpg.asset.json";
 import injourneySahakaryaAerial from "@/assets/injourney-sahakarya-aerial-2025.jpg.asset.json";
+import injourneyUmkmCraft from "@/assets/injourney-umkm-craft-market-2026.jpg.asset.json";
+import injourneyUmkmVillage from "@/assets/injourney-umkm-village-market-2026.jpg.asset.json";
+import injourneyUmkmNight from "@/assets/injourney-umkm-night-market-2026.jpg.asset.json";
+import injourneyUmkmCoastal from "@/assets/injourney-umkm-coastal-pavilion-2026.jpg.asset.json";
 import homePreview from "@/assets/home-preview-activation.jpg.asset.json";
 import pertaminaPreview from "@/assets/pertamina-preview.jpg.asset.json";
 import samsungPreview from "@/assets/samsung-preview.jpg.asset.json";
@@ -300,14 +304,14 @@ export const projects: Project[] = [
     slug: "injourney",
     title: "Injourney",
     category: "work",
-    year: "2024–2025",
+    year: "2024–2026",
     client: "InJourney",
     role: "3D Artist",
     software: ["3ds Max 2018", "V-Ray", "Photoshop", "CorelDRAW"],
     summary:
-      "Booth Exhibition Sub Holding 2024 and the Sahakarya 2025 festival: exhibition booths for InJourney's four sub-holdings built on one shared timber-arch pattern, followed by an outdoor leaving-legacy festival on the lawns.",
+      "Booth Exhibition Sub Holding 2024, the Sahakarya 2025 festival and the Gandrung Sewu 2026 UMKM market: exhibition booths for InJourney's four sub-holdings built on one shared timber-arch pattern, an outdoor leaving-legacy festival on the lawns, and a village market series for small traders.",
     description:
-      "A set of exhibition and event designs made for InJourney, the state-owned aviation and tourism holding and its sub-holdings. The 2024 series opens with the pola: a study of curved timber arches that became the shared visual language of four stands — Retail with a woven canopy, Hospitality with a yellow The Meru Bali counter, Aviation Service as an airport lounge with a neon LOUNGE sign, and Destination Management with a Borobudur diorama on grass. In 2025 the work moved outdoors: Sahakarya, a leaving-legacy festival on the lawns, with a main stage, food stalls and string lights under a transparent roof. Everything was modelled in 3ds Max 2018 with V-Ray, finished in Photoshop and CorelDRAW.",
+      "A set of exhibition and event designs made for InJourney, the state-owned tourism holding. The 2024 series opens with the pola: a study of curved timber arches that became the shared language of four stands — Retail, Hospitality, Aviation Service and Destination Management. In 2025 the work moved outdoors: Sahakarya, a leaving-legacy festival on the lawns, with a stage, food stalls and string lights under a transparent roof. In 2026 it turned to UMKM traders at Gandrung Sewu: a village craft market, a market lane of bamboo gazebos, a night harvest display and a coastal culture pavilion with a carved dancer screen. All modelled in 3ds Max 2018 with V-Ray, finished in Photoshop and CorelDRAW.",
     cover: injourneyPola.url,
     shareImage: injourneyPreview.url,
     gallery: [
@@ -382,6 +386,38 @@ export const projects: Project[] = [
         caption: "Bird's-eye view of the whole festival ground: the entrance sign, food stalls, garden paths and the main stage.",
         width: 1672,
         height: 940,
+      },
+      {
+        src: injourneyUmkmCraft.url,
+        title: "10 — UMKM Craft Market",
+        year: "2026",
+        caption: "Gandrung Sewu 2026: a grassy clearing beside rice fields with bamboo thatched huts, a becak, batik cloth on a clothes horse and two mannequins in batik garments.",
+        width: 1569,
+        height: 971,
+      },
+      {
+        src: injourneyUmkmVillage.url,
+        title: "11 — UMKM Market Lane",
+        year: "2026",
+        caption: "Noon market lane through the artisan village: bamboo gazebos with steep thatched roofs on one side, a brick half-wall, potted plants and hanging woven basket lanterns on the other.",
+        width: 1619,
+        height: 971,
+      },
+      {
+        src: injourneyUmkmNight.url,
+        title: "12 — UMKM Night Harvest",
+        year: "2026",
+        caption: "Night harvest corner lit by warm spots: burlap sacks of grain, a wooden pestle, green bananas and coconuts beside a woven bamboo screen hung with baskets of spice.",
+        width: 1620,
+        height: 971,
+      },
+      {
+        src: injourneyUmkmCoastal.url,
+        title: "13 — UMKM Coastal Pavilion",
+        year: "2026",
+        caption: "Night pavilion with a carved wooden screen showing a fan dancer in silhouette, white draped canopies above, woven floor mats, terracotta urns and a glowing bamboo lantern.",
+        width: 1620,
+        height: 971,
       },
     ],
   },

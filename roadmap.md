@@ -23,6 +23,7 @@
 - [x] Indofood Project (2018) added to Work: a 20 x 20 metre Rumah Indofood noodle pavilion at the Jakarta Fair (PRJ), with two labelled renders (main pavilion front view, scoreboard corner) and a 699-character opening paragraph; the Work cover row now holds three projects.
 - [x] Gallery now holds five on-site photos: the 2015 Palmia temple-roof pavilion at SIAL Interfood (wide hall view and crowded floor), the Rumah Indofood pavilion at the Jakarta Fair after dark, the 2017 Bogasari island booth, and the three Best Booth plaques labelled as three consecutive years.
 - [x] Injourney added to Work: Booth Exhibition Sub Holding 2024 — five numbered renders, number one the Pola timber-arch pattern study, then InJourney Retail, Hospitality, Aviation Service and Destination Management booths — plus the four Sahakarya 2025 festival renders (food court, entrance, main stage, aerial layout); 699-character opening paragraph; the Work cover row now holds four projects.
+- [x] Injourney extended with the Gandrung Sewu 2026 UMKM market: four labelled renders numbered 10–13 (craft market, market lane, night harvest, coastal pavilion), folder year now 2024–2026, opening paragraph rewritten to exactly 699 characters. The stray 3D viewport axis marker in the craft-market render was trimmed out before publishing.
 
 ## Open
 - [ ] Wisnu must create his account at /auth with wisnu3ds@gmail.com and confirm it before /briefs shows anything.
@@ -33,7 +34,7 @@
 - [ ] Confirm the SAMSUNG Project write-up: the two 2020 TV & AV interiors carry no visible branding, so their campaign name and year come only from Wisnu's file names; the foyer render shows no screen at all.
 - [ ] Confirm the Pertamina write-up is accurate: role "3D Artist" and the paragraph text.
 - [ ] Confirm the Indofood write-up: software list (3ds Max 2018, V-Ray, Photoshop, CorelDRAW) and role "3D Artist" were copied from the Pertamina entry, not told by Wisnu; the "20 x 20 m" size and PRJ 2018 date come from his message.
-- [ ] Confirm the Injourney write-up: year 2024 and the "Booth Exhibition Sub Holding" title come from Wisnu's message; software list and role "3D Artist" were copied from the Pertamina entry, not told by Wisnu.
+- [ ] Confirm the Injourney write-up: years 2024–2026 and the "Booth Exhibition Sub Holding", "Sahakarya" and "Gandrung Sewu / UMKM" names come from Wisnu's messages and file names — none of the 2026 renders show a logo; software list and role "3D Artist" were copied from the Pertamina entry, not told by Wisnu.
 
 ## Ideas (ready)
 - [ ] Hourly limit on "Generate brief" too, so nobody can burn AI credits by spamming the button.
