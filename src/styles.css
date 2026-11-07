@@ -256,7 +256,7 @@ body { font-family: var(--font-sans); }
 .work-arrow-left { left: calc(50% - min(28.75vw, 475px) - 1.5rem); }
 .work-arrow-right { right: calc(50% - min(28.75vw, 475px) - 1.5rem); }
 @media (max-width: 767px) {
-  .work-hcard { width: 84vw; margin-inline: -16vw; transform: scale(.6); }
-  .work-htrack { padding-inline: calc(8vw + 16vw); }
+  .work-hcard { width: min(92vw, 58svh); aspect-ratio: 1 / 1; margin-inline: -16vw; transform: scale(.6); }
+  .work-htrack { padding-inline: calc(66vw - min(46vw, 29svh)); }
   .work-arrow-left { left: .5rem; } .work-arrow-right { right: .5rem; }
 }
