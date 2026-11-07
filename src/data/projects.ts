@@ -27,6 +27,10 @@ import injourneyHospitality from "@/assets/injourney-hospitality-2024.jpg.asset.
 import injourneyAviation from "@/assets/injourney-aviation-2024.jpg.asset.json";
 import injourneyDestination from "@/assets/injourney-destination-2024.jpg.asset.json";
 import injourneyPreview from "@/assets/injourney-preview.jpg.asset.json";
+import injourneySahakaryaFoodCourt from "@/assets/injourney-sahakarya-food-court-2025.jpg.asset.json";
+import injourneySahakaryaEntrance from "@/assets/injourney-sahakarya-entrance-2025.jpg.asset.json";
+import injourneySahakaryaStage from "@/assets/injourney-sahakarya-stage-2025.jpg.asset.json";
+import injourneySahakaryaAerial from "@/assets/injourney-sahakarya-aerial-2025.jpg.asset.json";
 import homePreview from "@/assets/home-preview-activation.jpg.asset.json";
 import pertaminaPreview from "@/assets/pertamina-preview.jpg.asset.json";
 import samsungPreview from "@/assets/samsung-preview.jpg.asset.json";
@@ -296,14 +300,14 @@ export const projects: Project[] = [
     slug: "injourney",
     title: "Injourney",
     category: "work",
-    year: "2024",
+    year: "2024–2025",
     client: "InJourney",
     role: "3D Artist",
     software: ["3ds Max 2018", "V-Ray", "Photoshop", "CorelDRAW"],
     summary:
-      "Booth Exhibition Sub Holding 2024: a series of exhibition booths for InJourney and its four sub-holdings — Retail, Hospitality, Aviation and Destination Management — all built on one shared timber-arch pattern.",
+      "Booth Exhibition Sub Holding 2024 and the Sahakarya 2025 festival: exhibition booths for InJourney's four sub-holdings built on one shared timber-arch pattern, followed by an outdoor leaving-legacy festival on the lawns.",
     description:
-      "A set of exhibition booths designed in 2024 for InJourney, the state-owned aviation and tourism holding and its four sub-holdings. The series opens with the pola: a study of curved timber arches that became the shared visual language of every stand. InJourney Retail presents travel fashion and merchandise under a woven canopy. InJourney Hospitality carries a yellow The Meru Bali counter beside panels of hotel and township figures. InJourney Aviation turns the arches into an airport lounge with a neon LOUNGE sign and a flight information board. InJourney Destination Management places a Borobudur diorama and TMII letters on a grass floor. Modelled in 3ds Max with V-Ray, finished in Photoshop.",
+      "A set of exhibition and event designs made for InJourney, the state-owned aviation and tourism holding and its sub-holdings. The 2024 series opens with the pola: a study of curved timber arches that became the shared visual language of four stands — Retail with a woven canopy, Hospitality with a yellow The Meru Bali counter, Aviation Service as an airport lounge with a neon LOUNGE sign, and Destination Management with a Borobudur diorama on grass. In 2025 the work moved outdoors: Sahakarya, a leaving-legacy festival on the lawns, with a main stage, food stalls and string lights under a transparent roof. Everything was modelled in 3ds Max 2018 with V-Ray, finished in Photoshop and CorelDRAW.",
     cover: injourneyPola.url,
     shareImage: injourneyPreview.url,
     gallery: [
@@ -346,6 +350,38 @@ export const projects: Project[] = [
         caption: "Destination management stand: a Borobudur diorama and TMII letters on a grass floor, framed by Smart, Culture and Green Tour cubes.",
         width: 1672,
         height: 941,
+      },
+      {
+        src: injourneySahakaryaFoodCourt.url,
+        title: "6 — Sahakarya Food Court",
+        year: "2025",
+        caption: "Night food court with wooden tables on the grass, a Gudeg Kremiyati stall and a Makanan Nusantara corner under string lights.",
+        width: 1672,
+        height: 941,
+      },
+      {
+        src: injourneySahakaryaEntrance.url,
+        title: "7 — Sahakarya Entrance",
+        year: "2025",
+        caption: "Festival entrance at sunset: thatched huts, a flower-decked stage with the injourney SAHAKARYA letters and a transparent roof.",
+        width: 1672,
+        height: 940,
+      },
+      {
+        src: injourneySahakaryaStage.url,
+        title: "8 — Sahakarya Main Stage",
+        year: "2025",
+        caption: "The Leaving Legacy stage with a live band, a temple backdrop and batik drapes, with lesehan seating on the lawn.",
+        width: 1671,
+        height: 941,
+      },
+      {
+        src: injourneySahakaryaAerial.url,
+        title: "9 — Sahakarya Aerial Layout",
+        year: "2025",
+        caption: "Bird's-eye view of the whole festival ground: the entrance sign, food stalls, garden paths and the main stage.",
+        width: 1672,
+        height: 940,
       },
     ],
   },
