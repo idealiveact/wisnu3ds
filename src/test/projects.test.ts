@@ -94,16 +94,29 @@ describe("Injourney entry", () => {
     expect(project?.category).toBe("work");
   });
 
-  it("shows thirteen numbered pictures with Pola first and the UMKM market last", () => {
+  it("numbers every event from one, event name first and picture name in lower case", () => {
     const gallery = project?.gallery ?? [];
     expect(gallery.length).toBe(13);
-    expect(gallery[0]?.title).toBe("1 — Pola");
+    expect(gallery.map((item) => item.title)).toEqual([
+      "Booth Exhibition Sub Holding 2024 — 1 pola",
+      "Booth Exhibition Sub Holding 2024 — 2 retail",
+      "Booth Exhibition Sub Holding 2024 — 3 hospitality",
+      "Booth Exhibition Sub Holding 2024 — 4 aviation service",
+      "Booth Exhibition Sub Holding 2024 — 5 destination management",
+      "Sahakarya 2025 — 1 food court",
+      "Sahakarya 2025 — 2 entrance",
+      "Sahakarya 2025 — 3 main stage",
+      "Sahakarya 2025 — 4 aerial layout",
+      "Gandrung Sewu 2026 — 1 umkm craft market",
+      "Gandrung Sewu 2026 — 2 umkm market lane",
+      "Gandrung Sewu 2026 — 3 umkm night harvest",
+      "Gandrung Sewu 2026 — 4 umkm coastal pavilion",
+    ]);
     gallery.forEach((item, index) => {
-      expect(item.title.startsWith(`${index + 1} — `), item.title).toBe(true);
-      expect(item.caption?.trim().length, item.title).toBeGreaterThan(0);
       expect(item.year).toBe(index < 5 ? "2024" : index < 9 ? "2025" : "2026");
+      expect(item.caption?.trim().length, item.title).toBeGreaterThan(0);
+      const name = item.title.replace(/^.* — \d+ /, "");
+      expect(name, item.title).toBe(name.toLowerCase());
     });
-    expect(gallery[8]?.title).toContain("Sahakarya");
-    expect(gallery[12]?.title).toContain("UMKM");
   });
 });

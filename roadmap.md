@@ -25,6 +25,8 @@
 - [x] Injourney added to Work: Booth Exhibition Sub Holding 2024 — five numbered renders, number one the Pola timber-arch pattern study, then InJourney Retail, Hospitality, Aviation Service and Destination Management booths — plus the four Sahakarya 2025 festival renders (food court, entrance, main stage, aerial layout); 699-character opening paragraph; the Work cover row now holds four projects.
 - [x] Injourney extended with the Gandrung Sewu 2026 UMKM market: four labelled renders numbered 10–13 (craft market, market lane, night harvest, coastal pavilion), folder year now 2024–2026, opening paragraph rewritten to exactly 699 characters. The stray 3D viewport axis marker in the craft-market render was trimmed out before publishing.
 
+- [x] Injourney picture names restyled: each title starts with its event name, the number restarts at 1 per event (Booth Exhibition Sub Holding 2024 — 1 pola … — 5 destination management, Sahakarya 2025 — 1 food court … — 4 aerial layout, Gandrung Sewu 2026 — 1 umkm craft market … — 4 umkm coastal pavilion) and the picture name is in lower case.
+
 ## Open
 - [ ] Wisnu must create his account at /auth with wisnu3ds@gmail.com and confirm it before /briefs shows anything.
 - [ ] Inbox email to wisnu3ds@gmail.com for each new brief — blocked until Wisnu sets up an email sender domain he owns (or picks a forwarding service instead).
