@@ -248,3 +248,15 @@ body { font-family: var(--font-sans); }
   .work-htrack { padding-inline: 10vw; }
 }
 @media (prefers-reduced-motion: reduce) { .work-hcard, .work-backdrop { transition: none; } }
+/* Bigger centre cover (+25%), tighter neighbours, arrows at the centre cover's edges */
+.work-hcard { width: min(57.5vw, 950px); margin-inline: -11vw; transform: scale(.48); }
+.work-hcard[data-active="true"] { transform: scale(1); z-index: 1; }
+.work-htrack { padding-inline: calc(50vw - min(28.75vw, 475px) + 11vw); }
+.work-arrow { backdrop-filter: blur(8px); }
+.work-arrow-left { left: calc(50% - min(28.75vw, 475px) - 1.5rem); }
+.work-arrow-right { right: calc(50% - min(28.75vw, 475px) - 1.5rem); }
+@media (max-width: 767px) {
+  .work-hcard { width: 84vw; margin-inline: -16vw; transform: scale(.6); }
+  .work-htrack { padding-inline: calc(8vw + 16vw); }
+  .work-arrow-left { left: .5rem; } .work-arrow-right { right: .5rem; }
+}
