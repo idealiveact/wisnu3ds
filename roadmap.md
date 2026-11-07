@@ -23,6 +23,7 @@
 - [x] Indofood Project (2018) added to Work: a 20 x 20 metre Rumah Indofood noodle pavilion at the Jakarta Fair (PRJ), with two labelled renders (main pavilion front view, scoreboard corner) and a 699-character opening paragraph; the Work cover row now holds three projects.
 - [x] Gallery now holds five on-site photos: the 2015 Palmia temple-roof pavilion at SIAL Interfood (wide hall view and crowded floor), the Rumah Indofood pavilion at the Jakarta Fair after dark, the 2017 Bogasari island booth, and the three Best Booth plaques labelled as three consecutive years.
 - [x] Injourney added to Work: Booth Exhibition Sub Holding 2024 — five numbered renders, number one the Pola timber-arch pattern study, then InJourney Retail, Hospitality, Aviation Service and Destination Management booths — plus the four Sahakarya 2025 festival renders (food court, entrance, main stage, aerial layout); 699-character opening paragraph; the Work cover row now holds four projects.
+- [x] Injourney extended with the Gandrung Sewu 2026 UMKM market: four labelled renders numbered 10–13 (craft market, market lane, night harvest, coastal pavilion), folder year now 2024–2026, opening paragraph rewritten to exactly 699 characters. The stray 3D viewport axis marker in the craft-market render was trimmed out before publishing.
 
 ## Open
 - [ ] Wisnu must create his account at /auth with wisnu3ds@gmail.com and confirm it before /briefs shows anything.
