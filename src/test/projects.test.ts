@@ -78,3 +78,28 @@ describe("Indofood Project entry", () => {
     }
   });
 });
+
+// Wisnu's rule: the Injourney folder holds the Booth Exhibition Sub Holding
+// 2024 series — five numbered pictures, number one being the Pola study.
+describe("Injourney entry", () => {
+  const project = getProject("injourney");
+
+  it("is listed as Injourney, 2024, for client InJourney", () => {
+    expect(project, "no project with slug 'injourney'").toBeTruthy();
+    expect(project?.title).toBe("Injourney");
+    expect(project?.year).toBe("2024");
+    expect(project?.client).toBe("InJourney");
+    expect(project?.category).toBe("work");
+  });
+
+  it("shows five numbered pictures with Pola first", () => {
+    const gallery = project?.gallery ?? [];
+    expect(gallery.length).toBe(5);
+    expect(gallery[0]?.title).toBe("1 — Pola");
+    gallery.forEach((item, index) => {
+      expect(item.title.startsWith(`${index + 1} — `), item.title).toBe(true);
+      expect(item.caption?.trim().length, item.title).toBeGreaterThan(0);
+      expect(item.year).toBe("2024");
+    });
+  });
+});
