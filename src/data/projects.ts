@@ -35,6 +35,10 @@ import injourneyUmkmCraft from "@/assets/injourney-umkm-craft-market-2026.jpg.as
 import injourneyUmkmVillage from "@/assets/injourney-umkm-village-market-2026.jpg.asset.json";
 import injourneyUmkmNight from "@/assets/injourney-umkm-night-market-2026.jpg.asset.json";
 import injourneyUmkmCoastal from "@/assets/injourney-umkm-coastal-pavilion-2026.jpg.asset.json";
+import othersDerideSmkStudds from "@/assets/others-deride-smk-studds-2022.png.asset.json";
+import othersJuraganHelm2025 from "@/assets/others-juragan-helm-2025.png.asset.json";
+import othersDeride2026 from "@/assets/others-deride-2026.png.asset.json";
+import othersJuraganHelm2026 from "@/assets/others-juragan-helm-2026.png.asset.json";
 import homePreview from "@/assets/home-preview-activation.jpg.asset.json";
 import pertaminaPreview from "@/assets/pertamina-preview.jpg.asset.json";
 import samsungPreview from "@/assets/samsung-preview.jpg.asset.json";
