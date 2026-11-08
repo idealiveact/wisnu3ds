@@ -55,9 +55,9 @@ describe("Work opening paragraphs", () => {
   });
 });
 
-// The Suzuki folder holds the IIMS booths: two renders of the 2022 stand,
-// then three of the 2025 stand, sorted by year and numbered in order. Wisnu's
-// rule: the first 2025 photo carries just its number, no picture name.
+// The Suzuki folder holds the IIMS booths: two renders of the 2022 stand, two
+// of the 2024 booth, then three of the 2025 stand, sorted by year and numbered
+// within each event. Wisnu's rule: the first 2025 photo carries just its number.
 describe("SUZUKI EXHIBITION entry", () => {
   const project = getProject("suzuki");
 
@@ -69,16 +69,18 @@ describe("SUZUKI EXHIBITION entry", () => {
     expect(project?.category).toBe("work");
   });
 
-  it("shows five labelled renders sorted by year, 2022 first then 2025, numbered in order", () => {
+  it("shows seven labelled renders sorted by year, 2022 first then 2024 then 2025", () => {
     const gallery = project?.gallery ?? [];
     expect(gallery.map((item) => item.title)).toEqual([
-      "Booth Exhibition IIMS 2022 — 1 front view",
-      "Booth Exhibition IIMS 2022 — 2 Bird View",
+      "Booth Exhibition IIMS 2023 — 1 front view",
+      "Booth Exhibition IIMS 2023 — 2 Bird View",
+      "SUZUKI BOOTH EXHIBITION 2024 — 1 main display",
+      "SUZUKI BOOTH EXHIBITION 2024 — 2 jimny off-road zone",
       "SUZUKI BOOTH EXHIBITION IIMS 2025 — 1",
       "SUZUKI BOOTH EXHIBITION IIMS 2025 — 2 collection corner",
       "SUZUKI BOOTH EXHIBITION IIMS 2025 — 3 safety support",
     ]);
-    const expectedYears = ["2022", "2022", "2025", "2025", "2025"];
+    const expectedYears = ["2022", "2022", "2024", "2024", "2025", "2025", "2025"];
     gallery.forEach((item, index) => {
       expect(item.year).toBe(expectedYears[index]);
       expect(item.caption?.trim().length, item.title).toBeGreaterThan(0);

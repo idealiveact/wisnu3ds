@@ -40,6 +40,8 @@ import suzukiIimsFront from "@/assets/suzuki-iims-2023-front.png.asset.json";
 import suzukiIimsAerial from "@/assets/suzuki-iims-2023-aerial.png.asset.json";
 import suzukiIims2025Collection from "@/assets/suzuki-iims-2025-collection.jpg.asset.json";
 import suzukiIims2025Safety from "@/assets/suzuki-iims-2025-safety.jpg.asset.json";
+import suzukiBooth2024Main from "@/assets/suzuki-booth-2024-main-display.png.asset.json";
+import suzukiBooth2024Jimny from "@/assets/suzuki-booth-2024-jimny-offroad.png.asset.json";
 import othersDerideSmkStudds from "@/assets/others-deride-smk-studds-2022.png.asset.json";
 import othersJuraganHelm2025 from "@/assets/others-juragan-helm-2025.png.asset.json";
 import othersDeride2026 from "@/assets/others-deride-2026.png.asset.json";
@@ -286,9 +288,9 @@ export const projects: Project[] = [
     role: "3D Artist",
     software: ["3ds Max 2018", "V-Ray", "Photoshop", "CorelDRAW"],
     summary:
-      "Suzuki at IIMS, two years running: the wide, low 2022 stand with timber inlays and a hexagon light ring, and the brighter 2025 booth with a glowing blue LED waterfall wall, a hanging Suzuki cube and a mezzanine lounge.",
+      "Suzuki at IIMS across 2022, 2024 and 2025: the wide, low 2022 stand with timber inlays and a hexagon light ring, the 2024 booth with a Jimny off-road island and Suzuki Collection store, and the brighter 2025 booth with a glowing blue LED waterfall wall.",
     description:
-      "Suzuki at IIMS, two years running. The 2022 stand sits wide and low under an exposed truss ceiling: crisp white faceted walls with warm timber inlays, a floating hexagon light ring above the centre stage, and the Grand Vitara leading the line-up on its own black plinth, flanked by the Jimny, S-Presso, Ertiga and XL7. In 2025 the booth turned brighter and taller: a glowing blue LED waterfall wall runs the length of the stand under a hanging Suzuki cube, with ring lamps, an EMPOWERING YOUR NEXT MOVE facade, a Suzuki Collection merchandise corner, a Safety Support interactive screen and a mezzanine lounge above. All modelled in 3ds Max 2018 with V-Ray, then finished in Photoshop and CorelDRAW.",
+      "Suzuki at IIMS across three years. The 2022 stand sits wide and low under an exposed truss ceiling: crisp white faceted walls with warm timber inlays, a floating hexagon light ring above the centre stage, and the Grand Vitara leading the line-up on its own raised black plinth. In 2024 the booth opened into zones: a panoramic LED skyline behind the car line-up, a Suzuki Collection store, and a Jimny off-road island of log ramps, boulders and rope-bound stone pillars. In 2025 it turned brighter and taller, with a glowing blue LED waterfall wall, a hanging Suzuki cube, a Safety Support screen and a mezzanine lounge. Modelled in 3ds Max 2018 with V-Ray, then finished in Photoshop and CorelDRAW.",
     cover: suzukiIimsMain.url,
     shareImage: suzukiIimsMain.url,
     gallery: [
@@ -305,6 +307,22 @@ export const projects: Project[] = [
         title: "Booth Exhibition IIMS 2023 — 2 Bird View",
         year: "2022",
         caption: "Aerial layout of the whole stand: the centre stage, Urban Mobility row, Grand Vitara plinth and the S-Presso corner.",
+        width: 1672,
+        height: 941,
+      },
+      {
+        src: suzukiBooth2024Main.url,
+        title: "SUZUKI BOOTH EXHIBITION 2024 — 1 main display",
+        year: "2024",
+        caption: "Elevated view of the whole stand: the car line-up on the lit floor, the panoramic skyline LED wall and the Suzuki Collection store at right.",
+        width: 1672,
+        height: 941,
+      },
+      {
+        src: suzukiBooth2024Jimny.url,
+        title: "SUZUKI BOOTH EXHIBITION 2024 — 2 jimny off-road zone",
+        year: "2024",
+        caption: "The Jimny island: a lime Jimny on a timber log ramp between boulders and rope-bound stone pillars, with the Suzuki Collection store beside it.",
         width: 1672,
         height: 941,
       },
