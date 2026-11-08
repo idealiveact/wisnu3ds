@@ -79,6 +79,32 @@ describe("Indofood Project entry", () => {
   });
 });
 
+// The Others folder gathers the smaller riding-gear and helmet booths that do
+// not belong to a single big client: Deride and Juragan Helm, 2022 to 2026.
+describe("Others entry", () => {
+  const project = getProject("others");
+
+  it("is listed as Others, 2022–2026", () => {
+    expect(project, "no project with slug 'others'").toBeTruthy();
+    expect(project?.title).toBe("Others");
+    expect(project?.year).toBe("2022–2026");
+    expect(project?.category).toBe("work");
+  });
+
+  it("shows four labelled booth renders, oldest first", () => {
+    const gallery = project?.gallery ?? [];
+    expect(gallery.length).toBe(4);
+    for (const item of gallery) {
+      expect(item.title.trim().length, item.src).toBeGreaterThan(3);
+      expect(item.caption?.trim().length, item.title).toBeGreaterThan(0);
+      expect(Number.isInteger(item.width), item.title).toBe(true);
+      expect(Number.isInteger(item.height), item.title).toBe(true);
+    }
+    const years = gallery.map((item) => Number(item.year));
+    expect([...years].sort((a, b) => a - b)).toEqual(years);
+  });
+});
+
 // Wisnu's rule: the Injourney folder holds the Booth Exhibition Sub Holding
 // 2024 series (five numbered pictures, number one being the Pola study), then
 // the four Sahakarya 2025 festival renders, then the four Gandrung Sewu 2026
