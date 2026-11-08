@@ -38,7 +38,6 @@ import injourneyUmkmCoastal from "@/assets/injourney-umkm-coastal-pavilion-2026.
 import suzukiIimsMain from "@/assets/suzuki-iims-2023-main.jpg.asset.json";
 import suzukiIimsFront from "@/assets/suzuki-iims-2023-front.png.asset.json";
 import suzukiIimsAerial from "@/assets/suzuki-iims-2023-aerial.png.asset.json";
-import suzukiIims2025Front from "@/assets/suzuki-iims-2025-front.jpg.asset.json";
 import suzukiIims2025Collection from "@/assets/suzuki-iims-2025-collection.jpg.asset.json";
 import suzukiIims2025Safety from "@/assets/suzuki-iims-2025-safety.jpg.asset.json";
 import othersDerideSmkStudds from "@/assets/others-deride-smk-studds-2022.png.asset.json";
@@ -318,16 +317,8 @@ export const projects: Project[] = [
         height: 941,
       },
       {
-        src: suzukiIims2025Front.url,
-        title: "SUZUKI BOOTH EXHIBITION IIMS 2025 — 1 front view",
-        year: "2025",
-        caption: "Front view of the 2025 stand: the blue LED waterfall wall under the hanging Suzuki cube, with the line-up on a glowing floor.",
-        width: 1280,
-        height: 720,
-      },
-      {
         src: suzukiIims2025Collection.url,
-        title: "SUZUKI BOOTH EXHIBITION IIMS 2025 — 2 collection corner",
+        title: "SUZUKI BOOTH EXHIBITION IIMS 2025 — 1 collection corner",
         year: "2025",
         caption: "The Suzuki Collection merchandise wall and EMPOWERING YOUR NEXT MOVE facade, with the YOUR GEAR counter beside it.",
         width: 1280,
@@ -335,7 +326,7 @@ export const projects: Project[] = [
       },
       {
         src: suzukiIims2025Safety.url,
-        title: "SUZUKI BOOTH EXHIBITION IIMS 2025 — 3 safety support",
+        title: "SUZUKI BOOTH EXHIBITION IIMS 2025 — 2 safety support",
         year: "2025",
         caption: "The Safety Support interactive screen at the mezzanine stairs, with the Jimny corner and LED wall behind.",
         width: 1280,
