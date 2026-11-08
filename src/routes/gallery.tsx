@@ -104,8 +104,10 @@ function Gallery() {
                       setIndex(k);
                       setOpen(true);
                     }}
+                    onMouseMove={(event) => drift(event, 12)}
+                    onMouseLeave={settle}
                     aria-label={`Open ${entry.title} full size`}
-                    className="group relative block w-full cursor-zoom-in overflow-hidden rounded-sm"
+                    className="gallery-drift group relative block w-full cursor-zoom-in overflow-hidden rounded-sm"
                   >
                     <img
                       src={entry.src}
@@ -114,7 +116,7 @@ function Gallery() {
                       height={entry.height}
                       loading={k === 0 ? "eager" : "lazy"}
                       decoding="async"
-                      className="h-auto w-full rounded-sm bg-muted transition duration-500 group-hover:scale-[1.02]"
+                      className="h-auto w-full rounded-sm bg-muted transition duration-500 group-hover:scale-[1.03]"
                     />
                     <span className="pointer-events-none absolute inset-0 grid place-items-center bg-background/55 opacity-0 transition duration-300 group-hover:opacity-100 group-focus-visible:opacity-100">
                       <span className="chip bg-background/85 text-foreground">View full size</span>
