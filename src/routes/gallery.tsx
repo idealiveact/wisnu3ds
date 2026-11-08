@@ -102,7 +102,7 @@ function Gallery() {
             className="relative mt-14 hidden h-[1500px] md:block lg:h-[1750px]"
           >
             {galleryEntries.map((entry, k) => {
-              const s = scatter[k % scatter.length];
+              const s = scatter[k % scatter.length]!;
               return (
                 <figure
                   key={entry.src + k}
