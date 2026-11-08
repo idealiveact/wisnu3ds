@@ -1,10 +1,10 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Maximize2 } from "lucide-react";
-import { useState, type MouseEvent } from "react";
+import { Play } from "lucide-react";
+import { useRef, useState, type MouseEvent } from "react";
 
 import walkthroughPreview from "@/assets/samsung-note20-walkthrough-2020-preview.jpg.asset.json";
 import { GalleryLightbox } from "@/components/GalleryLightbox";
-import { galleryEntries } from "@/data/gallery";
+import { galleryEntries, type GalleryEntry } from "@/data/gallery";
 import { pageHead } from "@/lib/seo";
 
 export const Route = createFileRoute("/gallery")({
@@ -20,32 +20,59 @@ export const Route = createFileRoute("/gallery")({
   component: Gallery,
 });
 
-/** Susunan editorial: tiap foto bergantian lebar dan posisi, dengan jeda besar antar karya. */
-const layouts = [
-  "md:w-[58%] md:mr-auto",
-  "md:w-[46%] md:ml-auto",
-  "md:w-[64%] md:mx-auto",
-  "md:w-[50%] md:mr-auto",
-  "md:w-[42%] md:ml-auto md:mr-[8%]",
-  "md:w-[56%] md:mx-auto",
+/**
+ * Susunan kolase tersebar (seperti index view michaelgatt.com):
+ * tiap karya melayang di kanvas gelap dengan ukuran, posisi, dan rotasi berbeda.
+ * depth mengatur seberapa jauh karya ikut bergeser saat kursor bergerak.
+ */
+const scatter: { top: string; left: string; width: string; rotate: number; depth: number }[] = [
+  { top: "1%", left: "4%", width: "21%", rotate: -3, depth: 0.9 },
+  { top: "6%", left: "37%", width: "26%", rotate: 2, depth: 0.5 },
+  { top: "3%", left: "72%", width: "20%", rotate: -2, depth: 1.1 },
+  { top: "23%", left: "13%", width: "18%", rotate: 3, depth: 0.6 },
+  { top: "25%", left: "54%", width: "24%", rotate: -1, depth: 1.0 },
+  { top: "36%", left: "80%", width: "16%", rotate: 4, depth: 0.7 },
+  { top: "41%", left: "29%", width: "20%", rotate: -4, depth: 1.2 },
+  { top: "49%", left: "59%", width: "22%", rotate: 2, depth: 0.5 },
+  { top: "55%", left: "7%", width: "24%", rotate: -2, depth: 0.8 },
+  { top: "67%", left: "37%", width: "18%", rotate: 3, depth: 1.1 },
+  { top: "71%", left: "69%", width: "24%", rotate: -3, depth: 0.6 },
+  { top: "81%", left: "19%", width: "20%", rotate: 2, depth: 1.0 },
 ];
 
-/** Foto/film mengikuti kursor sedikit, seolah ikut bergerak saat ditunjuk. */
-function drift(event: MouseEvent<HTMLElement>, strength: number) {
+/** Kanvas bergerak pelan mengikuti kursor; tiap karya ikut sejauh depth-nya. */
+function parallax(event: MouseEvent<HTMLElement>) {
   const el = event.currentTarget;
   const rect = el.getBoundingClientRect();
   const x = (event.clientX - rect.left) / rect.width - 0.5;
   const y = (event.clientY - rect.top) / rect.height - 0.5;
-  el.style.transform = `translate(${x * strength}px, ${y * strength}px) scale(1.015)`;
+  el.style.setProperty("--mx", x.toFixed(3));
+  el.style.setProperty("--my", y.toFixed(3));
 }
 
-function settle(event: MouseEvent<HTMLElement>) {
-  event.currentTarget.style.transform = "";
+function resetParallax(event: MouseEvent<HTMLElement>) {
+  event.currentTarget.style.setProperty("--mx", "0");
+  event.currentTarget.style.setProperty("--my", "0");
+}
+
+function EntryCaption({ entry }: { entry: GalleryEntry }) {
+  return (
+    <figcaption className="mt-2 flex items-baseline justify-between gap-3">
+      <span className="min-w-0 truncate text-xs font-semibold text-foreground md:text-sm">{entry.title}</span>
+      <span className="eyebrow shrink-0">{entry.year}</span>
+    </figcaption>
+  );
 }
 
 function Gallery() {
   const [index, setIndex] = useState(0);
   const [open, setOpen] = useState(false);
+  const canvasRef = useRef<HTMLDivElement>(null);
+
+  const openAt = (k: number) => {
+    setIndex(k);
+    setOpen(true);
+  };
 
   return (
     <section className="min-h-screen px-6 pt-28 pb-16 md:px-10">
@@ -66,73 +93,86 @@ function Gallery() {
             Thank you for taking the time to view them. Click any picture or film to open it full size, then use the
             arrows to move between them.
           </p>
-          <div className="mt-16 flex flex-col gap-20 md:mt-24 md:gap-36">
-            {galleryEntries.map((entry, k) => (
-              <figure key={entry.src + k} className={layouts[k % layouts.length]}>
-                {entry.kind === "video" ? (
-                  <div
-                    className="gallery-drift relative"
-                    onMouseMove={(event) => drift(event, 6)}
-                    onMouseLeave={settle}
-                  >
-                    <video
-                      src={entry.src}
-                      poster={entry.poster}
-                      width={entry.width}
-                      height={entry.height}
-                      controls
-                      playsInline
-                      preload="metadata"
-                      className="h-auto w-full rounded-sm bg-muted"
-                    />
-                    <button
-                      type="button"
-                      onClick={() => {
-                        setIndex(k);
-                        setOpen(true);
-                      }}
-                      aria-label={`Open ${entry.title} full size`}
-                      className="absolute right-3 top-3 z-10 grid h-9 w-9 place-items-center rounded-full border border-border bg-background/75 text-foreground backdrop-blur transition hover:border-primary hover:text-primary"
-                    >
-                      <Maximize2 className="h-4 w-4" />
-                    </button>
-                  </div>
-                ) : (
+
+          {/* Kanvas kolase tersebar — laptop */}
+          <div
+            ref={canvasRef}
+            onMouseMove={parallax}
+            onMouseLeave={resetParallax}
+            className="relative mt-14 hidden h-[1500px] md:block lg:h-[1750px]"
+          >
+            {galleryEntries.map((entry, k) => {
+              const s = scatter[k % scatter.length];
+              return (
+                <figure
+                  key={entry.src + k}
+                  className="group absolute transition-transform duration-700 ease-out will-change-transform"
+                  style={{
+                    top: s.top,
+                    left: s.left,
+                    width: s.width,
+                    transform: `translate(calc(var(--mx, 0) * ${s.depth * 36}px), calc(var(--my, 0) * ${s.depth * 26}px)) rotate(${s.rotate}deg)`,
+                  }}
+                >
                   <button
                     type="button"
-                    onClick={() => {
-                      setIndex(k);
-                      setOpen(true);
-                    }}
-                    onMouseMove={(event) => drift(event, 12)}
-                    onMouseLeave={settle}
+                    onClick={() => openAt(k)}
                     aria-label={`Open ${entry.title} full size`}
-                    className="gallery-drift group relative block w-full cursor-zoom-in overflow-hidden rounded-sm"
+                    className="relative block w-full cursor-zoom-in transition duration-500 ease-out group-hover:z-20 group-hover:scale-[1.06] group-hover:shadow-2xl"
                   >
                     <img
-                      src={entry.src}
+                      src={entry.kind === "video" ? entry.poster : entry.src}
                       alt={entry.title}
                       width={entry.width}
                       height={entry.height}
-                      loading={k === 0 ? "eager" : "lazy"}
+                      loading={k < 4 ? "eager" : "lazy"}
                       decoding="async"
-                      className="h-auto w-full rounded-sm bg-muted transition duration-500 group-hover:scale-[1.03]"
+                      className="h-auto w-full rounded-sm bg-muted"
                     />
-                    <span className="pointer-events-none absolute inset-0 grid place-items-center bg-background/55 opacity-0 transition duration-300 group-hover:opacity-100 group-focus-visible:opacity-100">
-                      <span className="chip bg-background/85 text-foreground">View full size</span>
-                    </span>
+                    {entry.kind === "video" && (
+                      <span className="absolute inset-0 grid place-items-center">
+                        <span className="grid h-12 w-12 place-items-center rounded-full bg-background/70 text-foreground backdrop-blur transition group-hover:bg-primary group-hover:text-primary-foreground">
+                          <Play className="h-5 w-5 fill-current" />
+                        </span>
+                      </span>
+                    )}
+                    <span className="pointer-events-none absolute inset-0 bg-background/45 opacity-0 transition duration-300 group-hover:opacity-100" />
                   </button>
-                )}
-                <figcaption className="mt-3 flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1 border-t border-border pt-3">
-                  <span className="font-display text-xl font-bold text-foreground md:text-2xl">
-                    {entry.title}
-                    {entry.kind === "video" && <span className="eyebrow ml-3">Video</span>}
-                  </span>
-                  <span className="eyebrow shrink-0">{entry.year}</span>
-                </figcaption>
-                {entry.caption && (
-                  <p className="mt-2 max-w-2xl text-sm leading-relaxed text-muted-foreground">{entry.caption}</p>
-                )}
+                  <EntryCaption entry={entry} />
+                </figure>
+              );
+            })}
+          </div>
+
+          {/* Kolase sederhana dua kolom — HP */}
+          <div className="mt-12 grid grid-cols-2 items-start gap-x-4 gap-y-8 md:hidden">
+            {galleryEntries.map((entry, k) => (
+              <figure key={entry.src + k} className={k % 3 === 0 ? "col-span-2" : k % 2 === 0 ? "mt-6" : ""}>
+                <button
+                  type="button"
+                  onClick={() => openAt(k)}
+                  aria-label={`Open ${entry.title} full size`}
+                  className="relative block w-full cursor-zoom-in"
+                  style={{ transform: `rotate(${k % 2 === 0 ? -1.5 : 1.5}deg)` }}
+                >
+                  <img
+                    src={entry.kind === "video" ? entry.poster : entry.src}
+                    alt={entry.title}
+                    width={entry.width}
+                    height={entry.height}
+                    loading={k < 2 ? "eager" : "lazy"}
+                    decoding="async"
+                    className="h-auto w-full rounded-sm bg-muted"
+                  />
+                  {entry.kind === "video" && (
+                    <span className="absolute inset-0 grid place-items-center">
+                      <span className="grid h-10 w-10 place-items-center rounded-full bg-background/70 text-foreground backdrop-blur">
+                        <Play className="h-4 w-4 fill-current" />
+                      </span>
+                    </span>
+                  )}
+                </button>
+                <EntryCaption entry={entry} />
               </figure>
             ))}
           </div>
