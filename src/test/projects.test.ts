@@ -69,15 +69,14 @@ describe("SUZUKI EXHIBITION entry", () => {
     expect(project?.category).toBe("work");
   });
 
-  it("shows six labelled renders, 2023 first then 2025, each event numbered from one", () => {
+  it("shows five labelled renders, 2023 first then 2025, each event numbered from one", () => {
     const gallery = project?.gallery ?? [];
     expect(gallery.map((item) => item.title)).toEqual([
-      "Booth Exhibition IIMS 2024 — 1",
-      "Booth Exhibition IIMS 2024 — 2 front view",
-      "Booth Exhibition IIMS 2024 — 3 aerial layout",
-      "SUZUKI BOOTH EXHIBITION IIMS 2025 — 1 front view",
-      "SUZUKI BOOTH EXHIBITION IIMS 2025 — 2 collection corner",
-      "SUZUKI BOOTH EXHIBITION IIMS 2025 — 3 safety support",
+      "Booth Exhibition IIMS 2022 — 1",
+      "Booth Exhibition IIMS 2022 — 2 front view",
+      "Booth Exhibition IIMS 2022 — 3 Bird View",
+      "SUZUKI BOOTH EXHIBITION IIMS 2025 — 1 collection corner",
+      "SUZUKI BOOTH EXHIBITION IIMS 2025 — 2 safety support",
     ]);
     gallery.forEach((item, index) => {
       expect(item.year).toBe(index < 3 ? "2023" : "2025");
