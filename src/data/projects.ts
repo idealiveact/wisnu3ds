@@ -35,6 +35,10 @@ import injourneyUmkmCraft from "@/assets/injourney-umkm-craft-market-2026.jpg.as
 import injourneyUmkmVillage from "@/assets/injourney-umkm-village-market-2026.jpg.asset.json";
 import injourneyUmkmNight from "@/assets/injourney-umkm-night-market-2026.jpg.asset.json";
 import injourneyUmkmCoastal from "@/assets/injourney-umkm-coastal-pavilion-2026.jpg.asset.json";
+import othersDerideSmkStudds from "@/assets/others-deride-smk-studds-2022.png.asset.json";
+import othersJuraganHelm2025 from "@/assets/others-juragan-helm-2025.png.asset.json";
+import othersDeride2026 from "@/assets/others-deride-2026.png.asset.json";
+import othersJuraganHelm2026 from "@/assets/others-juragan-helm-2026.png.asset.json";
 import homePreview from "@/assets/home-preview-activation.jpg.asset.json";
 import pertaminaPreview from "@/assets/pertamina-preview.jpg.asset.json";
 import samsungPreview from "@/assets/samsung-preview.jpg.asset.json";
@@ -418,6 +422,55 @@ export const projects: Project[] = [
         caption: "Night pavilion with a carved wooden screen showing a fan dancer in silhouette, white draped canopies above, woven floor mats, terracotta urns and a glowing bamboo lantern.",
         width: 1620,
         height: 971,
+      },
+    ],
+  },
+  {
+    slug: "others",
+    title: "Others",
+    category: "work",
+    year: "2022–2026",
+    client: "Various brands",
+    role: "3D Artist",
+    software: ["3ds Max 2018", "V-Ray", "Photoshop", "CorelDRAW"],
+    summary:
+      "A collection of smaller exhibition booths for riding-gear and helmet brands from 2022 to 2026: Deride stands for SMK, Studds, Shoei, Komine and more, plus two Juragan Helm layouts for Macna, HJC, Airoh and Xpd.",
+    description:
+      "A shelf of smaller exhibition booths built for the riding-gear and helmet brands between 2022 and 2026. It opens with the Deride stand for SMK and Studds helmets: a red corner booth with a helmet wall behind white slats and a Nolan counter at the side. In 2025 came the Juragan Helm booth, a black and yellow Macna and HJC stand with jackets on one flank and a full helmet wall on the other. The 2026 pair follows: a second Juragan Helm layout adding Airoh and Xpd corners around a red and yellow core, and a long white Deride stand carrying Shoei, Komine, Quad Lock, Cardo, Nolan and X-lite along one open frontage. All modelled in 3ds Max 2018 with V-Ray, then finished in Photoshop and CorelDRAW.",
+    cover: othersDeride2026.url,
+    shareImage: othersDeride2026.url,
+    gallery: [
+      {
+        src: othersDerideSmkStudds.url,
+        title: "Deride — SMK & Studds Helmets Booth",
+        year: "2022",
+        caption: "Red corner booth for SMK and Studds helmets: a helmet wall behind white slats, with a Nolan counter at the side.",
+        width: 1671,
+        height: 941,
+      },
+      {
+        src: othersJuraganHelm2025.url,
+        title: "Juragan Helm — Macna & HJC Booth",
+        year: "2025",
+        caption: "Black and yellow stand for Juragan Helm: Macna jackets on one flank, an HJC helmet wall on the other.",
+        width: 1672,
+        height: 941,
+      },
+      {
+        src: othersJuraganHelm2026.url,
+        title: "Juragan Helm — Airoh, Macna, HJC & Xpd Booth",
+        year: "2026",
+        caption: "Second Juragan Helm layout: Airoh and HJC helmet walls around a red and yellow Macna and Xpd core.",
+        width: 1671,
+        height: 941,
+      },
+      {
+        src: othersDeride2026.url,
+        title: "Deride — Multi-Brand Booth",
+        year: "2026",
+        caption: "Long white Deride stand carrying Shoei, Komine, Quad Lock, Cardo, Nolan and X-lite along one open frontage.",
+        width: 1671,
+        height: 941,
       },
     ],
   },
