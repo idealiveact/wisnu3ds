@@ -55,31 +55,34 @@ describe("Work opening paragraphs", () => {
   });
 });
 
-// The Suzuki folder holds the IIMS 2023 booth: two renders of one stand,
-// numbered per event like the Injourney folder.
+// The Suzuki folder holds the IIMS booths: two renders of the 2023 stand,
+// then three of the 2025 stand, each event numbered from one.
 describe("SUZUKI EXHIBITION entry", () => {
   const project = getProject("suzuki");
 
-  it("is listed as SUZUKI EXHIBITION, 2023, for client Suzuki", () => {
+  it("is listed as SUZUKI EXHIBITION, 2023–2025, for client Suzuki", () => {
     expect(project, "no project with slug 'suzuki'").toBeTruthy();
     expect(project?.title).toBe("SUZUKI EXHIBITION");
-    expect(project?.year).toBe("2023");
+    expect(project?.year).toBe("2023–2025");
     expect(project?.client).toBe("Suzuki");
     expect(project?.category).toBe("work");
   });
 
-  it("shows two labelled renders numbered under Booth Exhibition IIMS 2023", () => {
+  it("shows five labelled renders, 2023 first then 2025, each event numbered from one", () => {
     const gallery = project?.gallery ?? [];
     expect(gallery.map((item) => item.title)).toEqual([
       "Booth Exhibition IIMS 2023 — 1 front view",
       "Booth Exhibition IIMS 2023 — 2 aerial layout",
+      "SUZUKI BOOTH EXHIBITION IIMS 2025 — 1 front view",
+      "SUZUKI BOOTH EXHIBITION IIMS 2025 — 2 collection corner",
+      "SUZUKI BOOTH EXHIBITION IIMS 2025 — 3 safety support",
     ]);
-    for (const item of gallery) {
-      expect(item.year).toBe("2023");
+    gallery.forEach((item, index) => {
+      expect(item.year).toBe(index < 2 ? "2023" : "2025");
       expect(item.caption?.trim().length, item.title).toBeGreaterThan(0);
       expect(Number.isInteger(item.width), item.title).toBe(true);
       expect(Number.isInteger(item.height), item.title).toBe(true);
-    }
+    });
   });
 });
 

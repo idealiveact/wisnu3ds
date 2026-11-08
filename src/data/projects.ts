@@ -37,6 +37,9 @@ import injourneyUmkmNight from "@/assets/injourney-umkm-night-market-2026.jpg.as
 import injourneyUmkmCoastal from "@/assets/injourney-umkm-coastal-pavilion-2026.jpg.asset.json";
 import suzukiIimsFront from "@/assets/suzuki-iims-2023-front.jpg.asset.json";
 import suzukiIimsAerial from "@/assets/suzuki-iims-2023-aerial.jpg.asset.json";
+import suzukiIims2025Front from "@/assets/suzuki-iims-2025-front.jpg.asset.json";
+import suzukiIims2025Collection from "@/assets/suzuki-iims-2025-collection.jpg.asset.json";
+import suzukiIims2025Safety from "@/assets/suzuki-iims-2025-safety.jpg.asset.json";
 import othersDerideSmkStudds from "@/assets/others-deride-smk-studds-2022.png.asset.json";
 import othersJuraganHelm2025 from "@/assets/others-juragan-helm-2025.png.asset.json";
 import othersDeride2026 from "@/assets/others-deride-2026.png.asset.json";
@@ -278,14 +281,14 @@ export const projects: Project[] = [
     slug: "suzuki",
     title: "SUZUKI EXHIBITION",
     category: "work",
-    year: "2023",
+    year: "2023–2025",
     client: "Suzuki",
     role: "3D Artist",
     software: ["3ds Max 2018", "V-Ray", "Photoshop", "CorelDRAW"],
     summary:
-      "The Suzuki booth at IIMS 2023: a wide stand under an exposed truss ceiling, pairing white faceted walls with warm timber inlays, carrying the full Suzuki line-up led by the Grand Vitara.",
+      "Suzuki at IIMS, two years running: the wide, low 2023 stand with timber inlays and a hexagon light ring, and the brighter 2025 booth with a glowing blue LED waterfall wall, a hanging Suzuki cube and a mezzanine lounge.",
     description:
-      "The Suzuki booth at IIMS 2023: a wide, low stand under an exposed truss ceiling, carrying the whole Suzuki line on one continuous floor. The design pairs crisp white faceted walls with warm timber inlays, so the booth reads modern but still friendly up close. A floating hexagon light ring glows above the centre stage, with YOUR GEAR and DRIVING LIFESTYLE signs hanging from the rig. The Grand Vitara leads the line-up on its own black plinth, flanked by the Jimny, S-Presso, Ertiga and XL7, while an URBAN MOBILITY corner and a SUZUKI COLLECTION merchandise wall fill the sides. All modelled in 3ds Max 2018 with V-Ray, then finished in Photoshop and CorelDRAW for the big show launch artwork set.",
+      "Suzuki at IIMS, two years running. The 2023 stand sits wide and low under an exposed truss ceiling: crisp white faceted walls with warm timber inlays, a floating hexagon light ring above the centre stage, and the Grand Vitara leading the line-up on its own black plinth, flanked by the Jimny, S-Presso, Ertiga and XL7. In 2025 the booth turned brighter and taller: a glowing blue LED waterfall wall runs the length of the stand under a hanging Suzuki cube, with ring lamps, an EMPOWERING YOUR NEXT MOVE facade, a Suzuki Collection merchandise corner, a Safety Support interactive screen and a mezzanine lounge above. All modelled in 3ds Max 2018 with V-Ray, then finished in Photoshop and CorelDRAW.",
     cover: suzukiIimsFront.url,
     shareImage: suzukiIimsFront.url,
     gallery: [
@@ -304,6 +307,30 @@ export const projects: Project[] = [
         caption: "Bird's-eye view of the whole floor: the full line-up, the URBAN MOBILITY corner and the S-Presso display at the front edge.",
         width: 1672,
         height: 941,
+      },
+      {
+        src: suzukiIims2025Front.url,
+        title: "SUZUKI BOOTH EXHIBITION IIMS 2025 — 1 front view",
+        year: "2025",
+        caption: "Front view of the 2025 stand: the blue LED waterfall wall under the hanging Suzuki cube, with the line-up on a glowing floor.",
+        width: 1280,
+        height: 720,
+      },
+      {
+        src: suzukiIims2025Collection.url,
+        title: "SUZUKI BOOTH EXHIBITION IIMS 2025 — 2 collection corner",
+        year: "2025",
+        caption: "The Suzuki Collection merchandise wall and EMPOWERING YOUR NEXT MOVE facade, with the YOUR GEAR counter beside it.",
+        width: 1280,
+        height: 720,
+      },
+      {
+        src: suzukiIims2025Safety.url,
+        title: "SUZUKI BOOTH EXHIBITION IIMS 2025 — 3 safety support",
+        year: "2025",
+        caption: "The Safety Support interactive screen at the mezzanine stairs, with the Jimny corner and LED wall behind.",
+        width: 1280,
+        height: 720,
       },
     ],
   },
