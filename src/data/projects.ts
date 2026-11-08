@@ -295,7 +295,7 @@ export const projects: Project[] = [
     gallery: [
       {
         src: suzukiIimsMain.url,
-        title: "Booth Exhibition IIMS 2024 — 1",
+        title: "Booth Exhibition IIMS 2022 — 1",
         year: "2023",
         caption: "The 2023 stand: white faceted walls with timber inlays, the hexagon light ring and the YOUR GEAR sign above the centre stage.",
         width: 1672,
@@ -303,7 +303,7 @@ export const projects: Project[] = [
       },
       {
         src: suzukiIimsFront.url,
-        title: "Booth Exhibition IIMS 2024 — 2 front view",
+        title: "Booth Exhibition IIMS 2022 — 2 front view",
         year: "2023",
         caption: "Front view: the Grand Vitara on its black plinth, the Suzuki Collection corner and the car line-up under the truss ceiling.",
         width: 1671,
@@ -311,7 +311,7 @@ export const projects: Project[] = [
       },
       {
         src: suzukiIimsAerial.url,
-        title: "Booth Exhibition IIMS 2024 — 3 aerial layout",
+        title: "Booth Exhibition IIMS 2022 — 3 aerial layout",
         year: "2023",
         caption: "Aerial layout of the whole stand: the centre stage, Urban Mobility row, Grand Vitara plinth and the S-Presso corner.",
         width: 1672,
