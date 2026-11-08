@@ -12,6 +12,8 @@ import suzuki2023 from "@/assets/suzuki-iims-2023.mp4.asset.json";
 import suzuki2023Poster from "@/assets/suzuki-iims-2023-poster.jpg.asset.json";
 import suzuki2025 from "@/assets/suzuki-iims-ewx-2025.mp4.asset.json";
 import suzuki2025Poster from "@/assets/suzuki-iims-ewx-2025-poster.jpg.asset.json";
+import sahakaryaPavilion2025 from "@/assets/injourney-sahakarya-pavilion-2025.jpg.asset.json";
+import sahakaryaCanopy2025 from "@/assets/injourney-sahakarya-canopy-2025.jpg.asset.json";
 
 /**
  * Entri untuk halaman Gallery.
@@ -128,5 +130,23 @@ export const galleryEntries: GalleryEntry[] = [
     caption: "The eWX concept unveiled on a glowing green turntable beneath a wide LED screen.",
     width: 1920,
     height: 1080,
+  },
+  {
+    kind: "photo",
+    src: sahakaryaPavilion2025.url,
+    title: "Injourney Sahakarya 2025 — Festival Pavilion",
+    year: "2025",
+    caption: "The open-air pavilion on the lawn, framed by penjor poles and shaded by the old trees.",
+    width: 1280,
+    height: 720,
+  },
+  {
+    kind: "photo",
+    src: sahakaryaCanopy2025.url,
+    title: "Injourney Sahakarya 2025 — Under the Canopy",
+    year: "2025",
+    caption: "Guests in traditional dress beneath the rattan canopy, with the temple rising behind.",
+    width: 1280,
+    height: 854,
   },
 ];
