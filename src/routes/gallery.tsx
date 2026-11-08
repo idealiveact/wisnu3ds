@@ -20,6 +20,29 @@ export const Route = createFileRoute("/gallery")({
   component: Gallery,
 });
 
+/** Susunan editorial: tiap foto bergantian lebar dan posisi, dengan jeda besar antar karya. */
+const layouts = [
+  "md:w-[58%] md:mr-auto",
+  "md:w-[46%] md:ml-auto",
+  "md:w-[64%] md:mx-auto",
+  "md:w-[50%] md:mr-auto",
+  "md:w-[42%] md:ml-auto md:mr-[8%]",
+  "md:w-[56%] md:mx-auto",
+];
+
+/** Foto/film mengikuti kursor sedikit, seolah ikut bergerak saat ditunjuk. */
+function drift(event: MouseEvent<HTMLElement>, strength: number) {
+  const el = event.currentTarget;
+  const rect = el.getBoundingClientRect();
+  const x = (event.clientX - rect.left) / rect.width - 0.5;
+  const y = (event.clientY - rect.top) / rect.height - 0.5;
+  el.style.transform = `translate(${x * strength}px, ${y * strength}px) scale(1.015)`;
+}
+
+function settle(event: MouseEvent<HTMLElement>) {
+  event.currentTarget.style.transform = "";
+}
+
 function Gallery() {
   const [index, setIndex] = useState(0);
   const [open, setOpen] = useState(false);
