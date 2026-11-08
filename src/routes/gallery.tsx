@@ -66,11 +66,15 @@ function Gallery() {
             Thank you for taking the time to view them. Click any picture or film to open it full size, then use the
             arrows to move between them.
           </p>
-          <div className="mt-10 columns-1 gap-6 sm:columns-2 lg:columns-3">
+          <div className="mt-16 flex flex-col gap-20 md:mt-24 md:gap-36">
             {galleryEntries.map((entry, k) => (
-              <figure key={entry.src + k} className="mb-6 break-inside-avoid">
+              <figure key={entry.src + k} className={layouts[k % layouts.length]}>
                 {entry.kind === "video" ? (
-                  <div className="relative">
+                  <div
+                    className="gallery-drift relative"
+                    onMouseMove={(event) => drift(event, 6)}
+                    onMouseLeave={settle}
+                  >
                     <video
                       src={entry.src}
                       poster={entry.poster}
