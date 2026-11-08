@@ -55,9 +55,9 @@ describe("Work opening paragraphs", () => {
   });
 });
 
-// The Suzuki folder holds the IIMS booths: one render of the 2023 stand,
+// The Suzuki folder holds the IIMS booths: three renders of the 2023 stand,
 // then three of the 2025 stand, each event numbered from one. Wisnu's rule:
-// the 2023 photo carries just its number, no picture name after it.
+// the first 2023 photo carries just its number, no picture name after it.
 describe("SUZUKI EXHIBITION entry", () => {
   const project = getProject("suzuki");
 
@@ -69,16 +69,18 @@ describe("SUZUKI EXHIBITION entry", () => {
     expect(project?.category).toBe("work");
   });
 
-  it("shows four labelled renders, 2023 first then 2025, each event numbered from one", () => {
+  it("shows six labelled renders, 2023 first then 2025, each event numbered from one", () => {
     const gallery = project?.gallery ?? [];
     expect(gallery.map((item) => item.title)).toEqual([
-      "Booth Exhibition IIMS 2023 — 1",
+      "Booth Exhibition IIMS 2024 — 1",
+      "Booth Exhibition IIMS 2024 — 2 front view",
+      "Booth Exhibition IIMS 2024 — 3 aerial layout",
       "SUZUKI BOOTH EXHIBITION IIMS 2025 — 1 front view",
       "SUZUKI BOOTH EXHIBITION IIMS 2025 — 2 collection corner",
       "SUZUKI BOOTH EXHIBITION IIMS 2025 — 3 safety support",
     ]);
     gallery.forEach((item, index) => {
-      expect(item.year).toBe(index === 0 ? "2023" : "2025");
+      expect(item.year).toBe(index < 3 ? "2023" : "2025");
       expect(item.caption?.trim().length, item.title).toBeGreaterThan(0);
       expect(Number.isInteger(item.width), item.title).toBe(true);
       expect(Number.isInteger(item.height), item.title).toBe(true);
