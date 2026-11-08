@@ -311,6 +311,22 @@ export const projects: Project[] = [
         height: 941,
       },
       {
+        src: suzukiBooth2024Main.url,
+        title: "SUZUKI BOOTH EXHIBITION 2024 — 1 main display",
+        year: "2024",
+        caption: "Elevated view of the whole stand: the car line-up on the lit floor, the panoramic skyline LED wall and the Suzuki Collection store at right.",
+        width: 1672,
+        height: 941,
+      },
+      {
+        src: suzukiBooth2024Jimny.url,
+        title: "SUZUKI BOOTH EXHIBITION 2024 — 2 jimny off-road zone",
+        year: "2024",
+        caption: "The Jimny island: a lime Jimny on a timber log ramp between boulders and rope-bound stone pillars, with the Suzuki Collection store beside it.",
+        width: 1672,
+        height: 941,
+      },
+      {
         src: suzukiIimsMain.url,
         title: "SUZUKI BOOTH EXHIBITION IIMS 2025 — 1",
         year: "2025",
