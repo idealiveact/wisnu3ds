@@ -294,7 +294,7 @@ export const projects: Project[] = [
     gallery: [
       {
         src: suzukiIimsFront.url,
-        title: "Booth Exhibition IIMS 2022 — 1 front view",
+        title: "Booth Exhibition IIMS 2023 — 1 front view",
         year: "2022",
         caption: "Front view: the Grand Vitara on its black plinth, the Suzuki Collection corner and the car line-up under the truss ceiling.",
         width: 1671,
