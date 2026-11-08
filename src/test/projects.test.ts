@@ -55,6 +55,34 @@ describe("Work opening paragraphs", () => {
   });
 });
 
+// The Suzuki folder holds the IIMS 2023 booth: two renders of one stand,
+// numbered per event like the Injourney folder.
+describe("SUZUKI EXHIBITION entry", () => {
+  const project = getProject("suzuki");
+
+  it("is listed as SUZUKI EXHIBITION, 2023, for client Suzuki", () => {
+    expect(project, "no project with slug 'suzuki'").toBeTruthy();
+    expect(project?.title).toBe("SUZUKI EXHIBITION");
+    expect(project?.year).toBe("2023");
+    expect(project?.client).toBe("Suzuki");
+    expect(project?.category).toBe("work");
+  });
+
+  it("shows two labelled renders numbered under Booth Exhibition IIMS 2023", () => {
+    const gallery = project?.gallery ?? [];
+    expect(gallery.map((item) => item.title)).toEqual([
+      "Booth Exhibition IIMS 2023 — 1 front view",
+      "Booth Exhibition IIMS 2023 — 2 aerial layout",
+    ]);
+    for (const item of gallery) {
+      expect(item.year).toBe("2023");
+      expect(item.caption?.trim().length, item.title).toBeGreaterThan(0);
+      expect(Number.isInteger(item.width), item.title).toBe(true);
+      expect(Number.isInteger(item.height), item.title).toBe(true);
+    }
+  });
+});
+
 describe("Indofood Project entry", () => {
   const project = getProject("indofood");
 
