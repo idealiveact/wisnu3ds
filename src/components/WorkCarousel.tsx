@@ -71,8 +71,8 @@ export function WorkCarousel({ projects }: { projects: Project[] }) {
       <h1 className="sr-only">Built with care. Shown with gratitude.</h1>
 
       <div className="relative flex flex-1">
-      <Button variant="ghost" size="icon" className="work-arrow work-arrow-left absolute top-1/2 z-10 size-12 -translate-y-1/2 rounded-full" onClick={() => shift(-1)} aria-label="Previous project"><ChevronLeft className="size-24" strokeWidth={2.75} /></Button>
-      <Button variant="ghost" size="icon" className="work-arrow work-arrow-right absolute top-1/2 z-10 size-12 -translate-y-1/2 rounded-full" onClick={() => shift(1)} aria-label="Next project"><ChevronRight className="size-24" strokeWidth={2.75} /></Button>
+      <Button variant="ghost" size="icon" className="work-arrow work-arrow-left absolute top-1/2 z-10 size-24 -translate-y-1/2 rounded-full" onClick={() => shift(-1)} aria-label="Previous project"><ChevronLeft className="size-24" strokeWidth={2.75} /></Button>
+      <Button variant="ghost" size="icon" className="work-arrow work-arrow-right absolute top-1/2 z-10 size-24 -translate-y-1/2 rounded-full" onClick={() => shift(1)} aria-label="Next project"><ChevronRight className="size-24" strokeWidth={2.75} /></Button>
       <div
         ref={track}
         role="region"
