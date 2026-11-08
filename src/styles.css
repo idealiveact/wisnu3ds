@@ -252,7 +252,7 @@ body { font-family: var(--font-sans); }
 .work-hcard { width: min(57.5vw, 950px); margin-inline: -11vw; transform: scale(.48); }
 .work-hcard[data-active="true"] { transform: scale(1); z-index: 1; }
 .work-htrack { padding-inline: calc(50vw - min(28.75vw, 475px) + 11vw); }
-.work-arrow { border: none; background: transparent; color: oklch(0.85 0.01 80); transition: color .25s, transform .25s; }
+.work-arrow { border: none; background: transparent; color: oklch(0.92 0.01 80); filter: drop-shadow(0 1px 6px oklch(0.12 0.005 60 / 0.9)); transition: color .25s, transform .25s; }
 .work-arrow:hover { background: transparent; color: oklch(0.78 0.12 195); transform: translateY(-50%) scale(1.15); }
 .work-arrow-left { left: calc(50% - min(28.75vw, 475px) - 1.5rem); }
 .work-arrow-right { right: calc(50% - min(28.75vw, 475px) - 1.5rem); }
