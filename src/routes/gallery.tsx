@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Maximize2 } from "lucide-react";
-import { useState } from "react";
+import { useState, type MouseEvent } from "react";
 
 import walkthroughPreview from "@/assets/samsung-note20-walkthrough-2020-preview.jpg.asset.json";
 import { GalleryLightbox } from "@/components/GalleryLightbox";
