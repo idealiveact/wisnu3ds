@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Maximize2 } from "lucide-react";
-import { useState } from "react";
+import { useState, type MouseEvent } from "react";
 
 import walkthroughPreview from "@/assets/samsung-note20-walkthrough-2020-preview.jpg.asset.json";
 import { GalleryLightbox } from "@/components/GalleryLightbox";
@@ -19,6 +19,29 @@ export const Route = createFileRoute("/gallery")({
     }),
   component: Gallery,
 });
+
+/** Susunan editorial: tiap foto bergantian lebar dan posisi, dengan jeda besar antar karya. */
+const layouts = [
+  "md:w-[58%] md:mr-auto",
+  "md:w-[46%] md:ml-auto",
+  "md:w-[64%] md:mx-auto",
+  "md:w-[50%] md:mr-auto",
+  "md:w-[42%] md:ml-auto md:mr-[8%]",
+  "md:w-[56%] md:mx-auto",
+];
+
+/** Foto/film mengikuti kursor sedikit, seolah ikut bergerak saat ditunjuk. */
+function drift(event: MouseEvent<HTMLElement>, strength: number) {
+  const el = event.currentTarget;
+  const rect = el.getBoundingClientRect();
+  const x = (event.clientX - rect.left) / rect.width - 0.5;
+  const y = (event.clientY - rect.top) / rect.height - 0.5;
+  el.style.transform = `translate(${x * strength}px, ${y * strength}px) scale(1.015)`;
+}
+
+function settle(event: MouseEvent<HTMLElement>) {
+  event.currentTarget.style.transform = "";
+}
 
 function Gallery() {
   const [index, setIndex] = useState(0);
@@ -43,11 +66,15 @@ function Gallery() {
             Thank you for taking the time to view them. Click any picture or film to open it full size, then use the
             arrows to move between them.
           </p>
-          <div className="mt-10 columns-1 gap-6 sm:columns-2 lg:columns-3">
+          <div className="mt-16 flex flex-col gap-20 md:mt-24 md:gap-36">
             {galleryEntries.map((entry, k) => (
-              <figure key={entry.src + k} className="mb-6 break-inside-avoid">
+              <figure key={entry.src + k} className={layouts[k % layouts.length]}>
                 {entry.kind === "video" ? (
-                  <div className="relative">
+                  <div
+                    className="gallery-drift relative"
+                    onMouseMove={(event) => drift(event, 6)}
+                    onMouseLeave={settle}
+                  >
                     <video
                       src={entry.src}
                       poster={entry.poster}
@@ -77,8 +104,10 @@ function Gallery() {
                       setIndex(k);
                       setOpen(true);
                     }}
+                    onMouseMove={(event) => drift(event, 12)}
+                    onMouseLeave={settle}
                     aria-label={`Open ${entry.title} full size`}
-                    className="group relative block w-full cursor-zoom-in overflow-hidden rounded-sm"
+                    className="gallery-drift group relative block w-full cursor-zoom-in overflow-hidden rounded-sm"
                   >
                     <img
                       src={entry.src}
@@ -87,7 +116,7 @@ function Gallery() {
                       height={entry.height}
                       loading={k === 0 ? "eager" : "lazy"}
                       decoding="async"
-                      className="h-auto w-full rounded-sm bg-muted transition duration-500 group-hover:scale-[1.02]"
+                      className="h-auto w-full rounded-sm bg-muted transition duration-500 group-hover:scale-[1.03]"
                     />
                     <span className="pointer-events-none absolute inset-0 grid place-items-center bg-background/55 opacity-0 transition duration-300 group-hover:opacity-100 group-focus-visible:opacity-100">
                       <span className="chip bg-background/85 text-foreground">View full size</span>
