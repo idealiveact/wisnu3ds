@@ -302,7 +302,7 @@ export const projects: Project[] = [
       },
       {
         src: suzukiIimsAerial.url,
-        title: "Booth Exhibition IIMS 2022 — 2 Bird View",
+        title: "Booth Exhibition IIMS 2023 — 2 Bird View",
         year: "2022",
         caption: "Aerial layout of the whole stand: the centre stage, Urban Mobility row, Grand Vitara plinth and the S-Presso corner.",
         width: 1672,
