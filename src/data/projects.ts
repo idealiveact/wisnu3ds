@@ -35,6 +35,8 @@ import injourneyUmkmCraft from "@/assets/injourney-umkm-craft-market-2026.jpg.as
 import injourneyUmkmVillage from "@/assets/injourney-umkm-village-market-2026.jpg.asset.json";
 import injourneyUmkmNight from "@/assets/injourney-umkm-night-market-2026.jpg.asset.json";
 import injourneyUmkmCoastal from "@/assets/injourney-umkm-coastal-pavilion-2026.jpg.asset.json";
+import suzukiIimsFront from "@/assets/suzuki-iims-2023-front.jpg.asset.json";
+import suzukiIimsAerial from "@/assets/suzuki-iims-2023-aerial.jpg.asset.json";
 import othersDerideSmkStudds from "@/assets/others-deride-smk-studds-2022.png.asset.json";
 import othersJuraganHelm2025 from "@/assets/others-juragan-helm-2025.png.asset.json";
 import othersDeride2026 from "@/assets/others-deride-2026.png.asset.json";
@@ -267,6 +269,39 @@ export const projects: Project[] = [
         title: "TV & AV Campaign — Seaside Infinity Pool",
         year: "2020",
         caption: "Oceanfront villa deck: a teak poolside running to an infinity pool and a beach, with a timber entertainment unit holding an outdoor screen.",
+        width: 1672,
+        height: 941,
+      },
+    ],
+  },
+  {
+    slug: "suzuki",
+    title: "SUZUKI EXHIBITION",
+    category: "work",
+    year: "2023",
+    client: "Suzuki",
+    role: "3D Artist",
+    software: ["3ds Max 2018", "V-Ray", "Photoshop", "CorelDRAW"],
+    summary:
+      "The Suzuki booth at IIMS 2023: a wide stand under an exposed truss ceiling, pairing white faceted walls with warm timber inlays, carrying the full Suzuki line-up led by the Grand Vitara.",
+    description:
+      "The Suzuki booth at IIMS 2023: a wide, low stand under an exposed truss ceiling, carrying the whole Suzuki line on one continuous floor. The design pairs crisp white faceted walls with warm timber inlays, so the booth reads modern but still friendly up close. A floating hexagon light ring glows above the centre stage, with YOUR GEAR and DRIVING LIFESTYLE signs hanging from the rig. The Grand Vitara leads the line-up on its own black plinth, flanked by the Jimny, S-Presso, Ertiga and XL7, while an URBAN MOBILITY corner and a SUZUKI COLLECTION merchandise wall fill the sides. All modelled in 3ds Max 2018 with V-Ray, then finished in Photoshop and CorelDRAW for the big show launch artwork set.",
+    cover: suzukiIimsFront.url,
+    shareImage: suzukiIimsFront.url,
+    gallery: [
+      {
+        src: suzukiIimsFront.url,
+        title: "Booth Exhibition IIMS 2023 — 1 front view",
+        year: "2023",
+        caption: "Front view of the stand: the Grand Vitara on its black plinth, the hexagon light ring and the YOUR GEAR sign above the centre stage.",
+        width: 1672,
+        height: 941,
+      },
+      {
+        src: suzukiIimsAerial.url,
+        title: "Booth Exhibition IIMS 2023 — 2 aerial layout",
+        year: "2023",
+        caption: "Bird's-eye view of the whole floor: the full line-up, the URBAN MOBILITY corner and the S-Presso display at the front edge.",
         width: 1672,
         height: 941,
       },
