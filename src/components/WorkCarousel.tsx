@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { ArrowLeft, ArrowRight, ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, ChevronLeft, ChevronRight } from "lucide-react";
 import { useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
 import type { Project } from "@/data/projects";
@@ -71,8 +71,8 @@ export function WorkCarousel({ projects }: { projects: Project[] }) {
       <h1 className="sr-only">Built with care. Shown with gratitude.</h1>
 
       <div className="relative flex flex-1">
-      <Button variant="outline" size="icon" className="work-arrow work-arrow-left absolute top-1/2 z-10 size-12 -translate-y-1/2 rounded-full" onClick={() => shift(-1)} aria-label="Previous project"><ArrowLeft /></Button>
-      <Button size="icon" className="work-arrow work-arrow-right absolute top-1/2 z-10 size-12 -translate-y-1/2 rounded-full" onClick={() => shift(1)} aria-label="Next project"><ArrowRight /></Button>
+      <Button variant="ghost" size="icon" className="work-arrow work-arrow-left absolute top-1/2 z-10 size-12 -translate-y-1/2 rounded-full" onClick={() => shift(-1)} aria-label="Previous project"><ChevronLeft className="size-8" strokeWidth={1.5} /></Button>
+      <Button variant="ghost" size="icon" className="work-arrow work-arrow-right absolute top-1/2 z-10 size-12 -translate-y-1/2 rounded-full" onClick={() => shift(1)} aria-label="Next project"><ChevronRight className="size-8" strokeWidth={1.5} /></Button>
       <div
         ref={track}
         role="region"
