@@ -36,6 +36,8 @@ import injourneyUmkmVillage from "@/assets/injourney-umkm-village-market-2026.jp
 import injourneyUmkmNight from "@/assets/injourney-umkm-night-market-2026.jpg.asset.json";
 import injourneyUmkmCoastal from "@/assets/injourney-umkm-coastal-pavilion-2026.jpg.asset.json";
 import suzukiIimsMain from "@/assets/suzuki-iims-2023-main.jpg.asset.json";
+import suzukiIimsFront from "@/assets/suzuki-iims-2023-front.png.asset.json";
+import suzukiIimsAerial from "@/assets/suzuki-iims-2023-aerial.png.asset.json";
 import suzukiIims2025Front from "@/assets/suzuki-iims-2025-front.jpg.asset.json";
 import suzukiIims2025Collection from "@/assets/suzuki-iims-2025-collection.jpg.asset.json";
 import suzukiIims2025Safety from "@/assets/suzuki-iims-2025-safety.jpg.asset.json";
@@ -296,6 +298,22 @@ export const projects: Project[] = [
         title: "Booth Exhibition IIMS 2024 — 1",
         year: "2023",
         caption: "The 2023 stand: white faceted walls with timber inlays, the hexagon light ring and the YOUR GEAR sign above the centre stage.",
+        width: 1672,
+        height: 941,
+      },
+      {
+        src: suzukiIimsFront.url,
+        title: "Booth Exhibition IIMS 2024 — 2 front view",
+        year: "2023",
+        caption: "Front view: the Grand Vitara on its black plinth, the Suzuki Collection corner and the car line-up under the truss ceiling.",
+        width: 1671,
+        height: 941,
+      },
+      {
+        src: suzukiIimsAerial.url,
+        title: "Booth Exhibition IIMS 2024 — 3 aerial layout",
+        year: "2023",
+        caption: "Aerial layout of the whole stand: the centre stage, Urban Mobility row, Grand Vitara plinth and the S-Presso corner.",
         width: 1672,
         height: 941,
       },
