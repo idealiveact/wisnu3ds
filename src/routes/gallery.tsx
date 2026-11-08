@@ -118,7 +118,7 @@ function Gallery() {
                 style={{
                   transform: `rotateX(${rowTilt(row, desktopRows)}deg)`,
                   transformStyle: "preserve-3d",
-                  marginTop: row === 0 ? 0 : "-1.5rem",
+                  marginTop: row === 0 ? 0 : "0.75rem",
                 }}
               >
                 {galleryEntries.slice(row * DESKTOP_COLS, row * DESKTOP_COLS + DESKTOP_COLS).map((entry, c) => (
@@ -146,7 +146,7 @@ function Gallery() {
                 style={{
                   transform: `rotateX(${rowTilt(row, mobileRows)}deg)`,
                   transformStyle: "preserve-3d",
-                  marginTop: row === 0 ? 0 : "-1rem",
+                  marginTop: row === 0 ? 0 : "0.5rem",
                 }}
               >
                 {galleryEntries.slice(row * MOBILE_COLS, row * MOBILE_COLS + MOBILE_COLS).map((entry, c) => (
