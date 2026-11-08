@@ -293,7 +293,7 @@ export const projects: Project[] = [
     gallery: [
       {
         src: suzukiIimsMain.url,
-        title: "Booth Exhibition IIMS 2023 — 1",
+        title: "Booth Exhibition IIMS 2024 — 1",
         year: "2023",
         caption: "The 2023 stand: white faceted walls with timber inlays, the hexagon light ring and the YOUR GEAR sign above the centre stage.",
         width: 1672,
