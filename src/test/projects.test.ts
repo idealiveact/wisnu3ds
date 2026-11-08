@@ -61,25 +61,26 @@ describe("Work opening paragraphs", () => {
 describe("SUZUKI EXHIBITION entry", () => {
   const project = getProject("suzuki");
 
-  it("is listed as SUZUKI EXHIBITION, 2023–2025, for client Suzuki", () => {
+  it("is listed as SUZUKI EXHIBITION, 2022–2025, for client Suzuki", () => {
     expect(project, "no project with slug 'suzuki'").toBeTruthy();
     expect(project?.title).toBe("SUZUKI EXHIBITION");
-    expect(project?.year).toBe("2023–2025");
+    expect(project?.year).toBe("2022–2025");
     expect(project?.client).toBe("Suzuki");
     expect(project?.category).toBe("work");
   });
 
-  it("shows five labelled renders, 2023 first then 2025, each event numbered from one", () => {
+  it("shows five labelled renders sorted by year, 2022 first then 2023 then 2025, each event numbered from one", () => {
     const gallery = project?.gallery ?? [];
     expect(gallery.map((item) => item.title)).toEqual([
-      "Booth Exhibition IIMS 2022 — 1",
-      "Booth Exhibition IIMS 2022 — 2 front view",
-      "Booth Exhibition IIMS 2022 — 3 Bird View",
+      "Booth Exhibition IIMS 2022 — 1 front view",
+      "Booth Exhibition IIMS 2023 — 1",
+      "Booth Exhibition IIMS 2023 — 2 Bird View",
       "SUZUKI BOOTH EXHIBITION IIMS 2025 — 1 collection corner",
       "SUZUKI BOOTH EXHIBITION IIMS 2025 — 2 safety support",
     ]);
+    const expectedYears = ["2022", "2023", "2023", "2025", "2025"];
     gallery.forEach((item, index) => {
-      expect(item.year).toBe(index < 3 ? "2023" : "2025");
+      expect(item.year).toBe(expectedYears[index]);
       expect(item.caption?.trim().length, item.title).toBeGreaterThan(0);
       expect(Number.isInteger(item.width), item.title).toBe(true);
       expect(Number.isInteger(item.height), item.title).toBe(true);
