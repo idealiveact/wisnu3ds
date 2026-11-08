@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Play } from "lucide-react";
-import { useRef, useState, type MouseEvent } from "react";
+import { useState } from "react";
 
 import walkthroughPreview from "@/assets/samsung-note20-walkthrough-2020-preview.jpg.asset.json";
 import { GalleryLightbox } from "@/components/GalleryLightbox";
@@ -21,38 +21,22 @@ export const Route = createFileRoute("/gallery")({
 });
 
 /**
- * Susunan kolase tersebar (seperti index view michaelgatt.com):
- * tiap karya melayang di kanvas gelap dengan ukuran, posisi, dan rotasi berbeda.
- * depth mengatur seberapa jauh karya ikut bergeser saat kursor bergerak.
+ * Kubah cembung: baris foto kotak berjejer rapat, tetapi seluruh susunan
+ * melengkung ke arah penonton — tengah menonjol, tepi mundur dan miring,
+ * baris atas menunduk, baris bawah menengadah.
  */
-const scatter: { top: string; left: string; width: string; rotate: number; depth: number }[] = [
-  { top: "1%", left: "4%", width: "21%", rotate: -3, depth: 0.9 },
-  { top: "6%", left: "37%", width: "26%", rotate: 2, depth: 0.5 },
-  { top: "3%", left: "72%", width: "20%", rotate: -2, depth: 1.1 },
-  { top: "23%", left: "13%", width: "18%", rotate: 3, depth: 0.6 },
-  { top: "25%", left: "54%", width: "24%", rotate: -1, depth: 1.0 },
-  { top: "36%", left: "80%", width: "16%", rotate: 4, depth: 0.7 },
-  { top: "41%", left: "29%", width: "20%", rotate: -4, depth: 1.2 },
-  { top: "49%", left: "59%", width: "22%", rotate: 2, depth: 0.5 },
-  { top: "55%", left: "7%", width: "24%", rotate: -2, depth: 0.8 },
-  { top: "67%", left: "37%", width: "18%", rotate: 3, depth: 1.1 },
-  { top: "71%", left: "69%", width: "24%", rotate: -3, depth: 0.6 },
-  { top: "81%", left: "19%", width: "20%", rotate: 2, depth: 1.0 },
-];
+const DESKTOP_COLS = 4;
+const MOBILE_COLS = 2;
 
-/** Kanvas bergerak pelan mengikuti kursor; tiap karya ikut sejauh depth-nya. */
-function parallax(event: MouseEvent<HTMLElement>) {
-  const el = event.currentTarget;
-  const rect = el.getBoundingClientRect();
-  const x = (event.clientX - rect.left) / rect.width - 0.5;
-  const y = (event.clientY - rect.top) / rect.height - 0.5;
-  el.style.setProperty("--mx", x.toFixed(3));
-  el.style.setProperty("--my", y.toFixed(3));
-}
+/** Skala & kemiringan per posisi kolom (laptop, 4 kolom): tepi mundur, tengah menonjol. */
+const colBulge = [0.88, 0.97, 0.97, 0.88];
+const colTilt = [10, 3, -3, -10];
 
-function resetParallax(event: MouseEvent<HTMLElement>) {
-  event.currentTarget.style.setProperty("--mx", "0");
-  event.currentTarget.style.setProperty("--my", "0");
+/** Kemiringan baris (rotateX derajat): atas menunduk, bawah menengadah, makin ke tepi makin dalam. */
+function rowTilt(row: number, rows: number): number {
+  if (rows <= 1) return 0;
+  const center = (rows - 1) / 2;
+  return ((center - row) / center) * 6;
 }
 
 function EntryCaption({ entry }: { entry: GalleryEntry }) {
@@ -64,15 +48,46 @@ function EntryCaption({ entry }: { entry: GalleryEntry }) {
   );
 }
 
+function Tile({ entry, onOpen }: { entry: GalleryEntry; onOpen: () => void }) {
+  return (
+    <button
+      type="button"
+      onClick={onOpen}
+      aria-label={`Open ${entry.title} full size`}
+      className="relative block aspect-square w-full cursor-zoom-in overflow-hidden rounded-sm bg-muted transition duration-500 ease-out group-hover:z-20 group-hover:scale-[1.06] group-hover:shadow-2xl"
+    >
+      <img
+        src={entry.kind === "video" ? entry.poster : entry.src}
+        alt={entry.title}
+        width={entry.width}
+        height={entry.height}
+        loading="lazy"
+        decoding="async"
+        className="h-full w-full object-cover"
+      />
+      {entry.kind === "video" && (
+        <span className="absolute inset-0 grid place-items-center">
+          <span className="grid h-12 w-12 place-items-center rounded-full bg-background/70 text-foreground backdrop-blur transition group-hover:bg-primary group-hover:text-primary-foreground">
+            <Play className="h-5 w-5 fill-current" />
+          </span>
+        </span>
+      )}
+      <span className="pointer-events-none absolute inset-0 bg-background/45 opacity-0 transition duration-300 group-hover:opacity-100" />
+    </button>
+  );
+}
+
 function Gallery() {
   const [index, setIndex] = useState(0);
   const [open, setOpen] = useState(false);
-  const canvasRef = useRef<HTMLDivElement>(null);
 
   const openAt = (k: number) => {
     setIndex(k);
     setOpen(true);
   };
+
+  const desktopRows = Math.ceil(galleryEntries.length / DESKTOP_COLS);
+  const mobileRows = Math.ceil(galleryEntries.length / MOBILE_COLS);
 
   return (
     <section className="min-h-screen px-6 pt-28 pb-16 md:px-10">
@@ -94,86 +109,57 @@ function Gallery() {
             arrows to move between them.
           </p>
 
-          {/* Kanvas kolase tersebar — laptop */}
-          <div
-            ref={canvasRef}
-            onMouseMove={parallax}
-            onMouseLeave={resetParallax}
-            className="relative mt-14 hidden h-[1500px] md:block lg:h-[1750px]"
-          >
-            {galleryEntries.map((entry, k) => {
-              const s = scatter[k % scatter.length]!;
-              return (
-                <figure
-                  key={entry.src + k}
-                  className="group absolute transition-transform duration-700 ease-out will-change-transform"
-                  style={{
-                    top: s.top,
-                    left: s.left,
-                    width: s.width,
-                    transform: `translate(calc(var(--mx, 0) * ${s.depth * 36}px), calc(var(--my, 0) * ${s.depth * 26}px)) rotate(${s.rotate}deg)`,
-                  }}
-                >
-                  <button
-                    type="button"
-                    onClick={() => openAt(k)}
-                    aria-label={`Open ${entry.title} full size`}
-                    className="relative block w-full cursor-zoom-in transition duration-500 ease-out group-hover:z-20 group-hover:scale-[1.06] group-hover:shadow-2xl"
+          {/* Kubah cembung — laptop: 4 kolom kotak, baris melengkung */}
+          <div className="mt-14 hidden md:block" style={{ perspective: "1400px" }}>
+            {Array.from({ length: desktopRows }, (_, row) => (
+              <div
+                key={row}
+                className="grid grid-cols-4 gap-2"
+                style={{
+                  transform: `rotateX(${rowTilt(row, desktopRows)}deg)`,
+                  transformStyle: "preserve-3d",
+                  marginTop: row === 0 ? 0 : "0.75rem",
+                }}
+              >
+                {galleryEntries.slice(row * DESKTOP_COLS, row * DESKTOP_COLS + DESKTOP_COLS).map((entry, c) => (
+                  <figure
+                    key={entry.src}
+                    className="group transition-transform duration-700 ease-out will-change-transform"
+                    style={{
+                      transform: `scale(${colBulge[c]}) rotateY(${colTilt[c]}deg)`,
+                    }}
                   >
-                    <img
-                      src={entry.kind === "video" ? entry.poster : entry.src}
-                      alt={entry.title}
-                      width={entry.width}
-                      height={entry.height}
-                      loading={k < 4 ? "eager" : "lazy"}
-                      decoding="async"
-                      className="h-auto w-full rounded-sm bg-muted"
-                    />
-                    {entry.kind === "video" && (
-                      <span className="absolute inset-0 grid place-items-center">
-                        <span className="grid h-12 w-12 place-items-center rounded-full bg-background/70 text-foreground backdrop-blur transition group-hover:bg-primary group-hover:text-primary-foreground">
-                          <Play className="h-5 w-5 fill-current" />
-                        </span>
-                      </span>
-                    )}
-                    <span className="pointer-events-none absolute inset-0 bg-background/45 opacity-0 transition duration-300 group-hover:opacity-100" />
-                  </button>
-                  <EntryCaption entry={entry} />
-                </figure>
-              );
-            })}
+                    <Tile entry={entry} onOpen={() => openAt(row * DESKTOP_COLS + c)} />
+                    <EntryCaption entry={entry} />
+                  </figure>
+                ))}
+              </div>
+            ))}
           </div>
 
-          {/* Kolase sederhana dua kolom — HP */}
-          <div className="mt-12 grid grid-cols-2 items-start gap-x-4 gap-y-8 md:hidden">
-            {galleryEntries.map((entry, k) => (
-              <figure key={entry.src + k} className={k % 3 === 0 ? "col-span-2" : k % 2 === 0 ? "mt-6" : ""}>
-                <button
-                  type="button"
-                  onClick={() => openAt(k)}
-                  aria-label={`Open ${entry.title} full size`}
-                  className="relative block w-full cursor-zoom-in"
-                  style={{ transform: `rotate(${k % 2 === 0 ? -1.5 : 1.5}deg)` }}
-                >
-                  <img
-                    src={entry.kind === "video" ? entry.poster : entry.src}
-                    alt={entry.title}
-                    width={entry.width}
-                    height={entry.height}
-                    loading={k < 2 ? "eager" : "lazy"}
-                    decoding="async"
-                    className="h-auto w-full rounded-sm bg-muted"
-                  />
-                  {entry.kind === "video" && (
-                    <span className="absolute inset-0 grid place-items-center">
-                      <span className="grid h-10 w-10 place-items-center rounded-full bg-background/70 text-foreground backdrop-blur">
-                        <Play className="h-4 w-4 fill-current" />
-                      </span>
-                    </span>
-                  )}
-                </button>
-                <EntryCaption entry={entry} />
-              </figure>
+          {/* Kubah cembung — HP: 2 kolom kotak, baris melengkung */}
+          <div className="mt-12 md:hidden" style={{ perspective: "900px" }}>
+            {Array.from({ length: mobileRows }, (_, row) => (
+              <div
+                key={row}
+                className="grid grid-cols-2 gap-2"
+                style={{
+                  transform: `rotateX(${rowTilt(row, mobileRows)}deg)`,
+                  transformStyle: "preserve-3d",
+                  marginTop: row === 0 ? 0 : "0.5rem",
+                }}
+              >
+                {galleryEntries.slice(row * MOBILE_COLS, row * MOBILE_COLS + MOBILE_COLS).map((entry, c) => (
+                  <figure
+                    key={entry.src}
+                    className="group"
+                    style={{ transform: `scale(0.94) rotateY(${c === 0 ? 8 : -8}deg)` }}
+                  >
+                    <Tile entry={entry} onOpen={() => openAt(row * MOBILE_COLS + c)} />
+                    <EntryCaption entry={entry} />
+                  </figure>
+                ))}
+              </div>
             ))}
           </div>
 
