@@ -55,9 +55,10 @@ describe("Work opening paragraphs", () => {
   });
 });
 
-// The Suzuki folder holds the IIMS booths: two renders of the 2022 stand, two
-// of the 2024 booth, then three of the 2025 stand, sorted by year and numbered
-// within each event. Wisnu's rule: the first 2025 photo carries just its number.
+// The Suzuki folder holds the IIMS booths across four years: three renders of
+// the 2022 stand, two of 2023, two of the 2024 booth, then three of the 2025
+// stand, sorted by year and numbered within each event. Wisnu's rule: the first
+// 2025 photo carries just its number.
 describe("SUZUKI EXHIBITION entry", () => {
   const project = getProject("suzuki");
 
