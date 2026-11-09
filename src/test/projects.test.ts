@@ -130,9 +130,9 @@ describe("Others entry", () => {
     expect(project?.category).toBe("work");
   });
 
-  it("shows four labelled booth renders, oldest first", () => {
+  it("shows nine labelled renders, oldest first", () => {
     const gallery = project?.gallery ?? [];
-    expect(gallery.length).toBe(4);
+    expect(gallery.length).toBe(9);
     for (const item of gallery) {
       expect(item.title.trim().length, item.src).toBeGreaterThan(3);
       expect(item.caption?.trim().length, item.title).toBeGreaterThan(0);
@@ -141,6 +141,26 @@ describe("Others entry", () => {
     }
     const years = gallery.map((item) => Number(item.year));
     expect([...years].sort((a, b) => a - b)).toEqual(years);
+  });
+
+  it("numbers the Waroeng Caffe 27 pictures one to five, picture name in lower case", () => {
+    const gallery = project?.gallery ?? [];
+    expect(gallery.map((item) => item.title).slice(4)).toEqual([
+      "Waroeng Caffe 27 — 1 dining lounge",
+      "Waroeng Caffe 27 — 2 lounge to bar",
+      "Waroeng Caffe 27 — 3 espresso bar",
+      "Waroeng Caffe 27 — 4 entrance counter",
+      "Waroeng Caffe 27 — 5 reading corner",
+    ]);
+    for (const item of gallery.slice(4)) {
+      expect(item.year).toBe("2026");
+      const name = item.title.replace(/^.* — \d+ /, "");
+      expect(name, item.title).toBe(name.toLowerCase());
+    }
+  });
+
+  it("names the coffee house in the opening paragraph", () => {
+    expect(project?.description).toContain("Waroeng Caffe 27");
   });
 });
 

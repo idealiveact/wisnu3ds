@@ -49,6 +49,11 @@ import othersDerideSmkStudds from "@/assets/others-deride-smk-studds-2022.png.as
 import othersJuraganHelm2025 from "@/assets/others-juragan-helm-2025.png.asset.json";
 import othersDeride2026 from "@/assets/others-deride-2026.png.asset.json";
 import othersJuraganHelm2026 from "@/assets/others-juragan-helm-2026.png.asset.json";
+import caffe27DiningLounge from "@/assets/caffe_27_a.jpg.asset.json";
+import caffe27LoungeBar from "@/assets/caffe_27_b.jpg.asset.json";
+import caffe27EspressoBar from "@/assets/caffe_27_c.jpg.asset.json";
+import caffe27Entrance from "@/assets/caffe_27_e.jpg.asset.json";
+import caffe27ReadingCorner from "@/assets/waroeng_r_kudus_b.jpg.asset.json";
 import homePreview from "@/assets/home-preview-activation.jpg.asset.json";
 import pertaminaPreview from "@/assets/pertamina-preview.jpg.asset.json";
 import samsungPreview from "@/assets/samsung-preview.jpg.asset.json";
@@ -541,9 +546,9 @@ export const projects: Project[] = [
     role: "3D Designer",
     software: ["3ds Max 2018", "V-Ray", "Photoshop", "CorelDRAW"],
     summary:
-      "A collection of smaller exhibition booths for riding-gear and helmet brands from 2022 to 2026: Deride stands for SMK, Studds, Shoei, Komine and more, plus two Juragan Helm layouts for Macna, HJC, Airoh and Xpd.",
+      "A collection of smaller projects from 2022 to 2026: Deride and Juragan Helm exhibition booths for riding-gear and helmet brands, plus the Waroeng Caffe 27 coffee house interior.",
     description:
-      "A shelf of smaller exhibition booths built for the riding-gear and helmet brands between 2022 and 2026. It opens with the Deride stand for SMK and Studds helmets: a red corner booth with a helmet wall behind white slats and a Nolan counter at the side. In 2025 came the Juragan Helm booth, a black and yellow Macna and HJC stand with jackets on one flank and a full helmet wall on the other. The 2026 pair follows: a second Juragan Helm layout adding Airoh and Xpd corners around a red and yellow core, and a long white Deride stand carrying Shoei, Komine, Quad Lock, Cardo, Nolan and X-lite along one open frontage. All modelled in 3ds Max 2018 with V-Ray, then finished in Photoshop and CorelDRAW.",
+      "A shelf of smaller projects built between 2022 and 2026. It opens with the Deride stand for SMK and Studds helmets: a red corner booth with a helmet wall behind white slats and a Nolan counter at the side. In 2025 came the Juragan Helm booth, a black and yellow Macna and HJC stand with jackets on one flank and a helmet wall on the other, followed in 2026 by a second Juragan Helm layout adding Airoh and Xpd and one long white Deride stand carrying Shoei, Komine, Cardo and X-lite. The shelf also holds Waroeng Caffe 27, a warm coffee house built around a patchwork lounge, an espresso bar and an entrance counter, all modelled in 3ds Max 2018 with V-Ray, then finished in Photoshop and CorelDRAW.",
     cover: othersDeride2026.url,
     shareImage: othersDeride2026.url,
     gallery: [
@@ -578,6 +583,46 @@ export const projects: Project[] = [
         caption: "Long white Deride stand carrying Shoei, Komine, Quad Lock, Cardo, Nolan and X-lite along one open frontage.",
         width: 1671,
         height: 941,
+      },
+      {
+        src: caffe27DiningLounge.url,
+        title: "Waroeng Caffe 27 — 1 dining lounge",
+        year: "2026",
+        caption: "Round bistro tables with red chairs, a patchwork sofa lounge and the red Warung 27 neon on the concrete wall.",
+        width: 1049,
+        height: 1049,
+      },
+      {
+        src: caffe27LoungeBar.url,
+        title: "Waroeng Caffe 27 — 2 lounge to bar",
+        year: "2026",
+        caption: "Lounge seating facing the raised espresso counter, under a cluster of small globe pendants.",
+        width: 1049,
+        height: 1049,
+      },
+      {
+        src: caffe27EspressoBar.url,
+        title: "Waroeng Caffe 27 — 3 espresso bar",
+        year: "2026",
+        caption: "Order counter in white cubic relief and patterned tiles, with a backlit eat, laugh, simple, talk, kiss, drink wall.",
+        width: 1049,
+        height: 1049,
+      },
+      {
+        src: caffe27Entrance.url,
+        title: "Waroeng Caffe 27 — 4 entrance counter",
+        year: "2026",
+        caption: "Entrance greeter desk in front of a black-and-white street mural, split from the window bar by a planted metal grid.",
+        width: 1049,
+        height: 1049,
+      },
+      {
+        src: caffe27ReadingCorner.url,
+        title: "Waroeng Caffe 27 — 5 reading corner",
+        year: "2026",
+        caption: "Warm brick reading corner carrying the quote happiness is a cup of coffee and a good book.",
+        width: 960,
+        height: 960,
       },
     ],
   },
