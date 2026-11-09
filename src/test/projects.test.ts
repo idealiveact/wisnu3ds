@@ -72,11 +72,11 @@ describe("SUZUKI EXHIBITION entry", () => {
   it("shows ten labelled renders sorted by year, 2022 first then 2024 then 2025", () => {
     const gallery = project?.gallery ?? [];
     expect(gallery.map((item) => item.title)).toEqual([
-      "Booth Exhibition IIMS 2023 — 1 front view",
-      "Booth Exhibition IIMS 2023 — 2 Bird View",
-      "Booth Exhibition IIMS 2022 — 3 cafeteria",
-      "Booth Exhibition IIMS 2022 — 4 beach zone",
-      "Booth Exhibition IIMS 2022 — 5 full booth",
+      "Booth Exhibition IIMS 2022 — 1 full booth",
+      "Booth Exhibition IIMS 2023 — 2 front view",
+      "Booth Exhibition IIMS 2023 — 3 Bird View",
+      "Booth Exhibition IIMS 2022 — 4 cafeteria",
+      "Booth Exhibition IIMS 2022 — 5 beach zone",
       "SUZUKI BOOTH EXHIBITION 2024 — 1 main display",
       "SUZUKI BOOTH EXHIBITION 2024 — 2 jimny off-road zone",
       "SUZUKI BOOTH EXHIBITION IIMS 2025 — 1",

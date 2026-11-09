@@ -298,8 +298,16 @@ export const projects: Project[] = [
     shareImage: suzukiIimsMain.url,
     gallery: [
       {
+        src: suzukiIims2022FullBooth.url,
+        title: "Booth Exhibition IIMS 2022 — 1 full booth",
+        year: "2022",
+        caption: "The whole stand from the front: the full car line-up, central stage with Suzuki sign and hanging greenery under the truss.",
+        width: 1671,
+        height: 941,
+      },
+      {
         src: suzukiIimsFront.url,
-        title: "Booth Exhibition IIMS 2023 — 1 front view",
+        title: "Booth Exhibition IIMS 2023 — 2 front view",
         year: "2022",
         caption: "Front view: the Grand Vitara on its black plinth, the Suzuki Collection corner and the car line-up under the truss ceiling.",
         width: 1671,
@@ -307,7 +315,7 @@ export const projects: Project[] = [
       },
       {
         src: suzukiIimsAerial.url,
-        title: "Booth Exhibition IIMS 2023 — 2 Bird View",
+        title: "Booth Exhibition IIMS 2023 — 3 Bird View",
         year: "2022",
         caption: "Aerial layout of the whole stand: the centre stage, Urban Mobility row, Grand Vitara plinth and the S-Presso corner.",
         width: 1672,
@@ -315,7 +323,7 @@ export const projects: Project[] = [
       },
       {
         src: suzukiIims2022Cafeteria.url,
-        title: "Booth Exhibition IIMS 2022 — 3 cafeteria",
+        title: "Booth Exhibition IIMS 2022 — 4 cafeteria",
         year: "2022",
         caption: "The cafeteria inside the stand: rows of tables with acrylic partitions under timber arches and a green ceiling.",
         width: 1671,
@@ -323,18 +331,10 @@ export const projects: Project[] = [
       },
       {
         src: suzukiIims2022BeachSuv.url,
-        title: "Booth Exhibition IIMS 2022 — 4 beach zone",
+        title: "Booth Exhibition IIMS 2022 — 5 beach zone",
         year: "2022",
         caption: "The beach-themed corner: a red Jimny on sand with surfboards, deck chairs and a rope fence along a water edge.",
         width: 1672,
-        height: 941,
-      },
-      {
-        src: suzukiIims2022FullBooth.url,
-        title: "Booth Exhibition IIMS 2022 — 5 full booth",
-        year: "2022",
-        caption: "The whole stand from the front: the full car line-up, central stage with Suzuki sign and hanging greenery under the truss.",
-        width: 1671,
         height: 941,
       },
       {
