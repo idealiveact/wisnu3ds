@@ -130,33 +130,36 @@ describe("Others entry", () => {
     expect(project?.category).toBe("work");
   });
 
-  it("shows nine labelled renders, oldest first", () => {
+  it("shows nine labelled renders, the coffee house first", () => {
     const gallery = project?.gallery ?? [];
-    expect(gallery.length).toBe(9);
+    expect(gallery.map((item) => item.title)).toEqual([
+      "Waroeng Caffe 27 — 1 dining lounge",
+      "Waroeng Caffe 27 — 2 lounge to bar",
+      "Waroeng Caffe 27 — 3 espresso bar",
+      "Waroeng Caffe 27 — 4 entrance counter",
+      "Waroeng Caffe 27 — 5 reading corner",
+      "Deride — SMK & Studds Helmets Booth",
+      "Juragan Helm — Macna & HJC Booth",
+      "Juragan Helm — Airoh, Macna, HJC & Xpd Booth",
+      "Deride — Multi-Brand Booth",
+    ]);
     for (const item of gallery) {
       expect(item.title.trim().length, item.src).toBeGreaterThan(3);
       expect(item.caption?.trim().length, item.title).toBeGreaterThan(0);
       expect(Number.isInteger(item.width), item.title).toBe(true);
       expect(Number.isInteger(item.height), item.title).toBe(true);
     }
-    const years = gallery.map((item) => Number(item.year));
-    expect([...years].sort((a, b) => a - b)).toEqual(years);
-  });
-
-  it("numbers the Waroeng Caffe 27 pictures one to five, picture name in lower case", () => {
-    const gallery = project?.gallery ?? [];
-    expect(gallery.map((item) => item.title).slice(4)).toEqual([
-      "Waroeng Caffe 27 — 1 dining lounge",
-      "Waroeng Caffe 27 — 2 lounge to bar",
-      "Waroeng Caffe 27 — 3 espresso bar",
-      "Waroeng Caffe 27 — 4 entrance counter",
-      "Waroeng Caffe 27 — 5 reading corner",
-    ]);
-    for (const item of gallery.slice(4)) {
-      expect(item.year).toBe("2026");
+    for (const item of gallery.slice(0, 5)) {
       const name = item.title.replace(/^.* — \d+ /, "");
       expect(name, item.title).toBe(name.toLowerCase());
     }
+    const boothYears = gallery.slice(5).map((item) => Number(item.year));
+    expect([...boothYears].sort((a, b) => a - b)).toEqual(boothYears);
+  });
+
+  it("opens the folder on the coffee house", () => {
+    const gallery = project?.gallery ?? [];
+    expect(project?.cover).toBe(gallery[0]?.src);
   });
 
   it("names the coffee house in the opening paragraph", () => {

@@ -54,6 +54,7 @@ import caffe27LoungeBar from "@/assets/caffe_27_b.jpg.asset.json";
 import caffe27EspressoBar from "@/assets/caffe_27_c.jpg.asset.json";
 import caffe27Entrance from "@/assets/caffe_27_e.jpg.asset.json";
 import caffe27ReadingCorner from "@/assets/waroeng_r_kudus_b.jpg.asset.json";
+import caffe27Preview from "@/assets/others-caffe27-preview.jpg.asset.json";
 import homePreview from "@/assets/home-preview-activation.jpg.asset.json";
 import pertaminaPreview from "@/assets/pertamina-preview.jpg.asset.json";
 import samsungPreview from "@/assets/samsung-preview.jpg.asset.json";
@@ -546,44 +547,12 @@ export const projects: Project[] = [
     role: "3D Designer",
     software: ["3ds Max 2018", "V-Ray", "Photoshop", "CorelDRAW"],
     summary:
-      "A collection of smaller projects from 2022 to 2026: Deride and Juragan Helm exhibition booths for riding-gear and helmet brands, plus the Waroeng Caffe 27 coffee house interior.",
+      "A collection of smaller projects from 2022 to 2026: the Waroeng Caffe 27 coffee house interior, plus Deride and Juragan Helm exhibition booths for riding-gear and helmet brands.",
     description:
-      "A shelf of smaller projects built between 2022 and 2026. It opens with the Deride stand for SMK and Studds helmets: a red corner booth with a helmet wall behind white slats and a Nolan counter at the side. In 2025 came the Juragan Helm booth, a black and yellow Macna and HJC stand with jackets on one flank and a helmet wall on the other, followed in 2026 by a second Juragan Helm layout adding Airoh and Xpd and one long white Deride stand carrying Shoei, Komine, Cardo and X-lite. The shelf also holds Waroeng Caffe 27, a warm coffee house built around a patchwork lounge, an espresso bar and an entrance counter, all modelled in 3ds Max 2018 with V-Ray, then finished in Photoshop and CorelDRAW.",
-    cover: othersDeride2026.url,
-    shareImage: othersDeride2026.url,
+      "Waroeng Caffe 27 leads this shelf of smaller projects from 2022 to 2026: a warm coffee house with a patchwork lounge, an espresso bar, an entrance counter and a reading corner. Behind it sit the helmet booths. The Deride stand for SMK and Studds is a red corner booth with a helmet wall behind white slats and a Nolan counter at the side. In 2025 came the Juragan Helm booth, a black and yellow Macna and HJC stand with jackets on one flank and a helmet wall on the other, followed in 2026 by a second Juragan Helm layout adding Airoh and Xpd and one long white Deride stand carrying Shoei, Komine, Cardo and X-lite. All modelled in 3ds Max 2018 with V-Ray, then finished in Photoshop and CorelDRAW.",
+    cover: caffe27DiningLounge.url,
+    shareImage: caffe27Preview.url,
     gallery: [
-      {
-        src: othersDerideSmkStudds.url,
-        title: "Deride — SMK & Studds Helmets Booth",
-        year: "2022",
-        caption: "Red corner booth for SMK and Studds helmets: a helmet wall behind white slats, with a Nolan counter at the side.",
-        width: 1671,
-        height: 941,
-      },
-      {
-        src: othersJuraganHelm2025.url,
-        title: "Juragan Helm — Macna & HJC Booth",
-        year: "2025",
-        caption: "Black and yellow stand for Juragan Helm: Macna jackets on one flank, an HJC helmet wall on the other.",
-        width: 1672,
-        height: 941,
-      },
-      {
-        src: othersJuraganHelm2026.url,
-        title: "Juragan Helm — Airoh, Macna, HJC & Xpd Booth",
-        year: "2026",
-        caption: "Second Juragan Helm layout: Airoh and HJC helmet walls around a red and yellow Macna and Xpd core.",
-        width: 1671,
-        height: 941,
-      },
-      {
-        src: othersDeride2026.url,
-        title: "Deride — Multi-Brand Booth",
-        year: "2026",
-        caption: "Long white Deride stand carrying Shoei, Komine, Quad Lock, Cardo, Nolan and X-lite along one open frontage.",
-        width: 1671,
-        height: 941,
-      },
       {
         src: caffe27DiningLounge.url,
         title: "Waroeng Caffe 27 — 1 dining lounge",
@@ -623,6 +592,38 @@ export const projects: Project[] = [
         caption: "Warm brick reading corner carrying the quote happiness is a cup of coffee and a good book.",
         width: 960,
         height: 960,
+      },
+      {
+        src: othersDerideSmkStudds.url,
+        title: "Deride — SMK & Studds Helmets Booth",
+        year: "2022",
+        caption: "Red corner booth for SMK and Studds helmets: a helmet wall behind white slats, with a Nolan counter at the side.",
+        width: 1671,
+        height: 941,
+      },
+      {
+        src: othersJuraganHelm2025.url,
+        title: "Juragan Helm — Macna & HJC Booth",
+        year: "2025",
+        caption: "Black and yellow stand for Juragan Helm: Macna jackets on one flank, an HJC helmet wall on the other.",
+        width: 1672,
+        height: 941,
+      },
+      {
+        src: othersJuraganHelm2026.url,
+        title: "Juragan Helm — Airoh, Macna, HJC & Xpd Booth",
+        year: "2026",
+        caption: "Second Juragan Helm layout: Airoh and HJC helmet walls around a red and yellow Macna and Xpd core.",
+        width: 1671,
+        height: 941,
+      },
+      {
+        src: othersDeride2026.url,
+        title: "Deride — Multi-Brand Booth",
+        year: "2026",
+        caption: "Long white Deride stand carrying Shoei, Komine, Quad Lock, Cardo, Nolan and X-lite along one open frontage.",
+        width: 1671,
+        height: 941,
       },
     ],
   },
