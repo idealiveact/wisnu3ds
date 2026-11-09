@@ -326,7 +326,7 @@ export const projects: Project[] = [
         title: "Booth Exhibition IIMS 2023 — 1 front view",
         year: "2023",
         caption: "Front view: the Grand Vitara on its black plinth, the Suzuki Collection corner and the car line-up under the truss ceiling.",
-        width: 1671,
+        width: 1672,
         height: 941,
       },
       {
