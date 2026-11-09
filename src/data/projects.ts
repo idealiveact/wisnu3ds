@@ -99,7 +99,7 @@ export const projects: Project[] = [
     category: "work",
     year: "2021–2026",
     client: "Pertamina",
-    role: "3D Artist",
+    role: "3D Designer",
     software: ["3ds Max 2018", "V-Ray", "Photoshop", "CorelDRAW"],
     summary:
       "A collection of commercial visualization work for Pertamina from 2021 to 2026: anniversary key visuals, a virtual exhibition environment, event stages, festival displays and exhibition booths.",
@@ -196,7 +196,7 @@ export const projects: Project[] = [
     category: "work",
     year: "2015–2020",
     client: "Samsung (office project)",
-    role: "3D Artist",
+    role: "3D Designer",
     software: ["3ds Max 2018", "V-Ray", "Photoshop"],
     summary:
       "Samsung work from 2015 to 2020: a carnival activation booth, a digital-dealer showroom stand, a Galaxy Note8 photo experience, the Galaxy Note20 virtual launch booth, and showroom and lifestyle visualisations made for the brand's TV & AV campaign.",
@@ -285,7 +285,7 @@ export const projects: Project[] = [
     category: "work",
     year: "2022–2025",
     client: "Suzuki",
-    role: "3D Artist",
+    role: "3D Designer",
     software: ["3ds Max 2018", "V-Ray", "Photoshop", "CorelDRAW"],
     summary:
       "Suzuki at IIMS across 2022, 2024 and 2025: the wide, low 2022 stand with timber inlays and a hexagon light ring, the 2024 booth with a Jimny off-road island and Suzuki Collection store, and the brighter 2025 booth with a glowing blue LED waterfall wall.",
@@ -358,7 +358,7 @@ export const projects: Project[] = [
     category: "work",
     year: "2018",
     client: "Indofood",
-    role: "3D Artist",
+    role: "3D Designer",
     software: ["3ds Max 2018", "V-Ray", "Photoshop", "CorelDRAW"],
     summary:
       "A 20 x 20 metre Rumah Indofood noodle pavilion at the Jakarta Fair (PRJ) 2018: a two-storey, stadium-shaped activation with noodle counters, brand displays and a roofline of flags.",
@@ -390,7 +390,7 @@ export const projects: Project[] = [
     category: "work",
     year: "2024–2026",
     client: "InJourney",
-    role: "3D Artist",
+    role: "3D Designer",
     software: ["3ds Max 2018", "V-Ray", "Photoshop", "CorelDRAW"],
     summary:
       "Booth Exhibition Sub Holding 2024, the Sahakarya 2025 festival and the Gandrung Sewu 2026 UMKM market: exhibition booths for InJourney's four sub-holdings built on one shared timber-arch pattern, an outdoor leaving-legacy festival on the lawns, and a village market series for small traders.",
@@ -511,7 +511,7 @@ export const projects: Project[] = [
     category: "work",
     year: "2022–2026",
     client: "Various brands",
-    role: "3D Artist",
+    role: "3D Designer",
     software: ["3ds Max 2018", "V-Ray", "Photoshop", "CorelDRAW"],
     summary:
       "A collection of smaller exhibition booths for riding-gear and helmet brands from 2022 to 2026: Deride stands for SMK, Studds, Shoei, Komine and more, plus two Juragan Helm layouts for Macna, HJC, Airoh and Xpd.",
