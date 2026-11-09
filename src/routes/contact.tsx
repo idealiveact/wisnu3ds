@@ -18,6 +18,7 @@ const socials = [
   { label: "Instagram", href: "https://www.instagram.com/wisnu3ds/" },
   { label: "Behance", href: "https://www.behance.net/wisnu3ds" },
   { label: "YouTube", href: "https://www.youtube.com/@wisnu3ds" },
+  { label: "TikTok", href: "https://www.tiktok.com/@wisnu3ds" },
 ];
 
 function Contact() {
