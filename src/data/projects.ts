@@ -291,9 +291,9 @@ export const projects: Project[] = [
     role: "3D Designer",
     software: ["3ds Max 2018", "V-Ray", "Photoshop", "CorelDRAW"],
     summary:
-      "Suzuki at IIMS across 2022, 2024 and 2025: the wide, low 2022 stand with timber inlays and a hexagon light ring, the 2024 booth with a Jimny off-road island and Suzuki Collection store, and the brighter 2025 booth with a glowing blue LED waterfall wall.",
+      "Suzuki at IIMS across 2022, 2023, 2024 and 2025: the wide, low 2022 stand with timber inlays and a Jimny beach zone, the 2023 line-up led by the Grand Vitara, the 2024 booth with a Jimny off-road island and Suzuki Collection store, and the brighter 2025 booth with a glowing blue LED waterfall wall.",
     description:
-      "Suzuki at IIMS across three years. The 2022 stand sits wide and low under an exposed truss ceiling: crisp white faceted walls with warm timber inlays, a floating hexagon light ring above the centre stage, and the Grand Vitara leading the line-up on its own raised black plinth. In 2024 the booth opened into zones: a panoramic LED skyline behind the car line-up, a Suzuki Collection store, and a Jimny off-road island of log ramps, boulders and rope-bound stone pillars. In 2025 it turned brighter and taller, with a glowing blue LED waterfall wall, a hanging Suzuki cube, a Safety Support screen and a mezzanine lounge. Modelled in 3ds Max 2018 with V-Ray, then finished in Photoshop and CorelDRAW.",
+      "Suzuki at IIMS across four years. The 2022 stand sits wide and low under an exposed truss ceiling: crisp white faceted walls with warm timber inlays, a cafeteria under timber arches, and a Jimny beach zone. The 2023 view holds the Grand Vitara on its raised black plinth, the Suzuki Collection corner and the car line-up, read from above in the bird's-eye view. In 2024 the booth opened into zones: a panoramic LED skyline, a Suzuki Collection store, and a Jimny off-road island of log ramps and boulders. In 2025 it turned brighter and taller, with a blue LED waterfall wall and a mezzanine lounge. Modelled in 3ds Max 2018 with V-Ray, then finished in Photoshop and CorelDRAW, partly with AI help.",
     cover: suzukiIimsMain.url,
     shareImage: suzukiIimsMain.url,
     gallery: [
