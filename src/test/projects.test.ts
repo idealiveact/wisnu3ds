@@ -73,17 +73,17 @@ describe("SUZUKI EXHIBITION entry", () => {
     const gallery = project?.gallery ?? [];
     expect(gallery.map((item) => item.title)).toEqual([
       "Booth Exhibition IIMS 2022 — 1 full booth",
-      "Booth Exhibition IIMS 2023 — 2 front view",
-      "Booth Exhibition IIMS 2023 — 3 Bird View",
-      "Booth Exhibition IIMS 2022 — 4 cafeteria",
-      "Booth Exhibition IIMS 2022 — 5 beach zone",
+      "Booth Exhibition IIMS 2022 — 2 cafeteria",
+      "Booth Exhibition IIMS 2022 — 3 beach zone",
+      "Booth Exhibition IIMS 2023 — 1 front view",
+      "Booth Exhibition IIMS 2023 — 2 Bird View",
       "SUZUKI BOOTH EXHIBITION 2024 — 1 main display",
       "SUZUKI BOOTH EXHIBITION 2024 — 2 jimny off-road zone",
       "SUZUKI BOOTH EXHIBITION IIMS 2025 — 1",
       "SUZUKI BOOTH EXHIBITION IIMS 2025 — 2 collection corner",
       "SUZUKI BOOTH EXHIBITION IIMS 2025 — 3 safety support",
     ]);
-    const expectedYears = ["2022", "2022", "2022", "2022", "2022", "2024", "2024", "2025", "2025", "2025"];
+    const expectedYears = ["2022", "2022", "2022", "2023", "2023", "2024", "2024", "2025", "2025", "2025"];
     gallery.forEach((item, index) => {
       expect(item.year).toBe(expectedYears[index]);
       expect(item.caption?.trim().length, item.title).toBeGreaterThan(0);
