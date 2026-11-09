@@ -542,21 +542,21 @@ export const projects: Project[] = [
     slug: "others",
     title: "Others",
     category: "work",
-    year: "2022–2026",
+    year: "2017–2026",
     client: "Various brands",
     role: "3D Designer",
     software: ["3ds Max 2018", "V-Ray", "Photoshop", "CorelDRAW"],
     summary:
-      "A collection of smaller projects from 2022 to 2026: the Waroeng Caffe 27 coffee house interior, plus Deride and Juragan Helm exhibition booths for riding-gear and helmet brands.",
+      "A collection of smaller projects from 2017 to 2026: the Waroeng Caffe 27 coffee house interior, plus Deride and Juragan Helm exhibition booths for riding-gear and helmet brands.",
     description:
-      "Waroeng Caffe 27 leads this shelf of smaller projects from 2022 to 2026: a warm coffee house with a patchwork lounge, an espresso bar, an entrance counter and a reading corner. Behind it sit the helmet booths. The Deride stand for SMK and Studds is a red corner booth with a helmet wall behind white slats and a Nolan counter at the side. In 2025 came the Juragan Helm booth, a black and yellow Macna and HJC stand with jackets on one flank and a helmet wall on the other, followed in 2026 by a second Juragan Helm layout adding Airoh and Xpd and one long white Deride stand carrying Shoei, Komine, Cardo and X-lite. All modelled in 3ds Max 2018 with V-Ray, then finished in Photoshop and CorelDRAW.",
+      "Waroeng Caffe 27 leads this shelf of smaller projects from 2017 to 2026: a warm coffee house with a patchwork lounge, an espresso bar, an entrance counter and a reading corner. Behind it sit the helmet booths. The Deride stand for SMK and Studds is a red corner booth with a helmet wall behind white slats and a Nolan counter at the side. In 2025 came the Juragan Helm booth, a black and yellow Macna and HJC stand with jackets on one flank and a helmet wall on the other, followed in 2026 by a second Juragan Helm layout adding Airoh and Xpd and one long white Deride stand carrying Shoei, Komine, Cardo and X-lite. All modelled in 3ds Max 2018 with V-Ray, then finished in Photoshop and CorelDRAW.",
     cover: caffe27DiningLounge.url,
     shareImage: caffe27Preview.url,
     gallery: [
       {
         src: caffe27DiningLounge.url,
         title: "Waroeng Caffe 27 — 1 dining lounge",
-        year: "2026",
+        year: "2017",
         caption: "Round bistro tables with red chairs, a patchwork sofa lounge and the red Warung 27 neon on the concrete wall.",
         width: 1049,
         height: 1049,
@@ -564,7 +564,7 @@ export const projects: Project[] = [
       {
         src: caffe27LoungeBar.url,
         title: "Waroeng Caffe 27 — 2 lounge to bar",
-        year: "2026",
+        year: "2017",
         caption: "Lounge seating facing the raised espresso counter, under a cluster of small globe pendants.",
         width: 1049,
         height: 1049,
@@ -572,7 +572,7 @@ export const projects: Project[] = [
       {
         src: caffe27EspressoBar.url,
         title: "Waroeng Caffe 27 — 3 espresso bar",
-        year: "2026",
+        year: "2017",
         caption: "Order counter in white cubic relief and patterned tiles, with a backlit eat, laugh, simple, talk, kiss, drink wall.",
         width: 1049,
         height: 1049,
@@ -580,7 +580,7 @@ export const projects: Project[] = [
       {
         src: caffe27Entrance.url,
         title: "Waroeng Caffe 27 — 4 entrance counter",
-        year: "2026",
+        year: "2017",
         caption: "Entrance greeter desk in front of a black-and-white street mural, split from the window bar by a planted metal grid.",
         width: 1049,
         height: 1049,
@@ -588,7 +588,7 @@ export const projects: Project[] = [
       {
         src: caffe27ReadingCorner.url,
         title: "Waroeng Caffe 27 — 5 reading corner",
-        year: "2026",
+        year: "2017",
         caption: "Warm brick reading corner carrying the quote happiness is a cup of coffee and a good book.",
         width: 960,
         height: 960,
