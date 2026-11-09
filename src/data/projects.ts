@@ -42,6 +42,9 @@ import suzukiIims2025Collection from "@/assets/suzuki-iims-2025-collection.jpg.a
 import suzukiIims2025Safety from "@/assets/suzuki-iims-2025-safety.jpg.asset.json";
 import suzukiBooth2024Main from "@/assets/suzuki-booth-2024-main-display.png.asset.json";
 import suzukiBooth2024Jimny from "@/assets/suzuki-booth-2024-jimny-offroad.png.asset.json";
+import suzukiIims2022Cafeteria from "@/assets/suzuki-iims-2022-cafeteria.png.asset.json";
+import suzukiIims2022BeachSuv from "@/assets/suzuki-iims-2022-beach-suv.png.asset.json";
+import suzukiIims2022FullBooth from "@/assets/suzuki-iims-2022-full-booth.png.asset.json";
 import othersDerideSmkStudds from "@/assets/others-deride-smk-studds-2022.png.asset.json";
 import othersJuraganHelm2025 from "@/assets/others-juragan-helm-2025.png.asset.json";
 import othersDeride2026 from "@/assets/others-deride-2026.png.asset.json";
