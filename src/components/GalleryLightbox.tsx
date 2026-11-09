@@ -2,6 +2,7 @@ import { useCallback, useEffect, useRef } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 import { Dialog, DialogContent, DialogDescription, DialogTitle } from "@/components/ui/dialog";
+import { Button } from "@/components/ui/button";
 import type { GalleryEntry } from "@/data/gallery";
 
 const pad = (n: number) => String(n).padStart(2, "0");
@@ -49,13 +50,13 @@ export function GalleryLightbox({ entries, index, open, onOpenChange, onIndexCha
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="w-[min(96vw,1440px)] max-w-none gap-0 border-0 bg-background/95 p-0 shadow-2xl backdrop-blur-sm">
+      <DialogContent className="flex h-dvh w-screen max-w-none flex-col gap-0 rounded-none border-0 bg-background p-0 shadow-none sm:rounded-none">
         <DialogTitle className="sr-only">{entry?.title}</DialogTitle>
         <DialogDescription className="sr-only">{entry?.caption}</DialogDescription>
 
         {entry && (
           <div
-            className="relative flex items-center justify-center px-3 pt-12 pb-3"
+            className="relative flex min-h-0 flex-1 items-center justify-center px-3 pt-12 pb-3"
             onTouchStart={(e) => (touchX.current = e.touches[0]?.clientX ?? null)}
             onTouchEnd={(e) => {
               if (touchX.current === null) return;
@@ -74,7 +75,7 @@ export function GalleryLightbox({ entries, index, open, onOpenChange, onIndexCha
                 controls
                 autoPlay
                 playsInline
-                className="max-h-[72vh] w-auto max-w-full rounded-sm bg-muted"
+                 className="h-full w-full object-contain bg-muted"
               />
             ) : (
               <img
@@ -84,35 +85,37 @@ export function GalleryLightbox({ entries, index, open, onOpenChange, onIndexCha
                 width={entry.width}
                 height={entry.height}
                 decoding="async"
-                className="max-h-[72vh] w-auto max-w-full rounded-sm object-contain"
+                 className="h-full w-full object-contain"
               />
             )}
 
             {total > 1 && (
               <>
-                <button
+                <Button
+                  variant="ghost"
                   type="button"
                   onClick={() => go(-1)}
                   aria-label="Previous"
                   className="btn-ghost-round absolute left-4 top-1/2 -translate-y-1/2"
                 >
                   <ChevronLeft className="h-5 w-5" />
-                </button>
-                <button
+                </Button>
+                <Button
+                  variant="ghost"
                   type="button"
                   onClick={() => go(1)}
                   aria-label="Next"
                   className="btn-ghost-round absolute right-4 top-1/2 -translate-y-1/2"
                 >
                   <ChevronRight className="h-5 w-5" />
-                </button>
+                </Button>
               </>
             )}
           </div>
         )}
 
         {entry && (
-          <div className="flex flex-wrap items-baseline justify-between gap-x-6 gap-y-2 border-t border-border px-5 py-4">
+          <div className="flex max-h-[30dvh] shrink-0 flex-wrap items-baseline justify-between gap-x-6 gap-y-2 overflow-y-auto border-t border-border px-5 py-4">
             <div className="min-w-0">
               <p className="font-display text-xl font-bold text-foreground md:text-2xl">
                 {entry.title}
