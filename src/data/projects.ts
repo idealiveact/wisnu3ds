@@ -55,6 +55,15 @@ import caffe27EspressoBar from "@/assets/caffe_27_c.jpg.asset.json";
 import caffe27Entrance from "@/assets/caffe_27_e.jpg.asset.json";
 import caffe27ReadingCorner from "@/assets/waroeng_r_kudus_b.jpg.asset.json";
 import caffe27Preview from "@/assets/others-caffe27-preview.jpg.asset.json";
+import ahmPrj2018Facade from "@/assets/ahm-prj-2018-facade.webp.asset.json";
+import ahmPrj2018Side from "@/assets/ahm-prj-2018-side.webp.asset.json";
+import ahmIims2019Overview from "@/assets/ahm-iims-2019-overview.webp.asset.json";
+import ahmIims2019MainStage from "@/assets/ahm-iims-2019-main-stage.webp.asset.json";
+import ahmIims2019Lounge from "@/assets/ahm-iims-2019-lounge.webp.asset.json";
+import ahmIims2019Cafe from "@/assets/ahm-iims-2019-cafe.webp.asset.json";
+import ahmGiass2019Facade from "@/assets/ahm-giass-2019-facade.webp.asset.json";
+import ahmPrj2019RedWhite from "@/assets/ahm-prj-2019-red-white.webp.asset.json";
+import ahmPrj2019BlackFacade from "@/assets/ahm-prj-2019-black-facade.webp.asset.json";
 import homePreview from "@/assets/home-preview-activation.jpg.asset.json";
 import pertaminaPreview from "@/assets/pertamina-preview.jpg.asset.json";
 import samsungPreview from "@/assets/samsung-preview.jpg.asset.json";
@@ -414,6 +423,95 @@ export const projects: Project[] = [
         caption: "Corner of the same pavilion: a central scoreboard reading 20 and 18, flanked by two \"Rumah Indofood\" header signs, curved fascia panels for Pop Mie and Indomie, and PlenTop counters below.",
         width: 1448,
         height: 1086,
+      },
+    ],
+  },
+  {
+    slug: "astra-honda-motor",
+    title: "Astra Honda Motor",
+    category: "work",
+    year: "2018–2019",
+    client: "Astra Honda Motor",
+    role: "3D Designer",
+    software: ["3ds Max 2018", "V-Ray", "Photoshop", "CorelDRAW"],
+    summary:
+      "Honda exhibition booths for Astra Honda Motor across 2018 and 2019: the long double-height PRJ 2018 stand, the open rider's hangout at IIMS 2019, the wide GIASS 2019 facade, and two PRJ 2019 facade studies.",
+    description:
+      "Four Honda booth designs made for Astra Honda Motor across 2018 and 2019. The series opens at the Jakarta Fair (PRJ) 2018 with a long double-height stand: a red PCX wing wall on one flank, a black One Heart block on the other, and a motorcycle gallery running between them. At IIMS 2019 the booth turned into an open rider's hangout: a container-style cafe with a mesh canopy, a merchandise corner, a lounge with its neon sign, and the bike line-up on red carpet islands. GIASS 2019 brought a wide facade with a brick Born to Ride wall and a Kowa display. PRJ 2019 closed that run with red-white and black facade studies. All modelled in 3ds Max 2018 with V-Ray, finished in Photoshop and CorelDRAW.",
+    cover: ahmIims2019Overview.url,
+    shareImage: ahmIims2019Overview.url,
+    gallery: [
+      {
+        src: ahmPrj2018Facade.url,
+        title: "Booth PRJ 2018 — 1 main facade",
+        year: "2018",
+        caption: "The long double-height stand: a red PCX wing wall on the left flank, a black One Heart block on the right, and a motorcycle gallery between them.",
+        width: 1448,
+        height: 1086,
+      },
+      {
+        src: ahmPrj2018Side.url,
+        title: "Booth PRJ 2018 — 2 side facade",
+        year: "2018",
+        caption: "The opposite face: the Honda wing above a glass showroom, with the big bike gallery panels running to the red fin at the far end.",
+        width: 1448,
+        height: 1086,
+      },
+      {
+        src: ahmIims2019Overview.url,
+        title: "Booth Exhibition IIMS 2019 — 1 full booth",
+        year: "2019",
+        caption: "The whole stand from above: the container cafe with mesh canopy, the merchandise corner and the bike line-up on red carpet islands.",
+        width: 1448,
+        height: 1086,
+      },
+      {
+        src: ahmIims2019MainStage.url,
+        title: "Booth Exhibition IIMS 2019 — 2 main stage",
+        year: "2019",
+        caption: "Main stage with the big screen and red fin wall, the scooter display arc and the cafe deck behind.",
+        width: 1448,
+        height: 1086,
+      },
+      {
+        src: ahmIims2019Lounge.url,
+        title: "Booth Exhibition IIMS 2019 — 3 lounge",
+        year: "2019",
+        caption: "The rider's lounge: a Honda coffee counter, a neon LOUNGE sign and riding-gear displays under warm pendant lamps.",
+        width: 1448,
+        height: 1086,
+      },
+      {
+        src: ahmIims2019Cafe.url,
+        title: "Booth Exhibition IIMS 2019 — 4 cafe corner",
+        year: "2019",
+        caption: "Cafe terrace with timber tables and stools, a brick Born to Ride wall and the scooter row in front.",
+        width: 1448,
+        height: 1086,
+      },
+      {
+        src: ahmGiass2019Facade.url,
+        title: "Booth Exhibition GIASS 2019 — 1 main facade",
+        year: "2019",
+        caption: "Wide single-storey facade: the big bike screen above the Honda sign, a brick Born to Ride corner and the Kowa display at the end.",
+        width: 1821,
+        height: 864,
+      },
+      {
+        src: ahmPrj2019RedWhite.url,
+        title: "Booth PRJ 2019 — 1 red facade",
+        year: "2019",
+        caption: "Red and white study: the CRF 150L banner wall, the Dominasi Juara racing display and the One HEART sign above the screen.",
+        width: 1672,
+        height: 940,
+      },
+      {
+        src: ahmPrj2019BlackFacade.url,
+        title: "Booth PRJ 2019 — 2 black facade",
+        year: "2019",
+        caption: "Black study: the PCX Exceed Excellence screen, the Africa Twin desert panel and the glass showroom front.",
+        width: 1672,
+        height: 940,
       },
     ],
   },

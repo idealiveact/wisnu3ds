@@ -168,6 +168,49 @@ describe("Others entry", () => {
   });
 });
 
+// The Astra Honda Motor folder holds the Honda booths of 2018 and 2019:
+// PRJ 2018 (two facades), IIMS 2019 (four views), GIASS 2019, then PRJ 2019
+// (two facade studies), sorted by year and numbered within each event.
+describe("Astra Honda Motor entry", () => {
+  const project = getProject("astra-honda-motor");
+
+  it("is listed as Astra Honda Motor, 2018–2019, for client Astra Honda Motor", () => {
+    expect(project, "no project with slug 'astra-honda-motor'").toBeTruthy();
+    expect(project?.title).toBe("Astra Honda Motor");
+    expect(project?.year).toBe("2018–2019");
+    expect(project?.client).toBe("Astra Honda Motor");
+    expect(project?.category).toBe("work");
+  });
+
+  it("shows nine labelled renders sorted by year, PRJ 2018 first then IIMS, GIASS and PRJ 2019", () => {
+    const gallery = project?.gallery ?? [];
+    expect(gallery.map((item) => item.title)).toEqual([
+      "Booth PRJ 2018 — 1 main facade",
+      "Booth PRJ 2018 — 2 side facade",
+      "Booth Exhibition IIMS 2019 — 1 full booth",
+      "Booth Exhibition IIMS 2019 — 2 main stage",
+      "Booth Exhibition IIMS 2019 — 3 lounge",
+      "Booth Exhibition IIMS 2019 — 4 cafe corner",
+      "Booth Exhibition GIASS 2019 — 1 main facade",
+      "Booth PRJ 2019 — 1 red facade",
+      "Booth PRJ 2019 — 2 black facade",
+    ]);
+    const expectedYears = ["2018", "2018", "2019", "2019", "2019", "2019", "2019", "2019", "2019"];
+    gallery.forEach((item, index) => {
+      expect(item.year).toBe(expectedYears[index]);
+      expect(item.caption?.trim().length, item.title).toBeGreaterThan(0);
+      expect(Number.isInteger(item.width), item.title).toBe(true);
+      expect(Number.isInteger(item.height), item.title).toBe(true);
+      const name = item.title.replace(/^.* — \d+ /, "");
+      expect(name, item.title).toBe(name.toLowerCase());
+    });
+  });
+
+  it("opens the folder on the IIMS 2019 full booth view", () => {
+    expect(project?.cover).toBe(project?.gallery[2]?.src);
+  });
+});
+
 // Wisnu's rule: the Injourney folder holds the Booth Exhibition Sub Holding
 // 2024 series (five numbered pictures, number one being the Pola study), then
 // the four Sahakarya 2025 festival renders, then the four Gandrung Sewu 2026
