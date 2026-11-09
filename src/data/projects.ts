@@ -42,6 +42,9 @@ import suzukiIims2025Collection from "@/assets/suzuki-iims-2025-collection.jpg.a
 import suzukiIims2025Safety from "@/assets/suzuki-iims-2025-safety.jpg.asset.json";
 import suzukiBooth2024Main from "@/assets/suzuki-booth-2024-main-display.png.asset.json";
 import suzukiBooth2024Jimny from "@/assets/suzuki-booth-2024-jimny-offroad.png.asset.json";
+import suzukiIims2022Cafeteria from "@/assets/suzuki-iims-2022-cafeteria.png.asset.json";
+import suzukiIims2022BeachSuv from "@/assets/suzuki-iims-2022-beach-suv.png.asset.json";
+import suzukiIims2022FullBooth from "@/assets/suzuki-iims-2022-full-booth.png.asset.json";
 import othersDerideSmkStudds from "@/assets/others-deride-smk-studds-2022.png.asset.json";
 import othersJuraganHelm2025 from "@/assets/others-juragan-helm-2025.png.asset.json";
 import othersDeride2026 from "@/assets/others-deride-2026.png.asset.json";
@@ -308,6 +311,30 @@ export const projects: Project[] = [
         year: "2022",
         caption: "Aerial layout of the whole stand: the centre stage, Urban Mobility row, Grand Vitara plinth and the S-Presso corner.",
         width: 1672,
+        height: 941,
+      },
+      {
+        src: suzukiIims2022Cafeteria.url,
+        title: "Booth Exhibition IIMS 2022 — 3 cafeteria",
+        year: "2022",
+        caption: "The cafeteria inside the stand: rows of tables with acrylic partitions under timber arches and a green ceiling.",
+        width: 1671,
+        height: 941,
+      },
+      {
+        src: suzukiIims2022BeachSuv.url,
+        title: "Booth Exhibition IIMS 2022 — 4 beach zone",
+        year: "2022",
+        caption: "The beach-themed corner: a red Jimny on sand with surfboards, deck chairs and a rope fence along a water edge.",
+        width: 1672,
+        height: 941,
+      },
+      {
+        src: suzukiIims2022FullBooth.url,
+        title: "Booth Exhibition IIMS 2022 — 5 full booth",
+        year: "2022",
+        caption: "The whole stand from the front: the full car line-up, central stage with Suzuki sign and hanging greenery under the truss.",
+        width: 1671,
         height: 941,
       },
       {
