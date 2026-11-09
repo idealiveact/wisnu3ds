@@ -13,8 +13,8 @@ export const Route = createFileRoute("/contact")({
 });
 
 const socials = [
-  { label: "LinkedIn", href: "https://www.linkedin.com/in/wisnu-kesuma-b1564426/" },
   { label: "Gmail", href: "mailto:wisnu3ds@gmail.com" },
+  { label: "LinkedIn", href: "https://www.linkedin.com/in/wisnu-kesuma-b1564426/" },
   { label: "Instagram", href: "https://www.instagram.com/wisnu3ds/" },
   { label: "Behance", href: "https://www.behance.net/wisnu3ds" },
   { label: "YouTube", href: "https://www.youtube.com/@wisnu3ds" },
