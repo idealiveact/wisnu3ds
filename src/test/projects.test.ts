@@ -118,15 +118,15 @@ describe("Indofood Project entry", () => {
   });
 });
 
-// The Others folder gathers the smaller riding-gear and helmet booths that do
-// not belong to a single big client: Deride and Juragan Helm, 2022 to 2026.
+// The Others folder gathers the coffee house interior and the smaller riding-gear
+// and helmet booths that do not belong to a single big client: 2017 to 2026.
 describe("Others entry", () => {
   const project = getProject("others");
 
-  it("is listed as Others, 2022–2026", () => {
+  it("is listed as Others, 2017–2026", () => {
     expect(project, "no project with slug 'others'").toBeTruthy();
     expect(project?.title).toBe("Others");
-    expect(project?.year).toBe("2022–2026");
+    expect(project?.year).toBe("2017–2026");
     expect(project?.category).toBe("work");
   });
 
@@ -152,9 +152,10 @@ describe("Others entry", () => {
     for (const item of gallery.slice(0, 5)) {
       const name = item.title.replace(/^.* — \d+ /, "");
       expect(name, item.title).toBe(name.toLowerCase());
+      expect(item.year, item.title).toBe("2017");
     }
-    const boothYears = gallery.slice(5).map((item) => Number(item.year));
-    expect([...boothYears].sort((a, b) => a - b)).toEqual(boothYears);
+    const allYears = gallery.map((item) => Number(item.year));
+    expect([...allYears].sort((a, b) => a - b)).toEqual(allYears);
   });
 
   it("opens the folder on the coffee house", () => {
