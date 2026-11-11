@@ -278,9 +278,13 @@ body { font-family: var(--font-sans); }
   .liquid-cursor { display: none; }
 }
 @media (max-width: 767px) {
-  .work-hcard { width: min(92vw, 58svh); aspect-ratio: 1 / 1; margin-inline: -16vw; transform: scale(.6); }
-  .work-htrack { padding-inline: calc(66vw - min(46vw, 29svh)); }
-  .work-arrow-left { left: .5rem; } .work-arrow-right { right: .5rem; }
+  .work-stage { container-type: size; }
+  .work-hcard { width: min(92vw, 58svh); aspect-ratio: 1 / 1; margin-inline: 0; margin-block: -8svh; transform: scale(.6); }
+  .work-htrack { position: absolute; inset: 0; flex-direction: column; overflow-x: hidden; overflow-y: auto; scroll-snap-type: y mandatory; padding-inline: 0; padding-block: max(0px, calc(50cqh - min(46vw, 29svh) + 8svh)); touch-action: pan-y; }
+  .work-arrow { width: 3rem; height: 3rem; left: calc(50% - 1.5rem); right: auto; }
+  .work-arrow svg { width: 3rem; height: 3rem; transform: rotate(90deg); }
+  .work-arrow-left { top: calc(50% - min(46vw, 29svh)); }
+  .work-arrow-right { top: calc(50% + min(46vw, 29svh)); }
 }
 
 /* Square contact sheet: previews expand across four cells without moving the grid. */

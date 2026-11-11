@@ -1,42 +1,66 @@
 import { Link } from "@tanstack/react-router";
 import { ArrowUpRight, ChevronLeft, ChevronRight } from "lucide-react";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
 import type { Project } from "@/data/projects";
 
 const SLIDE_MS = 1100;
+
+export function workSlideAxis(viewportWidth: number) {
+  return viewportWidth < 768 ? "vertical" : "horizontal";
+}
 
 /** Arrows and keyboard keys loop the slider: past the last cover you land back on the first. */
 export function shiftIndex(active: number, dir: number, total: number) {
   return (active + dir + total) % total;
 }
 
-/** Horizontal cover slider: the centred cover grows and is ready to open; the page background shows it blurred and dark. */
+/** Responsive cover slider: vertical on phones, horizontal on larger screens. */
 export function WorkCarousel({ projects }: { projects: Project[] }) {
   const track = useRef<HTMLDivElement>(null);
   const animating = useRef(false);
   const [active, setActive] = useState(0);
   const current = projects[active];
+  const activeRef = useRef(active);
+  activeRef.current = active;
+
+  useEffect(() => {
+    const media = window.matchMedia("(max-width: 767px)");
+    const align = () => {
+      const element = track.current;
+      const card = element?.children[activeRef.current];
+      if (!element || !(card instanceof HTMLElement)) return;
+      element.scrollLeft = media.matches ? 0 : card.offsetLeft - (element.clientWidth - card.offsetWidth) / 2;
+      element.scrollTop = media.matches ? card.offsetTop - (element.clientHeight - card.offsetHeight) / 2 : 0;
+    };
+    window.addEventListener("resize", align);
+    align();
+    return () => window.removeEventListener("resize", align);
+  }, []);
 
   function go(index: number) {
     const element = track.current;
     const card = element?.children[index];
     if (!element || !(card instanceof HTMLElement)) return;
-    const target = card.offsetLeft - (element.clientWidth - card.offsetWidth) / 2;
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) { element.scrollLeft = target; return; }
+    const vertical = workSlideAxis(window.innerWidth) === "vertical";
+    const property = vertical ? "scrollTop" : "scrollLeft";
+    const target = vertical
+      ? card.offsetTop - (element.clientHeight - card.offsetHeight) / 2
+      : card.offsetLeft - (element.clientWidth - card.offsetWidth) / 2;
+    setActive(index);
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) { element[property] = target; return; }
     // Slow, eased glide instead of the browser's quick smooth scroll.
-    const start = element.scrollLeft;
+    const start = element[property];
     const t0 = performance.now();
     animating.current = true;
     element.style.scrollSnapType = "none";
     const step = (now: number) => {
       const p = Math.min(1, (now - t0) / SLIDE_MS);
       const e = p < 0.5 ? 4 * p * p * p : 1 - Math.pow(-2 * p + 2, 3) / 2;
-      element.scrollLeft = start + (target - start) * e;
+      element[property] = start + (target - start) * e;
       if (p < 1) requestAnimationFrame(step);
       else { animating.current = false; element.style.scrollSnapType = ""; }
     };
-    setActive(index);
     requestAnimationFrame(step);
   }
 
@@ -47,12 +71,14 @@ export function WorkCarousel({ projects }: { projects: Project[] }) {
   function onScroll() {
     const element = track.current;
     if (!element || animating.current) return;
-    const middle = element.scrollLeft + element.clientWidth / 2;
+    const vertical = workSlideAxis(window.innerWidth) === "vertical";
+    const middle = vertical ? element.scrollTop + element.clientHeight / 2 : element.scrollLeft + element.clientWidth / 2;
     let closest = 0;
     let distance = Infinity;
     Array.from(element.children).forEach((child, index) => {
       if (!(child instanceof HTMLElement)) return;
-      const d = Math.abs(child.offsetLeft + child.offsetWidth / 2 - middle);
+      const center = vertical ? child.offsetTop + child.offsetHeight / 2 : child.offsetLeft + child.offsetWidth / 2;
+      const d = Math.abs(center - middle);
       if (d < distance) { closest = index; distance = d; }
     });
     setActive(closest);
@@ -70,7 +96,7 @@ export function WorkCarousel({ projects }: { projects: Project[] }) {
 
       <h1 className="sr-only">Built with care. Shown with gratitude.</h1>
 
-      <div className="relative flex flex-1">
+      <div className="work-stage relative flex min-h-0 flex-1">
       <Button variant="ghost" size="icon" className="work-arrow work-arrow-left absolute top-1/2 z-10 size-24 -translate-y-1/2 rounded-full" onClick={() => shift(-1)} aria-label="Previous project"><ChevronLeft className="size-24" strokeWidth={2.75} /></Button>
       <Button variant="ghost" size="icon" className="work-arrow work-arrow-right absolute top-1/2 z-10 size-24 -translate-y-1/2 rounded-full" onClick={() => shift(1)} aria-label="Next project"><ChevronRight className="size-24" strokeWidth={2.75} /></Button>
       <div
@@ -82,9 +108,12 @@ export function WorkCarousel({ projects }: { projects: Project[] }) {
         className="work-htrack flex flex-1 items-center overflow-x-auto focus-visible:outline-none"
         onScroll={onScroll}
         onKeyDown={(event) => {
-          if (event.key !== "ArrowRight" && event.key !== "ArrowLeft") return;
+          const vertical = workSlideAxis(window.innerWidth) === "vertical";
+          const nextKey = vertical ? "ArrowDown" : "ArrowRight";
+          const previousKey = vertical ? "ArrowUp" : "ArrowLeft";
+          if (event.key !== nextKey && event.key !== previousKey) return;
           event.preventDefault();
-          shift(event.key === "ArrowRight" ? 1 : -1);
+          shift(event.key === nextKey ? 1 : -1);
         }}
       >
         {projects.map((project, index) => (
@@ -109,7 +138,7 @@ export function WorkCarousel({ projects }: { projects: Project[] }) {
       </div>
       </div>
 
-      <footer className="mx-auto flex w-full max-w-[1600px] items-end justify-between gap-6 px-6 pb-20 md:px-10 md:pb-28">
+      <footer className="mx-auto flex w-full max-w-[1600px] items-end justify-between gap-6 px-6 pb-6 md:px-10 md:pb-28">
         <div>
           <p className="flex items-center gap-3 text-xs font-semibold uppercase text-muted-foreground"><span className="h-px w-8 bg-primary" aria-hidden="true" />Selected projects</p>
           <p className="mt-3 font-display text-5xl font-semibold leading-none text-primary md:text-6xl">{String(active + 1).padStart(2, "0")}<span className="ml-2 text-base text-muted-foreground">/ {String(projects.length).padStart(2, "0")}</span></p>
