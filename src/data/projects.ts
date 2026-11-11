@@ -454,7 +454,7 @@ export const projects: Project[] = [
       },
       {
         src: indofoodSportsZone2018.url,
-        title: "Booth PRJ 2018 — 2 sports zone layout",
+        title: "Booth PRJ 2018 — UMKM zone layout",
         year: "2018",
         caption: "Aerial view of the same year's activation layout: a running track and football pitch floor graphic, mini games, tiered bleachers and circular counters ringed with MAKANAN and MINUMAN signs.",
         width: 1753,
