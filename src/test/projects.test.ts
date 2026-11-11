@@ -108,12 +108,12 @@ describe("Indofood Project entry", () => {
   it("shows six labelled renders oldest first, the 2018 pavilion still the cover", () => {
     const gallery = project?.gallery ?? [];
     expect(gallery.map((item) => item.title)).toEqual([
-      "Booth PRJ 2015 — 1 dining interior",
-      "Booth PRJ 2016 — 1 market pavilion",
+      "Booth PRJ 2015 — UMKM zone layout",
+      "Booth PRJ 2016 — UMKM zone layout",
       "Bogasari — 1 three booth themes",
       "Rumah Indofood — Main Pavilion",
       "Rumah Indofood — Scoreboard Corner",
-      "Booth PRJ 2018 — 2 sports zone layout",
+      "Booth PRJ 2018 — UMKM zone layout",
     ]);
     const expectedYears = ["2015", "2016", "2015–2017", "2018", "2018", "2018"];
     gallery.forEach((item, index) => {
