@@ -414,7 +414,7 @@ export const projects: Project[] = [
     gallery: [
       {
         src: indofoodFoodstall2015.url,
-        title: "Booth PRJ 2015 — 1 dining interior",
+        title: "Booth PRJ 2015 — UMKM  zone layout",
         year: "2015",
         caption: "The 2015 Indofood foodstall as a Betawi dining pavilion: a timber-slat ceiling, bamboo birdcage pendant lamps, tiled floors, curved wooden chairs and a hand-drawn Indofood mural down the main aisle.",
         width: 1535,
