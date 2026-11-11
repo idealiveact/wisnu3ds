@@ -25,9 +25,9 @@ export const personalEntries: GalleryEntry[] = [
     src: teriosEv.url,
     title: "Terios EV Concept — 3dsmax - Vray - AI",
     year: "",
-    caption: "An electric Terios study in a dark studio, lit by standing softboxes.",
-    width: 1365,
-    height: 768,
+    caption: "A hybrid Terios study shown as a cutaway, with the powertrain and floor battery packs visible.",
+    width: 1672,
+    height: 941,
   },
   {
     kind: "video",
