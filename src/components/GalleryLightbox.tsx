@@ -126,7 +126,7 @@ export function GalleryLightbox({ entries, index, open, onOpenChange, onIndexCha
               )}
             </div>
             <div className="flex shrink-0 items-baseline gap-4">
-              <span className="eyebrow">{entry.year}</span>
+              {entry.year && <span className="eyebrow">{entry.year}</span>}
               <span className="font-display text-lg font-bold text-primary">{pad(index + 1)}</span>
               <span className="eyebrow">{pad(total)}</span>
             </div>
