@@ -1,6 +1,15 @@
 import { describe, expect, it } from "vitest";
 
-import { shiftIndex } from "@/components/WorkCarousel";
+import { shiftIndex, workSlideAxis } from "@/components/WorkCarousel";
+
+describe("Work slide direction", () => {
+  it("slides vertically only on mobile", () => {
+    expect(workSlideAxis(393)).toBe("vertical");
+    expect(workSlideAxis(767)).toBe("vertical");
+    expect(workSlideAxis(768)).toBe("horizontal");
+    expect(workSlideAxis(1280)).toBe("horizontal");
+  });
+});
 
 // The Work slider loops: the arrows never open a folder, they keep sliding.
 describe("Work slider looping", () => {
