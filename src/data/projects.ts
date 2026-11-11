@@ -21,6 +21,10 @@ import samsungHouseOfScreens from "@/assets/samsung-house-of-screens.jpg.asset.j
 import indofoodEntrance from "@/assets/indofood-rumah-indofood-entrance-2018.jpg.asset.json";
 import indofoodScoreboard from "@/assets/indofood-rumah-indofood-scoreboard-2018.jpg.asset.json";
 import indofoodPreview from "@/assets/indofood-preview.jpg.asset.json";
+import indofoodFoodstall2015 from "@/assets/indofood-prj-foodstall-2015.png.asset.json";
+import indofoodFoodstall2016 from "@/assets/indofood-prj-foodstall-2016.png.asset.json";
+import indofoodBogasariConcepts from "@/assets/indofood-bogasari-three-concepts.png.asset.json";
+import indofoodSportsZone2018 from "@/assets/indofood-prj-foodstall-2018.jpg.asset.json";
 import injourneyPola from "@/assets/injourney-pola-2024.jpg.asset.json";
 import injourneyRetail from "@/assets/injourney-retail-2024.jpg.asset.json";
 import injourneyHospitality from "@/assets/injourney-hospitality-2024.jpg.asset.json";
@@ -398,16 +402,40 @@ export const projects: Project[] = [
     slug: "indofood",
     title: "Indofood Project",
     category: "work",
-    year: "2018",
+    year: "2015–2018",
     client: "Indofood",
     role: "3D Designer",
     software: ["3ds Max 2018", "V-Ray", "Photoshop", "CorelDRAW"],
     summary:
-      "A 20 x 20 metre Rumah Indofood noodle pavilion at the Jakarta Fair (PRJ) 2018: a two-storey, stadium-shaped activation with noodle counters, brand displays and a roofline of flags.",
-    description: `A 20 x 20 metre food pavilion built for Rumah Indofood at the Jakarta Fair (PRJ) in 2018: an open-air, two-storey structure shaped like a small stadium, with a circular plan, an open truss ring roof carried on round white pylons, and floodlight banks mounted along the ribs. The ground floor holds noodle serving counters and retail displays for Indomie, Pop Mie, Noodlez and PlenTop, while a mezzanine deck above is reached via the central staircase. Branding runs the full height of the build: a large stadium-shaped header reading "Rumah Indofood - Jelajah Kuliner Indonesia", a Garuda panel marking Sector 1, Indonesian and Indofood flags along the roofline, and a scoreboard showing 20 over 18.`,
+      "Indofood exhibition designs from 2015 to 2018: a Betawi dining foodstall, a heritage market pavilion, the 20 x 20 metre Rumah Indofood noodle pavilion at PRJ 2018, and three Bogasari booth concepts.",
+    description: `Six exhibition designs made for Indofood between 2015 and 2018, most of them for the Jakarta Fair (PRJ). The 2015 foodstall is a warm Betawi dining interior: a timber-slat ceiling, bamboo birdcage pendant lamps, tiled floors and a hand-drawn Indofood mural. The 2016 foodstall opens as a heritage market pavilion: mint-green carved posts under a navy roof, wooden stalls, food carts and one Indofood bajaj. The 2018 build is a 20 x 20 metre Rumah Indofood pavilion shaped like a small stadium, with noodle counters, a mezzanine deck and a scoreboard reading 20 over 18. A separate Bogasari pitch explores three booth themes at once. Each one modelled in 3ds Max with V-Ray and finished in Photoshop.`,
     cover: indofoodEntrance.url,
     shareImage: indofoodPreview.url,
     gallery: [
+      {
+        src: indofoodFoodstall2015.url,
+        title: "Booth PRJ 2015 — 1 dining interior",
+        year: "2015",
+        caption: "The 2015 Indofood foodstall as a Betawi dining pavilion: a timber-slat ceiling, bamboo birdcage pendant lamps, tiled floors, curved wooden chairs and a hand-drawn Indofood mural down the main aisle.",
+        width: 1535,
+        height: 1025,
+      },
+      {
+        src: indofoodFoodstall2016.url,
+        title: "Booth PRJ 2016 — 1 market pavilion",
+        year: "2016",
+        caption: "The 2016 foodstall as an open heritage market: mint-green carved posts under a navy roof, wooden stalls and food carts, an orange Indofood bajaj and an ondel-ondel by the entrance and exit signs.",
+        width: 1491,
+        height: 1055,
+      },
+      {
+        src: indofoodBogasariConcepts.url,
+        title: "Bogasari — 1 three booth themes",
+        year: "2015–2017",
+        caption: "Three Bogasari booth directions pitched together: a golden carnival marquee, a Korean palace stall with tiled eaves, and a fairground hot-air balloon canopy over the counter.",
+        width: 959,
+        height: 1640,
+      },
       {
         src: indofoodEntrance.url,
         title: "Rumah Indofood — Main Pavilion",
@@ -423,6 +451,14 @@ export const projects: Project[] = [
         caption: "Corner of the same pavilion: a central scoreboard reading 20 and 18, flanked by two \"Rumah Indofood\" header signs, curved fascia panels for Pop Mie and Indomie, and PlenTop counters below.",
         width: 1448,
         height: 1086,
+      },
+      {
+        src: indofoodSportsZone2018.url,
+        title: "Booth PRJ 2018 — 2 sports zone layout",
+        year: "2018",
+        caption: "Aerial view of the same year's activation layout: a running track and football pitch floor graphic, mini games, tiered bleachers and circular counters ringed with MAKANAN and MINUMAN signs.",
+        width: 1753,
+        height: 1240,
       },
     ],
   },
