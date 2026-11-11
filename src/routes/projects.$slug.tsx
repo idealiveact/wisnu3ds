@@ -5,24 +5,41 @@ import { pageHead } from "@/lib/seo";
 const pad = (n: number) => String(n).padStart(2, "0");
 
 /**
- * A picture name that carries its own number ("Booth Exhibition Sub Holding 2024 — 1 pola")
- * keeps it, with the number picked out in the accent colour. Names without one fall back
- * to the running 01, 02 … prefix.
+ * Every picture name reads in three sizes: the number small, the event name at full
+ * size, and the picture name after it small again (Wisnu's rule: about 50%).
+ * A name that carries its own number ("Booth Exhibition Sub Holding 2024 — 1 pola")
+ * keeps that number where it sits, picked out in the accent colour; names without one
+ * fall back to the running 01, 02 … prefix in front.
  */
+const HALF = "text-[0.5em]";
+
+/** Split a name into the event part and whatever follows the dash. */
+function splitCaption(title: string) {
+  const clean = title.replace(/\s+/g, " ").trim();
+  const parts = clean.match(/^(.*?)\s*(?:—|–|\s-\s)\s*(.*)$/);
+  return parts ? { event: parts[1] ?? "", after: parts[2] ?? "" } : { event: clean, after: "" };
+}
+
 function captionTitle(title: string, index: number) {
-  const parts = title.match(/^(.*) — (\d+)(?: (.*))?$/);
-  if (!parts) {
+  const { event, after } = splitCaption(title);
+  const numbered = after.match(/^(\d+)(?:\s+(.*))?$/);
+
+  if (numbered) {
+    const num = numbered[1] ?? "";
+    const name = numbered[2] ?? "";
     return (
       <>
-        <span className="mr-3 text-base font-bold text-primary md:text-xl">{pad(index + 1)}</span>
-        {title}
+        <span className="text-primary">{event}</span>{" "}
+        <span className={HALF}>— {num}{name ? ` ${name}` : ""}</span>
       </>
     );
   }
+
   return (
     <>
-      <span className="text-primary">{parts[1]}</span>{" "}
-      <span className="text-[0.6em]">— {parts[2]}{parts[3] ? ` ${parts[3]}` : ""}</span>
+      <span className={`mr-3 font-bold text-primary ${HALF}`}>{pad(index + 1)}</span>
+      {event}
+      {after && <span className={`ml-3 ${HALF}`}>— {after}</span>}
     </>
   );
 }
