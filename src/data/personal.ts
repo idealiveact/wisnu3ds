@@ -62,7 +62,7 @@ export const personalEntries: GalleryEntry[] = [
     src: ranggaPhotoshop.url,
     title: "Rangga Concept — 3dsmax - Vray - Photoshop CS",
     year: "",
-    caption: "A clean side elevation of the boxy SUV, finished in Photoshop.",
+    caption: "The sand-colored SUV from the front three-quarter, parked on a concrete terrace under a wide blue sky.",
     width: 1200,
     height: 1200,
   },
