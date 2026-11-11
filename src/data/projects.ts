@@ -729,7 +729,7 @@ export const projects: Project[] = [
       },
       {
         src: othersDerideSmkStudds.url,
-        title: "Deride — SMK & Studds Helmets Booth",
+        title: "Deride 2022 — 1 smk & studds helmets booth",
         year: "2022",
         caption: "Red corner booth for SMK and Studds helmets: a helmet wall behind white slats, with a Nolan counter at the side.",
         width: 1671,
@@ -737,7 +737,7 @@ export const projects: Project[] = [
       },
       {
         src: othersJuraganHelm2025.url,
-        title: "Juragan Helm — Macna & HJC Booth",
+        title: "Juragan Helm 2025 — 1 macna & hjc booth",
         year: "2025",
         caption: "Black and yellow stand for Juragan Helm: Macna jackets on one flank, an HJC helmet wall on the other.",
         width: 1672,
@@ -745,7 +745,7 @@ export const projects: Project[] = [
       },
       {
         src: othersJuraganHelm2026.url,
-        title: "Juragan Helm — Airoh, Macna, HJC & Xpd Booth",
+        title: "Juragan Helm 2026 — 1 airoh, macna, hjc & xpd booth",
         year: "2026",
         caption: "Second Juragan Helm layout: Airoh and HJC helmet walls around a red and yellow Macna and Xpd core.",
         width: 1671,
@@ -753,7 +753,7 @@ export const projects: Project[] = [
       },
       {
         src: othersDeride2026.url,
-        title: "Deride — Multi-Brand Booth",
+        title: "Deride 2026 — 1 multi-brand booth",
         year: "2026",
         caption: "Long white Deride stand carrying Shoei, Komine, Quad Lock, Cardo, Nolan and X-lite along one open frontage.",
         width: 1671,
