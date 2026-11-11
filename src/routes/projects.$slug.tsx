@@ -17,7 +17,7 @@ const HALF = "text-[0.5em]";
 function splitCaption(title: string) {
   const clean = title.replace(/\s+/g, " ").trim();
   const parts = clean.match(/^(.*?)\s*(?:—|–|\s-\s)\s*(.*)$/);
-  return parts ? { event: parts[1], after: parts[2] } : { event: clean, after: "" };
+  return parts ? { event: parts[1] ?? "", after: parts[2] ?? "" } : { event: clean, after: "" };
 }
 
 function captionTitle(title: string, index: number) {
@@ -25,10 +25,12 @@ function captionTitle(title: string, index: number) {
   const numbered = after.match(/^(\d+)(?:\s+(.*))?$/);
 
   if (numbered) {
+    const num = numbered[1] ?? "";
+    const name = numbered[2] ?? "";
     return (
       <>
         <span className="text-primary">{event}</span>{" "}
-        <span className={HALF}>— {numbered[1]}{numbered[2] ? ` ${numbered[2]}` : ""}</span>
+        <span className={HALF}>— {num}{name ? ` ${name}` : ""}</span>
       </>
     );
   }
