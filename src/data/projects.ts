@@ -422,7 +422,7 @@ export const projects: Project[] = [
       },
       {
         src: indofoodFoodstall2016.url,
-        title: "Booth PRJ 2016 — 1 market pavilion",
+        title: "Booth PRJ 2016 —  UMKM  zone layout",
         year: "2016",
         caption: "The 2016 foodstall as an open heritage market: mint-green carved posts under a navy roof, wooden stalls and food carts, an orange Indofood bajaj and an ondel-ondel by the entrance and exit signs.",
         width: 1491,
