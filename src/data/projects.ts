@@ -21,6 +21,10 @@ import samsungHouseOfScreens from "@/assets/samsung-house-of-screens.jpg.asset.j
 import indofoodEntrance from "@/assets/indofood-rumah-indofood-entrance-2018.jpg.asset.json";
 import indofoodScoreboard from "@/assets/indofood-rumah-indofood-scoreboard-2018.jpg.asset.json";
 import indofoodPreview from "@/assets/indofood-preview.jpg.asset.json";
+import indofoodFoodstall2015 from "@/assets/indofood-prj-foodstall-2015.png.asset.json";
+import indofoodFoodstall2016 from "@/assets/indofood-prj-foodstall-2016.png.asset.json";
+import indofoodBogasariConcepts from "@/assets/indofood-bogasari-three-concepts.png.asset.json";
+import indofoodSportsZone2018 from "@/assets/indofood-prj-foodstall-2018.jpg.asset.json";
 import injourneyPola from "@/assets/injourney-pola-2024.jpg.asset.json";
 import injourneyRetail from "@/assets/injourney-retail-2024.jpg.asset.json";
 import injourneyHospitality from "@/assets/injourney-hospitality-2024.jpg.asset.json";
@@ -398,7 +402,7 @@ export const projects: Project[] = [
     slug: "indofood",
     title: "Indofood Project",
     category: "work",
-    year: "2018",
+    year: "2015–2018",
     client: "Indofood",
     role: "3D Designer",
     software: ["3ds Max 2018", "V-Ray", "Photoshop", "CorelDRAW"],
