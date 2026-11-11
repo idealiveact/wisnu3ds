@@ -148,10 +148,10 @@ describe("Others entry", () => {
       "Waroeng Caffe 27 — 3 espresso bar",
       "Waroeng Caffe 27 — 4 entrance counter",
       "Waroeng Caffe 27 — 5 reading corner",
-      "Deride — SMK & Studds Helmets Booth",
-      "Juragan Helm — Macna & HJC Booth",
-      "Juragan Helm — Airoh, Macna, HJC & Xpd Booth",
-      "Deride — Multi-Brand Booth",
+      "Deride 2022 — 1 smk & studds helmets booth",
+      "Juragan Helm 2025 — 1 macna & hjc booth",
+      "Juragan Helm 2026 — 1 airoh, macna, hjc & xpd booth",
+      "Deride 2026 — 1 multi-brand booth",
     ]);
     for (const item of gallery) {
       expect(item.title.trim().length, item.src).toBeGreaterThan(3);
