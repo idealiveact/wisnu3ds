@@ -17,7 +17,7 @@ export const Route = createFileRoute("/personal")({
         "Self-initiated 3D studies by Wisnu Kesuma — vehicle concepts modelled in 3ds Max, rendered with V-Ray, finished with AI and shared on YouTube.",
       path: "/personal",
       image: teriosEv.url,
-      imageAlt: "Terios EV concept render in a dark studio",
+      imageAlt: "Terios hybrid concept cutaway render in a light studio",
     }),
   component: Personal,
 });
