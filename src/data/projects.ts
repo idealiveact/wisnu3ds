@@ -407,8 +407,8 @@ export const projects: Project[] = [
     role: "3D Designer",
     software: ["3ds Max 2018", "V-Ray", "Photoshop", "CorelDRAW"],
     summary:
-      "A 20 x 20 metre Rumah Indofood noodle pavilion at the Jakarta Fair (PRJ) 2018: a two-storey, stadium-shaped activation with noodle counters, brand displays and a roofline of flags.",
-    description: `A 20 x 20 metre food pavilion built for Rumah Indofood at the Jakarta Fair (PRJ) in 2018: an open-air, two-storey structure shaped like a small stadium, with a circular plan, an open truss ring roof carried on round white pylons, and floodlight banks mounted along the ribs. The ground floor holds noodle serving counters and retail displays for Indomie, Pop Mie, Noodlez and PlenTop, while a mezzanine deck above is reached via the central staircase. Branding runs the full height of the build: a large stadium-shaped header reading "Rumah Indofood - Jelajah Kuliner Indonesia", a Garuda panel marking Sector 1, Indonesian and Indofood flags along the roofline, and a scoreboard showing 20 over 18.`,
+      "Indofood exhibition designs from 2015 to 2018: a Betawi dining foodstall, a heritage market pavilion, the 20 x 20 metre Rumah Indofood noodle pavilion at PRJ 2018, and three Bogasari booth concepts.",
+    description: `Six exhibition designs made for Indofood between 2015 and 2018, most of them for the Jakarta Fair (PRJ). The 2015 foodstall is a warm Betawi dining interior: a timber-slat ceiling, bamboo birdcage pendant lamps, tiled floors and a hand-drawn Indofood mural. The 2016 foodstall opens as a heritage market pavilion: mint-green carved posts under a navy roof, wooden stalls, food carts and one Indofood bajaj. The 2018 build is a 20 x 20 metre Rumah Indofood pavilion shaped like a small stadium, with noodle counters, a mezzanine deck and a scoreboard reading 20 over 18. A separate Bogasari pitch explores three booth themes at once. Each one modelled in 3ds Max with V-Ray and finished in Photoshop.`,
     cover: indofoodEntrance.url,
     shareImage: indofoodPreview.url,
     gallery: [
