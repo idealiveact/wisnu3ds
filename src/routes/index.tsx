@@ -21,13 +21,14 @@ function Index() {
       <div className="absolute inset-0 md:hidden [background:linear-gradient(to_top,oklch(0.12_0.005_60/0.92)_0%,oklch(0.12_0.005_60/0.75)_38%,oklch(0.12_0.005_60/0.35)_62%,oklch(0.12_0.005_60/0)_85%)]" />
       <div className="relative z-10 flex h-full flex-col justify-end px-6 pb-16 md:px-10 md:pb-24">
         <p className="hero-eyebrow fade-up">3D Designer</p>
-        <h1 className="fade-up slide-lead mt-4 font-display text-6xl font-bold leading-[0.9] text-foreground md:text-[9rem]">
+        <h1 className="fade-up slide-lead mt-4 font-display text-3xl font-bold leading-[0.9] text-foreground md:text-[4.5rem]">
           Wisnu<br />Kesuma<span className="text-primary">.</span>
         </h1>
         <p className="fade-up slide-lead mt-6 max-w-xl text-muted-foreground md:text-lg">
-          Senior 3D Designer in brand activation with 15+ years of experience in booth and event design. I enjoy
-          finding practical, budget-friendly ways to bring ideas to life, from small setups to exhibitions like IIMS,
-          GIIAS, and PRJ.
+          Hi, I'm a Senior 3D Event &amp; Exhibition Designer based in Jakarta. I've been in the event and BTL world
+          for 15+ years, designing booths and stages for brand activations, from small setups to big exhibitions like
+          IIMS, GIIAS, and PRJ. I love figuring out practical, budget-friendly ways to turn ideas into real spaces.
+          Still learning every day, and always happy to work with good people.
         </p>
         <div className="fade-up mt-8 flex flex-wrap gap-3">
           <Link to="/work" className="btn-ember">Explore work →</Link>
