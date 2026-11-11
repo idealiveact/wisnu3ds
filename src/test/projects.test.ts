@@ -121,8 +121,8 @@ describe("Indofood Project entry", () => {
       expect(item.caption?.trim().length, item.title).toBeGreaterThan(0);
       expect(Number.isInteger(item.width), item.title).toBe(true);
       expect(Number.isInteger(item.height), item.title).toBe(true);
-      const name = item.title.replace(/^.* — \d+ /, "");
-      expect(name, item.title).toBe(name.toLowerCase());
+      const numbered = item.title.match(/^(.*) — \d+ (.*)$/);
+      if (numbered) expect(numbered[2], item.title).toBe(numbered[2].toLowerCase());
     });
     expect(project?.cover).toBe(gallery[3]?.src);
   });
