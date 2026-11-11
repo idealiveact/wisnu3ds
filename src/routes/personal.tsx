@@ -48,8 +48,12 @@ function Tile({ entry, onOpen }: { entry: GalleryEntry; onOpen: () => void }) {
         </span>
       )}
       <span className="gallery-square-caption absolute inset-x-0 bottom-0 flex flex-col items-start gap-1 p-4 text-left whitespace-normal">
-        <span className="text-xs text-primary">{entry.year}</span>
-        <span className="font-display text-sm font-semibold">{entry.title}</span>
+        <span className="font-display text-sm font-semibold">
+          <span className="text-muted-foreground/70">{entry.title.split(" — ")[0]}</span>
+          {entry.title.includes(" — ") && (
+            <span className="text-foreground"> — {entry.title.split(" — ").slice(1).join(" — ")}</span>
+          )}
+        </span>
       </span>
       {["top-left", "top-right", "bottom-left", "bottom-right"].map((corner) => (
         <span key={corner} aria-hidden="true" className={`gallery-corner gallery-corner-${corner}`} />
