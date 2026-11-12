@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Play } from "lucide-react";
 import { useState } from "react";
 
-import walkthroughPreview from "@/assets/samsung-note20-walkthrough-2020-preview.jpg.asset.json";
+import walkthroughPreview from "@/assets/optimized/samsung-note20-walkthrough-2020-preview.webp.asset.json";
 import { Button } from "@/components/ui/button";
 import { GalleryLightbox } from "@/components/GalleryLightbox";
 import { galleryEntries, type GalleryEntry } from "@/data/gallery";
