@@ -1,6 +1,7 @@
 # Roadmap
 
 ## Done
+- [x] Add a lightweight interactive six-destination navigation map to Home, preserving the opening render and introduction.
 - [x] Compress all stored photos and film cover stills into smaller full-resolution WebP renditions where beneficial; retain originals and leave videos unchanged.
 - [x] Work covers redesigned with wider visible renders, staggered spacing, outlined project numbers, accent title and smooth cover interactions; desktop/mobile navigation and project links verified.
 - [x] Homepage and project-specific SEO: titles, descriptions, self-referencing URLs and optimized cover previews.
