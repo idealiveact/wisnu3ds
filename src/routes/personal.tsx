@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Play } from "lucide-react";
 import { useState } from "react";
 
-import teriosEv from "@/assets/personal-terios-ev-concept.png.asset.json";
+import teriosEv from "@/assets/optimized/personal-terios-ev-concept.webp.asset.json";
 import { Button } from "@/components/ui/button";
 import { GalleryLightbox } from "@/components/GalleryLightbox";
 import { personalEntries } from "@/data/personal";

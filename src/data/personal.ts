@@ -1,16 +1,16 @@
-import teriosEv from "@/assets/personal-terios-ev-concept.png.asset.json";
+import teriosEv from "@/assets/optimized/personal-terios-ev-concept.webp.asset.json";
 import teriosEvFilm from "@/assets/personal-terios-ev-concept.mp4.asset.json";
-import rangga1 from "@/assets/personal-rangga-concept-1.jpg.asset.json";
-import rangga2 from "@/assets/personal-rangga-concept-2.jpg.asset.json";
-import ranggaPhotoshop from "@/assets/personal-rangga-concept-photoshop.png.asset.json";
-import lexyHeadlamp from "@/assets/personal-yamaha-lexy-headlamp.jpg.asset.json";
-import lexyConcept from "@/assets/personal-yamaha-lexy-concept.jpg.asset.json";
-import mt25One from "@/assets/personal-yamaha-mt25-1.png.asset.json";
-import mt25Two from "@/assets/personal-yamaha-mt25-2.png.asset.json";
+import rangga1 from "@/assets/optimized/personal-rangga-concept-1.webp.asset.json";
+import rangga2 from "@/assets/optimized/personal-rangga-concept-2.webp.asset.json";
+import ranggaPhotoshop from "@/assets/optimized/personal-rangga-concept-photoshop.webp.asset.json";
+import lexyHeadlamp from "@/assets/optimized/personal-yamaha-lexy-headlamp.webp.asset.json";
+import lexyConcept from "@/assets/optimized/personal-yamaha-lexy-concept.webp.asset.json";
+import mt25One from "@/assets/optimized/personal-yamaha-mt25-1.webp.asset.json";
+import mt25Two from "@/assets/optimized/personal-yamaha-mt25-2.webp.asset.json";
 import mt25Assembly from "@/assets/personal-yamaha-mt25-assembly.mp4.asset.json";
 
-import teriosPoster from "@/assets/poster-terios-ev-film.jpg";
-import mt25Poster from "@/assets/poster-mt25-assembly-film.jpg";
+import teriosPoster from "@/assets/optimized/poster-terios-ev-film.webp.asset.json";
+import mt25Poster from "@/assets/optimized/poster-mt25-assembly-film.webp.asset.json";
 import type { GalleryEntry } from "@/data/gallery";
 
 /**
@@ -32,7 +32,7 @@ export const personalEntries: GalleryEntry[] = [
   {
     kind: "video",
     src: teriosEvFilm.url,
-    poster: teriosPoster,
+    poster: teriosPoster.url,
     title: "Terios EV Concept — 3dsmax - Vray - AI (film)",
     year: "",
     caption: "A short turntable of the EV study, modelled in 3ds Max and rendered with V-Ray.",
@@ -105,7 +105,7 @@ export const personalEntries: GalleryEntry[] = [
   {
     kind: "video",
     src: mt25Assembly.url,
-    poster: mt25Poster,
+    poster: mt25Poster.url,
     title: "Yamaha MT25 Concept — 3dsmax - Vray - AI render assembly",
     year: "",
     caption: "The MT25 concept coming together piece by piece, rendered with V-Ray and AI.",

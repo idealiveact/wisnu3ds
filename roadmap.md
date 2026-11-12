@@ -1,6 +1,7 @@
 # Roadmap
 
 ## Done
+- [x] Compress all stored photos and film cover stills into smaller full-resolution WebP renditions where beneficial; retain originals and leave videos unchanged.
 - [x] Work covers redesigned with wider visible renders, staggered spacing, outlined project numbers, accent title and smooth cover interactions; desktop/mobile navigation and project links verified.
 - [x] Homepage and project-specific SEO: titles, descriptions, self-referencing URLs and optimized cover previews.
 - [x] Identity swap: name "Wisnu Kesuma", email wisnu3ds@gmail.com across nav, hero, titles, Contact.
