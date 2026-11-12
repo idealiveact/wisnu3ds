@@ -19,4 +19,3 @@
 - The private /briefs page lives under the _authenticated layout; access is decided by the admin row in user_roles (granted by a trigger only to the owner's confirmed email), checked server-side with has_role, because sign-up is open and any account must otherwise see nothing.
 
 - Serve smaller full-resolution WebP renditions from src/assets/optimized when available; retain original asset pointers and video files so photo compression stays reversible and never alters films.
-- Home wayfinding uses a schematic SVG with native route links, not a geographic map SDK; this keeps the six-section navigation interactive without extra media or network requests.
