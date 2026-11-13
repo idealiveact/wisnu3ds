@@ -1,11 +1,11 @@
 import { Link } from "@tanstack/react-router";
 import { useState } from "react";
 
-const links = [
+// Five menu items: About is folded into the Contact page (/about only redirects).
+export const navLinks = [
   { to: "/work", label: "Work" },
   { to: "/gallery", label: "Gallery" },
   { to: "/personal", label: "Personal" },
-  { to: "/about", label: "About" },
   { to: "/start-a-project", label: "Start a Project" },
   { to: "/contact", label: "Contact" },
 ] as const;
@@ -18,7 +18,7 @@ export function SiteNav() {
         WISNU<span className="text-primary">.</span>K
       </Link>
       <nav className="site-nav hidden gap-4 md:flex lg:gap-8">
-        {links.map((l) => (
+        {navLinks.map((l) => (
           <Link key={l.to} to={l.to} className="nav-link" activeProps={{ "data-active": "true" }}>
             {l.label}
           </Link>
@@ -29,7 +29,7 @@ export function SiteNav() {
       </button>
       {open && (
         <div className="absolute inset-x-0 top-full flex flex-col gap-4 border-y border-border bg-background/95 px-6 py-6 backdrop-blur md:hidden">
-          {links.map((l) => (
+          {navLinks.map((l) => (
             <Link key={l.to} to={l.to} onClick={() => setOpen(false)} className="font-display text-2xl text-foreground">
               {l.label}
             </Link>

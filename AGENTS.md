@@ -19,3 +19,4 @@
 - The private /briefs page lives under the _authenticated layout; access is decided by the admin row in user_roles (granted by a trigger only to the owner's confirmed email), checked server-side with has_role, because sign-up is open and any account must otherwise see nothing.
 
 - Serve smaller full-resolution WebP renditions from src/assets/optimized when available; retain original asset pointers and video files so photo compression stays reversible and never alters films.
+- About and Contact share one page at /contact (profile and toolset first, then email and socials); /about stays only as a redirect stub so old links keep working, and the menu keeps its five items.
