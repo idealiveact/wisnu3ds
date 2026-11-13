@@ -62,7 +62,7 @@ describe("App routing", () => {
       "Designed to be walked into",
       "3ds Max",
       "Meshy",
-      "Let's build",
+      "Project brief assistant",
     ]) {
       expect(html, text).toContain(text);
     }
