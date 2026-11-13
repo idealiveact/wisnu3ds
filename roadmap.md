@@ -15,6 +15,7 @@
 - [x] Homepage opening picture: Wisnu's Samsung Galaxy activation render (with costumed performers), plus a matching 1200×630 share preview; overlay strengthened so the wording stays readable on phone and desktop.
 - [x] About picture removed; the page now reads as one centered column until Wisnu picks a new image.
 - [x] About bio, two-group toolset (Software / AI) and profile header.
+- [x] About folded into Contact: one page at /contact (profile and toolset first, then email, socials and the brief assistant). Menu is now five items — Work, Gallery, Personal, Start a Project, Contact — and the old /about URL redirects to /contact.
 - [x] Contact: AI project-brief assistant (client notes → structured brief).
 - [x] "Send to Wisnu" sends the brief straight to Wisnu without opening a mail app: asks the client's reply email (+ optional WhatsApp), saves every brief in the site's backend, shows sending / sent / error states, limits each address to 3 briefs an hour and quietly ignores spam bots.
 - [x] Private Briefs page (/briefs, Wisnu's account only) listing every brief with status and project-type filters and a status changer; clients now pick a project type when sending.
@@ -32,7 +33,7 @@
 ## Open
 - [ ] Wisnu must create his account at /auth with wisnu3ds@gmail.com and confirm it before /briefs shows anything.
 - [ ] Inbox email to wisnu3ds@gmail.com for each new brief — blocked until Wisnu sets up an email sender domain he owns (or picks a forwarding service instead).
-- [ ] About picture: Wisnu is choosing a replacement render — blocked until he sends it.
+- [ ] Picture for the merged About + Contact page: Wisnu is choosing a render — blocked until he sends it.
 - [ ] Fill Personal with real projects once they exist.
 - [ ] Confirm Pertamina Kartini is 2025 — the year was read from the "68" Pertamina anniversary emblem on its screen, not from Wisnu.
 - [ ] Confirm the SAMSUNG Project write-up: the two 2020 TV & AV interiors carry no visible branding, so their campaign name and year come only from Wisnu's file names; the foyer render shows no screen at all.
