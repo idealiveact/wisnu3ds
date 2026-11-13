@@ -1,11 +1,11 @@
 import { Link } from "@tanstack/react-router";
 import { useState } from "react";
 
-const links = [
+// Five menu items: About is folded into the Contact page (/about only redirects).
+export const navLinks = [
   { to: "/work", label: "Work" },
   { to: "/gallery", label: "Gallery" },
   { to: "/personal", label: "Personal" },
-  { to: "/about", label: "About" },
   { to: "/start-a-project", label: "Start a Project" },
   { to: "/contact", label: "Contact" },
 ] as const;
