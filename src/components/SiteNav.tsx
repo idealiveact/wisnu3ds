@@ -39,7 +39,7 @@ export function SiteNav() {
       </Link>
       <nav className="site-nav hidden gap-4 md:flex lg:gap-8">
         {navLinks.map((l) => (
-          <Link key={l.to} to={isHome ? "/" : l.to} hash={isHome ? sectionId(l.to) : undefined} className="nav-link" data-active={isHome ? section === sectionId(l.to) : location.pathname === l.to}>
+          <Link key={l.to} to={isHome ? "/" : l.to} {...(isHome ? { hash: sectionId(l.to) } : {})} className="nav-link" data-active={isHome ? section === sectionId(l.to) : location.pathname === l.to}>
             {l.label}
           </Link>
         ))}
@@ -50,7 +50,7 @@ export function SiteNav() {
       {open && (
         <div className="absolute inset-x-0 top-full flex flex-col gap-4 border-y border-border bg-background/95 px-6 py-6 backdrop-blur md:hidden">
           {navLinks.map((l) => (
-            <Link key={l.to} to={isHome ? "/" : l.to} hash={isHome ? sectionId(l.to) : undefined} onClick={() => setOpen(false)} className="font-display text-2xl text-foreground">
+            <Link key={l.to} to={isHome ? "/" : l.to} {...(isHome ? { hash: sectionId(l.to) } : {})} onClick={() => setOpen(false)} className="font-display text-2xl text-foreground">
               {l.label}
             </Link>
           ))}
