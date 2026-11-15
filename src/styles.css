@@ -366,7 +366,16 @@ a:hover, button:hover, .btn-outline:hover, .work-arrow:hover { color: var(--neon
   transform: translate(calc(-50% + var(--p, 0) * 25vw), calc(-50% + var(--p, 0) * 30vh));
 }
 .parallax-section > * { position: relative; z-index: 1; }
-.parallax-section :is(h1, h2):first-of-type, .parallax-section .eyebrow {
-  transform: translateY(calc(var(--p, 0) * 90px)); opacity: calc(1 - max(var(--p, 0), calc(var(--p, 0) * -1)) * 0.8); will-change: transform;
+/* Individual translate cannot be overridden by the existing fade-up transform animation. */
+[data-parallax-title] {
+  animation: none;
+  translate: var(--title-x, 0px) var(--title-y, 0px);
+  will-change: translate;
+  position: relative;
+  z-index: 2;
 }
-@media (prefers-reduced-motion: reduce) { .parallax-section::before { transform: translate(-50%, -50%); } .parallax-section :is(h1, h2), .parallax-section .eyebrow { transform: none; opacity: 1; } }
+.work-vcard-title[data-parallax-title] { position: absolute; }
+@media (prefers-reduced-motion: reduce) {
+  .parallax-section::before { transform: translate(-50%, -50%); }
+  [data-parallax-title] { translate: none; will-change: auto; }
+}

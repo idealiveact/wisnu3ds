@@ -21,3 +21,4 @@
 - Serve smaller full-resolution WebP renditions from src/assets/optimized when available; retain original asset pointers and video files so photo compression stays reversible and never alters films.
 - About and Contact share one page at /contact (profile and toolset first, then email and socials); /about stays only as a redirect stub so old links keep working. The menu lists its six items in this order: Home, Work, Gallery, Personal Project, Contact, Start a Project.
 - Home composes reusable section components in menu order with native vertical scrolling; standalone content routes retain their own metadata and reuse the same sections so direct links remain valid.
+- Homepage title parallax measures each visible heading independently and uses CSS individual translate in one animation-frame scroll callback; this avoids fade-up conflicts and frozen headings in tall sections, with reduced-motion disabled.
