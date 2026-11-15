@@ -312,3 +312,16 @@ body { font-family: var(--font-sans); }
   .gallery-square-caption .font-display { font-size: .7rem; }
 }
 @media (prefers-reduced-motion: reduce) { .gallery-square { transition: none; } }
+
+/* Desktop: covers glide up/down too; centred cover grows, neighbours peek above/below. */
+@media (min-width: 768px) {
+  .work-stage { container-type: size; --wc: min(52vw, 860px, 120cqh); }
+  .work-hcard { width: var(--wc); aspect-ratio: 16 / 9; margin-inline: 0; margin-block: calc(var(--wc) * -0.09); transform: scale(.55) translateY(0); }
+  .work-hcard[data-active="true"] { transform: scale(1); }
+  .work-htrack { position: absolute; inset: 0; flex-direction: column; overflow-x: hidden; overflow-y: auto; scroll-snap-type: y mandatory; padding-inline: 0; padding-block: max(0px, calc(50cqh - var(--wc) * 0.28125 + var(--wc) * 0.09)); }
+  .work-arrow { width: 4rem; height: 4rem; left: calc(50% - 2rem); right: auto; transform: none; }
+  .work-arrow:hover { transform: scale(1.15); }
+  .work-arrow svg { width: 4rem; height: 4rem; transform: rotate(90deg); }
+  .work-arrow-left { top: .25rem; }
+  .work-arrow-right { top: auto; bottom: .25rem; }
+}
