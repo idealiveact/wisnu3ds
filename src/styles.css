@@ -378,3 +378,10 @@ a:hover, button:hover, .btn-outline:hover, .work-arrow:hover { color: var(--neon
 .parallax-section { overflow-x: clip; }
 [data-parallax-row] { translate: none; }
 [data-parallax-row] > * { will-change: translate; }
+/* Rounded, spaced photo tiles without corner marks. */
+.gallery-square-grid { gap: .75rem; border: 0; }
+.gallery-square { border: 0; border-radius: 1rem; overflow: hidden; }
+.gallery-square img, .gallery-square video { border-radius: inherit; }
+.gallery-corner { display: none; }
+@media (hover: hover) and (pointer: fine) { .gallery-square:hover, .gallery-square:focus-visible { width: calc(200% + .75rem); } }
+@media (max-width: 767px) { .gallery-square-grid { gap: .5rem; } .gallery-square { border-radius: .75rem; } }
