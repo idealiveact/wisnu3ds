@@ -308,8 +308,8 @@ body { font-family: var(--font-sans); }
 .gallery-square-cell:nth-last-child(-n+4) .gallery-square { top: auto; bottom: 0; }
 @media (hover: hover) and (pointer: fine) {
   .gallery-square:hover, .gallery-square:focus-visible { width: 200%; }
-  /* Resting tiles stay dark monochrome; the pointed tile wakes into full colour. */
-  .gallery-square img { filter: grayscale(1) brightness(.5); transition: filter .5s ease; }
+  /* Resting tiles stay in a muted warm-grey duotone; the pointed tile wakes into full colour. */
+  .gallery-square img { filter: grayscale(.85) sepia(.18) brightness(.55) contrast(.95); transition: filter .5s ease; }
   .gallery-square:hover img, .gallery-square:focus-visible img { filter: grayscale(0) brightness(1); }
 }
 @media (max-width: 767px) {
