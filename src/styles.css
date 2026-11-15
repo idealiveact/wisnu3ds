@@ -87,6 +87,8 @@
   --ring: oklch(0.704 0.04 256.788);
   --work-image-label: oklch(0.14 0.005 60 / 0.82);
   --work-image-foreground: oklch(0.97 0.005 80);
+  --gallery-rim: oklch(0.74 0.11 78);
+  --gallery-rim-glow: 0 0 0 1px oklch(0.74 0.11 78 / 0.9), 0 0 14px oklch(0.66 0.1 74 / 0.55), 0 0 36px oklch(0.5 0.08 70 / 0.4);
   --chart-1: oklch(0.646 0.222 41.116);
   --chart-2: oklch(0.6 0.118 184.704);
   --chart-3: oklch(0.398 0.07 227.392);
@@ -119,6 +121,8 @@
   --silver-4: oklch(0.14 0.004 250);
   --gold-1: oklch(0.55 0.09 75);
   --gold-2: oklch(0.4 0.07 70);
+  --gallery-rim: oklch(0.74 0.11 78);
+  --gallery-rim-glow: 0 0 0 1px oklch(0.74 0.11 78 / 0.9), 0 0 14px oklch(0.66 0.1 74 / 0.55), 0 0 36px oklch(0.5 0.08 70 / 0.4);
   --secondary: oklch(0.24 0.006 60);
   --secondary-foreground: oklch(0.95 0.01 80);
   --muted: oklch(0.22 0.006 60);
@@ -294,30 +298,26 @@ body { font-family: var(--font-sans); }
 }
 
 
-/* Square contact sheet: previews expand across four cells without moving the grid. */
+/* Square contact sheet: tiles keep their cell; hover wakes colour and lights a gold rim. */
 .gallery-square-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); border-top: 1px solid var(--border); border-left: 1px solid var(--border); isolation: isolate; }
 .gallery-square-cell { position: relative; aspect-ratio: 1; min-width: 0; }
 .gallery-square-cell:hover, .gallery-square-cell:focus-within { z-index: 3; }
-.gallery-square { position: absolute; top: 0; left: 0; width: 100%; height: auto; aspect-ratio: 1; border-radius: 0; padding: 0; overflow: visible; border-right: 1px solid var(--border); border-bottom: 1px solid var(--border); background: var(--muted); cursor: zoom-in; transition: width .5s cubic-bezier(.2,.7,.2,1); }
+.gallery-square { position: absolute; top: 0; left: 0; width: 100%; height: auto; aspect-ratio: 1; border-radius: 0; padding: 0; overflow: visible; border-right: 1px solid var(--border); border-bottom: 1px solid var(--border); background: var(--muted); cursor: zoom-in; transition: box-shadow .45s ease; }
 .gallery-square-caption { background: linear-gradient(transparent, var(--work-image-label)); color: var(--work-image-foreground); min-height: 40%; justify-content: end; }
 .gallery-corner { position: absolute; width: 5px; height: 5px; background: var(--foreground); z-index: 2; pointer-events: none; }
 .gallery-corner-top-left { top: -2px; left: -2px; }
 .gallery-corner-top-right { top: -2px; right: -2px; }
 .gallery-corner-bottom-left { bottom: -2px; left: -2px; }
 .gallery-corner-bottom-right { bottom: -2px; right: -2px; }
-.gallery-square-cell:nth-child(4n) .gallery-square { left: auto; right: 0; }
-.gallery-square-cell:nth-last-child(-n+4) .gallery-square { top: auto; bottom: 0; }
 @media (hover: hover) and (pointer: fine) {
-  .gallery-square:hover, .gallery-square:focus-visible { width: 200%; }
-  /* Resting tiles stay in a muted warm-grey duotone; the pointed tile wakes into full colour. */
+  /* Resting tiles stay in a muted warm-grey duotone; the pointed tile wakes into full colour
+     and lights its own rim — the tile never grows. */
   .gallery-square img { filter: grayscale(.85) sepia(.18) brightness(.55) contrast(.95); transition: filter .5s ease; }
   .gallery-square:hover img, .gallery-square:focus-visible img { filter: grayscale(0) brightness(1); }
+  .gallery-square:hover, .gallery-square:focus-visible { box-shadow: var(--gallery-rim-glow); }
 }
 @media (max-width: 767px) {
   .gallery-square-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .gallery-square-cell:nth-child(2n) .gallery-square { left: auto; right: 0; }
-  .gallery-square-cell:nth-last-child(-n+4) .gallery-square { top: 0; bottom: auto; }
-  .gallery-square-cell:nth-last-child(-n+2) .gallery-square { top: auto; bottom: 0; }
   .gallery-square-caption { padding: .65rem; }
   .gallery-square-caption .font-display { font-size: .7rem; }
 }
@@ -390,7 +390,6 @@ a:hover, button:hover, .btn-outline:hover, .work-arrow:hover { color: var(--neon
 .gallery-square { border: 0; border-radius: 1rem; overflow: hidden; }
 .gallery-square img, .gallery-square video { border-radius: inherit; }
 .gallery-corner { display: none; }
-@media (hover: hover) and (pointer: fine) { .gallery-square:hover, .gallery-square:focus-visible { width: calc(200% + .75rem); } }
 @media (max-width: 767px) { .gallery-square-grid { gap: .5rem; } .gallery-square { border-radius: .75rem; } }
 
 /* Work subfolder pictures: equal-sided boxes — screen width on phone, enlarged and centred on desktop. */
