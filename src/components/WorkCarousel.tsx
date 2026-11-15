@@ -132,7 +132,7 @@ export function WorkCarousel({ projects }: { projects: Project[] }) {
 
       <footer className="mx-auto flex w-full max-w-[1600px] items-end justify-between gap-6 px-6 pb-6 md:px-10 md:pb-28">
         <div>
-          <p className="flex items-center gap-3 text-xs font-semibold uppercase text-muted-foreground"><span className="h-px w-8 bg-primary" aria-hidden="true" />Selected projects</p>
+          <p className="work-section-label flex items-center gap-3 text-xs font-semibold uppercase text-muted-foreground"><span className="h-px w-8 bg-primary" aria-hidden="true" />Selected projects</p>
           <p className="mt-3 font-display text-5xl font-semibold leading-none text-primary md:text-6xl">{String(active + 1).padStart(2, "0")}<span className="ml-2 text-base text-muted-foreground">/ {String(projects.length).padStart(2, "0")}</span></p>
           {current && <p className="mt-3 text-sm text-muted-foreground">{current.client} · {current.role} · {current.year}</p>}
         </div>

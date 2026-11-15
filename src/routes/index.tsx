@@ -26,22 +26,48 @@ function Index() {
     return () => document.documentElement.classList.remove("portfolio-scroll");
   }, []);
   useEffect(() => {
-    // Parallax: each section gets --p (-1 above … 0 in view … 1 below), read by CSS only.
+    // Measure titles independently: long galleries must not freeze their headings.
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
     let frame = 0;
     const sections = Array.from(document.querySelectorAll<HTMLElement>("[data-portfolio-section]"));
+    const titles = Array.from(document.querySelectorAll<HTMLElement>(
+      "[data-portfolio-section] h1:not(.sr-only), [data-portfolio-section] h2, [data-portfolio-section] .hero-eyebrow, [data-portfolio-section] .work-vcard-title, [data-portfolio-section] .work-section-label",
+    ));
+    const offsets = new Map<HTMLElement, number>();
+    titles.forEach((title) => title.setAttribute("data-parallax-title", ""));
     const update = () => {
       frame = 0;
+      const height = window.innerHeight;
+      const mobile = window.innerWidth < 768;
       for (const el of sections) {
-        const p = Math.max(-1, Math.min(1, el.getBoundingClientRect().top / window.innerHeight));
+        const p = Math.max(-1, Math.min(1, el.getBoundingClientRect().top / height));
         el.style.setProperty("--p", p.toFixed(3));
+      }
+      for (const title of titles) {
+        const rect = title.getBoundingClientRect();
+        const top = rect.top - (offsets.get(title) ?? 0);
+        const progress = Math.max(-0.15, Math.min(1, (top - height * 0.22) / (height * 0.78)));
+        const cover = title.classList.contains("work-vcard-title");
+        const y = -progress * (cover ? 24 : mobile ? 100 : 180);
+        offsets.set(title, y);
+        title.style.setProperty("--title-y", `${y.toFixed(2)}px`);
+        title.style.setProperty("--title-x", `${(cover ? 0 : progress * (mobile ? 8 : 32)).toFixed(2)}px`);
       }
     };
     const onScroll = () => { if (!frame) frame = requestAnimationFrame(update); };
     update();
     window.addEventListener("scroll", onScroll, { passive: true });
     window.addEventListener("resize", onScroll);
-    return () => { cancelAnimationFrame(frame); window.removeEventListener("scroll", onScroll); window.removeEventListener("resize", onScroll); };
+    return () => {
+      cancelAnimationFrame(frame);
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", onScroll);
+      titles.forEach((title) => {
+        title.removeAttribute("data-parallax-title");
+        title.style.removeProperty("--title-y");
+        title.style.removeProperty("--title-x");
+      });
+    };
   }, []);
   return (
     <div className="portfolio-flow">
