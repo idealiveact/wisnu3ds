@@ -326,21 +326,25 @@ html.portfolio-scroll { scroll-behavior: smooth; scroll-snap-type: y proximity; 
 .portfolio-flow > [data-portfolio-section] { scroll-snap-align: start; scroll-margin-top: 0; min-height: 100svh; }
 @media (prefers-reduced-motion: reduce) { html.portfolio-scroll { scroll-behavior: auto; } }
 
-/* Black-to-silver backdrop: each section has its own gradient, and each ends where the next begins. */
-body { background: linear-gradient(180deg, var(--silver-1), var(--silver-2) 45%, var(--silver-4)); background-attachment: fixed; }
-.portfolio-flow > [data-portfolio-section]:nth-child(1) { background: linear-gradient(180deg, var(--silver-1), var(--silver-2)); }
-.portfolio-flow > [data-portfolio-section]:nth-child(2) { background: linear-gradient(180deg, var(--silver-2), var(--silver-1) 55%, var(--silver-3)); }
-.portfolio-flow > [data-portfolio-section]:nth-child(3) { background: linear-gradient(180deg, var(--silver-3), var(--silver-1) 60%, var(--silver-2)); }
-.portfolio-flow > [data-portfolio-section]:nth-child(4) { background: linear-gradient(160deg, var(--silver-2), var(--silver-4) 50%, var(--silver-3)); }
-.portfolio-flow > [data-portfolio-section]:nth-child(5) { background: linear-gradient(200deg, var(--silver-3), var(--silver-1) 55%, var(--silver-2)); }
-.portfolio-flow > [data-portfolio-section]:nth-child(6) { background: linear-gradient(180deg, var(--silver-2), var(--silver-4) 50%, var(--silver-1)); }
+/* One continuous black-to-silver backdrop behind every section, drifting slower than the page (scroll-driven parallax). */
+body { background: var(--silver-1); }
+body::before {
+  content: ""; position: fixed; inset: -10vh 0 auto 0; height: 160vh; z-index: -1; pointer-events: none;
+  background:
+    radial-gradient(60vw 40vh at 80% 20%, oklch(0.75 0.01 250 / 0.16), transparent 70%),
+    radial-gradient(50vw 35vh at 15% 75%, oklch(0.7 0.01 250 / 0.12), transparent 70%),
+    linear-gradient(180deg, var(--silver-1), var(--silver-2) 35%, var(--silver-3) 65%, var(--silver-1));
+  animation: bg-drift linear both; animation-timeline: scroll(root);
+}
+@keyframes bg-drift { from { transform: translateY(0); } to { transform: translateY(-50vh); } }
+@media (prefers-reduced-motion: reduce) { body::before { animation: none; } }
+.portfolio-flow > [data-portfolio-section], .work-gradient, .parallax-section { background: transparent !important; }
 /* Selected or hovered text glows neon white. */
 a:hover, button:hover, .btn-outline:hover, .work-arrow:hover { color: var(--neon) !important; text-shadow: var(--neon-glow); }
 .btn-outline:hover { border-color: var(--neon); box-shadow: 0 0 14px oklch(1 0 0 / 0.35); }
 .btn-ember:hover { box-shadow: 0 0 22px oklch(1 0 0 / 0.45); }
 .work-cover[data-active="true"] .work-cover-number, .work-cover:hover .work-cover-number { color: var(--neon); -webkit-text-stroke-color: var(--neon); text-shadow: var(--neon-glow); }
 
-.work-gradient { background: linear-gradient(180deg, var(--silver-2), var(--silver-1) 55%, var(--silver-3)); }
 
 /* Layered parallax: ghost word, drifting wallpaper and floating titles, all driven by --p. */
 .parallax-section { position: relative; isolation: isolate; overflow: clip; background-size: 100% 140% !important; background-position: 50% calc(50% + var(--p, 0) * 30%) !important; }
