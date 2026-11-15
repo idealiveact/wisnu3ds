@@ -351,3 +351,5 @@ a:hover, button:hover, .btn-outline:hover, .work-arrow:hover { color: var(--neon
 .btn-outline:hover { border-color: var(--neon); box-shadow: 0 0 14px oklch(1 0 0 / 0.35); }
 .btn-ember:hover { box-shadow: 0 0 22px oklch(1 0 0 / 0.45); }
 .work-cover[data-active="true"] .work-cover-number, .work-cover:hover .work-cover-number { color: var(--neon); -webkit-text-stroke-color: var(--neon); text-shadow: var(--neon-glow); }
+
+.work-gradient { background: linear-gradient(180deg, var(--silver-2), var(--silver-1) 55%, var(--silver-3)); }

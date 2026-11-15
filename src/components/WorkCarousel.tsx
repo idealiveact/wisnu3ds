@@ -84,14 +84,7 @@ export function WorkCarousel({ projects }: { projects: Project[] }) {
   }
 
   return (
-    <section className="work-collection relative isolate flex h-svh flex-col overflow-hidden bg-background pt-24">
-      {/* Blurred, darkened backdrop of the centred project */}
-      <div className="absolute inset-0 -z-10" aria-hidden="true">
-        {projects.map((project, index) => (
-          <img key={project.slug} src={project.cover} alt="" loading={index === 0 ? "eager" : "lazy"} className="work-backdrop absolute inset-0 h-full w-full object-cover" data-active={active === index} />
-        ))}
-        <span className="work-backdrop-shade absolute inset-0" />
-      </div>
+    <section className="work-collection relative isolate flex h-svh flex-col overflow-hidden work-gradient pt-24">
 
       <h1 className="sr-only">Built with care. Shown with gratitude.</h1>
 
