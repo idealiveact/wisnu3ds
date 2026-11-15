@@ -25,6 +25,24 @@ function Index() {
     document.documentElement.classList.add("portfolio-scroll");
     return () => document.documentElement.classList.remove("portfolio-scroll");
   }, []);
+  useEffect(() => {
+    // Parallax: each section gets --p (-1 above … 0 in view … 1 below), read by CSS only.
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    let frame = 0;
+    const sections = Array.from(document.querySelectorAll<HTMLElement>("[data-portfolio-section]"));
+    const update = () => {
+      frame = 0;
+      for (const el of sections) {
+        const p = Math.max(-1, Math.min(1, el.getBoundingClientRect().top / window.innerHeight));
+        el.style.setProperty("--p", p.toFixed(3));
+      }
+    };
+    const onScroll = () => { if (!frame) frame = requestAnimationFrame(update); };
+    update();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onScroll);
+    return () => { cancelAnimationFrame(frame); window.removeEventListener("scroll", onScroll); window.removeEventListener("resize", onScroll); };
+  }, []);
   return (
     <div className="portfolio-flow">
     <section id="home" data-portfolio-section className="relative h-[100svh] overflow-hidden">
@@ -48,11 +66,11 @@ function Index() {
         </div>
       </div>
     </section>
-    <div id="work" data-portfolio-section><WorkCarousel projects={byCategory("work")} /></div>
-    <div id="gallery" data-portfolio-section><Gallery /></div>
-    <div id="personal" data-portfolio-section><Personal /></div>
-    <div id="contact" data-portfolio-section><Contact /></div>
-    <div id="start-a-project" data-portfolio-section><StartAProject /></div>
+    <div id="work" data-portfolio-section data-ghost="WORK" className="parallax-section"><WorkCarousel projects={byCategory("work")} /></div>
+    <div id="gallery" data-portfolio-section data-ghost="GALLERY" className="parallax-section"><Gallery /></div>
+    <div id="personal" data-portfolio-section data-ghost="PERSONAL" className="parallax-section"><Personal /></div>
+    <div id="contact" data-portfolio-section data-ghost="CONTACT" className="parallax-section"><Contact /></div>
+    <div id="start-a-project" data-portfolio-section data-ghost="START" className="parallax-section"><StartAProject /></div>
     </div>
   );
 }

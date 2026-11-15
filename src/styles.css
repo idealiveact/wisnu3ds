@@ -353,3 +353,17 @@ a:hover, button:hover, .btn-outline:hover, .work-arrow:hover { color: var(--neon
 .work-cover[data-active="true"] .work-cover-number, .work-cover:hover .work-cover-number { color: var(--neon); -webkit-text-stroke-color: var(--neon); text-shadow: var(--neon-glow); }
 
 .work-gradient { background: linear-gradient(180deg, var(--silver-2), var(--silver-1) 55%, var(--silver-3)); }
+
+/* Layered parallax: ghost word, drifting wallpaper and floating titles, all driven by --p. */
+.parallax-section { position: relative; isolation: isolate; overflow: clip; background-size: 100% 140% !important; background-position: 50% calc(50% + var(--p, 0) * 30%) !important; }
+.parallax-section::before {
+  content: attr(data-ghost); position: absolute; z-index: 0; left: 50%; top: 50%; pointer-events: none; white-space: nowrap;
+  font-family: var(--font-display); font-weight: 800; font-size: clamp(5rem, 18vw, 18rem); letter-spacing: -0.04em; line-height: 1;
+  color: transparent; -webkit-text-stroke: 1px oklch(0.85 0.01 250 / 0.14);
+  transform: translate(calc(-50% + var(--p, 0) * 25vw), calc(-50% + var(--p, 0) * 30vh));
+}
+.parallax-section > * { position: relative; z-index: 1; }
+.parallax-section :is(h1, h2):first-of-type, .parallax-section .eyebrow {
+  transform: translateY(calc(var(--p, 0) * 90px)); opacity: calc(1 - max(var(--p, 0), calc(var(--p, 0) * -1)) * 0.8); will-change: transform;
+}
+@media (prefers-reduced-motion: reduce) { .parallax-section::before { transform: translate(-50%, -50%); } .parallax-section :is(h1, h2), .parallax-section .eyebrow { transform: none; opacity: 1; } }
