@@ -15,20 +15,29 @@ describe("App routing", () => {
     expect(matches.at(-1)?.routeId).not.toBe(rootRouteId);
   });
 
-  it("has pages for every menu: Work, Gallery, Personal, Start a Project, Contact", () => {
-    for (const path of ["/work", "/gallery", "/personal", "/start-a-project", "/contact"]) {
+  it("has pages for every menu: Home, Work, Gallery, Personal Project, Contact, Start a Project", () => {
+    for (const path of ["/", "/work", "/gallery", "/personal", "/contact", "/start-a-project"]) {
       const matches = router.matchRoutes(path);
       expect(matches.at(-1)?.routeId, path).not.toBe(rootRouteId);
     }
   });
 
-  it("shows exactly five menu items and no About entry", () => {
+  it("shows exactly six menu items in order, with no About entry", () => {
     expect(navLinks.map((l) => l.to)).toEqual([
+      "/",
       "/work",
       "/gallery",
       "/personal",
-      "/start-a-project",
       "/contact",
+      "/start-a-project",
+    ]);
+    expect(navLinks.map((l) => l.label)).toEqual([
+      "Home",
+      "Work",
+      "Gallery",
+      "Personal Project",
+      "Contact",
+      "Start a Project",
     ]);
   });
 

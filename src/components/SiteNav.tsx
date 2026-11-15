@@ -1,13 +1,15 @@
 import { Link } from "@tanstack/react-router";
 import { useState } from "react";
 
-// Five menu items: About is folded into the Contact page (/about only redirects).
+// Six menu items, top-to-bottom order: Home, Work, Gallery, Personal Project,
+// Contact, Start a Project. About is folded into the Contact page (/about only redirects).
 export const navLinks = [
+  { to: "/", label: "Home" },
   { to: "/work", label: "Work" },
   { to: "/gallery", label: "Gallery" },
-  { to: "/personal", label: "Personal" },
-  { to: "/start-a-project", label: "Start a Project" },
+  { to: "/personal", label: "Personal Project" },
   { to: "/contact", label: "Contact" },
+  { to: "/start-a-project", label: "Start a Project" },
 ] as const;
 
 export function SiteNav() {
