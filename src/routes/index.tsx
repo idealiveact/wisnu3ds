@@ -31,7 +31,7 @@ function Index() {
     let frame = 0;
     const sections = Array.from(document.querySelectorAll<HTMLElement>("[data-portfolio-section]"));
     const titles = Array.from(document.querySelectorAll<HTMLElement>(
-      "[data-portfolio-section] h1:not(.sr-only), [data-portfolio-section] h2, [data-portfolio-section] .hero-eyebrow, [data-portfolio-section] .work-vcard-title, [data-portfolio-section] .work-section-label",
+      "[data-portfolio-section] h1:not(.sr-only), [data-portfolio-section] h2, [data-portfolio-section] .hero-eyebrow, [data-portfolio-section] .eyebrow, [data-portfolio-section] .work-vcard-title, [data-portfolio-section] .work-section-label",
     ));
     const offsets = new Map<HTMLElement, number>();
     titles.forEach((title) => title.setAttribute("data-parallax-title", ""));
