@@ -57,14 +57,21 @@ function Index() {
         title.style.setProperty("--title-y", `${y.toFixed(2)}px`);
         title.style.setProperty("--title-x", `${(cover ? 0 : progress * (mobile ? 8 : 32)).toFixed(2)}px`);
         if (title.hasAttribute("data-parallax-heading")) {
-          const s = 1 + 0.25 * Math.max(0, Math.min(1, (top - height * 0.2) / (height * 0.8)));
+          const s = 1 + 1.25 * Math.max(0, Math.min(1, (top - height * 0.2) / (height * 0.8)));
           title.style.setProperty("--title-s", s.toFixed(3));
         }
       }
       for (const row of rows) {
         const r = row.getBoundingClientRect();
         const t = Math.max(0, Math.min(1, (height - r.top) / (height + r.height)));
-        row.style.setProperty("--row-x", `${((0.5 - t) * (mobile ? 80 : 240)).toFixed(2)}px`);
+        const shift = (0.5 - t) * (mobile ? 90 : 260);
+        const cells = Array.from(row.children) as HTMLElement[];
+        const firstTop = cells[0]?.offsetTop ?? 0;
+        const rowH = cells[0]?.offsetHeight || 1;
+        for (const cell of cells) {
+          const line = Math.round((cell.offsetTop - firstTop) / rowH);
+          cell.style.translate = `${(line % 2 ? -shift : shift).toFixed(2)}px 0`;
+        }
       }
     };
     const onScroll = () => { if (!frame) frame = requestAnimationFrame(update); };
@@ -76,7 +83,7 @@ function Index() {
       window.removeEventListener("scroll", onScroll);
       window.removeEventListener("resize", onScroll);
       headings.forEach((h) => { h.removeAttribute("data-parallax-heading"); h.style.removeProperty("--title-s"); });
-      rows.forEach((r) => { r.removeAttribute("data-parallax-row"); r.style.removeProperty("--row-x"); });
+      rows.forEach((r) => { r.removeAttribute("data-parallax-row"); Array.from(r.children).forEach((c) => ((c as HTMLElement).style.translate = "")); });
       titles.forEach((title) => {
         title.removeAttribute("data-parallax-title");
         title.style.removeProperty("--title-y");

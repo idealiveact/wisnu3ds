@@ -386,3 +386,6 @@ a:hover, button:hover, .btn-outline:hover, .work-arrow:hover { color: var(--neon
   [data-parallax-heading] { scale: none; }
   [data-parallax-row] { translate: none; }
 }
+.parallax-section { overflow-x: clip; }
+[data-parallax-row] { translate: none; }
+[data-parallax-row] > * { will-change: translate; }
