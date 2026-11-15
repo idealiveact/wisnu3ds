@@ -109,8 +109,14 @@
   --card-foreground: oklch(0.95 0.01 80);
   --popover: oklch(0.18 0.006 60);
   --popover-foreground: oklch(0.95 0.01 80);
-  --primary: oklch(0.68 0.18 45);
-  --primary-foreground: oklch(0.14 0.005 60);
+  --primary: oklch(0.62 0.018 250);
+  --primary-foreground: oklch(0.98 0 0);
+  --neon: oklch(1 0 0);
+  --neon-glow: 0 0 6px oklch(1 0 0 / 0.9), 0 0 14px oklch(0.95 0.02 230 / 0.75), 0 0 28px oklch(0.9 0.03 230 / 0.5);
+  --silver-1: oklch(0.08 0 0);
+  --silver-2: oklch(0.2 0.006 250);
+  --silver-3: oklch(0.32 0.008 250);
+  --silver-4: oklch(0.14 0.004 250);
   --secondary: oklch(0.24 0.006 60);
   --secondary-foreground: oklch(0.95 0.01 80);
   --muted: oklch(0.22 0.006 60);
@@ -121,7 +127,7 @@
   --destructive-foreground: oklch(0.95 0.01 80);
   --border: oklch(1 0 0 / 14%);
   --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.68 0.18 45);
+  --ring: oklch(0.85 0.01 250);
   --scrim:
     linear-gradient(to bottom, oklch(0.12 0.005 60 / 0.8) 0%, oklch(0.12 0.005 60 / 0.4) 24%, oklch(0.12 0.005 60 / 0) 42%),
     linear-gradient(to top, oklch(0.12 0.005 60 / 0.96) 0%, oklch(0.12 0.005 60 / 0.78) 40%, oklch(0.12 0.005 60 / 0.5) 75%, oklch(0.12 0.005 60 / 0.25) 100%);
@@ -146,7 +152,7 @@ body { font-family: var(--font-sans); }
   width: fit-content; padding: 0.32rem 0.75rem; border-radius: 999px;
   background: oklch(0.12 0.005 60 / 0.72);
   font-size: 0.82rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.18em;
-  color: oklch(0.82 0.15 55);
+  color: oklch(0.85 0.01 250);
 }
 @utility slide-lead {
   text-shadow: 0 2px 22px oklch(0.12 0.005 60 / 0.95), 0 1px 5px oklch(0.12 0.005 60 / 0.9);
@@ -159,7 +165,7 @@ body { font-family: var(--font-sans); }
 @utility nav-link {
   font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.15em; color: var(--muted-foreground); transition: color .2s;
   white-space: nowrap;
-  &:hover, &[data-active="true"] { color: var(--primary); }
+  &:hover, &[data-active="true"] { color: var(--neon); text-shadow: var(--neon-glow); }
 }
 /* Six menu items must still fit one row on tablet and small-desktop screens without wrapping. */
 @media (min-width: 768px) and (max-width: 1279px) {
@@ -331,3 +337,17 @@ html.portfolio-scroll { scroll-behavior: smooth; scroll-snap-type: y proximity; 
   .work-arrow-right { top: calc(50% + min(46vw, 29svh)); }
 }
 @media (prefers-reduced-motion: reduce) { html.portfolio-scroll { scroll-behavior: auto; } }
+
+/* Black-to-silver backdrop: each section has its own gradient, and each ends where the next begins. */
+body { background: linear-gradient(180deg, var(--silver-1), var(--silver-2) 45%, var(--silver-4)); background-attachment: fixed; }
+.portfolio-flow > [data-portfolio-section]:nth-child(1) { background: linear-gradient(180deg, var(--silver-1), var(--silver-2)); }
+.portfolio-flow > [data-portfolio-section]:nth-child(2) { background: linear-gradient(180deg, var(--silver-2), var(--silver-1) 55%, var(--silver-3)); }
+.portfolio-flow > [data-portfolio-section]:nth-child(3) { background: linear-gradient(180deg, var(--silver-3), var(--silver-1) 60%, var(--silver-2)); }
+.portfolio-flow > [data-portfolio-section]:nth-child(4) { background: linear-gradient(160deg, var(--silver-2), var(--silver-4) 50%, var(--silver-3)); }
+.portfolio-flow > [data-portfolio-section]:nth-child(5) { background: linear-gradient(200deg, var(--silver-3), var(--silver-1) 55%, var(--silver-2)); }
+.portfolio-flow > [data-portfolio-section]:nth-child(6) { background: linear-gradient(180deg, var(--silver-2), var(--silver-4) 50%, var(--silver-1)); }
+/* Selected or hovered text glows neon white. */
+a:hover, button:hover, .btn-outline:hover, .work-arrow:hover { color: var(--neon) !important; text-shadow: var(--neon-glow); }
+.btn-outline:hover { border-color: var(--neon); box-shadow: 0 0 14px oklch(1 0 0 / 0.35); }
+.btn-ember:hover { box-shadow: 0 0 22px oklch(1 0 0 / 0.45); }
+.work-cover[data-active="true"] .work-cover-number, .work-cover:hover .work-cover-number { color: var(--neon); -webkit-text-stroke-color: var(--neon); text-shadow: var(--neon-glow); }
