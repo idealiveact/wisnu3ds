@@ -379,3 +379,10 @@ a:hover, button:hover, .btn-outline:hover, .work-arrow:hover { color: var(--neon
   .parallax-section::before { transform: translate(-50%, -50%); }
   [data-parallax-title] { translate: none; will-change: auto; }
 }
+/* Scroll-scrubbed heading scale and gallery row drift (values set per frame in index.tsx). */
+[data-parallax-heading] { scale: var(--title-s, 1); transform-origin: left center; }
+[data-parallax-row] { translate: var(--row-x, 0px) 0; will-change: translate; }
+@media (prefers-reduced-motion: reduce) {
+  [data-parallax-heading] { scale: none; }
+  [data-parallax-row] { translate: none; }
+}

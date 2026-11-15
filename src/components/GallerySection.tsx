@@ -55,7 +55,7 @@ export function Gallery() {
 
 
   return (
-    <section className="min-h-screen px-6 pt-28 pb-16 md:px-10">
+    <section className="min-h-screen overflow-x-clip px-6 pt-28 pb-16 md:px-10">
       <p className="eyebrow">Gallery</p>
       <h1 className="fade-up mt-4 max-w-4xl text-balance font-display text-3xl font-bold leading-[1.08] text-foreground md:text-5xl">
         A collection of works, built through <span className="text-primary">process and dedication</span>.

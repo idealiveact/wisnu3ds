@@ -34,6 +34,10 @@ function Index() {
       "[data-portfolio-section] h1:not(.sr-only), [data-portfolio-section] h2, [data-portfolio-section] .hero-eyebrow, [data-portfolio-section] .eyebrow, [data-portfolio-section] .work-vcard-title, [data-portfolio-section] .work-section-label",
     ));
     const offsets = new Map<HTMLElement, number>();
+    const headings = Array.from(document.querySelectorAll<HTMLElement>("[data-portfolio-section] h1:not(.sr-only), [data-portfolio-section] h2"));
+    headings.forEach((h) => h.setAttribute("data-parallax-heading", ""));
+    const rows = Array.from(document.querySelectorAll<HTMLElement>("[data-portfolio-section] .gallery-square-grid"));
+    rows.forEach((r) => r.setAttribute("data-parallax-row", ""));
     titles.forEach((title) => title.setAttribute("data-parallax-title", ""));
     const update = () => {
       frame = 0;
@@ -52,6 +56,15 @@ function Index() {
         offsets.set(title, y);
         title.style.setProperty("--title-y", `${y.toFixed(2)}px`);
         title.style.setProperty("--title-x", `${(cover ? 0 : progress * (mobile ? 8 : 32)).toFixed(2)}px`);
+        if (title.hasAttribute("data-parallax-heading")) {
+          const s = 1 + 0.25 * Math.max(0, Math.min(1, (top - height * 0.2) / (height * 0.8)));
+          title.style.setProperty("--title-s", s.toFixed(3));
+        }
+      }
+      for (const row of rows) {
+        const r = row.getBoundingClientRect();
+        const t = Math.max(0, Math.min(1, (height - r.top) / (height + r.height)));
+        row.style.setProperty("--row-x", `${((0.5 - t) * (mobile ? 80 : 240)).toFixed(2)}px`);
       }
     };
     const onScroll = () => { if (!frame) frame = requestAnimationFrame(update); };
@@ -62,6 +75,8 @@ function Index() {
       cancelAnimationFrame(frame);
       window.removeEventListener("scroll", onScroll);
       window.removeEventListener("resize", onScroll);
+      headings.forEach((h) => { h.removeAttribute("data-parallax-heading"); h.style.removeProperty("--title-s"); });
+      rows.forEach((r) => { r.removeAttribute("data-parallax-row"); r.style.removeProperty("--row-x"); });
       titles.forEach((title) => {
         title.removeAttribute("data-parallax-title");
         title.style.removeProperty("--title-y");
