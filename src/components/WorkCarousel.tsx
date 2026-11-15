@@ -6,8 +6,8 @@ import type { Project } from "@/data/projects";
 
 const SLIDE_MS = 1100;
 
-export function workSlideAxis(viewportWidth: number) {
-  return viewportWidth < 768 ? "vertical" : "horizontal";
+export function workSlideAxis(_viewportWidth: number) {
+  return "vertical";
 }
 
 /** Arrows and keyboard keys loop the slider: past the last cover you land back on the first. */
@@ -15,7 +15,7 @@ export function shiftIndex(active: number, dir: number, total: number) {
   return (active + dir + total) % total;
 }
 
-/** Responsive cover slider: vertical on phones, horizontal on larger screens. */
+/** Vertical cover slider on every screen, matching the portfolio's downward flow. */
 export function WorkCarousel({ projects }: { projects: Project[] }) {
   const track = useRef<HTMLDivElement>(null);
   const animating = useRef(false);
@@ -25,13 +25,12 @@ export function WorkCarousel({ projects }: { projects: Project[] }) {
   activeRef.current = active;
 
   useEffect(() => {
-    const media = window.matchMedia("(max-width: 767px)");
     const align = () => {
       const element = track.current;
       const card = element?.children[activeRef.current];
       if (!element || !(card instanceof HTMLElement)) return;
-      element.scrollLeft = media.matches ? 0 : card.offsetLeft - (element.clientWidth - card.offsetWidth) / 2;
-      element.scrollTop = media.matches ? card.offsetTop - (element.clientHeight - card.offsetHeight) / 2 : 0;
+      element.scrollLeft = 0;
+      element.scrollTop = card.offsetTop - (element.clientHeight - card.offsetHeight) / 2;
     };
     window.addEventListener("resize", align);
     align();
