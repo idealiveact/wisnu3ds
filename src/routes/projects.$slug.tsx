@@ -97,26 +97,27 @@ function ProjectPage() {
         </div>
       </div>
 
-      <div className="mt-16 space-y-14 px-6 md:px-10">
+      <div className="mt-16 space-y-12 md:space-y-16">
         {p.gallery.map((item, k) => (
-          <figure key={item.src + k}>
-            <img
-              src={item.src}
-              alt={`${item.title}, ${item.year}`}
-              width={item.width}
-              height={item.height}
-              loading={k === 0 ? "eager" : "lazy"}
-              decoding="async"
-              className="h-auto w-full rounded-sm bg-muted"
-            />
-            <figcaption className="mt-4 flex flex-wrap items-baseline justify-between gap-x-6 gap-y-1 border-t border-border pt-4">
+          <figure key={item.src + k} className="project-square-figure">
+            <div className="project-square">
+              <img
+                src={item.src}
+                alt={`${item.title}, ${item.year}`}
+                width={item.width}
+                height={item.height}
+                loading={k === 0 ? "eager" : "lazy"}
+                decoding="async"
+              />
+            </div>
+            <figcaption className="mt-4 flex flex-wrap items-baseline justify-between gap-x-6 gap-y-1 border-t border-border px-6 pt-4 md:px-0">
               <span className="font-display text-2xl font-bold leading-tight text-foreground md:text-4xl">
                 {captionTitle(item.title, k)}
               </span>
               <span className="eyebrow shrink-0 pt-1">{item.year}</span>
             </figcaption>
             {item.caption && (
-              <p className="mt-2 max-w-2xl text-sm leading-relaxed text-muted-foreground md:text-base">{item.caption}</p>
+              <p className="mt-2 max-w-2xl px-6 text-sm leading-relaxed text-muted-foreground md:px-0 md:text-base">{item.caption}</p>
             )}
           </figure>
         ))}
