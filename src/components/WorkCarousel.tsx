@@ -6,9 +6,8 @@ import type { Project } from "@/data/projects";
 
 const SLIDE_MS = 1100;
 
-/** Covers slide up/down on every screen size. */
-export function workSlideAxis(_viewportWidth?: number) {
-  return "vertical" as const;
+export function workSlideAxis(viewportWidth: number) {
+  return viewportWidth < 768 ? "vertical" : "horizontal";
 }
 
 /** Arrows and keyboard keys loop the slider: past the last cover you land back on the first. */
@@ -26,7 +25,7 @@ export function WorkCarousel({ projects }: { projects: Project[] }) {
   activeRef.current = active;
 
   useEffect(() => {
-    const media = { matches: true };
+    const media = window.matchMedia("(max-width: 767px)");
     const align = () => {
       const element = track.current;
       const card = element?.children[activeRef.current];
