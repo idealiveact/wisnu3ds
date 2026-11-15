@@ -8,7 +8,7 @@ Fitur utama:
 
 Opening page dengan hero image/video fullscreen, nama, profesi, deskripsi, dan tombol navigasi.
 
-Navigasi kategori: Work, Gallery, Personal, Start a Project, Contact (About sudah menyatu di halaman Contact).
+Navigasi kategori: Home, Work, Gallery, Personal Project, Contact, Start a Project (About sudah menyatu di halaman Contact).
 
 Sistem slideshow project dengan tombol next/previous, indikator nomor project, dan transisi halus.
 
