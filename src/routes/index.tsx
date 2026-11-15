@@ -1,6 +1,13 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { heroImage, heroShareImage } from "@/data/projects";
 import { pageHead } from "@/lib/seo";
+import { WorkCarousel } from "@/components/WorkCarousel";
+import { Gallery } from "@/components/GallerySection";
+import { Personal } from "@/components/PersonalSection";
+import { Contact } from "@/components/ContactSection";
+import { StartAProject } from "@/components/StartAProjectSection";
+import { byCategory } from "@/data/projects";
+import { useEffect } from "react";
 
 export const Route = createFileRoute("/")({
   head: () => pageHead({
@@ -14,8 +21,13 @@ export const Route = createFileRoute("/")({
 });
 
 function Index() {
+  useEffect(() => {
+    document.documentElement.classList.add("portfolio-scroll");
+    return () => document.documentElement.classList.remove("portfolio-scroll");
+  }, []);
   return (
-    <section className="relative h-[100svh] overflow-hidden">
+    <div className="portfolio-flow">
+    <section id="home" data-portfolio-section className="relative h-[100svh] overflow-hidden">
       <img src={heroImage} alt="" width={1410} height={752} fetchPriority="high" className="hero-zoom absolute inset-0 h-full w-full object-cover" />
       <div className="absolute inset-0 bg-scrim" />
       <div className="absolute inset-0 md:hidden [background:linear-gradient(to_top,oklch(0.12_0.005_60/0.92)_0%,oklch(0.12_0.005_60/0.75)_38%,oklch(0.12_0.005_60/0.35)_62%,oklch(0.12_0.005_60/0)_85%)]" />
@@ -31,10 +43,16 @@ function Index() {
           Still learning every day, and always happy to work with good people.
         </p>
         <div className="fade-up mt-8 flex flex-wrap gap-3">
-          <Link to="/work" className="btn-ember">Explore work →</Link>
-          <Link to="/contact" className="btn-outline">Get in touch</Link>
+          <Link to="/" hash="work" className="btn-ember">Explore work ↓</Link>
+          <Link to="/" hash="contact" className="btn-outline">Get in touch</Link>
         </div>
       </div>
     </section>
+    <div id="work" data-portfolio-section><WorkCarousel projects={byCategory("work")} /></div>
+    <div id="gallery" data-portfolio-section><Gallery /></div>
+    <div id="personal" data-portfolio-section><Personal /></div>
+    <div id="contact" data-portfolio-section><Contact /></div>
+    <div id="start-a-project" data-portfolio-section><StartAProject /></div>
+    </div>
   );
 }
