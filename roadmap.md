@@ -16,6 +16,7 @@
 - [x] About picture removed; the page now reads as one centered column until Wisnu picks a new image.
 - [x] About bio, two-group toolset (Software / AI) and profile header.
 - [x] About folded into Contact: one page at /contact (profile and toolset first, then email, socials and the brief assistant). Menu is now five items — Work, Gallery, Personal, Start a Project, Contact — and the old /about URL redirects to /contact.
+- [x] Menu reordered top-to-bottom to Home, Work, Gallery, Personal Project, Contact, Start a Project; "Personal" renamed to "Personal Project" in the menu.
 - [x] Contact: AI project-brief assistant (client notes → structured brief).
 - [x] "Send to Wisnu" sends the brief straight to Wisnu without opening a mail app: asks the client's reply email (+ optional WhatsApp), saves every brief in the site's backend, shows sending / sent / error states, limits each address to 3 briefs an hour and quietly ignores spam bots.
 - [x] Private Briefs page (/briefs, Wisnu's account only) listing every brief with status and project-type filters and a status changer; clients now pick a project type when sending.
