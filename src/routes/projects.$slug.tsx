@@ -117,7 +117,7 @@ function ProjectPage() {
               <span className="eyebrow shrink-0 pt-1">{item.year}</span>
             </figcaption>
             {item.caption && (
-              <p className="mt-2 max-w-2xl text-sm leading-relaxed text-muted-foreground md:text-base">{item.caption}</p>
+              <p className="mt-2 max-w-2xl px-6 text-sm leading-relaxed text-muted-foreground md:px-0 md:text-base">{item.caption}</p>
             )}
           </figure>
         ))}
