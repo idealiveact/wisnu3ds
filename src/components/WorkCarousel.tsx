@@ -7,7 +7,7 @@ import type { Project } from "@/data/projects";
 const SLIDE_MS = 1100;
 
 export function workSlideAxis(_viewportWidth: number) {
-  return "vertical";
+  return "horizontal";
 }
 
 /** Arrows and keyboard keys loop the slider: past the last cover you land back on the first. */
@@ -15,7 +15,7 @@ export function shiftIndex(active: number, dir: number, total: number) {
   return (active + dir + total) % total;
 }
 
-/** Vertical cover slider on every screen, matching the portfolio's downward flow. */
+/** Horizontal cover slider on every screen size: phone, tablet and desktop. */
 export function WorkCarousel({ projects }: { projects: Project[] }) {
   const track = useRef<HTMLDivElement>(null);
   const animating = useRef(false);

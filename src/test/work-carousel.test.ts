@@ -3,11 +3,11 @@ import { describe, expect, it } from "vitest";
 import { shiftIndex, workSlideAxis } from "@/components/WorkCarousel";
 
 describe("Work slide direction", () => {
-  it("slides downward on mobile and desktop", () => {
-    expect(workSlideAxis(393)).toBe("vertical");
-    expect(workSlideAxis(767)).toBe("vertical");
-    expect(workSlideAxis(768)).toBe("vertical");
-    expect(workSlideAxis(1280)).toBe("vertical");
+  it("slides sideways on phone, tablet and desktop", () => {
+    expect(workSlideAxis(393)).toBe("horizontal");
+    expect(workSlideAxis(767)).toBe("horizontal");
+    expect(workSlideAxis(768)).toBe("horizontal");
+    expect(workSlideAxis(1280)).toBe("horizontal");
   });
 });
 
