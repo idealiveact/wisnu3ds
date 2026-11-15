@@ -336,9 +336,9 @@ body::before {
     radial-gradient(55vw 45vh at 82% 12%, oklch(0.8 0.008 250 / 0.28), transparent 70%),
     radial-gradient(45vw 40vh at 10% 55%, oklch(0.72 0.008 250 / 0.2), transparent 70%),
     radial-gradient(38vw 30vh at 70% 88%, oklch(0.75 0.01 250 / 0.16), transparent 70%),
-    radial-gradient(30vw 24vh at 18% 22%, var(--gold-1) 0%, transparent 65%),
-    radial-gradient(26vw 22vh at 88% 62%, var(--gold-2) 0%, transparent 65%),
-    radial-gradient(22vw 18vh at 40% 98%, var(--gold-1) 0%, transparent 60%),
+    radial-gradient(30vw 24vh at 18% 22%, oklch(from var(--gold-1) l c h / 0.35) 0%, transparent 65%),
+    radial-gradient(26vw 22vh at 88% 62%, oklch(from var(--gold-2) l c h / 0.3) 0%, transparent 65%),
+    radial-gradient(22vw 18vh at 40% 98%, oklch(from var(--gold-1) l c h / 0.28) 0%, transparent 60%),
     linear-gradient(180deg, var(--silver-1), var(--silver-2) 35%, var(--silver-3) 65%, var(--silver-1));
   opacity: 1;
   animation: bg-drift linear both; animation-timeline: scroll(root);
