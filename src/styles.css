@@ -341,10 +341,37 @@ body::before {
     radial-gradient(22vw 18vh at 40% 98%, oklch(from var(--gold-1) l c h / 0.28) 0%, transparent 60%),
     linear-gradient(180deg, var(--silver-1), var(--silver-2) 35%, var(--silver-3) 65%, var(--silver-1));
   opacity: 1;
-  animation: bg-drift linear both; animation-timeline: scroll(root);
+  animation:
+    bg-drift linear both,
+    bg-breathe 26s ease-in-out infinite alternate;
+  animation-timeline: scroll(root), auto;
 }
 @keyframes bg-drift { from { transform: translateY(0); } to { transform: translateY(-50vh); } }
-@media (prefers-reduced-motion: reduce) { body::before { animation: none; } }
+/* Living backdrop: the silver sheens and gold lamplight glints drift and breathe on their own. */
+@keyframes bg-breathe {
+  0% {
+    background-position:
+      0% 0%, 0% 0%, 0% 0%,
+      0% 0%, 0% 0%, 0% 0%,
+      0% 0%;
+    filter: brightness(1);
+  }
+  50% {
+    background-position:
+      -6vw 5vh, 7vw -4vh, -5vw -6vh,
+      6vw 4vh, -7vw 5vh, 5vw -5vh,
+      0% 0%;
+    filter: brightness(1.12);
+  }
+  100% {
+    background-position:
+      5vw -6vh, -6vw 6vh, 6vw 4vh,
+      -5vw -5vh, 6vw -4vh, -6vw 6vh,
+      0% 0%;
+    filter: brightness(0.94);
+  }
+}
+@media (prefers-reduced-motion: reduce) { body::before { animation: none; filter: none; } }
 .portfolio-flow > [data-portfolio-section], .work-gradient, .parallax-section { background: transparent !important; }
 /* Selected or hovered text glows neon white. */
 a:hover, button:hover, .btn-outline:hover, .work-arrow:hover { color: var(--neon) !important; text-shadow: var(--neon-glow); }
