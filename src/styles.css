@@ -298,7 +298,7 @@ body { font-family: var(--font-sans); }
 }
 
 
-/* Square contact sheet: previews expand across four cells without moving the grid. */
+/* Square contact sheet: tiles keep their cell; hover wakes colour and lights a gold rim. */
 .gallery-square-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); border-top: 1px solid var(--border); border-left: 1px solid var(--border); isolation: isolate; }
 .gallery-square-cell { position: relative; aspect-ratio: 1; min-width: 0; }
 .gallery-square-cell:hover, .gallery-square-cell:focus-within { z-index: 3; }
