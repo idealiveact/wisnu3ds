@@ -30,11 +30,13 @@ function Index() {
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
     let frame = 0;
     const sections = Array.from(document.querySelectorAll<HTMLElement>("[data-portfolio-section]"));
+    // The Home hero is the first screen and already fully visible on load:
+    // its name must stay sharp and in place, so it is excluded from the zoom/blur parallax.
     const titles = Array.from(document.querySelectorAll<HTMLElement>(
-      "[data-portfolio-section] h1:not(.sr-only), [data-portfolio-section] h2, [data-portfolio-section] .hero-eyebrow, [data-portfolio-section] .eyebrow, [data-portfolio-section] .work-vcard-title, [data-portfolio-section] .work-section-label",
+      "[data-portfolio-section]:not(#home) h1:not(.sr-only), [data-portfolio-section]:not(#home) h2, [data-portfolio-section]:not(#home) .hero-eyebrow, [data-portfolio-section]:not(#home) .eyebrow, [data-portfolio-section]:not(#home) .work-vcard-title, [data-portfolio-section]:not(#home) .work-section-label",
     ));
     const offsets = new Map<HTMLElement, number>();
-    const headings = Array.from(document.querySelectorAll<HTMLElement>("[data-portfolio-section] h1:not(.sr-only), [data-portfolio-section] h2"));
+    const headings = Array.from(document.querySelectorAll<HTMLElement>("[data-portfolio-section]:not(#home) h1:not(.sr-only), [data-portfolio-section]:not(#home) h2"));
     headings.forEach((h) => h.setAttribute("data-parallax-heading", ""));
     const rows = Array.from(document.querySelectorAll<HTMLElement>("[data-portfolio-section] .gallery-square-grid"));
     rows.forEach((r) => r.setAttribute("data-parallax-row", ""));
