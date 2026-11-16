@@ -422,10 +422,10 @@ a:hover, button:hover, .btn-outline:hover, .work-arrow:hover { color: var(--neon
 .gallery-corner { display: none; }
 @media (max-width: 767px) { .gallery-square-grid { gap: .5rem; } .gallery-square { border-radius: .75rem; } }
 
-/* Work subfolder pictures: wide landscape boxes, never cropped — full render visible. */
-.project-square { position: relative; width: 100%; aspect-ratio: 25 / 16; overflow: hidden; background: var(--muted); border-radius: .75rem; }
-.project-square img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; }
+/* Work subfolder pictures: no frame — each render keeps its natural shape, slightly rounded corners. */
+.project-square { width: 100%; }
+.project-square img { display: block; width: 100%; height: auto; border-radius: .75rem; }
 @media (min-width: 768px) {
   .project-square-figure { width: min(100%, 1200px); margin-inline: auto; }
-  .project-square { border-radius: 1rem; }
+  .project-square img { border-radius: 1rem; }
 }
