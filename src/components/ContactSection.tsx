@@ -18,7 +18,7 @@ const socials = [
 export function Contact() {
   return (
     <div className="px-6 pt-28 pb-16 md:px-10 md:pb-24">
-      <div className="mx-auto w-full max-w-3xl">
+      <div className="w-full max-w-3xl">
         <p className="eyebrow">About</p>
         <h1 className="fade-up mt-4 font-display text-4xl font-bold leading-[1] text-foreground md:text-5xl">
           Wisnu Kesuma
@@ -58,7 +58,7 @@ export function Contact() {
         </ul>
       </div>
 
-      <div className="mx-auto mt-20 w-full max-w-3xl border-t border-border pt-16 md:mt-28 md:pt-20">
+      <div className="mt-20 w-full max-w-3xl border-t border-border pt-16 md:mt-28 md:pt-20">
         <p className="eyebrow">Contact</p>
         <h2 className="fade-up mt-4 font-display text-5xl font-bold leading-[0.95] text-foreground md:text-7xl">
           Let's build<br />something <span className="text-primary">real</span>.
