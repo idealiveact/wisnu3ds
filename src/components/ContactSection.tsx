@@ -83,10 +83,10 @@ export function Contact() {
           <p className="eyebrow">Project brief assistant</p>
           <h3 className="mt-3 font-display text-2xl font-bold md:text-3xl">Not sure what to write yet?</h3>
           <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-            Jot down the rough idea on the Start a Project page — booth size, event, brand, deadline, budget. It turns your
+            Jot down the rough idea on the Let's Talk page — booth size, event, brand, deadline, budget. It turns your
             notes into a clear brief and sends it straight to Wisnu, no email app needed.
           </p>
-          <Link to="/start-a-project" className="btn-ember mt-6">Start a project</Link>
+          <Link to="/start-a-project" className="btn-ember mt-6">Let's Talk</Link>
         </div>
       </div>
     </div>

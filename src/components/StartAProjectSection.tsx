@@ -6,7 +6,7 @@ import { BriefBuilder } from "@/components/BriefBuilder";
 export function StartAProject() {
   return (
     <section className="flex min-h-screen flex-col px-6 pt-28 pb-20 md:px-10 md:pt-36">
-      <p className="eyebrow">Start a project</p>
+      <p className="eyebrow">Let's Talk</p>
       <h1 className="fade-up mt-4 max-w-3xl text-balance font-display text-5xl font-bold leading-[0.95] text-foreground md:text-7xl">
         Describe your idea,<br />get a clear <span className="text-primary">brief</span>.
       </h1>

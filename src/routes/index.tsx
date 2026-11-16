@@ -120,7 +120,7 @@ function Index() {
     <div id="gallery" data-portfolio-section data-ghost="GALLERY" className="parallax-section"><Gallery /></div>
     <div id="personal" data-portfolio-section data-ghost="PERSONAL" className="parallax-section"><Personal /></div>
     <div id="contact" data-portfolio-section data-ghost="CONTACT" className="parallax-section"><Contact /></div>
-    <div id="start-a-project" data-portfolio-section data-ghost="START" className="parallax-section"><StartAProject /></div>
+    <div id="start-a-project" data-portfolio-section data-ghost="TALK" className="parallax-section"><StartAProject /></div>
     </div>
   );
 }
