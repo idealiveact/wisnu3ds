@@ -15,7 +15,7 @@ describe("App routing", () => {
     expect(matches.at(-1)?.routeId).not.toBe(rootRouteId);
   });
 
-  it("has pages for every menu: Home, Work, Gallery, Personal Project, Contact, Start a Project", () => {
+  it("has pages for every menu: Home, Work, Gallery, Personal Project, Contact, Let's Talk", () => {
     for (const path of ["/", "/work", "/gallery", "/personal", "/contact", "/start-a-project"]) {
       const matches = router.matchRoutes(path);
       expect(matches.at(-1)?.routeId, path).not.toBe(rootRouteId);
@@ -37,7 +37,7 @@ describe("App routing", () => {
       "Gallery",
       "Personal Project",
       "Contact",
-      "Start a Project",
+      "Let's Talk",
     ]);
   });
 

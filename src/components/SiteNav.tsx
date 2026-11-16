@@ -3,14 +3,14 @@ import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 
 // Six menu items, top-to-bottom order: Home, Work, Gallery, Personal Project,
-// Contact, Start a Project. About is folded into the Contact page (/about only redirects).
+// Contact, Let's Talk. About is folded into the Contact page (/about only redirects).
 export const navLinks = [
   { to: "/", label: "Home" },
   { to: "/work", label: "Work" },
   { to: "/gallery", label: "Gallery" },
   { to: "/personal", label: "Personal Project" },
   { to: "/contact", label: "Contact" },
-  { to: "/start-a-project", label: "Start a Project" },
+  { to: "/start-a-project", label: "Let's Talk" },
 ] as const;
 
 export function SiteNav() {
