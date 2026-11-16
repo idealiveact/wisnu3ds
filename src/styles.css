@@ -303,7 +303,9 @@ body { font-family: var(--font-sans); }
 .gallery-square-cell { position: relative; aspect-ratio: 1; min-width: 0; }
 .gallery-square-cell:hover, .gallery-square-cell:focus-within { z-index: 3; }
 .gallery-square { position: absolute; top: 0; left: 0; width: 100%; height: auto; aspect-ratio: 1; border-radius: 0; padding: 0; overflow: visible; border-right: 1px solid var(--border); border-bottom: 1px solid var(--border); background: var(--muted); cursor: zoom-in; transition: box-shadow .45s ease; }
-.gallery-square-caption { background: linear-gradient(transparent, var(--work-image-label)); color: var(--work-image-foreground); min-height: 40%; justify-content: end; }
+.gallery-square-caption { background: linear-gradient(transparent, var(--work-image-label)); color: var(--work-image-foreground); min-height: 45%; justify-content: end; padding: .6rem; gap: .15rem; }
+.gallery-square-caption .font-display { font-size: .68rem; line-height: 1.25; }
+.gallery-square-caption .text-xs { font-size: .58rem; }
 .gallery-corner { position: absolute; width: 5px; height: 5px; background: var(--foreground); z-index: 2; pointer-events: none; }
 .gallery-corner-top-left { top: -2px; left: -2px; }
 .gallery-corner-top-right { top: -2px; right: -2px; }
