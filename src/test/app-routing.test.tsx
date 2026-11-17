@@ -33,7 +33,7 @@ describe("App routing", () => {
     ]);
     expect(navLinks.map((l) => l.label)).toEqual([
       "Home",
-      "Work",
+      "Selected Project",
       "Gallery",
       "Personal Project",
       "Contact",

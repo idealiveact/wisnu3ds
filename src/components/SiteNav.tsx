@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 // Contact, Let's Talk. About is folded into the Contact page (/about only redirects).
 export const navLinks = [
   { to: "/", label: "Home" },
-  { to: "/work", label: "Work" },
+  { to: "/work", label: "Selected Project" },
   { to: "/gallery", label: "Gallery" },
   { to: "/personal", label: "Personal Project" },
   { to: "/contact", label: "Contact" },
