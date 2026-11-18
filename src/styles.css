@@ -429,11 +429,21 @@ a:hover, button:hover, .btn-outline:hover, .work-arrow:hover { color: var(--neon
 [data-parallax-row] > * { will-change: translate; }
 /* Rounded, spaced photo tiles without corner marks. */
 .gallery-square-grid { gap: .75rem; border: 0; }
-/* CRT tube screen: four convex edges, applied via SVG clip-path. */
+/* CRT tube screen: one continuous superellipse curve, delivered as an anti-aliased
+   mask so the silhouette stays smooth at every size (clip-path url() renders jagged). */
+:root { --crt-mask: url("data:image/svg+xml,%3Csvg%20xmlns%3D'http:%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%201000%201000'%20preserveAspectRatio%3D'none'%3E%3Cpath%20fill%3D'%23fff'%20d%3D'M%201000.0%20500.0%20L%20999.5%20595.7%20L%20997.1%20657.9%20L%20994.8%20686.7%20L%20991.8%20712.5%20L%20988.0%20737.2%20L%20983.4%20759.9%20L%20977.6%20783.1%20L%20970.7%20804.6%20L%20963.0%20824.5%20L%20953.9%20843.9%20L%20944.3%20861.1%20L%20933.2%20877.9%20L%20921.0%20893.4%20L%20907.8%20907.8%20L%20893.4%20921.0%20L%20877.9%20933.2%20L%20861.1%20944.3%20L%20843.9%20953.9%20L%20824.5%20963.0%20L%20804.6%20970.7%20L%20783.1%20977.6%20L%20759.9%20983.4%20L%20737.2%20988.0%20L%20712.5%20991.8%20L%20686.7%20994.8%20L%20657.9%20997.1%20L%20595.7%20999.5%20L%20500.0%201000.0%20L%20404.3%20999.5%20L%20342.1%20997.1%20L%20313.3%20994.8%20L%20287.5%20991.8%20L%20262.8%20988.0%20L%20240.1%20983.4%20L%20216.9%20977.6%20L%20195.4%20970.7%20L%20175.5%20963.0%20L%20156.1%20953.9%20L%20138.9%20944.3%20L%20122.1%20933.2%20L%20106.6%20921.0%20L%2092.2%20907.8%20L%2079.0%20893.4%20L%2066.8%20877.9%20L%2055.7%20861.1%20L%2046.1%20843.9%20L%2037.0%20824.5%20L%2029.3%20804.6%20L%2022.4%20783.1%20L%2016.6%20759.9%20L%2012.0%20737.2%20L%208.2%20712.5%20L%205.2%20686.7%20L%202.9%20657.9%20L%200.5%20595.7%20L%200.0%20500.0%20L%200.5%20404.3%20L%202.9%20342.1%20L%205.2%20313.3%20L%208.2%20287.5%20L%2012.0%20262.8%20L%2016.6%20240.1%20L%2022.4%20216.9%20L%2029.3%20195.4%20L%2037.0%20175.5%20L%2046.1%20156.1%20L%2055.7%20138.9%20L%2066.8%20122.1%20L%2079.0%20106.6%20L%2092.2%2092.2%20L%20106.6%2079.0%20L%20122.1%2066.8%20L%20138.9%2055.7%20L%20156.1%2046.1%20L%20175.5%2037.0%20L%20195.4%2029.3%20L%20216.9%2022.4%20L%20240.1%2016.6%20L%20262.8%2012.0%20L%20287.5%208.2%20L%20313.3%205.2%20L%20342.1%202.9%20L%20404.3%200.5%20L%20500.0%200.0%20L%20595.7%200.5%20L%20657.9%202.9%20L%20686.7%205.2%20L%20712.5%208.2%20L%20737.2%2012.0%20L%20759.9%2016.6%20L%20783.1%2022.4%20L%20804.6%2029.3%20L%20824.5%2037.0%20L%20843.9%2046.1%20L%20861.1%2055.7%20L%20877.9%2066.8%20L%20893.4%2079.0%20L%20907.8%2092.2%20L%20921.0%20106.6%20L%20933.2%20122.1%20L%20944.3%20138.9%20L%20953.9%20156.1%20L%20963.0%20175.5%20L%20970.7%20195.4%20L%20977.6%20216.9%20L%20983.4%20240.1%20L%20988.0%20262.8%20L%20991.8%20287.5%20L%20994.8%20313.3%20L%20997.1%20342.1%20L%20999.5%20404.3%20Z'%2F%3E%3C%2Fsvg%3E"); }
 @utility crt-screen {
-  clip-path: url(#crt-screen-clip);
+  -webkit-mask-image: var(--crt-mask); mask-image: var(--crt-mask);
+  -webkit-mask-size: 100% 100%; mask-size: 100% 100%;
+  -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat;
+  border-radius: 1.25rem;
 }
-.gallery-square { border: 0; border-radius: 0; overflow: hidden; clip-path: url(#crt-screen-clip); }
+.gallery-square {
+  border: 0; overflow: hidden; border-radius: 1.1rem;
+  -webkit-mask-image: var(--crt-mask); mask-image: var(--crt-mask);
+  -webkit-mask-size: 100% 100%; mask-size: 100% 100%;
+  -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat;
+}
 /* The glow lives on the cell so it survives the child's clip-path. */
 .gallery-square-cell { transition: filter .45s ease; }
 @media (hover: hover) and (pointer: fine) {
