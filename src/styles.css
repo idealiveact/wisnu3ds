@@ -429,10 +429,10 @@ a:hover, button:hover, .btn-outline:hover, .work-arrow:hover { color: var(--neon
 [data-parallax-row] > * { will-change: translate; }
 /* Rounded, spaced photo tiles without corner marks. */
 .gallery-square-grid { gap: .75rem; border: 0; }
-.gallery-square { border: 0; border-radius: 1rem; overflow: hidden; }
+.gallery-square { border: 0; border-radius: 1.5rem; overflow: hidden; }
 .gallery-square img, .gallery-square video { border-radius: inherit; }
 .gallery-corner { display: none; }
-@media (max-width: 767px) { .gallery-square-grid { gap: .5rem; } .gallery-square { border-radius: .75rem; } }
+@media (max-width: 767px) { .gallery-square-grid { gap: .5rem; } .gallery-square { border-radius: 1rem; } }
 
 /* Work subfolder pictures: no frame — each render keeps its natural shape, slightly rounded corners. */
 .project-square { width: 100%; }

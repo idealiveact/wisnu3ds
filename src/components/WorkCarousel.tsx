@@ -114,7 +114,7 @@ export function WorkCarousel({ projects }: { projects: Project[] }) {
             to="/projects/$slug"
             params={{ slug: project.slug }}
             preload={false}
-            className="work-hcard group relative block overflow-hidden rounded-lg bg-card focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+            className="work-hcard group relative block overflow-hidden rounded-[2rem] bg-card focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
             data-active={active === index}
             aria-label={`Open ${project.title}`}
             onClick={(event) => { if (active !== index) { event.preventDefault(); go(index); } }}
