@@ -129,7 +129,7 @@ function RootComponent() {
       <svg aria-hidden="true" style={{ position: "absolute", width: 0, height: 0 }}>
         <defs>
           <clipPath id="crt-screen-clip" clipPathUnits="objectBoundingBox">
-            <path d="M 0.055 0.045 Q 0.5 -0.005 0.945 0.045 Q 1.005 0.5 0.945 0.955 Q 0.5 1.005 0.055 0.955 Q -0.005 0.5 0.055 0.045 Z" />
+            <path d="M 0.0610 0.0443 Q 0.5000 -0.0050 0.9390 0.0443 Q 0.9450 0.0450 0.9458 0.0509 Q 1.0050 0.5000 0.9458 0.9491 Q 0.9450 0.9550 0.9390 0.9557 Q 0.5000 1.0050 0.0610 0.9557 Q 0.0550 0.9550 0.0542 0.9491 Q -0.0050 0.5000 0.0542 0.0509 Q 0.0550 0.0450 0.0610 0.0443 Z" />
           </clipPath>
         </defs>
       </svg>
