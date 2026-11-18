@@ -303,7 +303,8 @@ body { font-family: var(--font-sans); }
 .gallery-square-cell { position: relative; aspect-ratio: 1; min-width: 0; }
 .gallery-square-cell:hover, .gallery-square-cell:focus-within { z-index: 3; }
 .gallery-square { position: absolute; top: 0; left: 0; width: 100%; height: auto; aspect-ratio: 1; border-radius: 0; padding: 0; overflow: visible; border-right: 1px solid var(--border); border-bottom: 1px solid var(--border); background: var(--muted); cursor: zoom-in; transition: box-shadow .45s ease; }
-.gallery-square-caption { background: linear-gradient(transparent, var(--work-image-label)); color: var(--work-image-foreground); min-height: 45%; justify-content: end; padding: .6rem; gap: .15rem; }
+/* Caption sits at the tile's centre so the CRT curve never cuts it. */
+.gallery-square-caption { top: 58%; bottom: auto; transform: translateY(-50%); background: none; color: var(--work-image-foreground); align-items: center; text-align: center; min-height: 0; padding: .6rem; gap: .15rem; text-shadow: 0 1px 8px oklch(0.12 0.005 60 / 0.95), 0 1px 3px oklch(0.12 0.005 60 / 0.9); }
 .gallery-square-caption .font-display { font-size: .68rem; line-height: 1.25; }
 .gallery-square-caption .text-xs { font-size: .58rem; }
 .gallery-corner { position: absolute; width: 5px; height: 5px; background: var(--foreground); z-index: 2; pointer-events: none; }

@@ -121,7 +121,7 @@ export function WorkCarousel({ projects }: { projects: Project[] }) {
           >
             <img src={project.cover} alt={project.title} loading={index < 3 ? "eager" : "lazy"} decoding="async" draggable={false} className="h-full w-full object-cover" />
             <span className="work-vcard-shade absolute inset-0" aria-hidden="true" />
-            <span className="work-vcard-title absolute inset-x-0 bottom-0 flex items-end justify-between gap-4 p-5 md:p-6">
+            <span className="work-vcard-title absolute inset-0 flex items-center justify-between gap-4 p-5 md:p-8">
               <span className="font-display text-xl font-bold leading-tight md:text-3xl">{project.title}</span>
               <span className="work-cover-open flex size-11 shrink-0 items-center justify-center rounded-full transition-transform group-hover:-rotate-45" aria-hidden="true"><ArrowUpRight className="size-5" /></span>
             </span>
