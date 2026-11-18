@@ -4,7 +4,7 @@ import { useState } from "react";
 import walkthroughPreview from "@/assets/optimized/samsung-note20-walkthrough-2020-preview.webp.asset.json";
 import { Button } from "@/components/ui/button";
 import { GalleryLightbox } from "@/components/GalleryLightbox";
-import { galleryEntries, type GalleryEntry } from "@/data/gallery";
+import { galleryOrdered, type GalleryEntry } from "@/data/gallery";
 
 
 
@@ -63,7 +63,7 @@ export function Gallery() {
       <p className="fade-up mt-5 font-display text-2xl font-bold leading-none text-foreground md:text-3xl">
         Selected <span className="text-primary">frames</span>
       </p>
-      {galleryEntries.length === 0 ? (
+      {galleryOrdered.length === 0 ? (
         <p className="mt-8 max-w-xl text-lg leading-relaxed text-muted-foreground">
           A curated gallery is on its way — renders, installations and walkthrough films will appear here soon.
         </p>
@@ -74,7 +74,7 @@ export function Gallery() {
           </p>
 
           <div className="gallery-square-grid mt-14" aria-label="Gallery collection">
-            {galleryEntries.map((entry, k) => (
+            {galleryOrdered.map((entry, k) => (
               <figure key={entry.src} className="gallery-square-cell">
                 <Tile entry={entry} onOpen={() => openAt(k)} />
               </figure>
@@ -82,7 +82,7 @@ export function Gallery() {
           </div>
 
           <GalleryLightbox
-            entries={galleryEntries}
+            entries={galleryOrdered}
             index={index}
             open={open}
             onOpenChange={setOpen}

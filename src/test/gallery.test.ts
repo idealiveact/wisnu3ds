@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest";
 
 import { stepIndex } from "@/components/GalleryLightbox";
-import { galleryEntries } from "@/data/gallery";
+import { galleryEntries, galleryOrdered } from "@/data/gallery";
 
 // Every entry on the Gallery page must carry its own label, date and note,
 // otherwise visitors see an unlabeled picture or film they cannot attribute to a project.
@@ -33,6 +33,17 @@ describe("Gallery entries", () => {
   it("has no two entries with the same picture or film", () => {
     const srcs = galleryEntries.map((entry) => entry.src);
     expect(new Set(srcs).size).toBe(srcs.length);
+  });
+
+  // Wisnu's rule: the page shows films first, then photos.
+  it("shows films above photos", () => {
+    const kinds = galleryOrdered.map((entry) => entry.kind);
+    const firstPhoto = kinds.indexOf("photo");
+    const lastFilm = kinds.lastIndexOf("video");
+    expect(lastFilm).toBeGreaterThan(-1);
+    expect(firstPhoto).toBeGreaterThan(-1);
+    expect(lastFilm).toBeLessThan(firstPhoto);
+    expect(galleryOrdered.length).toBe(galleryEntries.length);
   });
 
   // Wisnu's rule: the three plaques in the Bogasari counter photo are three

@@ -150,3 +150,14 @@ export const galleryEntries: GalleryEntry[] = [
     height: 854,
   },
 ];
+
+/**
+ * Display order for the Gallery page: films first, then photos.
+ * Each group keeps the order it was written in, so adding a film or a
+ * photo never disturbs the other group. The grid and the full-size viewer
+ * both read this array, so clicking a card always opens the right entry.
+ */
+export const galleryOrdered: GalleryEntry[] = [
+  ...galleryEntries.filter((entry) => entry.kind === "video"),
+  ...galleryEntries.filter((entry) => entry.kind === "photo"),
+];
