@@ -32,6 +32,7 @@
 
 - [x] Injourney picture names restyled: each title starts with its event name, the number restarts at 1 per event (Booth Exhibition Sub Holding 2024 — 1 pola … — 5 destination management, Sahakarya 2025 — 1 food court … — 4 aerial layout, Gandrung Sewu 2026 — 1 umkm craft market … — 4 umkm coastal pavilion) and the picture name is in lower case.
 - [x] Work subfolder pictures now sit in equal-sided square boxes: enlarged and centred on desktop, full screen width edge-to-edge on phone, rounded corners kept, captions below each box.
+- [x] Site background replaced with Wisnu's uploaded dark navy gradient, re-shaped so the light reads as a narrow band running top to bottom with the bright area reduced; muted and accent text colours retuned so everything stays readable on navy.
 
 ## Open
 - [ ] Wisnu must create his account at /auth with wisnu3ds@gmail.com and confirm it before /briefs shows anything.
