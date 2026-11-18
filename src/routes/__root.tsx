@@ -125,6 +125,14 @@ function RootComponent() {
       <SiteNav />
       <main><Outlet /></main>
       <LiquidCursor />
+      {/* CRT tube-screen clip: all four edges bulge outward like an old curved TV. */}
+      <svg aria-hidden="true" style={{ position: "absolute", width: 0, height: 0 }}>
+        <defs>
+          <clipPath id="crt-screen-clip" clipPathUnits="objectBoundingBox">
+            <path d="M 0.12 0.035 Q 0.5 -0.005 0.88 0.035 Q 0.955 0.05 0.965 0.12 Q 1.005 0.5 0.965 0.88 Q 0.955 0.95 0.88 0.965 Q 0.5 1.005 0.12 0.965 Q 0.045 0.95 0.035 0.88 Q -0.005 0.5 0.035 0.12 Q 0.045 0.05 0.12 0.035 Z" />
+          </clipPath>
+        </defs>
+      </svg>
     </QueryClientProvider>
   );
 }
