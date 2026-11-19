@@ -1,10 +1,8 @@
 import walkthrough2020 from "@/assets/samsung-note20-walkthrough-2020.mp4.asset.json";
 import walkthrough2020Poster from "@/assets/optimized/samsung-note20-walkthrough-2020-poster.webp.asset.json";
-import lobbyPis2023 from "@/assets/optimized/pertamina-pis-hut-ri-2023-lobby.webp.asset.json";
 import sialPavilion2015 from "@/assets/optimized/sial-interfood-indofood-pavilion-2015.webp.asset.json";
 import prjRumahIndofoodNight from "@/assets/optimized/prj-rumah-indofood-night-2015.webp.asset.json";
 import bogasariIsland2017 from "@/assets/sial-interfood-bogasari-island-booth-2017.jpg.asset.json";
-import bogasariAwards2017 from "@/assets/optimized/sial-interfood-bogasari-awards-2017.webp.asset.json";
 import ahm2018 from "@/assets/ahm-honda-jakarta-fair-2018.mp4.asset.json";
 import ahm2018Poster from "@/assets/optimized/ahm-honda-jakarta-fair-2018-poster.webp.asset.json";
 import suzuki2023 from "@/assets/suzuki-iims-2023.mp4.asset.json";
@@ -70,15 +68,6 @@ export const galleryEntries: GalleryEntry[] = [
     height: 1440,
   },
   {
-    kind: "photo",
-    src: bogasariAwards2017.url,
-    title: "Three Years of Best Booth Awards",
-    year: "2015–2017",
-    caption: "Three plaques on the Bogasari counter — three consecutive years of best booth.",
-    width: 1920,
-    height: 1280,
-  },
-  {
     kind: "video",
     src: ahm2018.url,
     poster: ahm2018Poster.url,
@@ -107,15 +96,6 @@ export const galleryEntries: GalleryEntry[] = [
     caption: "The stage reveal at the Suzuki booth, with a new SUV unveiled before a crowd of cameras.",
     width: 1920,
     height: 1080,
-  },
-  {
-    kind: "photo",
-    src: lobbyPis2023.url,
-    title: "Pertamina International Shipping — Independence Day Display",
-    year: "August 2023",
-    caption: "An acrylic slogan panel beside an ocean diorama with a tanker riding over a coral reef.",
-    width: 1448,
-    height: 1086,
   },
   {
     kind: "video",
