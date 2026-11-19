@@ -14,6 +14,15 @@ import suzuki2025 from "@/assets/suzuki-iims-ewx-2025.mp4.asset.json";
 import suzuki2025Poster from "@/assets/optimized/suzuki-iims-ewx-2025-poster.webp.asset.json";
 import sahakaryaPavilion2025 from "@/assets/injourney-sahakarya-pavilion-2025.jpg.asset.json";
 import sahakaryaCanopy2025 from "@/assets/injourney-sahakarya-canopy-2025.jpg.asset.json";
+import indofoodPavilion2017 from "@/assets/optimized/indofood-prj-pavilion-2017.webp.asset.json";
+import indofoodFacade2018 from "@/assets/optimized/indofood-rumah-indofood-facade-2018.webp.asset.json";
+import ahmFacadeNight2018 from "@/assets/optimized/ahm-jakarta-fair-2018-facade-night.webp.asset.json";
+import ahmBigbikeLounge2018 from "@/assets/optimized/ahm-jakarta-fair-2018-bigbike-lounge.webp.asset.json";
+import ahmCariAman2018 from "@/assets/optimized/ahm-jakarta-fair-2018-cari-aman.webp.asset.json";
+import ahmFacadeNight2019 from "@/assets/optimized/ahm-jakarta-fair-2019-facade-night.webp.asset.json";
+import ahmGiassGenio2019 from "@/assets/optimized/ahm-giass-2019-genio-floor.webp.asset.json";
+import suzukiHybridMall2022 from "@/assets/optimized/suzuki-ertiga-hybrid-mall-2022.webp.asset.json";
+import natashaHairSeries from "@/assets/optimized/natasha-hair-series-mall-stage.webp.asset.json";
 
 /**
  * Entri untuk halaman Gallery.
@@ -148,6 +157,87 @@ export const galleryEntries: GalleryEntry[] = [
     caption: "Guests in traditional dress beneath the rattan canopy, with the temple rising behind.",
     width: 1280,
     height: 854,
+  },
+  {
+    kind: "photo",
+    src: indofoodPavilion2017.url,
+    title: "Rumah Indofood at the Jakarta Fair — Corner View",
+    year: "2017",
+    caption: "The two-storey pavilion corner, wrapped in Supermi panels above the food counters.",
+    width: 1920,
+    height: 1440,
+  },
+  {
+    kind: "photo",
+    src: indofoodFacade2018.url,
+    title: "Rumah Indofood at the Jakarta Fair — Facade",
+    year: "2018",
+    caption: "The white facade under its blue dome roof, with Sarimi banners over the entrance.",
+    width: 1920,
+    height: 1440,
+  },
+  {
+    kind: "photo",
+    src: ahmFacadeNight2018.url,
+    title: "Astra Honda Motor at the Jakarta Fair — Night Facade",
+    year: "2018",
+    caption: "The red One HEART. facade glowing above the evening crowd.",
+    width: 1920,
+    height: 1440,
+  },
+  {
+    kind: "photo",
+    src: ahmBigbikeLounge2018.url,
+    title: "Astra Honda Motor at the Jakarta Fair — Big Bike Lounge",
+    year: "2018",
+    caption: "The big bike lounge, with the Gold Wing on its platform under warm spotlights.",
+    width: 1920,
+    height: 1280,
+  },
+  {
+    kind: "photo",
+    src: ahmCariAman2018.url,
+    title: "Astra Honda Motor at the Jakarta Fair — Cari Aman Corner",
+    year: "2018",
+    caption: "The #Cari_aMan safety-riding corner, with helmets on wooden crates beside a Scoopy.",
+    width: 1920,
+    height: 1280,
+  },
+  {
+    kind: "photo",
+    src: ahmFacadeNight2019.url,
+    title: "Astra Honda Motor at the Jakarta Fair — Night Facade",
+    year: "2019",
+    caption: "The white booth at night, its red wing logo lit above the entrance.",
+    width: 1920,
+    height: 1286,
+  },
+  {
+    kind: "photo",
+    src: ahmGiassGenio2019.url,
+    title: "Honda at GIASS — Genio Floor",
+    year: "2019",
+    caption: "Crowds around the Genio display on the Honda floor.",
+    width: 1536,
+    height: 1024,
+  },
+  {
+    kind: "photo",
+    src: suzukiHybridMall2022.url,
+    title: "Suzuki Ertiga Hybrid — Mall Exhibition",
+    year: "2022",
+    caption: "The Ertiga Hybrid display seen from the mall's upper floor.",
+    width: 1920,
+    height: 1280,
+  },
+  {
+    kind: "photo",
+    src: natashaHairSeries.url,
+    title: "Natasha Hair Series — Mall Atrium Stage",
+    year: "—",
+    caption: "The Natasha Hair Series stage and seating, filling the mall atrium.",
+    width: 1536,
+    height: 1024,
   },
 ];
 
