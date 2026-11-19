@@ -319,6 +319,10 @@ body { font-family: var(--font-sans); }
   .gallery-square img { filter: grayscale(.85) sepia(.18) brightness(.55) contrast(.95); transition: filter .5s ease; }
   .gallery-square:hover img, .gallery-square:focus-visible img { filter: grayscale(0) brightness(1); }
 }
+/* Desktop gallery: three rows of five, so the fifteen frames read as one contact sheet. */
+@media (min-width: 1280px) {
+  .gallery-square-grid--gallery { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+}
 @media (min-width: 768px) and (max-width: 1279px) {
   .gallery-square-grid { grid-template-columns: repeat(5, minmax(0, 1fr)); }
   .gallery-square-caption { padding: .55rem; }

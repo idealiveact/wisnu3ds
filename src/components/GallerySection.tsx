@@ -73,7 +73,7 @@ export function Gallery() {
             Thank you for taking the time to view them.
           </p>
 
-          <div className="gallery-square-grid mt-14" aria-label="Gallery collection">
+          <div className="gallery-square-grid gallery-square-grid--gallery mt-14" aria-label="Gallery collection">
             {galleryOrdered.map((entry, k) => (
               <figure key={entry.src} className="gallery-square-cell">
                 <Tile entry={entry} onOpen={() => openAt(k)} />
