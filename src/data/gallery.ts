@@ -2,7 +2,6 @@ import walkthrough2020 from "@/assets/samsung-note20-walkthrough-2020.mp4.asset.
 import walkthrough2020Poster from "@/assets/optimized/samsung-note20-walkthrough-2020-poster.webp.asset.json";
 import lobbyPis2023 from "@/assets/optimized/pertamina-pis-hut-ri-2023-lobby.webp.asset.json";
 import sialPavilion2015 from "@/assets/optimized/sial-interfood-indofood-pavilion-2015.webp.asset.json";
-import sialPavilionFloor2015 from "@/assets/optimized/sial-interfood-indofood-pavilion-floor-2015.webp.asset.json";
 import prjRumahIndofoodNight from "@/assets/optimized/prj-rumah-indofood-night-2015.webp.asset.json";
 import bogasariIsland2017 from "@/assets/sial-interfood-bogasari-island-booth-2017.jpg.asset.json";
 import bogasariAwards2017 from "@/assets/optimized/sial-interfood-bogasari-awards-2017.webp.asset.json";
@@ -14,11 +13,8 @@ import suzuki2025 from "@/assets/suzuki-iims-ewx-2025.mp4.asset.json";
 import suzuki2025Poster from "@/assets/optimized/suzuki-iims-ewx-2025-poster.webp.asset.json";
 import sahakaryaPavilion2025 from "@/assets/injourney-sahakarya-pavilion-2025.jpg.asset.json";
 import sahakaryaCanopy2025 from "@/assets/injourney-sahakarya-canopy-2025.jpg.asset.json";
-import indofoodPavilion2017 from "@/assets/optimized/indofood-prj-pavilion-2017.webp.asset.json";
 import indofoodFacade2018 from "@/assets/optimized/indofood-rumah-indofood-facade-2018.webp.asset.json";
-import ahmFacadeNight2018 from "@/assets/optimized/ahm-jakarta-fair-2018-facade-night.webp.asset.json";
 import ahmBigbikeLounge2018 from "@/assets/optimized/ahm-jakarta-fair-2018-bigbike-lounge.webp.asset.json";
-import ahmCariAman2018 from "@/assets/optimized/ahm-jakarta-fair-2018-cari-aman.webp.asset.json";
 import ahmFacadeNight2019 from "@/assets/optimized/ahm-jakarta-fair-2019-facade-night.webp.asset.json";
 import ahmGiassGenio2019 from "@/assets/optimized/ahm-giass-2019-genio-floor.webp.asset.json";
 import suzukiHybridMall2022 from "@/assets/optimized/suzuki-ertiga-hybrid-mall-2022.webp.asset.json";
@@ -54,15 +50,6 @@ export const galleryEntries: GalleryEntry[] = [
     caption: "A blue-tiled pagoda roof hung with red lanterns above Palmia and Indomilk bakery counters.",
     width: 1920,
     height: 1280,
-  },
-  {
-    kind: "photo",
-    src: sialPavilionFloor2015.url,
-    title: "SIAL Interfood — Pavilion Floor",
-    year: "2015",
-    caption: "Peak hours at the pavilion: visitors queueing at the pastry cases under the lantern line.",
-    width: 1920,
-    height: 1080,
   },
   {
     kind: "photo",
@@ -160,15 +147,6 @@ export const galleryEntries: GalleryEntry[] = [
   },
   {
     kind: "photo",
-    src: indofoodPavilion2017.url,
-    title: "Rumah Indofood at the Jakarta Fair — Corner View",
-    year: "2017",
-    caption: "The two-storey pavilion corner, wrapped in Supermi panels above the food counters.",
-    width: 1920,
-    height: 1440,
-  },
-  {
-    kind: "photo",
     src: indofoodFacade2018.url,
     title: "Rumah Indofood at the Jakarta Fair — Facade",
     year: "2018",
@@ -178,28 +156,10 @@ export const galleryEntries: GalleryEntry[] = [
   },
   {
     kind: "photo",
-    src: ahmFacadeNight2018.url,
-    title: "Astra Honda Motor at the Jakarta Fair — Night Facade",
-    year: "2018",
-    caption: "The red One HEART. facade glowing above the evening crowd.",
-    width: 1920,
-    height: 1440,
-  },
-  {
-    kind: "photo",
     src: ahmBigbikeLounge2018.url,
     title: "Astra Honda Motor at the Jakarta Fair — Big Bike Lounge",
     year: "2018",
     caption: "The big bike lounge, with the Gold Wing on its platform under warm spotlights.",
-    width: 1920,
-    height: 1280,
-  },
-  {
-    kind: "photo",
-    src: ahmCariAman2018.url,
-    title: "Astra Honda Motor at the Jakarta Fair — Cari Aman Corner",
-    year: "2018",
-    caption: "The #Cari_aMan safety-riding corner, with helmets on wooden crates beside a Scoopy.",
     width: 1920,
     height: 1280,
   },
