@@ -89,8 +89,8 @@ export function WorkCarousel({ projects }: { projects: Project[] }) {
       <h1 className="sr-only">Built with care. Shown with gratitude.</h1>
 
       <div className="work-stage relative flex min-h-0 flex-1">
-      <Button variant="ghost" size="icon" className="work-arrow work-arrow-left absolute top-1/2 z-10 size-36 -translate-y-1/2 rounded-full" onClick={() => shift(-1)} aria-label="Previous project"><ChevronLeft className="size-36" strokeWidth={2.75} /></Button>
-      <Button variant="ghost" size="icon" className="work-arrow work-arrow-right absolute top-1/2 z-10 size-36 -translate-y-1/2 rounded-full" onClick={() => shift(1)} aria-label="Next project"><ChevronRight className="size-36" strokeWidth={2.75} /></Button>
+      <Button variant="ghost" size="icon" className="work-arrow work-arrow-left absolute top-1/2 z-10 size-36 rounded-full" onClick={() => shift(-1)} aria-label="Previous project"><ChevronLeft className="size-36" strokeWidth={2.75} /></Button>
+      <Button variant="ghost" size="icon" className="work-arrow work-arrow-right absolute top-1/2 z-10 size-36 rounded-full" onClick={() => shift(1)} aria-label="Next project"><ChevronRight className="size-36" strokeWidth={2.75} /></Button>
       <div
         ref={track}
         role="region"
@@ -123,7 +123,7 @@ export function WorkCarousel({ projects }: { projects: Project[] }) {
             <span className="work-vcard-shade absolute inset-0" aria-hidden="true" />
             <span className="work-vcard-title absolute inset-0 flex items-center justify-between gap-4 p-5 md:p-8">
               <span className="font-display text-xl font-bold leading-tight md:text-3xl">{project.title}</span>
-              <span className="work-cover-open absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex size-11 shrink-0 items-center justify-center rounded-full transition-transform group-hover:-rotate-45" aria-hidden="true"><ArrowUpRight className="size-5" /></span>
+              <span className="work-cover-open flex size-11 shrink-0 items-center justify-center rounded-full transition-transform group-hover:-rotate-45" aria-hidden="true"><ArrowUpRight className="size-5" /></span>
             </span>
           </Link>
         ))}

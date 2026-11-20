@@ -220,7 +220,7 @@ body { font-family: var(--font-sans); }
 .work-cover:nth-child(even) { margin-top: 2.5rem; }
 .work-cover-image { aspect-ratio: 16 / 9; }
 .work-cover-year { padding: .5rem .75rem; border-radius: 4px; background: var(--work-image-label); color: var(--work-image-foreground); backdrop-filter: blur(8px); }
-.work-cover-open { background: var(--primary); color: var(--primary-foreground); }
+.work-cover-open { background: var(--primary); color: var(--primary-foreground); position: absolute; left: 50%; bottom: 1.25rem; margin-left: -1.375rem; }
 .work-cover-number { color: transparent; -webkit-text-stroke: 1px var(--muted-foreground); transition: color .3s, -webkit-text-stroke-color .3s; }
 .work-cover[data-active="true"] .work-cover-number, .work-cover:hover .work-cover-number { color: var(--primary); -webkit-text-stroke-color: var(--primary); }
 .work-cover-caption { position: relative; }
@@ -272,14 +272,15 @@ body { font-family: var(--font-sans); }
 .work-hcard { width: min(57.5vw, 950px); margin-inline: -11vw; transform: scale(.48); }
 .work-hcard[data-active="true"] { transform: scale(1); z-index: 1; }
 .work-htrack { padding-inline: calc(50vw - min(28.75vw, 475px) + 11vw); }
-.work-arrow { border: none; background: transparent; color: var(--primary); filter: drop-shadow(0 1px 6px oklch(0.12 0.005 60 / 0.9)); transition: color .25s, transform .25s; }
-.work-arrow:hover { background: transparent; color: oklch(0.78 0.12 195); transform: translateY(-50%) scale(1.15); }
-.work-arrow-left { left: calc(50% - min(28.75vw, 475px) - 3rem); }
-.work-arrow-right { right: calc(50% - min(28.75vw, 475px) - 3rem); }
+.work-arrow { border: none; background: transparent; color: var(--primary); filter: drop-shadow(0 1px 6px oklch(0.12 0.005 60 / 0.9)); transition: color .25s; margin-top: -4.5rem; }
+.work-arrow:hover { background: transparent; color: oklch(0.78 0.12 195); }
+.work-arrow-left { left: calc(50% - min(28.75vw, 475px) - 9.75rem); }
+.work-arrow-right { right: calc(50% - min(28.75vw, 475px) - 9.75rem); }
 /* Phones and tablets keep the same sideways slide, with a narrower centre cover. */
 @media (max-width: 1023px) {
   .work-hcard { width: 84vw; margin-inline: -6vw; }
   .work-htrack { padding-inline: calc(8vw + 6vw); }
+  .work-arrow { top: auto; bottom: 1.25rem; margin-top: 0; }
   .work-arrow-left { left: 0.5rem; }
   .work-arrow-right { right: 0.5rem; }
 }
